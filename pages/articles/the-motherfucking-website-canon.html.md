@@ -1,5 +1,5 @@
 ---
-title: Your Motherfucking Website Is Too Bloated. Here Are the Numbers.
+title: Stop Bloating Your Motherfucking Website
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com
