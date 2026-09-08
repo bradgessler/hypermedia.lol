@@ -1,5 +1,5 @@
 ---
-title: Your Login Code Screen Is Wrong. One HTML Attribute Fixes It.
+title: Everybody Builds Six-Digit Code Inputs Wrong. Just Use a Text Field.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com

@@ -86,6 +86,28 @@ and the page re-renders with the error attached to the field. That's a form doin
 a form's job. No client state machine, no disabled-button logic, nothing to keep
 in sync.
 
+Here's the shape of that page, live. The only thing standing in for the server
+is a `pattern` on the input, which is enough to feel it:
+
+<figure class="step">
+<form class="confirm" method="get" action="#confirm-demo" id="confirm-demo">
+  <p class="confirm__head">Delete <strong>example.com</strong>?</p>
+  <p>The following will be deleted:</p>
+  <ul>
+    <li>example.com website</li>
+    <li>412 pages</li>
+    <li>1,209 caches</li>
+  </ul>
+  <label for="confirm-name">Type <strong>example.com</strong> to confirm</label>
+  <input id="confirm-name" name="domain_confirmation" autocomplete="off" required pattern="example\.com" title="Type example.com exactly">
+  <div class="confirm__actions">
+    <a href="#confirm-demo">Cancel</a>
+    <button type="submit">Delete this website</button>
+  </div>
+</form>
+<figcaption>A confirmation page, not a modal. It knows what it's deleting, it demands the name, and it has a URL. Type the wrong thing and press Delete: the refusal you get is the browser's.</figcaption>
+</figure>
+
 **It has a URL.** You can link to it, bookmark it, hit back, refresh it, screenshot
 it in a bug report. Someone can open it, go read something else, and come back. An
 overlay has none of that, because it isn't anywhere.
@@ -116,6 +138,14 @@ to that document.[^spec] An iframe is its own document. So the best-implemented
 `<dialog>` in the world, opened inside an embed, blocks the embed and nothing
 else, and paints inside the embed's box and nowhere else. The page around it
 stays live. There is no attribute that fixes this.
+
+Don't take the spec's word for it. Below is a partner dashboard. Inside it, in
+an iframe, is your app. Click **Delete account** in your app.
+
+<figure class="step">
+<iframe class="embed" src="/demos/partner/" title="A partner dashboard embedding your app, which opens a modal dialog" loading="lazy"></iframe>
+<figcaption>A real <code>&lt;dialog&gt;</code> opened with <code>showModal()</code>, inside an iframe, inside a page, inside this modal. It blocks your app. The dashboard's checkbox still works. This page still scrolls. That's the spec doing exactly what it says, and it's why your modal can't protect anything once you're embedded.</figcaption>
+</figure>
 
 Pages compose. A full-page confirmation inside a webview is a full-page
 confirmation. It doesn't know or care that it's nested, because navigation is the
@@ -165,6 +195,19 @@ submits, closes, and hands you the button's value with no listeners:[^dialog]
   </form>
 </dialog>
 ```
+
+Here it is, open, with no script on this page at all. Click either button:
+
+<figure class="step">
+<dialog open class="demo__dialog" id="draft">
+  <p>Discard this draft?</p>
+  <form method="dialog">
+    <button value="cancel" class="demo__btn">Cancel</button>
+    <button value="discard" class="demo__btn">Discard</button>
+  </form>
+</dialog>
+<figcaption>A <code>&lt;dialog open&gt;</code> and a <code>&lt;form method="dialog"&gt;</code>. Submitting closes it and records which button did it. Nobody wrote a listener. (Without <code>showModal()</code> it isn't modal, which is the honest limit of what markup alone can do; see the embed above for the modal version.)</figcaption>
+</figure>
 
 Use it for discarding a draft. Don't use it for deleting an account.
 

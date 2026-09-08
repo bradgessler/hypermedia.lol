@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title><%= page_title %></title>
+    <style>
+      /* A deliberately generic SaaS look, so the embed reads as someone else's product. */
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 14px; color: #1f2328; background: #fff; }
+      a { color: #0969da; }
+      .bar { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem; background: #24292f; color: #fff; }
+      .bar b { font-size: 0.95rem; }
+      .bar span { opacity: 0.7; font-size: 0.8rem; }
+      .wrap { padding: 1rem; }
+      .card { border: 1px solid #d0d7de; border-radius: 6px; padding: 1rem; margin-bottom: 1rem; }
+      .card h2 { margin: 0 0 0.5rem; font-size: 1rem; }
+      .danger { border-color: #ff8182; }
+      .danger h2 { color: #cf222e; }
+      button { font: inherit; padding: 0.4rem 0.9rem; border-radius: 6px; border: 1px solid #d0d7de; background: #f6f8fa; cursor: pointer; }
+      button.red { color: #cf222e; font-weight: 600; }
+      button.red:hover { background: #cf222e; color: #fff; border-color: #cf222e; }
+      dialog { border: 1px solid #d0d7de; border-radius: 8px; padding: 1.25rem; max-width: 22rem; box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+      dialog::backdrop { background: rgba(0,0,0,0.55); }
+      dialog h2 { margin: 0 0 0.5rem; font-size: 1.05rem; }
+      dialog p { margin: 0 0 1rem; }
+      dialog form { display: flex; gap: 0.5rem; justify-content: flex-end; }
+      iframe { width: 100%; border: 1px solid #d0d7de; border-radius: 6px; background: #fff; }
+      .note { font-size: 0.8rem; color: #57606a; }
+      .row { display: flex; gap: 1rem; align-items: center; }
+      input[type=checkbox] { transform: scale(1.2); }
+    </style>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

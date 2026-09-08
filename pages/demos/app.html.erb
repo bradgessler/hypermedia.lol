@@ -1,0 +1,34 @@
+---
+title: Your app
+layout: demo
+---
+<div class="bar"><b>Your app</b><span>account settings</span></div>
+<div class="wrap">
+  <div class="card">
+    <h2>Notifications</h2>
+    <label class="row"><input type="checkbox" checked> Email me about new features</label>
+  </div>
+  <div class="card danger">
+    <h2>Danger zone</h2>
+    <p class="note">This opens a real <code>&lt;dialog&gt;</code> with <code>showModal()</code>. Watch what it blocks.</p>
+    <button class="red" type="button" id="open">Delete account</button>
+  </div>
+</div>
+
+<dialog id="confirm">
+  <h2>Delete your account?</h2>
+  <p>This can't be undone. It's also only blocking <em>this</em> document. Try clicking anything outside this box.</p>
+  <form method="dialog">
+    <button value="cancel">Cancel</button>
+    <button value="delete" class="red">Delete</button>
+  </form>
+</dialog>
+
+<script>
+  // The thing being demonstrated: a real modal dialog. Its blocking and its
+  // backdrop stop at the edge of this iframe, because the HTML spec scopes
+  // both to the document the dialog lives in.
+  document.getElementById("open").addEventListener("click", () => {
+    document.getElementById("confirm").showModal();
+  });
+</script>

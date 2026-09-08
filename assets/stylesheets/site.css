@@ -426,7 +426,7 @@ a.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
   line-height: 1.68;
 }
 
-.prose > p { margin: 1.4rem 0; }
+.prose > p { margin: 1.6rem 0; }
 
 .prose h2 {
   font-family: var(--display);
@@ -1322,7 +1322,7 @@ footer a:hover { color: var(--ink); }
 }
 
 /* What breaks — a comparison grid that reads as a checklist. */
-.breaks { display: grid; gap: 0.65rem; margin: 2.25rem 0 3rem; }
+.breaks { display: grid; gap: 0.65rem; margin: 4.5rem 0 6rem; }
 
 .break {
   display: grid;
@@ -1414,7 +1414,7 @@ footer a:hover { color: var(--ink); }
 .shadow {
   display: grid;
   gap: 0.5rem;
-  margin: 2.25rem 0 2.75rem;
+  margin: 4.5rem 0 5.5rem;
   padding: 1rem;
   border: 1px solid var(--rule);
   background: var(--panel);
@@ -1741,14 +1741,14 @@ footer a:hover { color: var(--ink); }
    so the story reads from captions alone. */
 /* Shown things get real air on both sides, so the prose around them reads
    as its own beat instead of a gap between exhibits. */
-.step { margin: 2.75rem 0 3.5rem; padding: 0; }
-.step figcaption { margin-top: 1rem; padding-top: 0.6rem; border-top: 1px solid var(--rule); font-family: var(--ui); font-size: 0.88rem; line-height: 1.5; color: var(--muted); }
+.step { margin: 5.5rem 0 7rem; padding: 0; }
+.step figcaption { margin-top: 1.4rem; padding-top: 0.8rem; border-top: 1px solid var(--rule); font-family: var(--ui); font-size: 0.88rem; line-height: 1.5; color: var(--muted); }
 .step figcaption b { font-family: var(--mono); font-weight: 700; color: var(--accent); margin-right: 0.35rem; }
 .step--code pre { margin: 0; }
 
 .prose p.lede { font-size: 1.28rem; line-height: 1.55; margin: 0 0 2rem; padding-left: 1rem; border-left: 6px solid var(--accent); }
 
-.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0.75rem; margin: 2.5rem 0 3.5rem; }
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 0.75rem; margin: 5rem 0 7rem; }
 .verdict__col { padding: 0.9rem 1rem; border: 1px solid var(--rule); background: var(--panel); }
 .verdict__col--pro { border-top: 6px solid var(--go, #2ee66b); }
 .verdict__col--con { border-top: 6px solid var(--alert, #ff2a2a); }
@@ -2318,3 +2318,23 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .pv--modalz .pv__win--3 { top: 42%; left: 36%; width: 56%; height: 50%; border-radius: 6px; border-color: #999; }
 .pv--modalz .pv__win--3 i { background: #e6e6e6; }
 .pv--modalz .pv__win--3 b { position: absolute; right: 8%; bottom: 10%; width: 28%; height: 16%; background: #337ab7; border-radius: 3px; }
+
+
+/* ------------------------------------------------ modals article demos */
+.embed { display: block; width: 100%; height: 30rem; border: 2px solid var(--rule); background: #fff; }
+
+.confirm { border: 2px solid var(--rule); background: var(--panel); padding: 1.25rem 1.4rem; max-width: 30rem; }
+.confirm__head { font-family: var(--ui); font-weight: 700; font-size: 1.1rem; margin: 0 0 0.5rem; }
+.confirm p, .confirm li { font-family: var(--ui); font-size: 0.95rem; }
+.confirm ul { margin: 0 0 1rem; padding-left: 1.2rem; }
+.confirm label { display: block; font-family: var(--ui); font-size: 0.9rem; margin-bottom: 0.35rem; }
+.confirm input { width: 100%; font: inherit; font-family: var(--mono); padding: 0.5rem 0.6rem; border: 2px solid var(--rule); background: var(--paper); color: var(--ink); }
+.confirm input:user-invalid { border-color: #c81e00; }
+.confirm__actions { display: flex; align-items: center; justify-content: flex-end; gap: 1rem; margin-top: 1rem; }
+.confirm button { font: inherit; font-family: var(--ui); font-weight: 700; padding: 0.5rem 1rem; border: 2px solid #c81e00; background: #c81e00; color: #fff; cursor: pointer; }
+
+.demo__dialog { position: static; margin: 0; padding: 1.25rem; border: 2px solid var(--rule); background: var(--panel); color: var(--ink); font-family: var(--prose); max-width: 22rem; }
+.demo__dialog p { margin: 0 0 1rem; }
+.demo__dialog form { display: flex; gap: 0.5rem; justify-content: flex-end; }
+.demo__dialog:not([open]) { display: none; }
+.t-modalz .confirm, .t-modalz .demo__dialog { background: #fff; color: #111; }

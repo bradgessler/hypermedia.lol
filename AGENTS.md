@@ -90,6 +90,8 @@ Both must be annotated in the source and mentioned on the page.
   `Caption:` paragraph directly after it; the renderer wraps the pair in a
   figure. A fence whose info string has spaces is not a fence to Redcarpet.
 - Headings get ids and anchor links automatically.
+- Demo pages that need their own chrome (an embedded "partner" app, say) go
+  in `pages/demos/` with `layout: demo`, a bare layout with no site chrome.
 - Images go in `pages/images/`; anything under `assets/` is fingerprinted.
 - Cards on the wall preview the article's treatment. If you add a treatment,
   add a preview in `helpers/preview_helper.rb`.
