@@ -25,6 +25,9 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %><%= " light-code" if %w[spec default].include?(treatment) %>">
+    <% unless home? %>
+      <div class="topmark"><%= site_mark %></div>
+    <% end %>
         <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
         <div class="banner">
@@ -71,12 +74,31 @@
       <% end %>
     </main>
 
-    <%= site_mark %>
-
-    <footer>
-      <a href="https://github.com/bradgessler/hypermedia.lol">Source &amp; submissions</a>
-      <a href="/llms.txt">llms.txt</a>
-      <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break, and one Copy button.</span>
+    <footer class="foot">
+      <a class="mark mark--masthead" href="/">hypermedia.lol</a>
+      <p class="foot__about">
+        Short, over-the-top arguments for using what the browser already does
+        instead of rebuilding it in JavaScript. Each one shows a thing breaking,
+        then the smaller thing that already worked.
+        <a href="/why/">More about this &rarr;</a>
+      </p>
+      <div class="foot__share" aria-label="Share this page">
+        <span class="foot__label">Share</span>
+        <a href="https://x.com/intent/post?text=<%= ERB::Util.url_encode(page_title) %>&amp;url=<%= ERB::Util.url_encode(canonical_url) %>">X</a>
+        <a href="https://bsky.app/intent/compose?text=<%= ERB::Util.url_encode("#{page_title} #{canonical_url}") %>">Bluesky</a>
+        <a href="https://news.ycombinator.com/submitlink?u=<%= ERB::Util.url_encode(canonical_url) %>&amp;t=<%= ERB::Util.url_encode(page_title) %>">Hacker News</a>
+        <a href="sms:?&amp;body=<%= ERB::Util.url_encode("#{page_title} #{canonical_url}") %>">Messages</a>
+        <a href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>">Email</a>
+      </div>
+      <p class="foot__contribute">
+        Got one of these in you? <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a>
+        One file, markdown or HTML, no JavaScript. Merged at the whim of a sometimes-benevolent dictator.
+      </p>
+      <p class="foot__meta">
+        <a href="https://github.com/bradgessler/hypermedia.lol">Source</a>
+        <a href="/llms.txt">llms.txt</a>
+        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break, and one Copy button.</span>
+      </p>
     </footer>
   </body>
 </html>

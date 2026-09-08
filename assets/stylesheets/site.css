@@ -48,16 +48,12 @@ body {
 /* -------------------------------------------------------------- the mark */
 
 /*
-  The one constant: a small box floated at the top right, padded off the
-  edges. Drawn in the page's own ink on its own paper so it adapts to every
-  treatment and colour scheme.
+  The site's name in a small box. On article pages it sits at the top right
+  of the page in normal flow and scrolls away; the home page has the masthead
+  instead. Drawn in the page's own ink and paper so it adapts everywhere.
 */
 .mark {
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  z-index: 20;
-  display: block;
+  display: inline-block;
   padding: 0.5rem 0.8rem;
   border: 2px solid var(--ink);
   background: var(--paper);
@@ -74,7 +70,9 @@ body {
 .mark:hover { background: var(--ink); color: var(--paper); box-shadow: 3px 3px 0 var(--paper); }
 .mark:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-main { padding: 4.5rem 1.25rem 0; }
+.topmark { display: flex; justify-content: flex-end; max-width: 76rem; margin: 0 auto; padding: 1rem 1.25rem 0; }
+
+main { padding: 2rem 1.25rem 0; }
 
 /* --------------------------------------------------------- the why pitch */
 
@@ -526,21 +524,41 @@ table th { background: var(--accent); color: #14130f; }
 
 .demo button:hover { background: var(--accent); color: #14130f; }
 
-footer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem 1.5rem;
+.foot {
   max-width: 76rem;
-  margin: 5rem auto 0;
-  padding: 1.25rem 1.25rem 0;
+  margin: 6rem auto 0;
+  padding: 2.5rem 1.25rem 0;
   border-top: 3px solid var(--rule);
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-family: var(--ui);
+  color: var(--ink);
 }
 
-footer a { color: var(--muted); }
-footer a:hover { color: var(--ink); }
+.foot .mark--masthead { margin-bottom: 1.25rem; }
+
+.foot__about { max-width: 40rem; font-size: 1.05rem; line-height: 1.55; margin: 0 0 1.5rem; }
+.foot__about a { color: var(--ink); font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+
+.foot__share { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin: 0 0 1.75rem; }
+.foot__label { font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); margin-right: 0.25rem; }
+.foot__share a {
+  display: inline-block;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-decoration: none;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+.foot__share a:hover { background: var(--ink); color: var(--paper); box-shadow: 2px 2px 0 var(--paper); }
+
+.foot__contribute { max-width: 40rem; font-size: 0.95rem; line-height: 1.5; margin: 0 0 1.75rem; }
+.foot__contribute a { color: var(--ink); font-weight: 700; }
+
+.foot__meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 0; padding-bottom: 1rem; }
+.foot__meta a { color: var(--muted); }
+.foot__meta a:hover { color: var(--ink); }
 
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 
@@ -1830,7 +1848,6 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .masthead__nav a:hover { background: var(--accent); color: #14130f; }
 
 /* The floating mark is redundant where the masthead is. */
-.is-home > .mark:not(.mark--masthead) { display: none; }
 .is-home main { padding-top: 2.5rem; }
 
 
@@ -2201,7 +2218,7 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .t-modalz .article-title { font-family: var(--display); color: #111; }
 .t-modalz .banner .byline { color: #444; }
 .t-modalz .onward__link { background: #fff; }
-.t-modalz footer, .t-modalz footer a { color: #ddd; }
+.t-modalz .foot { color: #eee; --ink: #eee; --paper: #2a2a2a; --muted: #bbb; }
 .t-modalz .footnotes { background: #fff; padding: 1.25rem; border: 2px solid #111; margin-top: 2.5rem; }
 .t-modalz .prose .footnotes li { color: #333; }
 
