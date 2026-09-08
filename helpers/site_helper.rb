@@ -86,8 +86,16 @@ module SiteHelper
     URI.join(SITE_URL, path_for(page)).to_s
   end
 
+  # Open Graph Plus currently fails to render any path below the root — nested
+  # paths return 404/503 while the root screenshots fine, reproduced on
+  # sitepress.cc as well as here. Until that's fixed every page shares the
+  # homepage card, which renders, rather than a per-page card that doesn't.
+  # Flip this to false to go back to per-page images.
+  OG_IMAGE_ROOT_ONLY = true
+
   def og_image_url(page = current_page)
-    URI.join(OG_IMAGE_HOST, path_for(page)).to_s
+    path = OG_IMAGE_ROOT_ONLY ? "/" : path_for(page)
+    URI.join(OG_IMAGE_HOST, path).to_s
   end
 
   def article?(page = current_page)
