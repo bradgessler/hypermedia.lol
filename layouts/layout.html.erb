@@ -22,6 +22,13 @@
     <meta name="twitter:creator" content="@bradgessler">
 
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Rules for machines">
+
+    <!-- Privacy-friendly analytics by Plausible. Disclosed in the footer. -->
+    <script async src="https://plausible.io/js/pa-WF9wT4GAo6d9TvY-p3HG2.js"></script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %><%= " light-code" if %w[spec default].include?(treatment) %>">
@@ -95,7 +102,7 @@
       <p class="foot__meta">
         <a href="https://github.com/bradgessler/hypermedia.lol">Source</a>
         <a href="/llms.txt">llms.txt</a>
-        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break; a Copy button; and a Share button that hands the page to your device's share sheet. Each is annotated in the source.</span>
+        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break; a Copy button; a Share button that hands the page to your device's share sheet; and Plausible analytics, which counts visits without cookies or personal data. Each is annotated in the source.</span>
       </p>
     </footer>
 

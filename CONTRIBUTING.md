@@ -105,6 +105,8 @@ Two narrow exceptions exist, and they're the bar for any other:
    declarative clipboard and no declarative share sheet, so the Copy button and
    the Share button are JavaScript or nothing. Each degrades to a page that
    works without it (tap-to-select; a mailto link), and each is annotated.
+3. **Plausible analytics** in the layout head: privacy-friendly, no cookies,
+   disclosed in the footer.
 
 Everything shown on a page: an email, a form, a diagram, a code block: goes
 in a `<figure>` with a `<figcaption>` that says what step you're looking at.

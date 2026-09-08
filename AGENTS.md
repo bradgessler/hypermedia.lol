@@ -81,6 +81,8 @@ No JavaScript for the site's own UI. Two exceptions, and they are the bar:
 2. A control the platform has no declarative answer for: the Copy button
    (clipboard) and the Share button (navigator.share). Each must degrade to a
    page that works without it and be annotated in the source.
+3. Plausible analytics, in the layout head. Privacy-friendly, no cookies, and
+   disclosed in the footer. Nothing else gets a script tag.
 
 Both must be annotated in the source and mentioned on the page.
 
