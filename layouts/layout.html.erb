@@ -25,14 +25,9 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
-    <div class="hang">
-      <a class="tag" href="/" aria-label="hypermedia.lol, back to the collection">
-        <span class="tag__body">hypermedia.lol</span>
-      </a>
-    </div>
-
-    <main class="<%= home? ? "" : "prose" %>">
+        <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
+        <%= site_tag %>
         <div class="banner">
           <div class="banner__art"><%= sprite sprite_name, size: 84 %></div>
           <div class="banner__meta">

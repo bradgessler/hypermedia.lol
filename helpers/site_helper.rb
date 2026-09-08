@@ -119,6 +119,20 @@ module SiteHelper
     articles[i + 1] if i
   end
 
+  # The site mark: a tag hanging on a string from the top edge of the first
+  # block on the page (the banner, or the pitch on the home page). Hung from
+  # page content rather than the viewport so it is always attached to a
+  # visible edge.
+  def site_tag
+    raw <<~HTML
+      <div class="hang">
+        <a class="tag" href="/" aria-label="hypermedia.lol, back to the collection">
+          <span class="tag__body">hypermedia.lol</span>
+        </a>
+      </div>
+    HTML
+  end
+
   def home?(page = current_page)
     page.request_path == "/"
   end
