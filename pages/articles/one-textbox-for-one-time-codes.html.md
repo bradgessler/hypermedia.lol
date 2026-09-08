@@ -5,6 +5,7 @@ description: Six boxes for a six digit code breaks paste, backspace, autofill, a
 accent: acid
 sprite: key
 treatment: form
+span: big
 ---
 
 Somewhere along the way, we stopped asking why.

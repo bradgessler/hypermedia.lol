@@ -146,25 +146,27 @@ main { padding-top: 7.5rem; }
 .wall {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  grid-auto-rows: minmax(13rem, auto);
+  grid-auto-flow: dense;
   gap: 0.9rem;
   max-width: 76rem;
   margin: 0 auto;
 }
 
 /*
-  Tiles keep a light panel behind all running text — colour is carried by the
-  border, the top rule and the sprite, so contrast never depends on the accent.
+  A card is a miniature of the page it opens — same palette, same chrome, drawn
+  small — under a body block whose type never changes, so titles stay readable
+  no matter how loud the preview above them is.
 */
 .tile {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  padding: 1.1rem;
+  padding: 0;
   border: 3px solid var(--rule);
-  border-top: 12px solid var(--accent);
   background: var(--panel);
   color: var(--ink);
   text-decoration: none;
+  overflow: hidden;
   transition: transform 120ms steps(2), box-shadow 120ms steps(2);
 }
 
@@ -175,8 +177,14 @@ a.tile:hover, a.tile:focus-visible {
 
 a.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
-.tile__art { color: var(--accent); line-height: 0; }
-.sprite { display: block; }
+.tile__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+  padding: 0.95rem 1rem 1.05rem;
+  border-top: 5px solid var(--accent);
+}
 
 .tile__kind {
   font-family: var(--mono);
@@ -188,17 +196,12 @@ a.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
 .tile__title {
   font-family: var(--display);
-  font-size: clamp(1.45rem, 3vw, 2rem);
-  line-height: 0.96;
+  font-size: clamp(1.4rem, 2.6vw, 1.95rem);
+  line-height: 0.98;
   text-transform: uppercase;
 }
 
-.tile__desc {
-  font-family: var(--ui);
-  font-size: 0.92rem;
-  line-height: 1.5;
-  color: var(--ink);
-}
+.tile__desc { font-family: var(--ui); font-size: 0.9rem; line-height: 1.5; color: var(--ink); }
 
 .tile__date {
   margin-top: auto;
@@ -208,39 +211,190 @@ a.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
   color: var(--muted);
 }
 
-.tile--essay { grid-column: span 2; min-height: 15rem; }
+/* --- previews ---------------------------------------------------------- */
 
-/* One-liners read as statements, so they use the UI face at a large size
-   rather than condensed display type. */
-.tile--line { min-height: 10rem; }
-
-.tile__text {
-  font-family: var(--ui);
-  font-weight: 700;
-  font-size: 1.12rem;
-  line-height: 1.3;
-  letter-spacing: -0.01em;
+.pv {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #fff;
 }
 
-.tile__note {
-  margin-top: auto;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  color: var(--muted);
+.pv__line {
+  position: absolute;
+  left: 8%;
+  right: 12%;
+  height: 5%;
+  background: currentColor;
+  opacity: 0.28;
 }
 
-.tile--cta {
-  grid-column: span 2;
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
+/* FORM — six boxes struck out, and the one field that replaces them. */
+.pv--form {
+  background-color: #fdfcf7;
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.09) 1px, transparent 1px);
+  background-size: 9px 9px;
 }
 
+.pv--form .pv__boxes {
+  position: absolute;
+  top: 16%;
+  left: 8%;
+  right: 8%;
+  display: flex;
+  gap: 3.2%;
+}
+
+.pv--form .pv__boxes i {
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  border: 2px solid #2a2a2a;
+  background: #fff;
+}
+
+.pv--form .pv__strike {
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  right: -2%;
+  height: 3px;
+  background: #c0392b;
+  transform: rotate(-4deg);
+}
+
+.pv--form .pv__field {
+  position: absolute;
+  bottom: 14%;
+  left: 8%;
+  right: 8%;
+  height: 26%;
+  border: 2px solid #2a2a2a;
+  border-bottom-width: 4px;
+  background: #fff;
+}
+
+.pv--form .pv__caret {
+  position: absolute;
+  top: 18%;
+  left: 5%;
+  width: 2px;
+  height: 64%;
+  background: #c0392b;
+}
+
+/* SPEC — a standards document with a dialog floating over it. */
+.pv--spec { background: #fff; color: #1a2340; }
+.pv--spec .pv__masthead { position: absolute; top: 13%; left: 8%; width: 42%; height: 7%; background: #1a4ed8; }
+.pv--spec .pv__line:nth-of-type(2) { top: 32%; }
+.pv--spec .pv__line:nth-of-type(3) { top: 45%; }
+.pv--spec .pv__line:nth-of-type(4) { top: 58%; }
+
+.pv--spec .pv__dialog {
+  position: absolute;
+  right: 9%;
+  bottom: 12%;
+  width: 44%;
+  height: 42%;
+  border: 2px solid #1a4ed8;
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(26, 78, 216, 0.22);
+}
+
+.pv--spec .pv__dialog i { position: absolute; left: 10%; height: 8%; background: #1a4ed8; opacity: 0.35; }
+.pv--spec .pv__dialog i:first-child { top: 22%; width: 60%; }
+.pv--spec .pv__dialog i:last-child { top: 44%; width: 40%; }
+
+/* TERMINAL — a window mid-deploy. */
+.pv--terminal { background: #080b08; font-family: var(--mono); }
+
+.pv--terminal .pv__chrome {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 17%;
+  background: #101510;
+  border-bottom: 1px solid #2b382a;
+}
+
+.pv--terminal .pv__chrome::before {
+  content: "";
+  position: absolute;
+  top: 32%;
+  left: 5%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 10px 0 0 #ffbd2e, 20px 0 0 #27c93f;
+}
+
+.pv--terminal .pv__cmd { position: absolute; top: 30%; left: 6%; color: #ffb000; font-size: 0.72rem; white-space: nowrap; }
+.pv--terminal .pv__out { position: absolute; top: 55%; left: 6%; color: #7d8a7b; font-size: 0.68rem; }
+.pv--terminal .pv__caret { display: inline-block; width: 0.5em; height: 1em; margin-left: 0.2em; vertical-align: -0.14em; background: #ffb000; }
+.pv--terminal .pv__scan { position: absolute; inset: 0; background: repeating-linear-gradient(rgba(0,0,0,0.4) 0 1px, transparent 1px 3px); }
+
+/* ZINE — a photocopied flyer, knocked askew. */
+.pv--zine {
+  background-color: #e9e6da;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.32) 0.9px, transparent 1.1px);
+  background-size: 5px 5px;
+  color: #111;
+}
+
+.pv--zine .pv__slab { position: absolute; top: 18%; left: 6%; width: 74%; height: 26%; background: #111; transform: rotate(-2.4deg); }
+.pv--zine .pv__slab::after { content: ""; position: absolute; top: 26%; left: 6%; width: 62%; height: 24%; background: #e9e6da; }
+.pv--zine .pv__line:nth-of-type(2) { top: 60%; }
+.pv--zine .pv__line:nth-of-type(3) { top: 74%; }
+
+/* PLAIN */
+.pv--plain { background: var(--panel); color: var(--ink); }
+.pv--plain .pv__block { position: absolute; top: 18%; left: 8%; width: 46%; height: 24%; background: var(--accent); }
+.pv--plain .pv__line:nth-of-type(2) { top: 58%; }
+.pv--plain .pv__line:nth-of-type(3) { top: 72%; }
+.pv__line--short { right: 42%; }
+
+/* --- sizes ------------------------------------------------------------
+   Spans are only applied once the grid is known to have enough columns for
+   them, so the wall stays correct at every width instead of spawning implicit
+   columns on narrow screens. */
+
+@media (min-width: 46rem) {
+  .tile--wide, .tile--big { grid-column: span 2; }
+  .tile--tall { grid-row: span 2; }
+}
+
+@media (min-width: 70rem) {
+  .tile--big { grid-column: span 2; grid-row: span 2; }
+}
+
+.tile--cta { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.tile--cta .tile__body { border-top-color: var(--accent); }
 .tile--cta .tile__desc { color: var(--paper); }
 .tile--cta .tile__kind { color: var(--accent); }
+.pv--cta { background: var(--ink); aspect-ratio: 21 / 9; }
 
-@media (max-width: 38rem) {
-  .tile--essay, .tile--cta { grid-column: span 1; }
+.pv--cta .pv__plus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2.4rem;
+  height: 0.42rem;
+  margin: -0.21rem 0 0 -1.2rem;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 var(--accent);
+}
+
+.pv--cta .pv__plus::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.42rem;
+  height: 2.4rem;
+  margin: -1.2rem 0 0 -0.21rem;
+  background: var(--accent);
 }
 
 /* ------------------------------------------------------------- articles */

@@ -5,6 +5,7 @@ description: In 2006 you opened the file over SFTP, fixed the character, hit sav
 accent: amber
 sprite: floppy
 treatment: terminal
+span: wide
 ---
 
 Here's a workflow from 2006.

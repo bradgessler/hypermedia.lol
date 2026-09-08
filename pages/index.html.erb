@@ -12,20 +12,25 @@ title: hypermedia.lol
 
 <div class="wall">
   <% articles.each do |article| %>
-    <a class="tile tile--essay" href="<%= article.request_path %>"
+    <a class="tile tile--essay tile--<%= article.data.fetch("span", "normal") %>" href="<%= article.request_path %>"
        style="--accent: <%= tile_accent article %>">
-      <span class="tile__art"><%= sprite sprite_name(article), size: 44 %></span>
-      <span class="tile__kind"><%= treatment(article) %></span>
-      <span class="tile__title"><%= article.data.fetch("title") %></span>
-      <span class="tile__desc"><%= article.data.fetch("description", nil) %></span>
-      <span class="tile__date"><%= date article.data.fetch("date") %></span>
+      <%= preview article %>
+      <span class="tile__body">
+        <span class="tile__title"><%= article.data.fetch("title") %></span>
+        <span class="tile__desc"><%= article.data.fetch("description", nil) %></span>
+        <span class="tile__date"><%= date article.data.fetch("date") %></span>
+      </span>
     </a>
   <% end %>
 
   <a class="tile tile--cta" href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">
-    <span class="tile__art"><%= sprite "floppy", size: 44 %></span>
-    <span class="tile__kind">Open to submissions</span>
-    <span class="tile__title">Send a pull request</span>
-    <span class="tile__desc">One file. Markdown or HTML. The only rule is no JavaScript.</span>
+    <span class="pv pv--cta" aria-hidden="true">
+      <span class="pv__plus"></span>
+    </span>
+    <span class="tile__body">
+      <span class="tile__kind">Open to submissions</span>
+      <span class="tile__title">Send a pull request</span>
+      <span class="tile__desc">One file. Markdown or HTML. The only rule is no JavaScript.</span>
+    </span>
   </a>
 </div>

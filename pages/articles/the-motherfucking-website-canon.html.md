@@ -5,6 +5,7 @@ description: A reading list. Four profane single-page manifestos that have been 
 accent: sky
 sprite: brick
 treatment: zine
+span: tall
 ---
 
 Before there was a name for any of this, there was

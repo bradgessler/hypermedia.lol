@@ -5,6 +5,7 @@ description: modalzmodalzmodalz.com made the case years ago. Now the platform ha
 accent: magenta
 sprite: dialog
 treatment: spec
+span: wide
 ---
 
 There's a website called [modalzmodalzmodalz.com](https://modalzmodalzmodalz.com/)
