@@ -8,9 +8,12 @@ treatment: launch
 span: big
 ---
 
-## You order coffee. Sweet Maria's emails you a code.
-<p class="dek">Copy it. You'll need it in about ten seconds.</p>
+<p class="lede">By the end of this you'll be able to delete a few hundred lines of
+JavaScript, replace them with one HTML attribute, and know exactly what those
+lines were quietly breaking for everyone who wasn't you. It starts with
+coffee.</p>
 
+<figure class="step">
 <div class="message message--email" aria-label="Email from Sweet Maria's with your login code">
   <span class="message__from">From: Sweet Maria's <span class="message__time">just now</span></span>
   <span class="message__subject">Your Sweet Maria's sign-in code</span>
@@ -18,11 +21,11 @@ span: big
   <span class="message__code"><code class="copyable">561579</code></span>
   <span class="message__hint">If you didn't request this, you can ignore this email.</span>
 </div>
+<figcaption><b>1.</b> You order coffee. Sweet Maria's emails you a code. Copy it — you'll need it in ten seconds.</figcaption>
+</figure>
 
-## You go back to the tab. This is waiting for you.
-<p class="dek">Paste the code. Everything here is live, and nothing in it is JavaScript.</p>
-
-<div class="console console--six" data-mode="six">
+<figure class="step">
+<div class="console console--six">
   <div class="console__head">
     <span class="console__title">Authorization required</span>
     <span class="console__lights"><i></i><i></i><i></i></span>
@@ -31,18 +34,18 @@ span: big
   <form class="console__body" method="get" action="#six">
     <span class="console__label">Enter 6-digit launch code</span>
     <span class="console__keys">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 1 of 6">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 2 of 6">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 3 of 6">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 4 of 6">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 5 of 6">
-      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 6 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 1 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 2 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 3 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 4 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 5 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required autocomplete="off" aria-label="Digit 6 of 6">
     </span>
     <input type="hidden" name="code" value="">
     <span class="console__wire">
       <span class="console__wire-label">Shadow field &middot; what the server gets</span>
       <code>code=""</code>
-      <span class="console__wire-note">The six boxes have no <code>name</code>. The hidden field does. Only JavaScript joins them — and this console has none.</span>
+      <span class="console__wire-note">The boxes have no <code>name</code>. A script joins them into this hidden field on every keystroke. That script is running right now.</span>
     </span>
     <span class="console__status">
       <span class="console__lamp"></span>
@@ -52,17 +55,38 @@ span: big
     </span>
     <button class="console__arm" type="submit">Arm</button>
   </form>
-  <div class="console__foot">This is how most websites ask for a login code. Everything in this console is live. Nothing in it is JavaScript.</div>
+  <div class="console__foot">Built the way these usually are: six boxes, auto-advance, a hidden field, and the JavaScript to hold it together. It's live so you can feel it.</div>
+</div>
+<figcaption><b>2.</b> The sign-in page. Paste the code. Then type two digits and press Backspace twice.</figcaption>
+</figure>
+
+One digit landed and five vanished. Backspace walked you back a box but left the
+digit behind. The lamp never went green. And on a phone, the keyboard never
+offered you the code — every box has <code>autocomplete="off"</code>, which is
+how the popular libraries ship it.
+
+<div class="verdict">
+  <div class="verdict__col verdict__col--pro">
+    <span class="verdict__head">What it gets right</span>
+    <ul>
+      <li>It looks like a code. Six slots, six digits — nobody wonders what to type.</li>
+      <li>Auto-advance feels fast when you type by hand.</li>
+      <li>It reads as serious, which is why every auth screen has copied it.</li>
+    </ul>
+  </div>
+  <div class="verdict__col verdict__col--con">
+    <span class="verdict__head">What it breaks</span>
+    <ul>
+      <li>Paste. Backspace. Autofill. The screen reader. The password manager.</li>
+      <li>The server, which now reads a hidden field a script has to keep honest.</li>
+      <li>Every one of those was working before the boxes showed up.</li>
+    </ul>
+  </div>
 </div>
 
-Paste the code into the console. One digit lands. The lamp stays red. Now
-type two digits and press backspace twice — you're stuck in the second box,
-because nothing walks you back.
 
-That's a six-digit code to buy coffee, and it fails a paste.
-
-## How it's usually built: six puppets and a shadow field
-<p class="dek">The boxes you see aren't the input. They're a costume on top of one.</p>
+## How it's built
+<p class="dek">Six puppets over one hidden field, held together by event handlers. Here it is, and here's the shape of the code.</p>
 
 <div class="shadow" aria-label="Diagram: six visible boxes wired by JavaScript to one hidden field">
   <div class="shadow__row">
@@ -98,6 +122,8 @@ boxes.forEach((box, i) => {
 });
 ```
 
+Caption: <b>How it's built.</b> The usual shape, hand-rolled everywhere. Do not ship this. Every line is a place Backspace can break.
+
 Backspace is where it always goes wrong, because the browser's backspace only
 knows about the box it's in. Everything else — moving back, deleting the previous
 digit, doing both — has to be re-invented in that `keydown` handler. Get it
@@ -110,7 +136,7 @@ None of that code exists in the version below.
 That sketch isn't a strawman. It's the shape of the most-downloaded
 implementation on the internet.
 
-## The most popular library does exactly this — and turns autofill off
+## The most popular library builds it exactly this way
 <p class="dek">react-otp-input: one input per digit, 274 lines, and <code>autoComplete: 'off'</code> hardcoded on every box.</p>
 
 [react-otp-input](https://github.com/devfolioco/react-otp-input) is the
@@ -132,10 +158,11 @@ It's a competent implementation of a bad idea. 274 lines to reproduce one input,
 minus the attribute that mattered most.
 
 
-## Even the best version of this is 767 lines
+
+## Even the best library needs 767 lines to hide one input
 <p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
 
-You've seen the bad version. Now the good one.
+You've felt the bad version. Now the good one.
 [input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
 component in the React ecosystem, and it gets the big thing right: it renders
 exactly one real text input, makes it transparent, and draws the boxes on top.
@@ -156,8 +183,9 @@ You don't have to hide the input. Keep going.
 
 
 ## What should have been waiting for you
-<p class="dek">Same console. Same drama. Paste the same code.</p>
+<p class="dek">One input. Every attribute is doing a job the script used to.</p>
 
+<figure class="step">
 <div class="console console--one">
   <div class="console__head">
     <span class="console__title">Authorization required</span>
@@ -181,7 +209,7 @@ You don't have to hide the input. Keep going.
     <span class="console__wire">
       <span class="console__wire-label">What the server gets</span>
       <code>code=561579</code>
-      <span class="console__wire-note">Whatever you typed. The input has a <code>name</code>. There is nothing to join.</span>
+      <span class="console__wire-note">Whatever you typed. The input has a <code>name</code>. There is nothing to join, and nothing here is JavaScript.</span>
     </span>
     <span class="console__status">
       <span class="console__lamp"></span>
@@ -191,14 +219,14 @@ You don't have to hide the input. Keep going.
     </span>
     <button class="console__arm" type="submit">Arm</button>
   </form>
-  <div class="console__foot">Same console. Same drama. One <code>&lt;input&gt;</code>.</div>
+  <div class="console__foot">Same console. Same drama. One <code>&lt;input&gt;</code>. No script.</div>
 </div>
+<figcaption><b>3.</b> What should have been waiting for you. Paste the same code.</figcaption>
+</figure>
 
-All six digits land. Backspace works. On a phone, the browser offers the code
-straight from your email. Submit it with four digits and the error you get is the
-browser's.
-
-Here is the entire control:
+All six digits land. Backspace deletes the last one. On a phone, the browser
+offers the code straight from your email. Submit it with four digits and the
+error you get is the browser's.
 
 ```html
 <label for="code">Enter code</label>
@@ -215,6 +243,8 @@ Here is the entire control:
   title="Six digits from your email"
   required>
 ```
+
+Caption: <b>The fix.</b> The entire control. No script. Every attribute is doing a job the script used to.
 
 ## What the six boxes actually break
 <p class="dek">Every item is a thing the browser already did, on the left, until it was replaced.</p>
@@ -278,7 +308,6 @@ that. Nobody asked, either.
 <p class="dek">I tried the clever version first. It shipped three bugs.</p>
 
 ```css
-/* Don't do this. */
 input {
   letter-spacing: 0.5em;
   text-indent: 0.5em;
@@ -286,6 +315,8 @@ input {
   text-align: center;
 }
 ```
+
+Caption: <b>Don't.</b> The clever version: four declarations, three bugs. It clips the last digit and puts the placeholder on a different origin than the value.
 
 `box-sizing: border-box` means that `width` is the *border* box, so padding eats
 into it and the last digit clips. Centering text with a trailing letter-space
@@ -303,6 +334,8 @@ input[name="code"] {
 }
 ```
 
+Caption: <b>Do.</b> Monospace, left-aligned, padding. <code>size</code> handles the width.
+
 Monospace means `______` and `561579` are exactly the same width, with no
 arithmetic. Left-aligned means they start at the same point. `size` handles the
 rest.
@@ -319,9 +352,37 @@ lines of JavaScript, ship one `<input>`, and I'll get back to buying coffee a
 little faster.
 
 <script>
-  // The one script on this site. There is no declarative clipboard: a Copy
-  // button is JavaScript or it is nothing. It inserts itself, so with scripts
-  // off you still get tap-to-select and no dead button.
+  // The JavaScript on this page, all of it, annotated.
+  //
+  // 1. The six-box pattern, written the way it usually is. It runs so you can
+  //    feel it break. This is the code the article is arguing against.
+  (() => {
+    const six = document.querySelector(".console--six");
+    if (!six) return;
+    const boxes = [...six.querySelectorAll(".console__keys input")];
+    const shadow = six.querySelector('input[name="code"]');
+    const wire = six.querySelector(".console__wire > code");
+    const sync = () => {
+      shadow.value = boxes.map((b) => b.value).join("");
+      wire.textContent = `code="${shadow.value}"`;
+    };
+    boxes.forEach((box, i) => {
+      box.addEventListener("input", () => {
+        box.value = box.value.replace(/\D/g, "").slice(-1);
+        sync();
+        if (box.value && boxes[i + 1]) boxes[i + 1].focus();
+      });
+      box.addEventListener("keydown", (e) => {
+        // The classic version: move back, but don't delete. You'll press it twice.
+        if (e.key === "Backspace" && !box.value && boxes[i - 1]) boxes[i - 1].focus();
+      });
+      // No paste handler. Most hand-rolled versions don't have one either.
+    });
+  })();
+
+  // 2. A Copy button. The platform has no declarative clipboard, so this is
+  //    JavaScript or nothing. It inserts itself; without scripts, tap-to-select
+  //    still works and there's no dead button.
   if (navigator.clipboard) {
     document.querySelectorAll(".copyable").forEach((code) => {
       const button = document.createElement("button");

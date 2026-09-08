@@ -10,7 +10,12 @@ gem "webrick"
 # down Rails, so rails templating engines should mostly work.
 gem "haml-rails"
 gem "slim-rails"
-gem "markdown-rails", "~> 1.0"
+gem "markdown-rails", "~> 2.2"
+
+# Server-side syntax highlighting for fenced code blocks; wired up in
+# markdown/application_markdown.rb.
+gem "redcarpet"
+gem "rouge"
 
 # View component libraries.
 gem "phlex-rails"

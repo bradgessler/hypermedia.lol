@@ -59,17 +59,33 @@ plain markdown image link.
 
 ## The one rule: HTML and CSS
 
-**No JavaScript.** Not in an article, not in a demo, not "just a little for the
-interactive bit."
+**No JavaScript for the site's own UI.** Not for navigation, not for a demo of
+the good way, not "just a little for the interactive bit."
 
 This is a site about how much the browser already does for you. Shipping a
 script to prove that point would be embarrassing for both of us.
 
-There is exactly one exception on the site: a Copy button on the one-time-code
-page, because the platform has no declarative clipboard. It's the bar for any
-future exception, and it's a high one — the browser genuinely has no answer,
-the script inserts its own UI so the page is complete without it, and it's
-annotated in the source and on the page.
+Two narrow exceptions exist, and they're the bar for any other:
+
+1. **Running the anti-pattern so the reader can feel it.** If your article is
+   about a JavaScript pattern that breaks things, you may run that pattern in
+   the article — clearly labeled as the thing being argued against, never as
+   the site's own behavior. A six-box code input with no script is a strawman
+   nobody ships; the honest demo runs the script and still breaks.
+2. **A control the platform genuinely has no answer for.** There is no
+   declarative clipboard, so the Copy button is JavaScript or nothing. It
+   inserts its own UI, so the page is complete without it, and it's annotated.
+
+Everything shown on a page — an email, a form, a diagram, a code block — goes
+in a `<figure>` with a `<figcaption>` that says what step you're looking at.
+Code blocks get theirs from a paragraph starting with `Caption:` right after
+the fence — the renderer wraps the pair in a figure:
+
+    ```js
+    // code
+    ```
+
+    Caption: <b>How it's built.</b> What this block proves.
 
 Within HTML and CSS, go nuts. A `<style>` block in your article is welcome and
 encouraged — if your piece is about `:has()`, build something absurd with
