@@ -30,7 +30,7 @@ module SiteHelper
   # decoration. Prose face, size and measure are deliberately NOT part of it;
   # every treatment inherits the same reading settings so variety never costs
   # legibility.
-  TREATMENTS = %w[plain spec terminal zine form launch default].freeze
+  TREATMENTS = %w[plain spec terminal zine form launch default modalz].freeze
 
   # The colour each treatment leads with, so a tile on the wall previews the
   # page it opens.
@@ -41,6 +41,7 @@ module SiteHelper
     "form"     => "#c0392b",
     "launch"   => "#ffb300",
     "default"  => "#0000ee",
+    "modalz"   => "#000080",
   }.freeze
 
   def tile_accent(page)
@@ -125,6 +126,44 @@ module SiteHelper
     raw <<~HTML
       <a class="mark" href="/" aria-label="hypermedia.lol, back to the collection">hypermedia.lol</a>
     HTML
+  end
+
+  # For the modalz treatment: every section of the rendered article becomes
+  # its own modal, each in a different vintage, all the way down. OK scrolls
+  # to the next one and Cancel goes back to the top. No script.
+  MODAL_VINTAGES = %w[win95 macos9 winxp aqua bootstrap material ios cookie].freeze
+
+  def modalize(html)
+    html = html.to_s
+    notes = ""
+    if (i = html.index('<div class="footnotes">'))
+      notes = html[i..]
+      html = html[0...i]
+    end
+    chunks = html.split(/(?=<h2 id=)/)
+    sections = chunks.each_with_index.map do |chunk, n|
+      heading = chunk[/\A<h2 id="([^"]+)">.*?<\/h2>/m]
+      id = $1 || "top"
+      body = heading ? chunk.sub(heading, "") : chunk
+      next_id = chunks[n + 1] && chunks[n + 1][/\A<h2 id="([^"]+)"/, 1]
+      vintage = MODAL_VINTAGES[n % MODAL_VINTAGES.length]
+      title_bar = heading || %(<h2 id="top" class="modal__untitled">#{page_title}</h2>)
+      ok = next_id ? %(<a class="modal__btn modal__btn--ok" href="##{next_id}">OK</a>) : %(<a class="modal__btn modal__btn--ok" href="/">OK</a>)
+      <<~HTML
+        <section class="modal modal--#{vintage}" style="--n: #{n}">
+          <div class="modal__bar">
+            #{title_bar}
+            <span class="modal__controls" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="modal__body">#{body}</div>
+          <div class="modal__buttons">
+            <a class="modal__btn" href="#top">Cancel</a>
+            #{ok}
+          </div>
+        </section>
+      HTML
+    end
+    raw(sections.join + notes)
   end
 
   def home?(page = current_page)

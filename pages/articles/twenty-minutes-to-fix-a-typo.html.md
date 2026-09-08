@@ -1,5 +1,5 @@
 ---
-title: Twenty minutes to fix a typo
+title: It Takes 20 Minutes to Fix a Typo. In 2006 It Took 10 Seconds.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com

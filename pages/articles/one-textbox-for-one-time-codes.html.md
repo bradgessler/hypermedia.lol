@@ -1,5 +1,5 @@
 ---
-title: One textbox for one-time codes
+title: Your Login Code Screen Is Wrong. One HTML Attribute Fixes It.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com

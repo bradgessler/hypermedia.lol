@@ -45,7 +45,11 @@ Match its standard before adding anything.
 8. **No em dashes.** Use a period, a colon, or a comma and rework the
    sentence. No "isn't X, it's Y" setups, no "genuinely", "exactly", "quietly",
    no triplets for rhythm. If it reads as machine-written, cut it.
-9. **Byline.** `byline:` and `byline_url:` in front matter render as
+9. **Headlines are shameless clickbait.** The title is the one line most
+   people will ever see, and its job is to get the argument in front of them.
+   "Your Login Code Screen Is Wrong. One HTML Attribute Fixes It." Make a
+   claim, name a number, promise the fix. The article then has to earn it.
+10. **Byline.** `byline:` and `byline_url:` in front matter render as
    "Prompted by Name". `byline_verb: By` for hand-written work.
 
 ## The JavaScript rule
@@ -65,8 +69,12 @@ Both must be annotated in the source and mentioned on the page.
   `byline`, `byline_url`, `treatment`, `sprite`, `span` (`big`/`wide`/`tall`),
   optional `og_image`.
 - `treatment:` picks a whole visual world: `plain`, `spec`, `terminal`, `zine`,
-  `form`, `launch`. Treatments change chrome, colour, headings and texture.
-  They may not change the prose face, prose size, or measure. Body copy must
+  `form`, `launch`, `default`, `modalz`. Treatments change chrome, colour,
+  headings and texture. They may not change the prose face, prose size, or
+  measure, with one exception: `default` is the browser's own stylesheet in
+  Times New Roman, because for the canon the face is the argument. `modalz`
+  wraps every section in a dialog of a different vintage; the article about
+  modals is modals all the way down. Body copy must
   hold 7:1 contrast in both colour schemes. Scanlines and rotation go on
   chrome only, never on running text.
 - Figures get real air: the CSS handles it, don't fight it.

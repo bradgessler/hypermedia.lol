@@ -1943,3 +1943,378 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .pv--default .pv__link { position: absolute; top: 68%; left: 8%; width: 34%; height: 4%; background: #0000ee; }
 .pv--default .pv__link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: #0000ee; }
 .pv--default .pv__scrawl { position: absolute; top: 28%; left: 6%; width: 62%; height: 6%; background: radial-gradient(ellipse 60% 100% at 30% 50%, #ff2b2b 45%, transparent 46%) 0 0 / 14px 100% repeat-x; transform: rotate(-2deg); opacity: 0.9; }
+
+
+/* == rouge light theme (GitHub) for light code backgrounds == */
+@media (prefers-color-scheme: light) {
+.light-code .highlight table td { padding: 5px; }
+.light-code .highlight table pre { margin: 0; }
+.light-code .highlight, .light-code .highlight .w {
+  color: #24292f;
+}
+.light-code .highlight .k, .light-code .highlight .kd, .light-code .highlight .kn, .light-code .highlight .kp, .light-code .highlight .kr, .light-code .highlight .kt, .light-code .highlight .kv {
+  color: #cf222e;
+}
+.light-code .highlight .gr {
+  color: #f6f8fa;
+}
+.light-code .highlight .gd {
+  color: #82071e;
+}
+.light-code .highlight .nb {
+  color: #953800;
+}
+.light-code .highlight .nc {
+  color: #953800;
+}
+.light-code .highlight .no {
+  color: #953800;
+}
+.light-code .highlight .nn {
+  color: #953800;
+}
+.light-code .highlight .sr {
+  color: #116329;
+}
+.light-code .highlight .na {
+  color: #116329;
+}
+.light-code .highlight .nt {
+  color: #116329;
+}
+.light-code .highlight .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+.light-code .highlight .ges {
+  font-weight: bold;
+  font-style: italic;
+}
+.light-code .highlight .kc {
+  color: #0550ae;
+}
+.light-code .highlight .l, .light-code .highlight .ld, .light-code .highlight .m, .light-code .highlight .mb, .light-code .highlight .mf, .light-code .highlight .mh, .light-code .highlight .mi, .light-code .highlight .il, .light-code .highlight .mo, .light-code .highlight .mx {
+  color: #0550ae;
+}
+.light-code .highlight .sb {
+  color: #0550ae;
+}
+.light-code .highlight .bp {
+  color: #0550ae;
+}
+.light-code .highlight .ne {
+  color: #0550ae;
+}
+.light-code .highlight .nl {
+  color: #0550ae;
+}
+.light-code .highlight .py {
+  color: #0550ae;
+}
+.light-code .highlight .nv, .light-code .highlight .vc, .light-code .highlight .vg, .light-code .highlight .vi, .light-code .highlight .vm {
+  color: #0550ae;
+}
+.light-code .highlight .o, .light-code .highlight .ow {
+  color: #0550ae;
+}
+.light-code .highlight .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+.light-code .highlight .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+.light-code .highlight .s, .light-code .highlight .sa, .light-code .highlight .sc, .light-code .highlight .dl, .light-code .highlight .sd, .light-code .highlight .s2, .light-code .highlight .se, .light-code .highlight .sh, .light-code .highlight .sx, .light-code .highlight .s1, .light-code .highlight .ss {
+  color: #0a3069;
+}
+.light-code .highlight .nd {
+  color: #8250df;
+}
+.light-code .highlight .nf, .light-code .highlight .fm {
+  color: #8250df;
+}
+.light-code .highlight .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+.light-code .highlight .c, .light-code .highlight .ch, .light-code .highlight .cd, .light-code .highlight .cm, .light-code .highlight .cp, .light-code .highlight .cpf, .light-code .highlight .c1, .light-code .highlight .cs {
+  color: #6e7781;
+}
+.light-code .highlight .gl {
+  color: #6e7781;
+}
+.light-code .highlight .gt {
+  color: #6e7781;
+}
+.light-code .highlight .ni {
+  color: #24292f;
+}
+.light-code .highlight .si {
+  color: #24292f;
+}
+.light-code .highlight .ge {
+  color: #24292f;
+  font-style: italic;
+}
+.light-code .highlight .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+}
+
+/* Modal bodies are always light, so their code is always light-themed. */
+.t-modalz .highlight table td { padding: 5px; }
+.t-modalz .highlight table pre { margin: 0; }
+.t-modalz .highlight, .t-modalz .highlight .w {
+  color: #24292f;
+}
+.t-modalz .highlight .k, .t-modalz .highlight .kd, .t-modalz .highlight .kn, .t-modalz .highlight .kp, .t-modalz .highlight .kr, .t-modalz .highlight .kt, .t-modalz .highlight .kv {
+  color: #cf222e;
+}
+.t-modalz .highlight .gr {
+  color: #f6f8fa;
+}
+.t-modalz .highlight .gd {
+  color: #82071e;
+}
+.t-modalz .highlight .nb {
+  color: #953800;
+}
+.t-modalz .highlight .nc {
+  color: #953800;
+}
+.t-modalz .highlight .no {
+  color: #953800;
+}
+.t-modalz .highlight .nn {
+  color: #953800;
+}
+.t-modalz .highlight .sr {
+  color: #116329;
+}
+.t-modalz .highlight .na {
+  color: #116329;
+}
+.t-modalz .highlight .nt {
+  color: #116329;
+}
+.t-modalz .highlight .gi {
+  color: #116329;
+  background-color: #dafbe1;
+}
+.t-modalz .highlight .ges {
+  font-weight: bold;
+  font-style: italic;
+}
+.t-modalz .highlight .kc {
+  color: #0550ae;
+}
+.t-modalz .highlight .l, .t-modalz .highlight .ld, .t-modalz .highlight .m, .t-modalz .highlight .mb, .t-modalz .highlight .mf, .t-modalz .highlight .mh, .t-modalz .highlight .mi, .t-modalz .highlight .il, .t-modalz .highlight .mo, .t-modalz .highlight .mx {
+  color: #0550ae;
+}
+.t-modalz .highlight .sb {
+  color: #0550ae;
+}
+.t-modalz .highlight .bp {
+  color: #0550ae;
+}
+.t-modalz .highlight .ne {
+  color: #0550ae;
+}
+.t-modalz .highlight .nl {
+  color: #0550ae;
+}
+.t-modalz .highlight .py {
+  color: #0550ae;
+}
+.t-modalz .highlight .nv, .t-modalz .highlight .vc, .t-modalz .highlight .vg, .t-modalz .highlight .vi, .t-modalz .highlight .vm {
+  color: #0550ae;
+}
+.t-modalz .highlight .o, .t-modalz .highlight .ow {
+  color: #0550ae;
+}
+.t-modalz .highlight .gh {
+  color: #0550ae;
+  font-weight: bold;
+}
+.t-modalz .highlight .gu {
+  color: #0550ae;
+  font-weight: bold;
+}
+.t-modalz .highlight .s, .t-modalz .highlight .sa, .t-modalz .highlight .sc, .t-modalz .highlight .dl, .t-modalz .highlight .sd, .t-modalz .highlight .s2, .t-modalz .highlight .se, .t-modalz .highlight .sh, .t-modalz .highlight .sx, .t-modalz .highlight .s1, .t-modalz .highlight .ss {
+  color: #0a3069;
+}
+.t-modalz .highlight .nd {
+  color: #8250df;
+}
+.t-modalz .highlight .nf, .t-modalz .highlight .fm {
+  color: #8250df;
+}
+.t-modalz .highlight .err {
+  color: #f6f8fa;
+  background-color: #82071e;
+}
+.t-modalz .highlight .c, .t-modalz .highlight .ch, .t-modalz .highlight .cd, .t-modalz .highlight .cm, .t-modalz .highlight .cp, .t-modalz .highlight .cpf, .t-modalz .highlight .c1, .t-modalz .highlight .cs {
+  color: #6e7781;
+}
+.t-modalz .highlight .gl {
+  color: #6e7781;
+}
+.t-modalz .highlight .gt {
+  color: #6e7781;
+}
+.t-modalz .highlight .ni {
+  color: #24292f;
+}
+.t-modalz .highlight .si {
+  color: #24292f;
+}
+.t-modalz .highlight .ge {
+  color: #24292f;
+  font-style: italic;
+}
+.t-modalz .highlight .gs {
+  color: #24292f;
+  font-weight: bold;
+}
+
+
+/* --- MODALZ ------------------------------------------- modals all the way down
+   For the modals article. Every section is its own dialog in a different
+   vintage, stacked and progressively inset, on a dimmed desktop. Body copy
+   inside the modals keeps the prose face; only the chrome changes. */
+
+.t-modalz {
+  --paper: #4a4a4a;
+  --ink: #111111;
+  --muted: #555555;
+  --rule: #999999;
+  --accent: #000080;
+  background-image: radial-gradient(circle at 50% 0, #6a6a6a, #3a3a3a 70%);
+}
+
+.t-modalz .prose { max-width: 46rem; }
+.t-modalz .banner { background: #fff; border: 2px solid #111; padding: 1rem 1.25rem; }
+.t-modalz .banner__art { display: none; }
+.t-modalz .article-title { font-family: var(--display); color: #111; }
+.t-modalz .banner .byline { color: #444; }
+.t-modalz .onward__link { background: #fff; }
+.t-modalz footer, .t-modalz footer a { color: #ddd; }
+.t-modalz .footnotes { background: #fff; padding: 1.25rem; border: 2px solid #111; margin-top: 2.5rem; }
+.t-modalz .prose .footnotes li { color: #333; }
+
+.modal {
+  margin: 2.25rem 0 2.25rem calc(min(var(--n, 0), 6) * 0.6rem);
+  color: #111;
+  overflow: hidden;
+  scroll-margin-top: 1rem;
+}
+
+.modal__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.modal__bar h2 { margin: 0; font-size: 1.05rem; line-height: 1.25; text-transform: none; letter-spacing: 0; border: 0; padding: 0; transform: none; }
+.modal__bar h2 .anchor { color: inherit; }
+.modal__controls { display: flex; gap: 0.35rem; flex: none; }
+.modal__controls i { display: block; width: 0.9rem; height: 0.9rem; }
+.modal__body { padding: 1.25rem 1.4rem 0.5rem; }
+.modal__body > :first-child { margin-top: 0; }
+.modal__buttons { display: flex; justify-content: flex-end; gap: 0.6rem; padding: 0.9rem 1.4rem 1.1rem; }
+.modal__btn { display: inline-block; padding: 0.4rem 1.2rem; font-family: var(--ui); font-size: 0.85rem; text-decoration: none; color: #111; }
+.t-modalz .modal .prose p, .t-modalz .modal p, .t-modalz .modal li { color: #111; }
+.t-modalz .modal a { color: #0645ad; }
+.t-modalz .modal code { background: #eee; color: #111; }
+.t-modalz .modal pre { background: #f6f8fa; color: #111; border: 1px solid #ccc; }
+.t-modalz .modal p.dek { color: #444; }
+
+/* Windows 95 */
+.modal--win95 { background: #c0c0c0; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000; font-family: Tahoma, "MS Sans Serif", Arial, sans-serif; }
+.modal--win95 .modal__bar { background: linear-gradient(90deg, #000080, #1084d0); color: #fff; padding: 0.3rem 0.4rem 0.3rem 0.6rem; }
+.modal--win95 .modal__bar h2 { font-family: Tahoma, "MS Sans Serif", Arial, sans-serif; font-weight: 700; font-size: 0.95rem; color: #fff; }
+.modal--win95 .modal__controls i { background: #c0c0c0; border: 2px solid; border-color: #fff #404040 #404040 #fff; }
+.modal--win95 .modal__btn { background: #c0c0c0; border: 2px solid; border-color: #fff #404040 #404040 #fff; box-shadow: 1px 1px 0 #000; font-family: Tahoma, "MS Sans Serif", Arial, sans-serif; font-size: 0.8rem; min-width: 5.5rem; text-align: center; }
+.modal--win95 .modal__btn--ok { outline: 1px solid #000; outline-offset: -4px; }
+
+/* Mac OS 9 (Platinum) */
+.modal--macos9 { background: #dddddd; border: 1px solid #000; box-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
+.modal--macos9 .modal__bar { padding: 0.35rem 0.5rem; background: repeating-linear-gradient(#e6e6e6 0 2px, #bfbfbf 2px 4px); flex-direction: row-reverse; justify-content: flex-end; }
+.modal--macos9 .modal__bar h2 { font-family: Charcoal, Geneva, "Lucida Grande", sans-serif; font-size: 0.95rem; background: #dddddd; padding: 0 0.6rem; margin: 0 auto; }
+.modal--macos9 .modal__controls i { width: 0.75rem; height: 0.75rem; border: 1px solid #333; background: #eee; box-shadow: inset 1px 1px 0 #fff; }
+.modal--macos9 .modal__controls i + i { display: none; }
+.modal--macos9 .modal__btn { border: 1px solid #333; border-radius: 6px; background: #eee; box-shadow: inset 1px 1px 0 #fff; font-family: Charcoal, Geneva, sans-serif; font-size: 0.85rem; }
+.modal--macos9 .modal__btn--ok { box-shadow: 0 0 0 2px #333, 0 0 0 3px #eee; }
+
+/* Windows XP */
+.modal--winxp { background: #ece9d8; border: 3px solid #0a5fd8; border-top: 0; border-radius: 8px 8px 0 0; }
+.modal--winxp .modal__bar { padding: 0.45rem 0.5rem 0.45rem 0.75rem; background: linear-gradient(#3b8ef5, #0a5fd8 40%, #1d78e6); color: #fff; border-radius: 6px 6px 0 0; }
+.modal--winxp .modal__bar h2 { font-family: "Trebuchet MS", Tahoma, sans-serif; font-weight: 700; font-size: 1rem; color: #fff; text-shadow: 1px 1px 0 #003c9e; }
+.modal--winxp .modal__controls i { border-radius: 3px; border: 1px solid #fff; background: #2f7be6; }
+.modal--winxp .modal__controls i:last-child { background: #d64c37; }
+.modal--winxp .modal__btn { border: 1px solid #003c74; border-radius: 3px; background: linear-gradient(#fff, #ece9d8); font-family: Tahoma, sans-serif; font-size: 0.8rem; min-width: 5rem; text-align: center; }
+.modal--winxp .modal__btn--ok { box-shadow: inset 0 0 0 2px #f7c56e; }
+
+/* Mac OS X Aqua */
+.modal--aqua { background: #fff; border: 1px solid #999; border-radius: 6px; box-shadow: 0 12px 30px rgba(0,0,0,0.45); }
+.modal--aqua .modal__bar { padding: 0.45rem 0.7rem; background: repeating-linear-gradient(#e9e9e9 0 1px, #dcdcdc 1px 2px); flex-direction: row-reverse; justify-content: flex-end; border-bottom: 1px solid #b5b5b5; }
+.modal--aqua .modal__bar h2 { font-family: "Lucida Grande", "Helvetica Neue", sans-serif; font-size: 0.95rem; color: #222; margin: 0 auto; }
+.modal--aqua .modal__controls { gap: 0.5rem; }
+.modal--aqua .modal__controls i { border-radius: 50%; width: 0.8rem; height: 0.8rem; border: 1px solid rgba(0,0,0,0.25); }
+.modal--aqua .modal__controls i:nth-child(1) { background: #ff5f57; }
+.modal--aqua .modal__controls i:nth-child(2) { background: #febc2e; }
+.modal--aqua .modal__controls i:nth-child(3) { background: #28c840; }
+.modal--aqua .modal__btn { border-radius: 999px; border: 1px solid #7a7a7a; background: linear-gradient(#fdfdfd, #d9d9d9); font-family: "Lucida Grande", "Helvetica Neue", sans-serif; }
+.modal--aqua .modal__btn--ok { background: linear-gradient(#8ec1ff, #2f7cf6 55%, #4d9bff); color: #fff; border-color: #1d5fc4; }
+
+/* Bootstrap 3 */
+.modal--bootstrap { background: #fff; border: 1px solid rgba(0,0,0,0.2); border-radius: 6px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+.modal--bootstrap .modal__bar { padding: 0.9rem 1.25rem; border-bottom: 1px solid #e5e5e5; }
+.modal--bootstrap .modal__bar h2 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.15rem; font-weight: 500; color: #333; }
+.modal--bootstrap .modal__controls i { display: none; }
+.modal--bootstrap .modal__controls::after { content: "\00d7"; font-size: 1.4rem; line-height: 1; color: #000; opacity: 0.3; font-weight: 700; }
+.modal--bootstrap .modal__buttons { border-top: 1px solid #e5e5e5; }
+.modal--bootstrap .modal__btn { border: 1px solid #ccc; border-radius: 4px; background: #fff; font-size: 0.9rem; padding: 0.4rem 0.9rem; }
+.modal--bootstrap .modal__btn--ok { background: #337ab7; border-color: #2e6da4; color: #fff; }
+
+/* Material */
+.modal--material { background: #fff; border-radius: 4px; box-shadow: 0 11px 15px -7px rgba(0,0,0,0.2), 0 24px 38px 3px rgba(0,0,0,0.14), 0 9px 46px 8px rgba(0,0,0,0.12); font-family: Roboto, "Helvetica Neue", Arial, sans-serif; }
+.modal--material .modal__bar { padding: 1.25rem 1.5rem 0.25rem; }
+.modal--material .modal__bar h2 { font-family: Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 1.25rem; font-weight: 500; color: rgba(0,0,0,0.87); }
+.modal--material .modal__controls { display: none; }
+.modal--material .modal__buttons { padding: 0.5rem 0.75rem 0.75rem; }
+.modal--material .modal__btn { text-transform: uppercase; letter-spacing: 0.09em; font-weight: 500; color: #6200ee; border-radius: 4px; }
+.modal--material .modal__btn:hover { background: rgba(98,0,238,0.08); }
+
+/* iOS alert */
+.modal--ios { background: rgba(249,249,249,0.96); border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,0.4); font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif; }
+.modal--ios .modal__bar { justify-content: center; padding: 1.1rem 1.25rem 0; }
+.modal--ios .modal__bar h2 { font-family: -apple-system, "SF Pro Text", "Helvetica Neue", sans-serif; font-weight: 600; font-size: 1.05rem; text-align: center; color: #000; }
+.modal--ios .modal__controls { display: none; }
+.modal--ios .modal__buttons { padding: 0; gap: 0; border-top: 1px solid rgba(0,0,0,0.2); }
+.modal--ios .modal__btn { flex: 1; text-align: center; padding: 0.85rem; color: #007aff; font-size: 1rem; }
+.modal--ios .modal__btn + .modal__btn { border-left: 1px solid rgba(0,0,0,0.2); font-weight: 600; }
+
+/* Cookie banner */
+.modal--cookie { background: #1f1f1f; color: #eee; border: 1px solid #444; }
+.modal--cookie .modal__bar { padding: 1rem 1.25rem 0; }
+.modal--cookie .modal__bar h2 { font-family: var(--ui); font-size: 1.05rem; color: #fff; }
+.modal--cookie .modal__bar h2::before { content: "\1F36A  "; }
+.modal--cookie .modal__controls { display: none; }
+.t-modalz .modal--cookie .modal__body p, .t-modalz .modal--cookie .modal__body li, .t-modalz .modal--cookie .modal p.dek { color: #ddd; }
+.t-modalz .modal--cookie a { color: #8ab4f8; }
+.t-modalz .modal--cookie code { background: #333; color: #eee; }
+.modal--cookie .modal__btn { border: 1px solid #888; border-radius: 4px; color: #eee; }
+.modal--cookie .modal__btn--ok { background: #2ea043; border-color: #2ea043; color: #fff; }
+.modal--cookie .modal__btn--ok::before { content: "Accept all"; }
+.modal--cookie .modal__btn--ok { font-size: 0; }
+.modal--cookie .modal__btn--ok::before { font-size: 0.85rem; }
+
+/* Card preview */
+.pv--modalz { background: #4a4a4a; }
+.pv--modalz .pv__win { position: absolute; border: 2px solid #111; background: #fff; }
+.pv--modalz .pv__win i { display: block; height: 14%; }
+.pv--modalz .pv__win--1 { top: 10%; left: 8%; width: 60%; height: 55%; background: #c0c0c0; }
+.pv--modalz .pv__win--1 i { background: linear-gradient(90deg, #000080, #1084d0); }
+.pv--modalz .pv__win--2 { top: 26%; left: 22%; width: 60%; height: 55%; background: #ece9d8; border-color: #0a5fd8; }
+.pv--modalz .pv__win--2 i { background: linear-gradient(#3b8ef5, #0a5fd8); }
+.pv--modalz .pv__win--3 { top: 42%; left: 36%; width: 56%; height: 50%; border-radius: 6px; border-color: #999; }
+.pv--modalz .pv__win--3 i { background: #e6e6e6; }
+.pv--modalz .pv__win--3 b { position: absolute; right: 8%; bottom: 10%; width: 28%; height: 16%; background: #337ab7; border-radius: 3px; }

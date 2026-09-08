@@ -1,5 +1,5 @@
 ---
-title: The motherfucking website canon
+title: The Original Motherfucking Website Is 98% Google Analytics
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com

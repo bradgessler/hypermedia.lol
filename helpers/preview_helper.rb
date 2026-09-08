@@ -10,6 +10,7 @@ module PreviewHelper
     when "zine"     then zine_preview
     when "launch"   then launch_preview
     when "default"  then default_preview
+    when "modalz"   then modalz_preview
     else plain_preview
     end
   end
@@ -82,6 +83,17 @@ module PreviewHelper
           <span class="pv__p"></span><span class="pv__p pv__p--short"></span>
           <span class="pv__link"></span>
           <span class="pv__scrawl"></span>
+        </span>
+      HTML
+    end
+
+    # Modals all the way down: three stacked dialogs of different vintages.
+    def modalz_preview
+      <<~HTML
+        <span class="pv pv--modalz" aria-hidden="true">
+          <span class="pv__win pv__win--1"><i></i></span>
+          <span class="pv__win pv__win--2"><i></i></span>
+          <span class="pv__win pv__win--3"><i></i><b></b></span>
         </span>
       HTML
     end

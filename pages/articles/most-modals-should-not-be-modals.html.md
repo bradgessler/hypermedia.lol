@@ -1,12 +1,12 @@
 ---
-title: Most modals shouldn't be modals
+title: Your Modal Is Broken by Design. The Spec Says So.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com
 description: The answer to a modal usually isn't a better modal. It's a page on the server, with a real URL, the actual data, and room for a challenge.
 accent: magenta
 sprite: dialog
-treatment: spec
+treatment: modalz
 span: wide
 ---
 

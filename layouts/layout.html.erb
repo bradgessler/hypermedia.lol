@@ -24,7 +24,7 @@
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Rules for machines">
     <%= stylesheet_link_tag "site" %>
   </head>
-  <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
+  <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %><%= " light-code" if %w[spec default].include?(treatment) %>">
         <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
         <div class="banner">
@@ -50,7 +50,8 @@
           </div>
         </div>
       <% end %>
-      <%= yield %>
+      <% content = yield %>
+      <%= treatment == "modalz" ? modalize(content) : content %>
 
       <% if article? %>
         <nav class="onward">
