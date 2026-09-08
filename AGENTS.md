@@ -56,9 +56,11 @@ review is coming.
 9. **Headlines are shameless clickbait.** The title is the one line most
    people will ever see, and its job is to get the argument in front of them.
    "Everybody Builds Six-Digit Code Inputs Wrong. Just Use a Text Field."
-   Make a claim, name the thing, promise the fix. No second person: not
-   "your website", not "you're doing it wrong". The article then has to earn
-   the title.
+   Make a claim, name the thing, promise the fix. Never accuse the reader:
+   not "your website", not "you're doing it wrong". Point at the pattern, the
+   industry, the library, everybody. Readers will know if it applies to them,
+   and the ones it applies to should laugh, not flinch. The article then has
+   to earn the title.
 10. **Byline.** `byline:` and `byline_url:` in front matter render as
    "Prompted by Name". `byline_verb: By` for hand-written work.
 

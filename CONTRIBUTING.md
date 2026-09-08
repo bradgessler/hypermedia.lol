@@ -145,7 +145,9 @@ The good ones are specific. A pattern you keep seeing in the wild, what it
 actually costs: accessibility, performance, keyboard, paste, back button: and
 the smaller thing that does the job. Show the markup.
 
-Punching down at a specific company isn't the vibe. Naming a site as an example
+Never accuse the reader. Titles and copy point at the pattern, not at "you";
+readers will know if it applies to them and, ideally, laugh. Punching down at a
+specific company isn't the vibe either. Naming a site as an example
 is fine, but write it like a bug report from someone who wants them to win, not
 a dunk.
 
