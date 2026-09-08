@@ -1,86 +1,179 @@
-body {
-  font-family: sans-serif;
-  padding: 0;
-  color: #000;
-  background: #fefefe;
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 1rem;
-  line-height: 1.5rem;
-}
-
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-}
-
-.logo {
-  max-width: 4rem;
-  max-height: 4rem;
-}
-
-.logo-light {
-  display: block;
-}
-
-.logo-dark {
-  display: none;
-}
-
-footer {
-  margin: 4rem auto 0;
-  padding: 0;
-}
-
-pre {
-  overflow: scroll;
-}
-
-code {
-  color: hsl(23,39%,7%);
-  font-size: 1.15rem;
-}
-
-h2, a {
-  color: hsl(23,39%,26%);
-}
-
-h3 {
-  margin-top: 2rem;
-  color: hsl(23,39%,5%);
-}
-
-table td, table th {
-  text-align: left;
-  padding: 0.25rem;
+:root {
+  --bg: #fdfcfa;
+  --fg: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: hsl(23, 60%, 38%);
+  --rule: hsl(23, 20%, 88%);
+  --code-bg: hsl(23, 30%, 96%);
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background: hsl(23,39%,26%);
-    color: #fefefe;
-  }
-
-  h2, a {
-    color: hsl(23,39%,90%);
-  }
-
-  h3 {
-    color: hsl(23,39%,85%);
-  }
-
-  code {
-    color: hsl(23,39%,90%);
-  }
-
-  .logo-light {
-    display: none;
-  }
-
-  .logo-dark {
-    display: block;
+  :root {
+    --bg: hsl(23, 12%, 11%);
+    --fg: hsl(23, 15%, 92%);
+    --muted: hsl(23, 10%, 60%);
+    --accent: hsl(23, 60%, 70%);
+    --rule: hsl(23, 12%, 24%);
+    --code-bg: hsl(23, 12%, 16%);
   }
 }
 
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", sans-serif;
+  color: var(--fg);
+  background: var(--bg);
+  max-width: 38rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: var(--accent);
+}
+
+header {
+  margin: 2.5rem 0 3rem;
+}
+
+#title {
+  font-size: 1.1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 600;
+  margin: 0;
+}
+
+#title a {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0 0 2.5rem;
+}
+
+.articles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.articles li {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.articles a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.articles a:hover {
+  text-decoration: underline;
+}
+
+.articles time {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+main h1 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  margin: 0 0 1.5rem;
+}
+
+main h2 {
+  font-size: 1.15rem;
+  margin: 2.5rem 0 0.75rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  margin: 1.5rem 0;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 1rem;
+  overflow-x: auto;
+  line-height: 1.45;
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* Live demo of the one-textbox one-time code field. */
+.demo {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.75rem 0;
+  text-align: center;
+  background: var(--code-bg);
+}
+
+.demo label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.demo input {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 2rem;
+  letter-spacing: 0.5em;
+  text-indent: 0.5em;
+  width: calc(6ch + 3em);
+  max-width: 100%;
+  text-align: center;
+  padding: 0.4rem 0.2rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+
+.demo input:user-invalid {
+  color: crimson;
+  border-color: crimson;
+}
+
+.demo button {
+  display: block;
+  margin: 1rem auto 0;
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 1.1rem;
+  color: var(--bg);
+  background: var(--accent);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}

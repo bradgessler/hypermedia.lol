@@ -2,4 +2,13 @@
 title: hypermedia.lol
 ---
 
-<p>Coming soon.</p>
+<p class="tagline">The browser already does that.</p>
+
+<ul class="articles">
+  <% articles.each do |article| %>
+    <li>
+      <a href="<%= article.request_path %>"><%= article.data.fetch("title") %></a>
+      <time><%= date article.data.fetch("date") %></time>
+    </li>
+  <% end %>
+</ul>
