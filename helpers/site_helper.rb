@@ -9,12 +9,43 @@ module SiteHelper
   # mirroring the site's own paths. See https://opengraphplus.com.
   OG_IMAGE_HOST = "https://qwaj1e37.ogplus.net"
 
+  # Short tiles that fill the gaps in the wall. Each is a claim you should be
+  # able to check yourself in about thirty seconds.
+  APHORISMS = [
+    { text: "<details> is an accordion.", note: "You wrote 200 lines for this." },
+    { text: "Your carousel is one scroll-snap away.", note: "overflow-x + scroll-snap-type" },
+    { text: ":has() shipped.", note: "Delete the class-toggling." },
+    { text: "The back button is a feature.", note: "You broke it." },
+    { text: "Forms validate themselves.", note: "required, pattern, type" },
+    { text: "popover is an attribute.", note: "Not a dependency." },
+    { text: "A link is a <a href>.", note: "Not an onClick." },
+    { text: "This page ships 0 bytes of JavaScript.", note: "So could yours." },
+  ].freeze
+
+  def aphorisms
+    APHORISMS
+  end
+
   def articles
     site
       .glob("articles/*.html.*")
       .select { |page| page.data["date"] }
       .sort_by { |page| Date.parse page.data.fetch("date") }
       .reverse
+  end
+
+  # Interleaves essays and one-liners so the wall reads as a mix rather than
+  # two stacked lists. Essays keep their order; aphorisms fill in around them.
+  def wall
+    essays = articles.map { |page| [:essay, page] }
+    lines = aphorisms.map { |line| [:aphorism, line] }
+    tiles = []
+    until essays.empty? && lines.empty?
+      tiles << essays.shift unless essays.empty?
+      tiles << lines.shift unless lines.empty?
+      tiles << lines.shift unless lines.empty?
+    end
+    tiles
   end
 
   def date(value)

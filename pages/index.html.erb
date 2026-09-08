@@ -2,19 +2,26 @@
 title: hypermedia.lol
 ---
 
-<p class="tagline">The browser already does that.</p>
-
-<ul class="articles">
-  <% articles.each do |article| %>
-    <li>
-      <a href="<%= article.request_path %>"><%= article.data.fetch("title") %></a>
-      <time datetime="<%= Date.parse(article.data.fetch("date")).iso8601 %>"><%= date article.data.fetch("date") %></time>
-      <p class="summary"><%= article.data.fetch("description", nil) %></p>
-    </li>
+<div class="wall">
+  <% wall.each_with_index do |(kind, item), i| %>
+    <% if kind == :essay %>
+      <a class="tile tile--essay tile--v<%= i % 4 %>" href="<%= item.request_path %>">
+        <span class="tile__kind">Essay</span>
+        <span class="tile__title"><%= item.data.fetch("title") %></span>
+        <span class="tile__desc"><%= item.data.fetch("description", nil) %></span>
+        <span class="tile__date"><%= date item.data.fetch("date") %></span>
+      </a>
+    <% else %>
+      <div class="tile tile--line tile--v<%= i % 4 %>">
+        <span class="tile__text"><%= item.fetch(:text) %></span>
+        <span class="tile__note"><%= item.fetch(:note) %></span>
+      </div>
+    <% end %>
   <% end %>
-</ul>
 
-<p class="submit">
-  Got one? <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a>
-  HTML and CSS only — go nuts inside that.
-</p>
+  <a class="tile tile--cta" href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">
+    <span class="tile__kind">Open</span>
+    <span class="tile__title">Send a pull request</span>
+    <span class="tile__desc">One file. Markdown or HTML. The only rule is no JavaScript.</span>
+  </a>
+</div>

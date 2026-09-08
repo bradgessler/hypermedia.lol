@@ -21,21 +21,56 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@bradgessler">
 
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="Rules for machines">
     <%= stylesheet_link_tag "site" %>
   </head>
   <body>
-    <header>
-      <h1 id="title"><a href="/"><%= SiteHelper::SITE_NAME %></a></h1>
-    </header>
-    <main>
+    <button class="mark" popovertarget="why" aria-label="hypermedia.lol — why this exists">
+      <span class="mark__line">hyper</span><span class="mark__line">media</span><span class="mark__line mark__line--lol">.lol</span>
+    </button>
+
+    <div id="why" popover class="why">
+      <h2>Why this exists</h2>
+
+      <p>The web is the most widely deployed application platform ever built, and
+      we have spent fifteen years treating it as a rendering target.</p>
+
+      <p>Every year the browser learns to do something else on its own — forms
+      that validate, dialogs that trap focus, transitions between pages, scroll
+      effects, popovers, containers that respond to their own size. And every
+      year we ship a library that does the same job worse. Not because anybody
+      compared the two. Because nobody checked.</p>
+
+      <p>The cost is never abstract. It's a login form a screen reader can't get
+      through. A back button that stopped working. A phone burning battery to
+      assemble a page that could have arrived finished. A typo that takes twenty
+      minutes to deploy. A site that goes dark because one CDN had a bad
+      afternoon.</p>
+
+      <p>Nobody chose any of that. It accumulated, one defensible decision at a
+      time, until it became the water.</p>
+
+      <p>So this is a site of short arguments, each one small enough to check
+      yourself. Read the spec. Use the element. Ship the document.</p>
+
+      <p class="why__sting">The browser already does that.</p>
+
+      <button popovertarget="why" popovertargetaction="hide" class="why__close">Back to it &rarr;</button>
+    </div>
+
+    <main class="<%= article? ? "prose" : "" %>">
       <% if article? %>
+        <p class="crumb"><a href="/">&larr; hypermedia.lol</a></p>
         <h1 class="article-title"><%= page_title %></h1>
         <time datetime="<%= Date.parse(current_page.data.fetch("date")).iso8601 %>"><%= date current_page.data.fetch("date") %></time>
       <% end %>
       <%= yield %>
     </main>
+
     <footer>
-      <a href="https://github.com/bradgessler/hypermedia.lol">Source and submissions on GitHub</a>
+      <a href="https://github.com/bradgessler/hypermedia.lol">Source &amp; submissions</a>
+      <a href="/llms.txt">llms.txt</a>
+      <span>No JavaScript was shipped in the making of this website.</span>
     </footer>
   </body>
 </html>
