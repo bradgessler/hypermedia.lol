@@ -1,32 +1,42 @@
 ---
 title: Why this exists
-description: The web is the most widely deployed application platform ever built, and we have spent fifteen years treating it as a rendering target.
+description: Brad Gessler built hypermedia.lol as a fun way for people and agents to learn how the web actually works, and why keeping it simple is the better deal.
 accent: hot
 sprite: brick
+byline: Brad Gessler
+byline_url: https://bradgessler.com
 ---
 
-<p>The web is the most widely deployed application platform ever built, and we
-have spent fifteen years treating it as a rendering target.</p>
+<p>I'm <a href="https://bradgessler.com" rel="author">Brad Gessler</a>. I've been
+building on the web for a long time, and lately I've been building a lot of it
+with agents. Somewhere in there I noticed two things at once.</p>
 
-<p>Every year the browser learns to do something else on its own: forms that
-validate, dialogs that trap focus, transitions between pages, scroll effects,
-popovers, containers that respond to their own size. And every year we ship a
-library that does the same job worse. Not because anybody compared the two.
-Because nobody checked.</p>
+<p>The first is that the browser is astonishingly capable. It validates forms,
+traps focus in dialogs, transitions between pages, fills in login codes from
+your text messages, and reads a document out loud to someone who can't see it.
+None of that costs you anything. It's already there.</p>
 
-<p>The cost is never abstract. It's a login form a screen reader can't get
-through. A back button that stopped working. A phone burning battery to assemble
-a page that could have arrived finished. A typo that takes twenty minutes to
-deploy. A site that goes dark because one CDN had a bad afternoon.</p>
+<p>The second is that we keep paying to replace it. Every year a new layer of
+abstraction goes between the person writing the page and the thing that renders
+it, and every layer makes it a little easier to forget what the medium can do
+on its own. So we end up with a six-box login code that breaks paste, a modal
+inside a modal, and a twenty-minute deploy to fix a typo. Not because anyone
+decided to. Because nobody checked.</p>
 
-<p>Nobody chose any of that. It accumulated, one defensible decision at a time,
-until it became the water.</p>
+<p>Keeping it simple turns out to be the better deal on almost every axis that
+matters. It's cheaper to build and cheaper to run. It's faster for the person
+on the other end. It's accessible by default instead of by heroics. And, more
+and more, it's what an agent can actually understand: plain hypermedia is
+legible to a model in a way a pile of client-side state never will be.</p>
 
-<p>So this is a site of short arguments, each one small enough to check
-yourself. Read the spec. Use the element. Ship the document.</p>
+<p>So I made this as a fun way for people, and for agents, to learn how
+hypermedia works and why it's worth using directly. Each article takes one
+thing we habitually over-build, shows it breaking, and shows the smaller thing
+that already worked. Short enough to check yourself. Loud enough to remember.</p>
 
 <p class="sting">The browser already does that.</p>
 
 <p>It's open. <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send
 a pull request</a>. One file, markdown or HTML, and the only rule is no
-JavaScript.</p>
+JavaScript for the site's own UI. There's also a
+<a href="/llms.txt">llms.txt</a>, written for the agents.</p>
