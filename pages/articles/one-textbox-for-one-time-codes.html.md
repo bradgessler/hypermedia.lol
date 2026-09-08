@@ -8,6 +8,10 @@ treatment: launch
 span: big
 ---
 
+<p class="brief">Your authorization code is <code class="copyable">561579</code>.
+Copy it now. You will need it to launch. Do not write it down. Do not share it
+with anyone. Especially not Sweet Maria's.</p>
+
 <div class="console console--six" data-mode="six">
   <div class="console__head">
     <span class="console__title">Authorization required</span>
@@ -35,13 +39,57 @@ span: big
   <div class="console__foot">This is how most websites ask for a login code. Everything on this page is live. Nothing on this page is JavaScript.</div>
 </div>
 
-Copy this: <code class="copyable">561579</code>
-
-Paste it into the console. One digit lands. The lamp stays red. Now type two
-digits and press backspace twice — you're stuck in the second box, because
-nothing walks you back.
+Paste your code into the console. One digit lands. The lamp stays red. Now
+type two digits and press backspace twice — you're stuck in the second box,
+because nothing walks you back.
 
 That's a six-digit code to buy coffee, and it fails a paste.
+
+## How it's usually built: six puppets and a shadow field
+<p class="dek">The boxes you see aren't the input. They're a costume on top of one.</p>
+
+<div class="shadow" aria-label="Diagram: six visible boxes wired by JavaScript to one hidden field">
+  <div class="shadow__row">
+    <span class="shadow__tag">What you see</span>
+    <span class="shadow__boxes"><i>5</i><i></i><i></i><i></i><i></i><i></i></span>
+  </div>
+  <div class="shadow__row">
+    <span class="shadow__tag">Held together by</span>
+    <span class="shadow__glue"><span>input →</span><span>keydown →</span><span>paste →</span><span>focus →</span><span>blur →</span></span>
+  </div>
+  <div class="shadow__row">
+    <span class="shadow__tag">What the server gets</span>
+    <span class="shadow__hidden">&lt;input type="hidden" name="code" value="<b>5</b>"&gt;</span>
+  </div>
+</div>
+
+Almost every one of these works the same way: a hidden "shadow" field holds the
+real value, and the six visible boxes are puppets. JavaScript watches every
+keystroke, joins the boxes into the shadow, and shuttles focus around to fake a
+single field. It's the shape of the code you're signing up for:
+
+```js
+// The usual shape. Do not ship this. Every line is a place backspace can break.
+boxes.forEach((box, i) => {
+  box.addEventListener("input", () => {
+    shadow.value = boxes.map(b => b.value).join("");
+    if (box.value && boxes[i + 1]) boxes[i + 1].focus();
+  });
+  box.addEventListener("keydown", (e) => {
+    if (e.key === "Backspace" && !box.value && boxes[i - 1]) boxes[i - 1].focus();
+  });
+  box.addEventListener("paste", (e) => { /* split the clipboard, distribute, pray */ });
+});
+```
+
+Backspace is where it always goes wrong, because the browser's backspace only
+knows about the box it's in. Everything else — moving back, deleting the previous
+digit, doing both — has to be re-invented in that `keydown` handler. Get it
+slightly wrong and you land in the box before but don't delete, or delete but
+don't move, or jump two. Every implementation is slightly wrong in a different
+way, and nobody tests it on a phone with autocorrect on.
+
+None of that code exists in the version below.
 
 ## The same code. One input.
 <p class="dek">Paste the same six digits here.</p>

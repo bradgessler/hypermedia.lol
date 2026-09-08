@@ -67,16 +67,18 @@ body {
 */
 .mark {
   position: fixed;
-  top: 0;
+  /*
+    Where "the top" is varies by browser: safe areas, collapsed toolbars,
+    in-app browsers that keep a strip of chrome. Rather than try to land on it
+    exactly, the ribbon starts 3rem above the viewport and pads by the same
+    amount. The overshoot is clipped, so it hangs from the edge wherever the
+    edge turns out to be.
+  */
+  top: -3rem;
   left: max(clamp(0.75rem, 4vw, 2.5rem), env(safe-area-inset-left));
   z-index: 100;
   display: block;
-  /*
-    The top padding absorbs the safe-area inset so the ribbon's colour runs
-    all the way under the notch. Anchored at top: 0 with nothing above it, it
-    reads as hanging off the edge rather than floating below it.
-  */
-  padding: calc(0.7rem + env(safe-area-inset-top, 0px)) 0.75rem 1.9rem;
+  padding: calc(3.7rem + env(safe-area-inset-top, 0px)) 0.75rem 1.9rem;
   background: #d7f205;
   color: #14130f;
   font-family: var(--display);
@@ -1355,4 +1357,47 @@ footer a:hover { color: var(--ink); }
 
 @media (prefers-reduced-motion: reduce) {
   .console__lights i { animation: none; }
+}
+
+
+/* Opening brief on the launch page. */
+.brief {
+  margin: 0 0 1.25rem;
+  padding: 0.9rem 1rem;
+  border: 2px solid var(--rule);
+  border-left: 8px solid var(--alert);
+  background: var(--panel);
+  font-family: var(--mono) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+
+.brief .copyable { font-size: 1.35em; color: var(--accent); padding: 0.1em 0.4em; }
+
+/* Six puppets and a shadow field. */
+.shadow {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1.25rem 0 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.shadow__row { display: grid; grid-template-columns: 7rem 1fr; gap: 0.75rem; align-items: center; }
+.shadow__tag { text-transform: uppercase; color: var(--muted); font-size: 0.66rem; letter-spacing: 0.14em; }
+.shadow__boxes { display: flex; gap: 0.3rem; }
+.shadow__boxes i { width: 1.6rem; height: 2rem; border: 2px solid var(--rule); background: #06070a; display: grid; place-items: center; color: var(--accent); font-style: normal; }
+.shadow__glue { color: var(--alert); text-transform: uppercase; font-size: 0.66rem; letter-spacing: 0.14em; }
+.shadow__glue span { display: inline-block; margin-right: 0.8rem; }
+.shadow__hidden { display: inline-block; padding: 0.35rem 0.6rem; border: 2px dashed var(--muted); color: var(--muted); }
+.shadow__hidden b { color: var(--accent); font-weight: normal; }
+
+@media (max-width: 40rem) {
+  .shadow__row { grid-template-columns: 1fr; gap: 0.3rem; }
 }
