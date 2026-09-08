@@ -1,5 +1,5 @@
 ---
-title: The Original Motherfucking Website Is 98% Google Analytics
+title: Every Motherfucking Website, Measured. One Is Perfect. One Won't Load.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com
