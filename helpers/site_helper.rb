@@ -119,17 +119,16 @@ module SiteHelper
     articles[i + 1] if i
   end
 
-  # The site mark: a tag hanging on a string from the top edge of the first
-  # block on the page (the banner, or the pitch on the home page). Hung from
-  # page content rather than the viewport so it is always attached to a
-  # visible edge.
-  def site_tag
+  # The site mark: a picket sign on a stick, poking up from the bottom-right of
+  # the viewport. Things that stick up out of the ground read as attached
+  # without needing to meet a visible line, which is why this works where a
+  # tag hung from the top edge did not.
+  def picket_sign
     raw <<~HTML
-      <div class="hang">
-        <a class="tag" href="/" aria-label="hypermedia.lol, back to the collection">
-          <span class="tag__body">hypermedia.lol</span>
-        </a>
-      </div>
+      <a class="picket" href="/" aria-label="hypermedia.lol, back to the collection">
+        <span class="picket__sign">hypermedia.lol</span>
+        <span class="picket__stick" aria-hidden="true"></span>
+      </a>
     HTML
   end
 

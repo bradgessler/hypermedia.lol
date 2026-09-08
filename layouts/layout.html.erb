@@ -27,7 +27,6 @@
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
         <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
-        <%= site_tag %>
         <div class="banner">
           <div class="banner__art"><%= sprite sprite_name, size: 84 %></div>
           <div class="banner__meta">
@@ -70,6 +69,8 @@
         </nav>
       <% end %>
     </main>
+
+    <%= picket_sign %>
 
     <footer>
       <a href="https://github.com/bradgessler/hypermedia.lol">Source &amp; submissions</a>
