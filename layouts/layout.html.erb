@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= current_page.data.fetch("title", "hypermedia.lol") %></title>
+    <%= stylesheet_link_tag "site" %>
+  </head>
+  <body>
+    <header>
+      <h1 id="title"><a href="/">hypermedia.lol</a></h1>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+  </body>
+</html>
