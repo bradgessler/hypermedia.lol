@@ -27,7 +27,8 @@ no opinion whatsoever about the character you changed.
 
 So what happened?
 
-## The honest part
+## That loop was fast because it was dangerous
+<p class="dek">No history, no undo, last save wins, and you were editing production.</p>
 
 The FTP loop was fast because it was dangerous, and I don't want to pretend
 otherwise.
@@ -47,7 +48,8 @@ were real fixes, and I would not go back.
 
 We traded latency for safety. That was a good trade.
 
-## The part nobody did
+## We won the safety and never went back for the speed
+<p class="dek">Nobody chose twenty minutes. It accumulated thirty seconds at a time.</p>
 
 We just never went back and won the latency back.
 
@@ -70,7 +72,8 @@ sites send a script that fetches a description of a page and assembles it on a
 phone. We made the deploy slower *and* the result slower, and got a nicer
 developer experience in between.
 
-## What the fast loop looks like now
+## The fast loop still exists — it's the pencil icon
+<p class="dek">Edit on github.com and you get 2006 back, with a revert button.</p>
 
 You can have most of 2006 back without giving any of the safety up. The pieces
 exist.

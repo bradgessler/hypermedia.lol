@@ -25,7 +25,8 @@ the rest of the page as inert so a screen reader doesn't wander into it. Almost
 nobody implements all seven. So you get a `<div>` with a dark background and an
 `overflow: hidden` on `<body>`, and a keyboard user gets a trap with no exit.
 
-## The part almost everybody skips
+## The answer is usually a route, not a better overlay
+<p class="dek">Give the confirmation a URL and render it on the server.</p>
 
 The usual next move is to reach for a better overlay. The platform grew good
 ones — I'll get to them — but they're the second answer, and leading with them
@@ -82,7 +83,8 @@ point: a full-width page has no responsive problem to solve. No positioning
 against a viewport that keeps changing, no scroll locking, no what-happens-on-a-
 short-landscape-phone. It's a page. Pages already work at every size.
 
-## Where modals really fall apart
+## Modals stop composing the moment your app is embedded
+<p class="dek">Two backdrops, two focus traps, one tab order. Pages don't have this problem.</p>
 
 Here's the failure nobody designs for: **your app ends up inside someone else's app.**
 
@@ -101,7 +103,8 @@ Pages compose. A full-page confirmation inside a webview is a full-page
 confirmation. It doesn't know or care that it's nested, because navigation is the
 one thing every container already knows how to do.
 
-## If it genuinely has to overlay
+## Use <code>popover</code> for what's transient and local
+<p class="dek">Shipping details, a menu, a date picker. Not deleting an account.</p>
 
 Some things really are transient and local — shipping details next to a line
 item, a date picker, a menu. For those the platform now has good answers, and
@@ -147,7 +150,8 @@ submits, closes, and hands you the button's value with no listeners:
 
 Use it for discarding a draft. Don't use it for deleting an account.
 
-## So the question got simpler
+## Ask "can this be a page?" before anything else
+<p class="dek">It almost always can.</p>
 
 It used to be "is this worth the accessibility debt?" Then it was "which overlay
 element?" It's actually neither:
@@ -159,7 +163,8 @@ be.
 Overlays are for things that are genuinely transient and genuinely local.
 Everything else is a route you didn't write.
 
-## A confession
+## I got this wrong on this very site
+<p class="dek">The manifesto you're reading used to be an overlay.</p>
 
 The first version of this site put its own manifesto in a `popover` — the "why
 this exists" page you get from the tile in the corner. Technically defensible:

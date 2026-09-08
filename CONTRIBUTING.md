@@ -72,6 +72,20 @@ can build a startling number of them out of `<details>`, `popover`, `<dialog>`,
 you find yourself wanting a script, that's usually a sign the platform grew a
 feature while you weren't looking. Go find it. That's the article.
 
+## The skim rule
+
+**Someone should be able to understand your whole argument without reading a
+paragraph.** Headings, deks, examples, diagrams and code have to carry it on
+their own. Blocks of prose are welcome underneath — but they're the second
+layer, not the first.
+
+In practice:
+
+- **Headings are statements, not labels.** "Six inputs break six things the browser already did" — not "What it costs." If a heading only makes sense once you've read the section under it, rewrite it.
+- **Put a dek under each one.** `<p class="dek">One line.</p>` right after the heading, carrying the specific claim.
+- **Show before you tell.** A live demo of the broken thing next to the working thing beats three paragraphs describing the difference. You can build a startling number of these with no JavaScript.
+- **Label your code.** A reader should know what a block proves before they parse it.
+
 ## What gets merged
 
 The good ones are specific. A pattern you keep seeing in the wild, what it

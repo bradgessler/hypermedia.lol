@@ -932,8 +932,8 @@ footer a:hover { color: var(--ink); }
 
 .t-form {
   background-image:
-    linear-gradient(to right, rgba(128, 128, 128, 0.16) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(128, 128, 128, 0.16) 1px, transparent 1px);
+    linear-gradient(to right, rgba(128, 128, 128, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(128, 128, 128, 0.09) 1px, transparent 1px);
   background-size: 1.5rem 1.5rem;
 }
 
@@ -989,17 +989,102 @@ footer a:hover { color: var(--ink); }
 
 .t-form .prose { counter-reset: field; }
 
-.t-form .prose p:not(.crumb), .t-form .prose ul {
-  background: var(--panel);
-  border: 1px solid var(--rule);
-  padding: 0.75rem 0.9rem;
-}
-
-.t-form .prose ul { padding-left: 2rem; }
+.t-form .prose ul { padding-left: 1.3rem; }
 .t-form code { background: color-mix(in srgb, var(--accent) 15%, transparent); color: inherit; }
 .t-form .prose a { color: var(--accent); }
 .t-form .prose a:hover { background: var(--accent); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   .t-terminal .article-title::after { animation: none; }
+}
+
+
+/* --------------------------------------------------------------- the dek
+   The line under a heading. Together with the headings it has to carry the
+   whole argument for someone who never reads a paragraph. */
+
+.dek {
+  font-family: var(--ui) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+  color: var(--muted);
+  margin: -0.4rem 0 1.4rem !important;
+  max-width: 34rem;
+}
+
+.copyable {
+  font-size: 1.05em;
+  user-select: all;
+}
+
+/* ------------------------------------------------- side-by-side demonstration
+   The broken pattern next to the working one, both live. Neither runs any
+   script — the point is that the failure on the left IS the absence of one. */
+
+.ab {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 0.9rem;
+  margin: 1.75rem 0 2rem;
+}
+
+.ab__side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.1rem;
+  border: 3px solid var(--rule);
+  background: var(--panel);
+}
+
+.ab__side--bad { border-top: 10px solid #c0392b; }
+.ab__side--good { border-top: 10px solid #1f8a4c; }
+
+.ab__tag {
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.ab__label {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.ab__boxes { display: flex; gap: 0.35rem; }
+
+.ab__boxes input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.5rem 0;
+  font-family: var(--mono);
+  font-size: 1.35rem;
+  text-align: center;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--rule);
+}
+
+.ab__side--good input {
+  font-family: var(--mono);
+  font-size: 1.55rem;
+  text-align: left;
+  padding: 0.45rem 0.6rem;
+  max-width: 100%;
+  color: var(--ink);
+  background: var(--paper);
+  border: 2px solid var(--rule);
+}
+
+.ab__side--good input:user-invalid { border-color: #c0392b; color: #c0392b; }
+
+.ab__note {
+  margin-top: auto;
+  font-family: var(--ui);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--muted);
 }

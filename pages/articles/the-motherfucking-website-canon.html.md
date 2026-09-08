@@ -23,7 +23,8 @@ It's a joke that turned out to be right about almost everything.
 The interesting part isn't that one page. It's that people kept answering it,
 and the replies form an actual argument, in order.
 
-## The canon, in sequence
+## Four manifestos, each moving the line a few declarations
+<p class="dek">Read in order they argue with each other, and the argument goes somewhere.</p>
 
 **[motherfuckingwebsite.com](https://motherfuckingwebsite.com/)** — the thesis.
 Use HTML. Your document is already fine.
@@ -52,7 +53,8 @@ There's also **[justfuckingusehtml.com](https://justfuckingusehtml.com/)**, whic
 is the same argument aimed squarely at people reaching for a SPA to render a
 brochure.
 
-## Why it's a sequence and not a pile-on
+## Nobody in the sequence is against CSS
+<p class="dek">What they're against is the default.</p>
 
 Read in order, they're not four people saying the same thing louder. They're a
 negotiation about where the line is, and each one moves it by a few

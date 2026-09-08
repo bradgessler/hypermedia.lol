@@ -27,7 +27,8 @@ machine where the code was written.
 
 Here's a small one that shows the whole shape of the problem.
 
-## The example
+## Sweet Maria's wants one code, in six boxes
+<p class="dek">A bug report from a happy customer, not a dunk.</p>
 
 I buy my green coffee from Sweet Maria's. I like Sweet Maria's — good beans,
 good people, been ordering from them for years. So take this as a bug report
@@ -40,7 +41,56 @@ it into six separate boxes:
 
 Six inputs for one value. And then it didn't work anyway.
 
-## What it costs
+## Paste six digits and watch five disappear
+<p class="dek">Both fields below are live. Neither runs a line of JavaScript.</p>
+
+Copy this code: <code class="copyable">561579</code>
+
+Now paste it into each of these. Nothing here runs any JavaScript — that's the
+entire point.
+
+<div class="ab">
+  <form class="ab__side ab__side--bad" method="get" action="#try">
+    <span class="ab__tag">What most sites ship</span>
+    <span class="ab__label">Enter code</span>
+    <span class="ab__boxes">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 1 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 2 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 3 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 4 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 5 of 6">
+      <input type="text" inputmode="numeric" maxlength="1" size="1" aria-label="Digit 6 of 6">
+    </span>
+    <span class="ab__note">One digit lands. Five vanish. Backspace won't walk you
+    back. Your password manager sees six anonymous fields.</span>
+  </form>
+
+  <form class="ab__side ab__side--good" method="get" action="#try">
+    <span class="ab__tag">One field</span>
+    <label class="ab__label" for="ab-code">Enter code</label>
+    <input
+      id="ab-code"
+      name="code"
+      type="text"
+      inputmode="numeric"
+      pattern="[0-9]{6}"
+      maxlength="6"
+      size="6"
+      placeholder="______"
+      autocomplete="one-time-code"
+      title="Six digits from your email"
+      required>
+    <span class="ab__note">All six land. Backspace works. On a phone the browser
+    offers the code straight from your email.</span>
+  </form>
+</div>
+
+Every difference you just felt is behavior the browser was already doing, on the
+left, taken away.
+
+## Six inputs break six things the browser already did
+<p class="dek">Every one of these worked until somebody replaced it.</p>
+
 
 Every one of these is something the browser was already doing correctly, until
 somebody replaced it:
@@ -59,7 +109,8 @@ out to do that. But nobody asked, either.
 The alternative isn't hard. It's one HTML5 field with constraints on it, and
 some CSS.
 
-## The field
+## The whole control is one input
+<p class="dek">No JavaScript. Each attribute buys back something from the list above.</p>
 
 ```html
 <label for="code">Enter code</label>
@@ -86,7 +137,8 @@ from the list above:
 - `inputmode="numeric"` brings up the number pad without lying about the type. Skip `type="number"` — a code isn't a quantity, and you'd inherit spinners, scroll-wheel edits, and a browser that happily accepts `5e6`.
 - `placeholder="______"` is six underscores, which shows the shape of what you want. Cheap trick, works. Fair warning: a placeholder only shows while the field is empty, so it's a hint about length, not a running progress bar.
 
-## Can you control the width?
+## <code>size="6"</code> sets the width — don't compute it
+<p class="dek">I tried the clever version first. It shipped three bugs.</p>
 
 Yes, and the boring answer is the right one: `size="6"`. It's one of the oldest
 attributes on the web, it sets the field's width in characters, and it still
@@ -162,7 +214,8 @@ input[name="code"]:user-invalid {
 }
 ```
 
-## The actual point
+## Boxes are a paint job — paint them on a control that works
+<p class="dek">The design was never the problem. Rebuilding the browser to get it was.</p>
 
 Boxes aren't the enemy. The enemy is reaching for JavaScript before you've
 checked whether the browser already does it — because when you lose that bet,
