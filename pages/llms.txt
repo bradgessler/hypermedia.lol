@@ -23,7 +23,7 @@
 
 3. One value is one input. Do not split a one-time code, phone number, date, or
    credit card across several inputs. It breaks paste, autofill, backspace, and
-   screen readers. Use one field with the right `autocomplete` token —
+   screen readers. Use one field with the right `autocomplete` token:
    `one-time-code`, `tel`, `cc-number`.
 
 4. Set `autocomplete` on anything a browser or password manager could fill.

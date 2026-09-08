@@ -9,11 +9,10 @@ span: big
 ---
 
 <p class="lede">By the end of this you'll be able to delete a few hundred lines of
-JavaScript, replace them with one HTML attribute, and know exactly what those
-lines were quietly breaking for everyone who wasn't you. It starts with
-coffee.</p>
+JavaScript, replace them with one HTML attribute, and know what those lines
+were breaking for everyone who wasn't you. It starts with coffee.</p>
 
-I go to buy green coffee from Sweet Maria's. They don't do passwords — they
+I go to buy green coffee from Sweet Maria's. They don't do passwords. They
 email me a magic code and I type it in. It arrives looking something like this:
 
 <figure class="step">
@@ -24,12 +23,11 @@ email me a magic code and I type it in. It arrives looking something like this:
   <span class="message__code"><code class="copyable">561579</code></span>
   <span class="message__hint">If you didn't request this, you can ignore this email.</span>
 </div>
-<figcaption>The email. Dramatized — the real one has more logo. Copy the code; you need it next.</figcaption>
+<figcaption>The email, dramatized. The real one has more logo. Copy the code. You need it next.</figcaption>
 </figure>
 
 I copy the code and go back to the tab, where I'm supposed to paste it into
-this. Somebody did a lot of strange things to an input field to get six little
-slots:
+this. Somebody did a lot of work to an input field to get six little slots:
 
 <figure class="step">
 <div class="console console--six">
@@ -69,8 +67,8 @@ slots:
 
 One digit landed and five vanished. Backspace walked me back a box and left the
 digit behind. The lamp never went green. And on my phone, the keyboard never
-offered me the code — every box has <code>autocomplete="off"</code>, which is
-how the popular libraries ship it.
+offered me the code, because every box has <code>autocomplete="off"</code>.
+That's how the popular libraries ship it.
 
 That's a six-digit code to buy coffee, and it fails a paste. So what did they
 build?
@@ -79,7 +77,7 @@ build?
   <div class="verdict__col verdict__col--pro">
     <span class="verdict__head">What it gets right</span>
     <ul>
-      <li>It looks like a code. Six slots, six digits — nobody wonders what to type.</li>
+      <li>It looks like a code. Six slots, six digits. Nobody wonders what to type.</li>
       <li>Auto-advance feels fast when you type by hand.</li>
       <li>It reads as serious, which is why every auth screen has copied it.</li>
     </ul>
@@ -135,22 +133,22 @@ boxes.forEach((box, i) => {
 Caption: <b>How it's built.</b> The usual shape, hand-rolled everywhere. Do not ship this. Every line is a place Backspace can break.
 
 Backspace is where it always goes wrong, because the browser's backspace only
-knows about the box it's in. Everything else — moving back, deleting the previous
-digit, doing both — has to be re-invented in that `keydown` handler. Get it
+knows about the box it's in. Moving back, deleting the previous digit, or doing both all has to be
+re-invented in that `keydown` handler. Get it
 slightly wrong and you land in the box before but don't delete, or delete but
 don't move, or jump two. Every implementation is slightly wrong in a different
 way, and nobody tests it on a phone with autocorrect on.
 
-None of that code exists in the version below.
+None of that code exists in the fix.
 
-That sketch isn't a strawman. It's the shape of the most-downloaded
-implementation on the internet.
+That sketch is the shape of the most-downloaded implementation on the
+internet.
 
 ## The most popular library builds it exactly this way
 <p class="dek">react-otp-input: one input per digit, 274 lines, and <code>autoComplete: 'off'</code> hardcoded on every box.</p>
 
 [react-otp-input](https://github.com/devfolioco/react-otp-input) is the
-canonical React version — hundreds of thousands of downloads a week. Go break
+canonical React version, at hundreds of thousands of downloads a week. Go break
 it yourself on the [live demo](https://devfolioco.github.io/react-otp-input/):
 
 1. Paste your code. Watch how it has to be split up and distributed.
@@ -159,7 +157,7 @@ it yourself on the [live demo](https://devfolioco.github.io/react-otp-input/):
 
 Step 3 isn't a bug they'll fix. Read the [source](https://github.com/devfolioco/react-otp-input/blob/main/src/index.tsx):
 one `<input>` per digit, Backspace and arrow keys re-implemented in a `keydown`
-handler, paste re-implemented in a `paste` handler — and every box rendered with
+handler, paste re-implemented in a `paste` handler, and every box rendered with
 `autoComplete: 'off'`. The library that people reach for to build this
 *deliberately disables* the one browser feature that makes a login code fast on
 a phone, because with six fields there was nothing else it could do.
@@ -170,7 +168,7 @@ input, minus the attribute that mattered most.
 
 
 ## Even the best library needs 767 lines to hide one input
-<p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
+<p class="dek">input-otp, the one shadcn/ui ships, keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
 
 You've felt the bad version. Now the good one.
 [input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
@@ -183,10 +181,10 @@ Now look at what it costs to hide an input and keep it working. From the
 [source](https://github.com/guilhermerodz/input-otp/tree/master/packages/input-otp/src):
 
 - **598 lines** in the core component. The browser's caret is invisible now, so there's a fake one. Selection is invisible, so `selectionStart` is tracked by hand and `setSelectionRange` is called to keep it honest. Three `ResizeObserver`s keep the painted boxes lined up with the real field underneath. Six special cases for iOS and Safari.
-- **169 more lines** in a hook whose only job is password managers. 1Password, LastPass, Dashlane and Bitwarden each inject a badge into the input — and the input is invisible, so the badge lands in a clipped region. The hook sniffs each manager by the DOM it injects, and grows the field forty pixels to make room.
+- **169 more lines** in a hook whose only job is password managers. 1Password, LastPass, Dashlane and Bitwarden each inject a badge into the input. The input is invisible, so the badge lands in a clipped region. The hook sniffs each manager by the DOM it injects, and grows the field forty pixels to make room.
 
 That's the *best* implementation. 767 lines, four password managers detected by
-selector, a caret drawn by hand — all so one input can look like six boxes.
+selector, a caret drawn by hand, all so one input can look like six boxes.
 Every line of it is repair work for one decision: hiding the input.
 
 You don't have to hide the input. Keep going.
@@ -202,9 +200,9 @@ and a label can say "6-digit code" in words. input-otp is the existence proof:
 one real input, six painted slots, and nobody can tell.[^iotp]
 
 **"Auto-advance is faster."** It *feels* faster. Count keystrokes. One field,
-six digits: six keystrokes, done. Six boxes, six digits: six keystrokes — and
+six digits: six keystrokes, done. Six boxes, six digits: six keystrokes, and
 auto-advance exists so it isn't twelve. It's a fix for a cost the boxes
-introduced. The genuinely fast path is one tap, with the code offered from your
+introduced. The fast path is one tap, with the code offered from your
 messages, and that's the path the boxes close.[^webdev]
 
 **"Segmented inputs test better."** Some guides say so, for codes up to eight
@@ -219,12 +217,12 @@ failed WCAG.[^wcag]
 **"We handle autofill on the first box."** Some do. The browser drops all six
 digits into box one, `maxlength` truncates to a single digit, and a handler races
 to catch the value before that happens and spread it out. It's the shadow field
-again — intercepting the browser's behavior so you can redo it. It works until it
+again: intercept the browser so you can redo what it did. It works until it
 doesn't, and when it doesn't, the person on the other end is trying to buy
 coffee.
 
 **"Accessibility can be handled."** It can, at the cost above. But the floor
-isn't a matter of opinion anymore. WCAG 2.2 treats an authentication step that
+is written down now. WCAG 2.2 treats an authentication step that
 makes you transcribe something as a cognitive function test, allowed only if
 paste works and password managers can fill the field.[^wcag] Six boxes that eat
 a paste fail Level AA. One input passes by doing nothing.
@@ -315,7 +313,7 @@ Caption: <b>The fix.</b> The entire control. No script. Every attribute is doing
     <span class="break__what">Autofill</span>
     <span class="break__six">Gets one digit and a shrug.</span>
     <span class="break__one">One tap fills it from SMS or email.</span>
-    <span class="break__fix">Safari and Chrome look for a single field marked <code>autocomplete="one-time-code"</code>. Six fields can't receive that suggestion — so the fancy version is slower on exactly the device where typing hurts most.</span>
+    <span class="break__fix">Safari and Chrome look for a single field marked <code>autocomplete="one-time-code"</code>. Six fields can't receive that suggestion, so the fancy version is slower on the one device where typing hurts most.</span>
   </div>
   <div class="break">
     <span class="break__what">Screen reader</span>
@@ -338,7 +336,7 @@ Caption: <b>The fix.</b> The entire control. No script. Every attribute is doing
 </div>
 
 Add it up: a few hundred lines of JavaScript, a support burden, and a pile of
-accessibility regressions — to make one textbox worse. Nobody decided to do
+accessibility regressions, all to make one textbox worse. Nobody decided to do
 that. Nobody asked, either.
 
 ## Each attribute buys back one thing from that list
@@ -349,11 +347,11 @@ that. Nobody asked, either.
 | `pattern="[0-9]{6}"` + `required` | Validation. The browser refuses to submit and shows its own message. `title` is the text in that bubble. |
 | `maxlength="6"` | Stops at six. The job all that per-box focus juggling was doing. |
 | `autocomplete="one-time-code"` | The one everybody leaves off. It's the signal that makes SMS and email autofill work.[^apple] |
-| `inputmode="numeric"` | Number pad on mobile without lying about the type. Not `type="number"` — a code isn't a quantity, and you'd inherit spinners and `5e6`.[^webdev] |
+| `inputmode="numeric"` | Number pad on mobile without lying about the type. Not `type="number"`: a code isn't a quantity, and you'd inherit spinners and `5e6`.[^webdev] |
 | `size="6"` | Width, in characters. Don't compute it. |
 | `placeholder="______"` | Six underscores. Shows the shape. Only visible while empty, so it's a hint, not a progress bar. |
 
-## The width is one attribute — don't compute it
+## The width is one attribute. Don't compute it.
 <p class="dek">I tried the clever version first. It shipped three bugs.</p>
 
 ```css
@@ -393,8 +391,9 @@ rest.
 <p class="dek">Boxes are a paint job. Paint them on a control that works.</p>
 
 The six boxes look serious. That's the whole appeal. But you can have the look
-on top of one input — a monospace font and some padding get you most of it — and
-keep paste, backspace, autofill, the password manager, and the screen reader.
+on top of one input. A monospace font and some padding get you most of it, and
+you keep paste, backspace, autofill, the password manager, and the screen
+reader.
 
 Sweet Maria's, if you ever read this: that's the whole fix. Delete a few hundred
 lines of JavaScript, ship one `<input>`, and I'll get back to buying coffee a

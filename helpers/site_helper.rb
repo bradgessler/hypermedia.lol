@@ -27,7 +27,7 @@ module SiteHelper
   end
 
   # A treatment is a whole visual world: colour, chrome, headline handling and
-  # decoration. Prose face, size and measure are deliberately NOT part of it —
+  # decoration. Prose face, size and measure are deliberately NOT part of it;
   # every treatment inherits the same reading settings so variety never costs
   # legibility.
   TREATMENTS = %w[plain spec terminal zine form launch].freeze
@@ -87,7 +87,7 @@ module SiteHelper
     URI.join(SITE_URL, path_for(page)).to_s
   end
 
-  # Open Graph Plus currently fails to render any path below the root — nested
+  # Open Graph Plus currently fails to render any path below the root; nested
   # paths return 404/503 while the root screenshots fine, reproduced on
   # sitepress.cc as well as here. Until that's fixed every page shares the
   # homepage card, which renders, rather than a per-page card that doesn't.
