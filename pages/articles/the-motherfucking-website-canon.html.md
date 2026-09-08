@@ -2,6 +2,8 @@
 title: The motherfucking website canon
 date: September 8, 2026
 description: A reading list. Four profane single-page manifestos that have been making the case for plain HTML and a little CSS for over a decade.
+accent: sky
+sprite: brick
 ---
 
 Before there was a name for any of this, there was

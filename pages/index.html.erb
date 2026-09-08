@@ -2,25 +2,38 @@
 title: hypermedia.lol
 ---
 
+<a class="pitch" href="/why">
+  <span class="pitch__q">Why does this exist?</span>
+  <span class="pitch__a">The browser already does most of what we keep rewriting in JavaScript. This is a collection of the easier way — what it costs to ignore it, and why the simpler thing is also the better one.</span>
+  <span class="pitch__go">Read the story &rarr;</span>
+</a>
+
+<h2 class="wall__lede">Short arguments for using what the browser already does.</h2>
+
 <div class="wall">
-  <% wall.each_with_index do |(kind, item), i| %>
+  <% wall.each do |kind, item| %>
     <% if kind == :essay %>
-      <a class="tile tile--essay tile--v<%= i % 4 %>" href="<%= item.request_path %>">
+      <a class="tile tile--essay" href="<%= item.request_path %>"
+         style="--accent: <%= accent item %>">
+        <span class="tile__art"><%= sprite sprite_name(item), size: 44 %></span>
         <span class="tile__kind">Essay</span>
         <span class="tile__title"><%= item.data.fetch("title") %></span>
         <span class="tile__desc"><%= item.data.fetch("description", nil) %></span>
         <span class="tile__date"><%= date item.data.fetch("date") %></span>
       </a>
     <% else %>
-      <div class="tile tile--line tile--v<%= i % 4 %>">
-        <span class="tile__text"><%= item.fetch(:text) %></span>
+      <div class="tile tile--line"
+           style="--accent: <%= SiteHelper::ACCENTS.fetch(item.fetch(:accent)) %>">
+        <span class="tile__art"><%= sprite item.fetch(:sprite), size: 36 %></span>
+        <span class="tile__text"><%= raw item.fetch(:text) %></span>
         <span class="tile__note"><%= item.fetch(:note) %></span>
       </div>
     <% end %>
   <% end %>
 
   <a class="tile tile--cta" href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">
-    <span class="tile__kind">Open</span>
+    <span class="tile__art"><%= sprite "floppy", size: 44 %></span>
+    <span class="tile__kind">Open to submissions</span>
     <span class="tile__title">Send a pull request</span>
     <span class="tile__desc">One file. Markdown or HTML. The only rule is no JavaScript.</span>
   </a>

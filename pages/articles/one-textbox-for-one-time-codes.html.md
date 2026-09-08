@@ -2,6 +2,8 @@
 title: One textbox for one-time codes
 date: September 8, 2026
 description: Six boxes for a six digit code breaks paste, backspace, autofill, and screen readers. One HTML5 input with constraints does the whole job.
+accent: acid
+sprite: key
 ---
 
 Somewhere along the way, we stopped asking why.
@@ -84,19 +86,16 @@ from the list above:
 
 ## Can you control the width?
 
-Yes, two ways.
+Yes, and the boring answer is the right one: `size="6"`. It's one of the oldest
+attributes on the web, it sets the field's width in characters, and it still
+works everywhere.
 
-In HTML, `size="6"` sets the width in characters. It's one of the oldest
-attributes there is and it still works.
-
-In CSS you get real control, because `ch` is a unit — the width of a `0` in the
-current font. Set a monospace font, space the characters out, and make the field
-exactly as wide as its contents:
+I want to be honest about the version I tried first, because it's exactly the
+mistake this site exists to complain about. It looked like this:
 
 ```css
-input[name="code"] {
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 2rem;
+/* Don't do this. */
+input {
   letter-spacing: 0.5em;
   text-indent: 0.5em;
   width: calc(6ch + 3em);
@@ -104,10 +103,30 @@ input[name="code"] {
 }
 ```
 
-`width: calc(6ch + 3em)` is just the arithmetic: six characters, plus the
-`0.5em` of letter-spacing each one drags along. The `text-indent` covers for a
-quirk — letter-spacing adds space *after* the last character too, which pulls
-the text half a slot off center, so you nudge it back.
+Clever, and broken. `box-sizing: border-box` means that `width` is the *border*
+box, so padding and borders eat into it and the last digit gets clipped off the
+end. Centering text that carries a trailing letter-space puts the placeholder
+and the typed value on different origins, so the underscores don't sit under the
+digits. And `ch` is the width of a `0`, which stops predicting anything the
+moment you add spacing between characters.
+
+Four declarations, three bugs, to do a job one HTML attribute already does.
+
+What actually works is smaller:
+
+```css
+input[name="code"] {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.9rem;
+  text-align: left;
+  padding: 0.45rem 0.65rem;
+}
+```
+
+Monospace means every character is the same width, so `______` and `561579`
+occupy exactly the same space with no arithmetic. Left-aligned means the
+placeholder and the value start at the same point. Padding gives it room without
+anyone computing anything. The `size` attribute handles the width.
 
 Here it is, live. Paste six digits into it:
 
@@ -120,6 +139,7 @@ Here it is, live. Paste six digits into it:
     inputmode="numeric"
     pattern="[0-9]{6}"
     maxlength="6"
+    size="6"
     placeholder="______"
     autocomplete="one-time-code"
     title="Six digits from your email"

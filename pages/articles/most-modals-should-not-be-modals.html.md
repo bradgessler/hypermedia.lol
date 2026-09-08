@@ -2,6 +2,8 @@
 title: Most modals shouldn't be modals
 date: September 8, 2026
 description: modalzmodalzmodalz.com made the case years ago. Now the platform has popover and dialog, so the excuse for a div-and-JavaScript modal is gone.
+accent: magenta
+sprite: dialog
 ---
 
 There's a website called [modalzmodalzmodalz.com](https://modalzmodalzmodalz.com/)
@@ -48,6 +50,18 @@ click outside ("light dismiss"), moves focus into it and back out again, and
 gives you `::backdrop` to style. Every behavior in that list is one somebody used
 to hand-write, badly.
 
+Here it is running. No script on this page:
+
+<div class="demo">
+  <button popovertarget="shipping" class="demo__btn">Shipping details</button>
+  <div id="shipping" popover class="demo__pop">
+    <p>Ships in 2–3 days from Oakland.</p>
+    <button popovertarget="shipping" popovertargetaction="hide" class="demo__btn">Close</button>
+  </div>
+</div>
+
+Press <kbd>Esc</kbd>, or click anywhere outside it. Nobody wrote that.
+
 **If it genuinely must block, use `<dialog>`.** A real modal — the kind where
 continuing without answering makes no sense — is `<dialog>`, which gets focus
 trapping and inerting of the background for free. It needs one line of script to
@@ -75,3 +89,20 @@ If no, it's a `popover` and you wrote zero JavaScript. If yes, it's a `<dialog>`
 and you wrote one line. And if the honest answer is "it doesn't need to be either
 of those, I just didn't know where to put it" — that's the junk drawer, and
 modalzmodalzmodalz already told you what to do about it.
+
+## A confession
+
+The first version of this site put its own manifesto in a `popover` — the "why
+this exists" page you get from the tile in the corner. Technically defensible:
+it's not a `<dialog>`, it doesn't block, it light-dismisses.
+
+It was still wrong, and for the exact reason this whole genre of complaint
+exists. That manifesto is the most important writing here. In an overlay it had
+no URL, so you couldn't link to it or send it to anyone. The back button didn't
+close it. A crawler never saw it. I hadn't decided where it went, so I made it
+pop up — which is the junk drawer, precisely as described.
+
+It's a page now, at [/why](/why). That's what it always should have been.
+
+The rule survives the embarrassment intact: a `popover` is a great answer for
+shipping details, and a bad answer for a document.
