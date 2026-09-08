@@ -65,6 +65,12 @@ interactive bit."
 This is a site about how much the browser already does for you. Shipping a
 script to prove that point would be embarrassing for both of us.
 
+There is exactly one exception on the site: a Copy button on the one-time-code
+page, because the platform has no declarative clipboard. It's the bar for any
+future exception, and it's a high one — the browser genuinely has no answer,
+the script inserts its own UI so the page is complete without it, and it's
+annotated in the source and on the page.
+
 Within HTML and CSS, go nuts. A `<style>` block in your article is welcome and
 encouraged — if your piece is about `:has()`, build something absurd with
 `:has()`. Live demos are the best part of any article here, and it turns out you

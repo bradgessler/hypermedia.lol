@@ -8,11 +8,32 @@ treatment: launch
 span: big
 ---
 
-<p class="brief">Your authorization code is <code class="copyable">561579</code>.
-Tap it once to select it, then Copy. You will need it to launch. Do not write it
-down. Do not share it with anyone. Especially not Sweet Maria's.<br><br>
-<small>A one-tap copy button would be one line of JavaScript. This page has
-zero, so it's two taps. Worth it.</small></p>
+<p class="brief">Your authorization code is <code class="copyable">561579</code>
+Copy it. You will need it to launch. Do not write it down. Do not share it with
+anyone. Especially not Sweet Maria's.</p>
+
+## Even the best version of this is 767 lines
+<p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
+
+Before the bad version, look at the good one.
+[input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
+component in the React ecosystem, and it gets the big thing right: it renders
+exactly one real text input, makes it transparent, and draws the boxes on top.
+Its own README says six separate inputs lose "SMS autofill, screen reader
+support, partial paste, undo, and half the keyboard."
+
+Now look at what it costs to hide an input and keep it working. From the
+[source](https://github.com/guilhermerodz/input-otp/tree/master/packages/input-otp/src):
+
+- **598 lines** in the core component. The browser's caret is invisible now, so there's a fake one. Selection is invisible, so `selectionStart` is tracked by hand and `setSelectionRange` is called to keep it honest. Three `ResizeObserver`s keep the painted boxes lined up with the real field underneath. Six special cases for iOS and Safari.
+- **169 more lines** in a hook whose only job is password managers. 1Password, LastPass, Dashlane and Bitwarden each inject a badge into the input — and the input is invisible, so the badge lands in a clipped region. The hook sniffs each manager by the DOM it injects, and grows the field forty pixels to make room.
+
+That's the *best* implementation. 767 lines, four password managers detected by
+selector, a caret drawn by hand — all so one input can look like six boxes.
+Every line of it is repair work for one decision: hiding the input.
+
+You don't have to hide the input. Keep going.
+
 
 <div class="console console--six" data-mode="six">
   <div class="console__head">
@@ -38,7 +59,7 @@ zero, so it's two taps. Worth it.</small></p>
     </span>
     <button class="console__arm" type="submit">Arm</button>
   </form>
-  <div class="console__foot">This is how most websites ask for a login code. Everything on this page is live. Nothing on this page is JavaScript.</div>
+  <div class="console__foot">This is how most websites ask for a login code. Everything in this console is live. Nothing in it is JavaScript.</div>
 </div>
 
 Paste your code into the console. One digit lands. The lamp stays red. Now
@@ -116,23 +137,6 @@ a phone, because with six fields there was nothing else it could do.
 
 It's a competent implementation of a bad idea. 274 lines to reproduce one input,
 minus the attribute that mattered most.
-
-## The best library agrees: one real input, boxes painted on top
-<p class="dek">input-otp — the one shadcn/ui ships — keeps a single <code>&lt;input&gt;</code> and draws the slots over it.</p>
-
-[input-otp](https://github.com/guilhermerodz/input-otp) is the other way to do
-it, and it's the way this article has been arguing for the whole time: it
-renders exactly one real text input, makes it transparent, and lets you draw
-whatever boxes you like on top. Its own README says six separate inputs lose
-"SMS autofill, screen reader support, partial paste, undo, and half the
-keyboard."
-
-That's the entire thesis, stated by the people who built the good version.
-
-So: if you're in React and you want the boxes, use that. And if you're not in
-React, notice what it's actually doing — one input and some paint. You don't
-need a dependency for that. The rest of this page is the paint.
-
 
 ## The same code. One input.
 <p class="dek">Paste the same six digits here.</p>
@@ -291,3 +295,23 @@ keep paste, backspace, autofill, the password manager, and the screen reader.
 Sweet Maria's, if you ever read this: that's the whole fix. Delete a few hundred
 lines of JavaScript, ship one `<input>`, and I'll get back to buying coffee a
 little faster.
+
+<script>
+  // The one script on this site. There is no declarative clipboard: a Copy
+  // button is JavaScript or it is nothing. It inserts itself, so with scripts
+  // off you still get tap-to-select and no dead button.
+  if (navigator.clipboard) {
+    document.querySelectorAll(".copyable").forEach((code) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "copy";
+      button.textContent = "Copy";
+      button.addEventListener("click", async () => {
+        await navigator.clipboard.writeText(code.textContent.trim());
+        button.textContent = "Copied";
+        setTimeout(() => (button.textContent = "Copy"), 1500);
+      });
+      code.after(button);
+    });
+  }
+</script>

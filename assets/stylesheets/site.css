@@ -1393,3 +1393,23 @@ footer a:hover { color: var(--ink); }
 @media (max-width: 40rem) {
   .shadow__row { grid-template-columns: 1fr; gap: 0.3rem; }
 }
+
+
+/* The Copy button. Inserted by the page's one script; see the article. */
+.copy {
+  margin-left: 0.4rem;
+  padding: 0.3em 0.7em;
+  border: 2px solid currentColor;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.copy:hover { background: currentColor; color: var(--paper); }
+.brief .copy { color: var(--accent); }
+.brief .copy:hover { background: var(--accent); color: #0c0e12; }
