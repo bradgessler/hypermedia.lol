@@ -85,27 +85,16 @@
 
     <footer class="foot">
       <a class="mark mark--masthead" href="/">hypermedia.lol</a>
-      <p class="foot__about">
-        Short, over-the-top arguments for using what the browser already does
-        instead of rebuilding it in JavaScript. Each one shows a thing breaking,
-        then the smaller thing that already worked.
-        <a href="/why/">More about this &rarr;</a>
-      </p>
-      <p class="foot__spread">
-        The way this spreads is people sending it to each other. If one of these
-        made you laugh or saved you a dependency, pass it on.
-        <a class="share" href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>"
-           data-title="<%= page_title %>" data-url="<%= canonical_url %>">Share this page</a>
-      </p>
-      <p class="foot__contribute">
-        Got one of these in you? <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a>
-        One file, markdown or HTML, no JavaScript. Merged at the whim of a sometimes-benevolent dictator.
-      </p>
-      <p class="foot__meta">
-        <a href="https://github.com/bradgessler/hypermedia.lol">Source</a>
-        <a href="/llms.txt">llms.txt</a>
-        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break; a Copy button; a Share button that hands the page to your device's share sheet; and Plausible analytics, which counts visits without cookies or personal data. Each is annotated in the source.</span>
-      </p>
+      <p class="foot__about">Over-the-top arguments for using what the browser already does. <a href="/why/">Why this exists &rarr;</a></p>
+      <dl class="foot__actions">
+        <dt>Share</dt>
+        <dd>Pass it on. <a class="share" href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>" data-title="<%= page_title %>" data-url="<%= canonical_url %>">Share this page</a></dd>
+        <dt>Contribute</dt>
+        <dd><a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a> One file, no JavaScript, merged at a dictator's whim.</dd>
+        <dt>Machines</dt>
+        <dd><a href="/llms.txt">llms.txt</a> has the rules. <a href="https://github.com/bradgessler/hypermedia.lol">Source</a> has everything.</dd>
+      </dl>
+      <p class="foot__meta">Scripts on this site: the six-box input we argue against, a Copy button, a Share button, Plausible analytics. Each annotated in the source.</p>
     </footer>
 
     <script>

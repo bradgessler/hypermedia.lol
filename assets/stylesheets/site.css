@@ -527,39 +527,41 @@ table th { background: var(--accent); color: #14130f; }
 .foot {
   max-width: 76rem;
   margin: 6rem auto 0;
-  padding: 2.5rem 1.25rem 0;
+  padding: 2.5rem 1.25rem 1.5rem;
   border-top: 3px solid var(--rule);
   font-family: var(--ui);
   color: var(--ink);
 }
 
-.foot .mark--masthead { margin-bottom: 1.25rem; }
+.foot .mark--masthead { margin-bottom: 1rem; }
 
-.foot__about { max-width: 40rem; font-size: 1.05rem; line-height: 1.55; margin: 0 0 1.5rem; }
-.foot__about a { color: var(--ink); font-family: var(--mono); font-size: 0.85rem; white-space: nowrap; }
+.foot__about { max-width: 40rem; font-size: 1.05rem; line-height: 1.5; margin: 0 0 1.75rem; }
+.foot__about a { color: var(--ink); white-space: nowrap; }
 
-.foot__spread { max-width: 40rem; font-size: 1.05rem; line-height: 1.55; margin: 0 0 1.75rem; }
-.foot__spread .share {
+.foot__actions { display: grid; grid-template-columns: 7rem 1fr; gap: 0.7rem 1rem; max-width: 40rem; margin: 0 0 2rem; }
+.foot__actions dt { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); padding-top: 0.35rem; }
+.foot__actions dd { margin: 0; font-size: 0.95rem; line-height: 1.5; }
+.foot__actions dd a { color: var(--ink); font-weight: 700; }
+
+.foot .share {
   display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.6rem 1.1rem;
+  margin-left: 0.4rem;
+  padding: 0.45rem 0.9rem;
   border: 2px solid var(--ink);
   background: var(--ink);
   color: var(--paper);
   font-family: var(--mono);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   text-decoration: none;
+  vertical-align: middle;
   box-shadow: 3px 3px 0 var(--paper), 3px 3px 0 5px var(--ink);
 }
-.foot__spread .share:hover { background: var(--paper); color: var(--ink); }
+.foot .share:hover { background: var(--paper); color: var(--ink); }
 
-.foot__contribute { max-width: 40rem; font-size: 0.95rem; line-height: 1.5; margin: 0 0 1.75rem; }
-.foot__contribute a { color: var(--ink); font-weight: 700; }
+@media (max-width: 30rem) { .foot__actions { grid-template-columns: 1fr; gap: 0.2rem 0; } .foot__actions dd { margin-bottom: 0.8rem; } }
 
-.foot__meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-family: var(--mono); font-size: 0.75rem; color: var(--muted); margin: 0; padding-bottom: 1rem; }
-.foot__meta a { color: var(--muted); }
-.foot__meta a:hover { color: var(--ink); }
+.foot__meta { max-width: 40rem; font-family: var(--mono); font-size: 0.72rem; line-height: 1.5; color: var(--muted); margin: 0; padding-top: 1rem; border-top: 1px solid var(--rule); }
 
 :focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
 
