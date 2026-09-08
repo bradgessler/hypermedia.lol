@@ -4,6 +4,7 @@ date: September 8, 2026
 description: modalzmodalzmodalz.com made the case years ago. Now the platform has popover and dialog, so the excuse for a div-and-JavaScript modal is gone.
 accent: magenta
 sprite: dialog
+treatment: spec
 ---
 
 There's a website called [modalzmodalzmodalz.com](https://modalzmodalzmodalz.com/)

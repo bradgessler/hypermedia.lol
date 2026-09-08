@@ -4,6 +4,7 @@ date: September 8, 2026
 description: Six boxes for a six digit code breaks paste, backspace, autofill, and screen readers. One HTML5 input with constraints does the whole job.
 accent: acid
 sprite: key
+treatment: form
 ---
 
 Somewhere along the way, we stopped asking why.

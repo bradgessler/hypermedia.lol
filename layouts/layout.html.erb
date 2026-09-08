@@ -24,7 +24,7 @@
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Rules for machines">
     <%= stylesheet_link_tag "site" %>
   </head>
-  <body style="--accent: <%= accent %>" class="<%= article? ? "is-article" : "is-home" %>">
+  <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
     <a class="mark" href="/" aria-label="hypermedia.lol — home">
       <span class="mark__line">hyper</span><span class="mark__line">media</span><span class="mark__line mark__line--lol">.lol</span>
     </a>

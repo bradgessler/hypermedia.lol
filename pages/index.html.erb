@@ -14,7 +14,7 @@ title: hypermedia.lol
   <% wall.each do |kind, item| %>
     <% if kind == :essay %>
       <a class="tile tile--essay" href="<%= item.request_path %>"
-         style="--accent: <%= accent item %>">
+         style="--accent: <%= tile_accent item %>">
         <span class="tile__art"><%= sprite sprite_name(item), size: 44 %></span>
         <span class="tile__kind">Essay</span>
         <span class="tile__title"><%= item.data.fetch("title") %></span>

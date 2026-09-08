@@ -40,6 +40,30 @@ module SiteHelper
     ACCENTS.fetch(page.data.fetch("accent", DEFAULT_ACCENT), ACCENTS.fetch(DEFAULT_ACCENT))
   end
 
+  # A treatment is a whole visual world: colour, chrome, headline handling and
+  # decoration. Prose face, size and measure are deliberately NOT part of it —
+  # every treatment inherits the same reading settings so variety never costs
+  # legibility.
+  TREATMENTS = %w[plain spec terminal zine form].freeze
+
+  # The colour each treatment leads with, so a tile on the wall previews the
+  # page it opens.
+  TREATMENT_ACCENTS = {
+    "spec"     => "#1a4ed8",
+    "terminal" => "#ffb000",
+    "zine"     => "#111111",
+    "form"     => "#c0392b",
+  }.freeze
+
+  def tile_accent(page)
+    TREATMENT_ACCENTS.fetch(treatment(page)) { accent(page) }
+  end
+
+  def treatment(page = current_page)
+    name = page.data.fetch("treatment", "plain")
+    TREATMENTS.include?(name) ? name : "plain"
+  end
+
   def sprite_name(page = current_page)
     page.data.fetch("sprite", "brick")
   end

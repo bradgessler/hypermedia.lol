@@ -25,6 +25,30 @@ description: One sentence. This is the search result and the social card copy.
 ---
 ```
 
+### Pick a treatment
+
+A treatment is the visual world your article lives in. Add `treatment:` to your
+front matter:
+
+| Treatment | Looks like | Good for |
+|---|---|---|
+| `plain` | The house style — poster type on paper | Anything (the default) |
+| `spec` | A W3C document: numbered sections, status box, institutional blue | Arguing from the platform |
+| `terminal` | Amber phosphor on black, scanlines, blinking cursor | Deploys, tooling, the machine |
+| `zine` | Photocopied punk: halftone paper, headline knocked askew | Manifestos and rants |
+| `form` | Ruled grid paper, boxed sections, stamped labels | Inputs and forms |
+
+Treatments can change colour, chrome, headline handling, texture and
+decoration. They **cannot** change the prose face, prose size, or the measure —
+those are locked across every treatment on purpose. Variety is the point;
+making an article harder to read is not. New treatments are welcome as PRs, and
+they get held to the same line: body copy at 7:1 contrast or better, in both
+colour schemes, with no text set on a rotated or textured background.
+
+Also pick a `sprite:` — `cursor`, `floppy`, `dialog`, `key`, `clock`, or
+`brick` — which is drawn as 16x16 pixel art in `helpers/sprite_helper.rb`. New
+sprites are just as welcome; they're drawn as text you can edit by hand.
+
 Don't repeat the title as a heading in the body — the layout renders it. Start
 with your first sentence. Use `##` for section headings.
 
