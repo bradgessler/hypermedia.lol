@@ -91,6 +91,47 @@ way, and nobody tests it on a phone with autocorrect on.
 
 None of that code exists in the version below.
 
+That sketch isn't a strawman. It's the shape of the most-downloaded
+implementation on the internet.
+
+## The most popular library does exactly this — and turns autofill off
+<p class="dek">react-otp-input: one input per digit, 274 lines, and <code>autoComplete: 'off'</code> hardcoded on every box.</p>
+
+[react-otp-input](https://github.com/devfolioco/react-otp-input) is the
+canonical React version — hundreds of thousands of downloads a week. Go break
+it yourself on the [live demo](https://devfolioco.github.io/react-otp-input/):
+
+1. Paste your code. Watch how it has to be split up and distributed.
+2. Type two digits, press Backspace twice. Note which box you land in.
+3. Open it on your phone and get a real code texted to you. Wait for the keyboard to offer it. It won't.
+
+Step 3 isn't a bug they'll fix. Read the [source](https://github.com/devfolioco/react-otp-input/blob/main/src/index.tsx):
+one `<input>` per digit, Backspace and arrow keys re-implemented in a `keydown`
+handler, paste re-implemented in a `paste` handler — and every box rendered with
+`autoComplete: 'off'`. The library that people reach for to build this
+*deliberately disables* the one browser feature that makes a login code fast on
+a phone, because with six fields there was nothing else it could do.
+
+It's a competent implementation of a bad idea. 274 lines to reproduce one input,
+minus the attribute that mattered most.
+
+## The best library agrees: one real input, boxes painted on top
+<p class="dek">input-otp — the one shadcn/ui ships — keeps a single <code>&lt;input&gt;</code> and draws the slots over it.</p>
+
+[input-otp](https://github.com/guilhermerodz/input-otp) is the other way to do
+it, and it's the way this article has been arguing for the whole time: it
+renders exactly one real text input, makes it transparent, and lets you draw
+whatever boxes you like on top. Its own README says six separate inputs lose
+"SMS autofill, screen reader support, partial paste, undo, and half the
+keyboard."
+
+That's the entire thesis, stated by the people who built the good version.
+
+So: if you're in React and you want the boxes, use that. And if you're not in
+React, notice what it's actually doing — one input and some paint. You don't
+need a dependency for that. The rest of this page is the paint.
+
+
 ## The same code. One input.
 <p class="dek">Paste the same six digits here.</p>
 
