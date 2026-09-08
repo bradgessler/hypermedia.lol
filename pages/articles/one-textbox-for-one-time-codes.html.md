@@ -54,6 +54,12 @@ You don't have to hide the input. Keep going.
       <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 5 of 6">
       <input type="text" inputmode="numeric" maxlength="1" size="1" pattern="[0-9]" required aria-label="Digit 6 of 6">
     </span>
+    <input type="hidden" name="code" value="">
+    <span class="console__wire">
+      <span class="console__wire-label">Shadow field &middot; what the server gets</span>
+      <code>code=""</code>
+      <span class="console__wire-note">The six boxes have no <code>name</code>. The hidden field does. Only JavaScript joins them — and this console has none.</span>
+    </span>
     <span class="console__status">
       <span class="console__lamp"></span>
       <span class="console__state console__state--wait">Standby</span>
@@ -164,6 +170,11 @@ minus the attribute that mattered most.
       autocomplete="one-time-code"
       title="Six digits from your email"
       required>
+    <span class="console__wire">
+      <span class="console__wire-label">What the server gets</span>
+      <code>code=561579</code>
+      <span class="console__wire-note">Whatever you typed. The input has a <code>name</code>. There is nothing to join.</span>
+    </span>
     <span class="console__status">
       <span class="console__lamp"></span>
       <span class="console__state console__state--wait">Standby</span>
