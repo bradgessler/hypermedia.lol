@@ -12,6 +12,14 @@ breaking, and shows the smaller thing that already worked. The reader should
 come away able to delete code. The tone is confident, specific, and a little
 unhinged in presentation, never in facts.
 
+We teach through humor. Flippant across the board, over the top in the
+visuals, deadpan in the numbers. The one thing the humor may never do is make
+the reader feel stupid. The joke is always on the pattern, the library, the
+industry, or the author, and the reader is on our side of it. The feeling to
+aim for is being let in on a secret: by the end they know something most
+developers don't, and they're a little better for it. Flatter the reader by
+trusting them with the real numbers, never by telling them they're clever.
+
 The reference article is `pages/articles/one-textbox-for-one-time-codes.html.md`.
 Match its standard before adding anything.
 

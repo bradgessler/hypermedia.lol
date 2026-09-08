@@ -145,8 +145,12 @@ The good ones are specific. A pattern you keep seeing in the wild, what it
 actually costs: accessibility, performance, keyboard, paste, back button: and
 the smaller thing that does the job. Show the markup.
 
-Never accuse the reader. Titles and copy point at the pattern, not at "you";
-readers will know if it applies to them and, ideally, laugh. Punching down at a
+The whole site is flippant and over the top, and it teaches through humor. The
+joke is on the pattern, the library, the industry, or the author. It is never
+on the reader, and it never makes them feel stupid. The feeling to aim for is
+being let in on a secret: by the end they know something most developers don't.
+Titles and copy point at the pattern, not at "you"; readers will know if it
+applies to them and, ideally, laugh. Punching down at a
 specific company isn't the vibe either. Naming a site as an example
 is fine, but write it like a bug report from someone who wants them to win, not
 a dunk.
