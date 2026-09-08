@@ -94,7 +94,13 @@ module SiteHelper
   # Flip this to false to go back to per-page images.
   OG_IMAGE_ROOT_ONLY = true
 
+  # A page can ship its own card by setting `og_image:` in front matter to a
+  # path under pages/ (e.g. /images/og/one-textbox.png). Otherwise the card
+  # comes from Open Graph Plus.
   def og_image_url(page = current_page)
+    if (own = page.data["og_image"])
+      return URI.join(SITE_URL, own).to_s
+    end
     path = OG_IMAGE_ROOT_ONLY ? "/" : path_for(page)
     URI.join(OG_IMAGE_HOST, path).to_s
   end

@@ -6,6 +6,7 @@ accent: hot
 sprite: key
 treatment: launch
 span: big
+og_image: /images/og/one-textbox-for-one-time-codes.png
 ---
 
 <p class="lede">By the end of this you'll be able to delete a few hundred lines of
