@@ -1135,13 +1135,12 @@ footer a:hover { color: var(--ink); }
   line-height: 1.15;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: var(--ink);
+  color: var(--accent);
   border-bottom: 1px solid var(--rule);
   padding-bottom: 0.45rem;
   margin-top: 4rem;
 }
 
-.t-launch .prose h2::before { content: "▶ "; color: var(--alert); }
 .t-launch code { background: var(--steel); color: var(--accent); }
 .t-launch pre { background: #06070a; border-color: var(--rule); color: var(--ink); }
 .t-launch .prose a { color: var(--accent); }
