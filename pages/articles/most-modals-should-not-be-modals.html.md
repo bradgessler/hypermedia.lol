@@ -1,5 +1,5 @@
 ---
-title: Your Modal Is Broken by Design. The Spec Says So.
+title: Modals Are Broken by Design. The Spec Says So.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com

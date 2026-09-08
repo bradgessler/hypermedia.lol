@@ -55,8 +55,10 @@ review is coming.
    no triplets for rhythm. If it reads as machine-written, cut it.
 9. **Headlines are shameless clickbait.** The title is the one line most
    people will ever see, and its job is to get the argument in front of them.
-   "Your Login Code Screen Is Wrong. One HTML Attribute Fixes It." Make a
-   claim, name a number, promise the fix. The article then has to earn it.
+   "Everybody Builds Six-Digit Code Inputs Wrong. Just Use a Text Field."
+   Make a claim, name the thing, promise the fix. No second person: not
+   "your website", not "you're doing it wrong". The article then has to earn
+   the title.
 10. **Byline.** `byline:` and `byline_url:` in front matter render as
    "Prompted by Name". `byline_verb: By` for hand-written work.
 
