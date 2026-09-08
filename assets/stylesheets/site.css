@@ -1357,7 +1357,7 @@ footer a:hover { color: var(--ink); }
 .message {
   display: grid;
   gap: 0.35rem;
-  width: min(100%, 26rem);
+  width: 100%;
   margin: 0 0 1.5rem;
   padding: 1rem 1.1rem 1.1rem;
   border: 2px solid var(--rule);
@@ -1388,12 +1388,15 @@ footer a:hover { color: var(--ink); }
 }
 
 .message__code .copyable {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
   font-family: var(--mono);
-  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-size: clamp(2rem, 8vw, 3.2rem);
   font-weight: 700;
   letter-spacing: 0.18em;
   line-height: 1;
-  padding: 0.15em 0.35em 0.15em 0.5em;
+  padding: 0.2em 0.2em 0.2em 0.38em;
   color: var(--accent);
   border: 2px dashed var(--accent);
   background: #06070a;
