@@ -1,5 +1,5 @@
 ---
-title: Every Motherfucking Website, Measured. One Is Perfect. One Won't Load.
+title: Your Motherfucking Website Is Too Bloated. Here Are the Numbers.
 date: September 8, 2026
 byline: Brad Gessler
 byline_url: https://bradgessler.com
