@@ -1789,7 +1789,8 @@ pre.highlight { background: var(--code-bg, #14130f); }
 /* ------------------------------------------------------ heading anchors */
 .prose h2 { scroll-margin-top: 1.5rem; }
 .prose h2 .anchor { color: inherit; text-decoration: none; }
-.prose h2 .anchor:hover { text-decoration: none; background: none; }
+/* Outranks every treatment's link hover: a heading must keep its own colour. */
+.prose h2 > a.anchor:hover, .prose h2 > a.anchor:focus-visible { color: inherit; background: none; text-decoration: none; }
 .prose h2 .anchor::after {
   content: " #";
   opacity: 0;
