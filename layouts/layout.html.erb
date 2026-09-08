@@ -25,10 +25,11 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
-    <nav class="topbar" aria-label="Site">
-      <a class="topbar__home" href="/">hypermedia.lol</a>
-      <a class="topbar__why" href="/why/">Why this exists</a>
-    </nav>
+    <div class="hang">
+      <a class="tag" href="/" aria-label="hypermedia.lol, back to the collection">
+        <span class="tag__body">hypermedia.lol</span>
+      </a>
+    </div>
 
     <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>

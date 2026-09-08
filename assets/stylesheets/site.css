@@ -45,37 +45,90 @@ body {
 }
 
 
-/* ------------------------------------------------------------ the topbar */
+/* --------------------------------------------------------------- the tag */
 
 /*
-  The one constant: a slim bar across the top of every page that sticks as
-  you scroll. Normal flow, position: sticky, nothing to fight. Its colours are
-  fixed on purpose so it reads the same over every treatment.
+  The one constant: a luggage tag hanging on a string off the top edge of every
+  page. It is drawn in the page's own ink on the page's own paper, so it adapts
+  to light and dark and to every treatment without imposing a colour of its
+  own. The wrapper is a zero-height sticky block in normal flow, so the tag
+  stays as you scroll with nothing positioned around it.
 */
-.topbar {
+.hang {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  height: 2.5rem;
-  padding: 0 1.25rem;
-  background: #14130f;
-  color: #d7f205;
-  border-bottom: 2px solid #d7f205;
-  font-family: var(--mono);
-  font-size: 0.82rem;
+  height: 0;
 }
 
-.topbar a { color: inherit; text-decoration: none; }
-.topbar__home { font-weight: 700; letter-spacing: 0.03em; }
-.topbar__why { opacity: 0.8; }
-.topbar a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.topbar a:focus-visible { outline: 2px solid #d7f205; outline-offset: 3px; }
+.tag {
+  position: absolute;
+  top: 0;
+  right: clamp(1rem, 6vw, 4rem);
+  display: block;
+  padding-top: 2.4rem;
+  color: var(--ink);
+  text-decoration: none;
+  transform-origin: 50% 0;
+  transform: rotate(-4deg);
+  transition: transform 600ms cubic-bezier(0.3, 1.7, 0.5, 1);
+}
 
-main { padding: 2.5rem 1.25rem 0; }
+/* The string. */
+.tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 2.4rem;
+  margin-left: -1px;
+  background: currentColor;
+}
+
+.tag__body {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.8rem 0.5rem 1.45rem;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  background: var(--paper);
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.78rem;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  box-shadow: 2px 3px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* The punched hole the string goes through. */
+.tag__body::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 50%;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: -0.3rem;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+.tag:hover, .tag:focus-visible { transform: rotate(5deg); }
+.tag:focus-visible { outline: none; }
+.tag:focus-visible .tag__body { outline: 2px solid currentColor; outline-offset: 3px; }
+
+main { padding: 5.5rem 1.25rem 0; }
+
+@media (min-width: 64rem) {
+  main { padding-top: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tag { transition: none; }
+  .tag:hover, .tag:focus-visible { transform: rotate(-4deg); }
+}
 
 /* --------------------------------------------------------- the why pitch */
 
@@ -392,7 +445,7 @@ a.tile:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
 
 /* ------------------------------------------------------------- articles */
 
-.prose { max-width: 36rem; margin: 0 auto; }
+.prose { max-width: 40rem; margin: 0 auto; }
 
 .banner {
   display: flex;
@@ -661,7 +714,7 @@ footer a:hover { color: var(--ink); }
   .t-spec { --accent: #7fa4ff; --paper: #0d0e12; --panel: #15171d; --rule: #2c3040; }
 }
 
-.t-spec .prose { max-width: 40rem; }
+.t-spec .prose { max-width: 44rem; }
 
 .t-spec .banner {
   display: block;
@@ -757,7 +810,7 @@ footer a:hover { color: var(--ink); }
   --rule: #2b382a;
 }
 
-.t-terminal .prose { max-width: 38rem; }
+.t-terminal .prose { max-width: 42rem; }
 
 .t-terminal .banner {
   position: relative;
@@ -853,7 +906,7 @@ footer a:hover { color: var(--ink); }
 }
 
 .t-zine .prose {
-  max-width: 38rem;
+  max-width: 42rem;
   padding: 1.75rem;
   background: var(--panel);
   border: 4px solid var(--rule);
@@ -915,7 +968,7 @@ footer a:hover { color: var(--ink); }
   background-size: 1.5rem 1.5rem;
 }
 
-.t-form .prose { max-width: 39rem; }
+.t-form .prose { max-width: 43rem; }
 
 .t-form .banner {
   position: relative;
@@ -1098,7 +1151,7 @@ footer a:hover { color: var(--ink); }
   --rule: #343946;
 }
 
-.t-launch .prose { max-width: 40rem; }
+.t-launch .prose { max-width: 44rem; }
 
 .t-launch .banner {
   display: block;
