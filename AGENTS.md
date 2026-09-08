@@ -78,8 +78,9 @@ No JavaScript for the site's own UI. Two exceptions, and they are the bar:
 
 1. Running the anti-pattern so the reader can feel it break, clearly labeled
    as the thing being argued against.
-2. A control the platform has no declarative answer for (the Copy button).
-   It must insert its own UI so the page is complete without it.
+2. A control the platform has no declarative answer for: the Copy button
+   (clipboard) and the Share button (navigator.share). Each must degrade to a
+   page that works without it and be annotated in the source.
 
 Both must be annotated in the source and mentioned on the page.
 

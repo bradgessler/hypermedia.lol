@@ -102,8 +102,9 @@ Two narrow exceptions exist, and they're the bar for any other:
    the site's own behavior. A six-box code input with no script is a strawman
    nobody ships; the honest demo runs the script and still breaks.
 2. **A control the platform genuinely has no answer for.** There is no
-   declarative clipboard, so the Copy button is JavaScript or nothing. It
-   inserts its own UI, so the page is complete without it, and it's annotated.
+   declarative clipboard and no declarative share sheet, so the Copy button and
+   the Share button are JavaScript or nothing. Each degrades to a page that
+   works without it (tap-to-select; a mailto link), and each is annotated.
 
 Everything shown on a page: an email, a form, a diagram, a code block: goes
 in a `<figure>` with a `<figcaption>` that says what step you're looking at.

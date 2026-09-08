@@ -82,14 +82,12 @@
         then the smaller thing that already worked.
         <a href="/why/">More about this &rarr;</a>
       </p>
-      <div class="foot__share" aria-label="Share this page">
-        <span class="foot__label">Share</span>
-        <a href="https://x.com/intent/post?text=<%= ERB::Util.url_encode(page_title) %>&amp;url=<%= ERB::Util.url_encode(canonical_url) %>">X</a>
-        <a href="https://bsky.app/intent/compose?text=<%= ERB::Util.url_encode("#{page_title} #{canonical_url}") %>">Bluesky</a>
-        <a href="https://news.ycombinator.com/submitlink?u=<%= ERB::Util.url_encode(canonical_url) %>&amp;t=<%= ERB::Util.url_encode(page_title) %>">Hacker News</a>
-        <a href="sms:?&amp;body=<%= ERB::Util.url_encode("#{page_title} #{canonical_url}") %>">Messages</a>
-        <a href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>">Email</a>
-      </div>
+      <p class="foot__spread">
+        The way this spreads is people sending it to each other. If one of these
+        made you laugh or saved you a dependency, pass it on.
+        <a class="share" href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>"
+           data-title="<%= page_title %>" data-url="<%= canonical_url %>">Share this page</a>
+      </p>
       <p class="foot__contribute">
         Got one of these in you? <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a>
         One file, markdown or HTML, no JavaScript. Merged at the whim of a sometimes-benevolent dictator.
@@ -97,8 +95,22 @@
       <p class="foot__meta">
         <a href="https://github.com/bradgessler/hypermedia.lol">Source</a>
         <a href="/llms.txt">llms.txt</a>
-        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break, and one Copy button.</span>
+        <span>JavaScript on this site: the six-box input we argue against, running so you can feel it break; a Copy button; and a Share button that hands the page to your device's share sheet. Each is annotated in the source.</span>
       </p>
     </footer>
+
+    <script>
+      // Share. The device's share sheet is navigator.share, which is
+      // JavaScript or nothing. The link underneath is a mailto, so with
+      // scripts off sharing still works; with them on, the link opens the
+      // sheet instead.
+      document.querySelectorAll("a.share").forEach((a) => {
+        if (!navigator.share) return;
+        a.addEventListener("click", (event) => {
+          event.preventDefault();
+          navigator.share({ title: a.dataset.title, url: a.dataset.url }).catch(() => {});
+        });
+      });
+    </script>
   </body>
 </html>
