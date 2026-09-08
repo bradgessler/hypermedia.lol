@@ -30,7 +30,7 @@ module SiteHelper
   # decoration. Prose face, size and measure are deliberately NOT part of it;
   # every treatment inherits the same reading settings so variety never costs
   # legibility.
-  TREATMENTS = %w[plain spec terminal zine form launch].freeze
+  TREATMENTS = %w[plain spec terminal zine form launch default].freeze
 
   # The colour each treatment leads with, so a tile on the wall previews the
   # page it opens.
@@ -40,6 +40,7 @@ module SiteHelper
     "zine"     => "#d61f1f",
     "form"     => "#c0392b",
     "launch"   => "#ffb300",
+    "default"  => "#0000ee",
   }.freeze
 
   def tile_accent(page)

@@ -9,6 +9,7 @@ module PreviewHelper
     when "terminal" then terminal_preview
     when "zine"     then zine_preview
     when "launch"   then launch_preview
+    when "default"  then default_preview
     else plain_preview
     end
   end
@@ -69,6 +70,18 @@ module PreviewHelper
           <span class="pv__hazard"></span>
           <span class="pv__keys"><i></i><i></i><i></i><i></i><i></i><i></i></span>
           <span class="pv__lamp"></span>
+        </span>
+      HTML
+    end
+
+    # The browser's default stylesheet, with a marker taken to it.
+    def default_preview
+      <<~HTML
+        <span class="pv pv--default" aria-hidden="true">
+          <span class="pv__h">Motherfucking Website</span>
+          <span class="pv__p"></span><span class="pv__p pv__p--short"></span>
+          <span class="pv__link"></span>
+          <span class="pv__scrawl"></span>
         </span>
       HTML
     end

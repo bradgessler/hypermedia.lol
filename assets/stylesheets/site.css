@@ -1802,3 +1802,144 @@ pre.highlight { background: var(--code-bg, #14130f); }
 
 
 
+
+
+/* ---------------------------------------------------------- masthead
+   The home page names the site in the same box the mark uses everywhere
+   else, just bigger and in flow, with the two links that matter. */
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  max-width: 76rem;
+  margin: 0 auto 2rem;
+}
+
+.mark--masthead {
+  position: static;
+  font-size: clamp(1.3rem, 3.5vw, 2rem);
+  padding: 0.6rem 1rem;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.masthead__nav { display: flex; gap: 1.5rem; font-family: var(--mono); font-size: 0.85rem; }
+.masthead__nav a { color: var(--ink); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.masthead__nav a:hover { background: var(--accent); color: #14130f; }
+
+/* The floating mark is redundant where the masthead is. */
+.is-home > .mark:not(.mark--masthead) { display: none; }
+.is-home main { padding-top: 2.5rem; }
+
+
+/* --- DEFAULT -------------------------------------- the browser's stylesheet
+   For the canon. Times New Roman, #0000EE links, white paper: the look of an
+   HTML document nobody styled, which is what the pages under discussion are.
+   Then a marker taken to it. This is the one treatment allowed to change the
+   prose face, because the face IS the argument. */
+
+.t-default {
+  --accent: #ff2b2b;
+  --paper: #ffffff;
+  --panel: #f6f6f6;
+  --ink: #000000;
+  --rule: #000000;
+  --muted: #444444;
+  --scrawl: "Marker Felt", "Chalkboard SE", "Comic Sans MS", "Segoe Print", cursive;
+}
+
+@media (prefers-color-scheme: dark) {
+  .t-default { --paper: #121212; --panel: #1e1e1e; --ink: #e8e8e8; --rule: #e8e8e8; --muted: #b0b0b0; }
+}
+
+.t-default .prose { max-width: 42rem; }
+.t-default .prose p, .t-default .prose li, .t-default .prose td, .t-default .prose th { font-family: "Times New Roman", Times, serif; }
+.t-default .prose p, .t-default .prose li { font-size: 1.15rem; line-height: 1.55; }
+
+.t-default .prose a { color: #0000ee; text-decoration: underline; }
+.t-default .prose a:visited { color: #551a8b; }
+.t-default .prose a:hover { background: none; color: #0000ee; }
+@media (prefers-color-scheme: dark) {
+  .t-default .prose a { color: #8ab4f8; }
+  .t-default .prose a:visited { color: #c58af9; }
+  .t-default .prose a:hover { color: #8ab4f8; }
+}
+
+.t-default .banner { display: block; border: 0; padding: 0 0 0.5rem; border-bottom: 1px solid var(--rule); }
+.t-default .banner__art { display: none; }
+
+.t-default .article-title {
+  position: relative;
+  display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* The red scribble under the title. */
+.t-default .article-title::after {
+  content: "";
+  position: absolute;
+  left: -0.2em;
+  right: -0.4em;
+  bottom: -0.18em;
+  height: 0.28em;
+  background:
+    radial-gradient(ellipse 60% 100% at 30% 50%, var(--accent) 45%, transparent 46%) 0 0 / 1.2em 100% repeat-x,
+    linear-gradient(var(--accent), var(--accent)) 0 60% / 100% 0.12em no-repeat;
+  opacity: 0.9;
+  transform: rotate(-0.6deg);
+}
+
+.t-default .prose h2 {
+  font-family: var(--scrawl);
+  font-size: clamp(1.7rem, 4.5vw, 2.3rem);
+  font-weight: 400;
+  line-height: 1.05;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--accent);
+  border: 0;
+  padding: 0;
+  transform: rotate(-1.2deg);
+  transform-origin: 0 100%;
+}
+
+/* Highlighter over the deks. */
+.t-default .prose p.dek {
+  display: inline;
+  font-family: var(--scrawl);
+  font-size: 1.05rem;
+  color: #000;
+  background: linear-gradient(transparent 12%, #fff45c 12%, #fff45c 88%, transparent 88%);
+  padding: 0.1em 0.3em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.t-default .prose h2 + p.dek { margin: 0; }
+
+.t-default code { font-family: monospace; font-size: 0.95em; background: var(--panel); color: inherit; padding: 0 0.2em; }
+.t-default pre { background: var(--panel); color: var(--ink); border: 1px solid var(--muted); }
+.t-default table { border: 1px solid var(--muted); font-family: "Times New Roman", Times, serif; font-size: 0.95rem; }
+.t-default table th, .t-default table td { border: 1px solid var(--muted); padding: 0.3rem 0.5rem; }
+.t-default table th { background: var(--panel); color: inherit; }
+.t-default .step figcaption { font-family: "Times New Roman", Times, serif; font-style: italic; }
+.t-default .prose p.lede { font-family: "Times New Roman", Times, serif; border-left-color: var(--accent); }
+.t-default .banner .byline { font-family: "Times New Roman", Times, serif; font-style: italic; }
+.t-default .byline a { color: #0000ee; }
+.t-default .onward__link { border-radius: 0; }
+
+/* Card preview */
+.pv--default { background: #fff; color: #000; font-family: "Times New Roman", Times, serif; }
+.pv--default .pv__h { position: absolute; top: 14%; left: 8%; font-weight: 700; font-size: 0.95rem; line-height: 1; white-space: nowrap; }
+.pv--default .pv__p { position: absolute; left: 8%; right: 10%; height: 4%; background: #000; opacity: 0.22; }
+.pv--default .pv__p:nth-of-type(2) { top: 42%; }
+.pv--default .pv__p--short { top: 54%; right: 38%; }
+.pv--default .pv__link { position: absolute; top: 68%; left: 8%; width: 34%; height: 4%; background: #0000ee; }
+.pv--default .pv__link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 1px; background: #0000ee; }
+.pv--default .pv__scrawl { position: absolute; top: 28%; left: 6%; width: 62%; height: 6%; background: radial-gradient(ellipse 60% 100% at 30% 50%, #ff2b2b 45%, transparent 46%) 0 0 / 14px 100% repeat-x; transform: rotate(-2deg); opacity: 0.9; }
