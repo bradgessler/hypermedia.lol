@@ -48,22 +48,23 @@ body {
 /* ------------------------------------------------------------- the mark */
 
 /*
-  The one constant on the site: a pill that sticks to the top as you scroll.
-  It's in normal flow, so there's nothing to position around, no safe-area
-  arithmetic, no padding on main to clear it, and no filter repainting on
-  every scroll frame. position: sticky is the browser doing this job for us.
-  Colours are fixed on purpose — a constant that changes isn't one.
+  The one constant on the site: a tab hanging off the top edge that sticks
+  as you scroll. It's in normal flow, so nothing is positioned around it and
+  there's no safe-area arithmetic; the browser does the sticking. Its top
+  offset is 0 both at rest and when stuck, so it never moves between page
+  loads or on scroll. Colours are fixed on purpose.
 */
 .mark {
   position: sticky;
-  top: 0.75rem;
+  top: 0;
   z-index: 10;
   display: block;
   width: max-content;
-  margin: 0.9rem 0 0;
-  padding: 0.45rem 0.9rem;
+  margin: 0;
+  padding: 0.5rem 0.9rem 0.55rem;
   border: 2px solid #14130f;
-  border-radius: 999px;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
   background: #d7f205;
   color: #14130f;
   font-family: var(--mono);
@@ -1352,21 +1353,53 @@ footer a:hover { color: var(--ink); }
 }
 
 
-/* Opening brief on the launch page. */
-.prose p.brief {
-  margin: 0 0 1.25rem;
-  padding: 0.9rem 1rem;
+/* The text message that delivers the code. Presented, not described. */
+.message {
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 26rem);
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.1rem 1.1rem;
   border: 2px solid var(--rule);
-  border-left: 8px solid var(--alert);
+  border-radius: 18px 18px 18px 4px;
   background: var(--panel);
-  font-family: var(--mono);
-  font-size: 0.85rem;
-  line-height: 1.55;
-  letter-spacing: 0.02em;
-  color: var(--ink);
+  font-family: var(--ui);
 }
 
-.brief .copyable { font-size: 1.35em; color: var(--accent); border-color: var(--accent); }
+.message__from {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.message__time { text-transform: none; letter-spacing: 0; }
+.message__body { font-size: 0.95rem; color: var(--ink); }
+
+.message__code {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.35rem 0 0.15rem;
+}
+
+.message__code .copyable {
+  font-family: var(--mono);
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  padding: 0.15em 0.35em 0.15em 0.5em;
+  color: var(--accent);
+  border: 2px dashed var(--accent);
+  background: #06070a;
+}
+
+.message__hint { font-size: 0.82rem; color: var(--muted); }
 
 /* Six puppets and a shadow field. */
 .shadow {
@@ -1411,5 +1444,16 @@ footer a:hover { color: var(--ink); }
 }
 
 .copy:hover { background: currentColor; color: var(--paper); }
-.brief .copy { color: var(--accent); }
-.brief .copy:hover { background: var(--accent); color: #0c0e12; }
+
+.message .copy {
+  margin: 0;
+  padding: 0.6em 1em;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0c0e12;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.message .copy:hover { background: #fff; border-color: #fff; }

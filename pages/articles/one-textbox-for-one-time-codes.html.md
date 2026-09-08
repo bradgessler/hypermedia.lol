@@ -8,9 +8,12 @@ treatment: launch
 span: big
 ---
 
-<p class="brief">Your authorization code is <code class="copyable">561579</code>
-Copy it. You will need it to launch. Do not write it down. Do not share it with
-anyone. Especially not Sweet Maria's.</p>
+<div class="message" aria-label="Text message from Sweet Maria's with your login code">
+  <span class="message__from">Sweet Maria's <span class="message__time">now</span></span>
+  <span class="message__body">Your one-time login code is</span>
+  <span class="message__code"><code class="copyable">561579</code></span>
+  <span class="message__hint">Copy it. Paste it into the consoles below.</span>
+</div>
 
 ## Even the best version of this is 767 lines
 <p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
@@ -62,7 +65,7 @@ You don't have to hide the input. Keep going.
   <div class="console__foot">This is how most websites ask for a login code. Everything in this console is live. Nothing in it is JavaScript.</div>
 </div>
 
-Paste your code into the console. One digit lands. The lamp stays red. Now
+Paste the code into the console. One digit lands. The lamp stays red. Now
 type two digits and press backspace twice — you're stuck in the second box,
 because nothing walks you back.
 
