@@ -8,7 +8,13 @@ title: hypermedia.lol
   <% articles.each do |article| %>
     <li>
       <a href="<%= article.request_path %>"><%= article.data.fetch("title") %></a>
-      <time><%= date article.data.fetch("date") %></time>
+      <time datetime="<%= Date.parse(article.data.fetch("date")).iso8601 %>"><%= date article.data.fetch("date") %></time>
+      <p class="summary"><%= article.data.fetch("description", nil) %></p>
     </li>
   <% end %>
 </ul>
+
+<p class="submit">
+  Got one? <a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a>
+  HTML and CSS only — go nuts inside that.
+</p>

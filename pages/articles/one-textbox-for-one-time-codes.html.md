@@ -1,6 +1,7 @@
 ---
 title: One textbox for one-time codes
 date: September 8, 2026
+description: Six boxes for a six digit code breaks paste, backspace, autofill, and screen readers. One HTML5 input with constraints does the whole job.
 ---
 
 Somewhere along the way, we stopped asking why.

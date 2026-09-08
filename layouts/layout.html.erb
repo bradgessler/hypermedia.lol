@@ -3,15 +3,39 @@
   <head>
     <meta charset='utf-8'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= current_page.data.fetch("title", "hypermedia.lol") %></title>
+
+    <title><%= page_title %></title>
+    <meta name="description" content="<%= page_description %>">
+    <link rel="canonical" href="<%= canonical_url %>">
+
+    <meta property="og:type" content="<%= article? ? "article" : "website" %>">
+    <meta property="og:site_name" content="<%= SiteHelper::SITE_NAME %>">
+    <meta property="og:title" content="<%= page_title %>">
+    <meta property="og:description" content="<%= page_description %>">
+    <meta property="og:url" content="<%= canonical_url %>">
+    <meta property="og:image" content="<%= og_image_url %>">
+    <% if article? %>
+      <meta property="article:published_time" content="<%= Date.parse(current_page.data.fetch("date")).iso8601 %>">
+    <% end %>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@bradgessler">
+
     <%= stylesheet_link_tag "site" %>
   </head>
   <body>
     <header>
-      <h1 id="title"><a href="/">hypermedia.lol</a></h1>
+      <h1 id="title"><a href="/"><%= SiteHelper::SITE_NAME %></a></h1>
     </header>
     <main>
+      <% if article? %>
+        <h1 class="article-title"><%= page_title %></h1>
+        <time datetime="<%= Date.parse(current_page.data.fetch("date")).iso8601 %>"><%= date current_page.data.fetch("date") %></time>
+      <% end %>
       <%= yield %>
     </main>
+    <footer>
+      <a href="https://github.com/bradgessler/hypermedia.lol">Source and submissions on GitHub</a>
+    </footer>
   </body>
 </html>

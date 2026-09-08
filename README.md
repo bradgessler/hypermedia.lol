@@ -16,6 +16,11 @@ bundle exec sitepress server
 bundle exec rake   # cleans and compiles into ./build
 ```
 
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md). Articles are one file in `pages/articles/`,
+markdown or HTML, and the house rule is HTML and CSS only — no JavaScript.
+
 ## Deploy
 
 Pushing to `main` runs `.github/workflows/publish.yml`, which compiles the site
