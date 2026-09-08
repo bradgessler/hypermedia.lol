@@ -47,13 +47,13 @@
       <% if article? %>
         <nav class="onward">
           <% if (prev = previous_article) %>
-            <a class="onward__link" href="<%= prev.request_path %>" style="--accent: <%= accent prev %>">
+            <a class="onward__link" href="<%= path_for prev %>" style="--accent: <%= accent prev %>">
               <span class="onward__dir">&larr; Newer</span>
               <span class="onward__title"><%= prev.data.fetch("title") %></span>
             </a>
           <% end %>
           <% if (nxt = next_article) %>
-            <a class="onward__link onward__link--next" href="<%= nxt.request_path %>" style="--accent: <%= accent nxt %>">
+            <a class="onward__link onward__link--next" href="<%= path_for nxt %>" style="--accent: <%= accent nxt %>">
               <span class="onward__dir">Older &rarr;</span>
               <span class="onward__title"><%= nxt.data.fetch("title") %></span>
             </a>

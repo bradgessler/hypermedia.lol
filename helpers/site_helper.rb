@@ -74,12 +74,20 @@ module SiteHelper
     page.data.fetch("description", SITE_DESCRIPTION)
   end
 
+  # GitHub Pages serves these as directories and 301s the slashless form, so
+  # emitting the slash ourselves saves every internal click and every shared
+  # link a redirect, and keeps canonical pointing at the address that answers.
+  def path_for(page = current_page)
+    path = page.request_path
+    path.end_with?("/") ? path : "#{path}/"
+  end
+
   def canonical_url(page = current_page)
-    URI.join(SITE_URL, page.request_path).to_s
+    URI.join(SITE_URL, path_for(page)).to_s
   end
 
   def og_image_url(page = current_page)
-    URI.join(OG_IMAGE_HOST, page.request_path).to_s
+    URI.join(OG_IMAGE_HOST, path_for(page)).to_s
   end
 
   def article?(page = current_page)

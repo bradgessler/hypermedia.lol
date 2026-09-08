@@ -12,7 +12,7 @@ title: hypermedia.lol
 
 <div class="wall">
   <% articles.each do |article| %>
-    <a class="tile tile--essay tile--<%= article.data.fetch("span", "normal") %>" href="<%= article.request_path %>"
+    <a class="tile tile--essay tile--<%= article.data.fetch("span", "normal") %>" href="<%= path_for article %>"
        style="--accent: <%= tile_accent article %>">
       <%= preview article %>
       <span class="tile__body">
