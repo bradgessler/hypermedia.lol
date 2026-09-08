@@ -8,35 +8,19 @@ treatment: launch
 span: big
 ---
 
-<div class="message" aria-label="Text message from Sweet Maria's with your login code">
-  <span class="message__from">Sweet Maria's <span class="message__time">now</span></span>
-  <span class="message__body">Your one-time login code is</span>
+## You order coffee. Sweet Maria's emails you a code.
+<p class="dek">Copy it. You'll need it in about ten seconds.</p>
+
+<div class="message message--email" aria-label="Email from Sweet Maria's with your login code">
+  <span class="message__from">From: Sweet Maria's <span class="message__time">just now</span></span>
+  <span class="message__subject">Your Sweet Maria's sign-in code</span>
+  <span class="message__body">Here's the code to finish signing in. It expires in 10 minutes.</span>
   <span class="message__code"><code class="copyable">561579</code></span>
-  <span class="message__hint">Copy it. Paste it into the consoles below.</span>
+  <span class="message__hint">If you didn't request this, you can ignore this email.</span>
 </div>
 
-## Even the best version of this is 767 lines
-<p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
-
-Before the bad version, look at the good one.
-[input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
-component in the React ecosystem, and it gets the big thing right: it renders
-exactly one real text input, makes it transparent, and draws the boxes on top.
-Its own README says six separate inputs lose "SMS autofill, screen reader
-support, partial paste, undo, and half the keyboard."
-
-Now look at what it costs to hide an input and keep it working. From the
-[source](https://github.com/guilhermerodz/input-otp/tree/master/packages/input-otp/src):
-
-- **598 lines** in the core component. The browser's caret is invisible now, so there's a fake one. Selection is invisible, so `selectionStart` is tracked by hand and `setSelectionRange` is called to keep it honest. Three `ResizeObserver`s keep the painted boxes lined up with the real field underneath. Six special cases for iOS and Safari.
-- **169 more lines** in a hook whose only job is password managers. 1Password, LastPass, Dashlane and Bitwarden each inject a badge into the input — and the input is invisible, so the badge lands in a clipped region. The hook sniffs each manager by the DOM it injects, and grows the field forty pixels to make room.
-
-That's the *best* implementation. 767 lines, four password managers detected by
-selector, a caret drawn by hand — all so one input can look like six boxes.
-Every line of it is repair work for one decision: hiding the input.
-
-You don't have to hide the input. Keep going.
-
+## You go back to the tab. This is waiting for you.
+<p class="dek">Paste the code. Everything here is live, and nothing in it is JavaScript.</p>
 
 <div class="console console--six" data-mode="six">
   <div class="console__head">
@@ -147,8 +131,32 @@ a phone, because with six fields there was nothing else it could do.
 It's a competent implementation of a bad idea. 274 lines to reproduce one input,
 minus the attribute that mattered most.
 
-## The same code. One input.
-<p class="dek">Paste the same six digits here.</p>
+
+## Even the best version of this is 767 lines
+<p class="dek">input-otp — the one shadcn/ui ships — keeps one real <code>&lt;input&gt;</code> and paints it invisible. Then it has to fake everything the browser stopped drawing.</p>
+
+You've seen the bad version. Now the good one.
+[input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
+component in the React ecosystem, and it gets the big thing right: it renders
+exactly one real text input, makes it transparent, and draws the boxes on top.
+Its own README says six separate inputs lose "SMS autofill, screen reader
+support, partial paste, undo, and half the keyboard."
+
+Now look at what it costs to hide an input and keep it working. From the
+[source](https://github.com/guilhermerodz/input-otp/tree/master/packages/input-otp/src):
+
+- **598 lines** in the core component. The browser's caret is invisible now, so there's a fake one. Selection is invisible, so `selectionStart` is tracked by hand and `setSelectionRange` is called to keep it honest. Three `ResizeObserver`s keep the painted boxes lined up with the real field underneath. Six special cases for iOS and Safari.
+- **169 more lines** in a hook whose only job is password managers. 1Password, LastPass, Dashlane and Bitwarden each inject a badge into the input — and the input is invisible, so the badge lands in a clipped region. The hook sniffs each manager by the DOM it injects, and grows the field forty pixels to make room.
+
+That's the *best* implementation. 767 lines, four password managers detected by
+selector, a caret drawn by hand — all so one input can look like six boxes.
+Every line of it is repair work for one decision: hiding the input.
+
+You don't have to hide the input. Keep going.
+
+
+## What should have been waiting for you
+<p class="dek">Same console. Same drama. Paste the same code.</p>
 
 <div class="console console--one">
   <div class="console__head">

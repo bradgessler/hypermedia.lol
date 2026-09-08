@@ -1494,3 +1494,16 @@ footer a:hover { color: var(--ink); }
 }
 
 .console__wire-note code { font-size: 0.85em; }
+
+
+/* Email variant of the message: square, with a subject line. */
+.message--email { border-radius: 6px; }
+
+.message__subject {
+  font-family: var(--ui);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--ink);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
