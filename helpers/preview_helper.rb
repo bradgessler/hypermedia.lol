@@ -8,6 +8,7 @@ module PreviewHelper
     when "spec"     then spec_preview
     when "terminal" then terminal_preview
     when "zine"     then zine_preview
+    when "launch"   then launch_preview
     else plain_preview
     end
   end
@@ -57,6 +58,17 @@ module PreviewHelper
           <span class="pv__slab"></span>
           <span class="pv__line"></span>
           <span class="pv__line pv__line--short"></span>
+        </span>
+      HTML
+    end
+
+    # A launch console: hazard stripes, six keys, one red lamp.
+    def launch_preview
+      <<~HTML
+        <span class="pv pv--launch" aria-hidden="true">
+          <span class="pv__hazard"></span>
+          <span class="pv__keys"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="pv__lamp"></span>
         </span>
       HTML
     end

@@ -1088,3 +1088,271 @@ footer a:hover { color: var(--ink); }
   line-height: 1.45;
   color: var(--muted);
 }
+
+/* --- LAUNCH ------------------------------------------ the launch console
+   For the six-box login code. The joke is the seriousness: hazard stripes,
+   indicator lamps, a big red ARM button. The de-escalation to one input is
+   the argument. Dark in both schemes by design. Body copy #e6e3d6 on
+   #0c0e12 is 15:1. */
+
+.t-launch {
+  --accent: #ffb300;
+  --alert: #ff2a2a;
+  --go: #2ee66b;
+  --ink: #e6e3d6;
+  --paper: #0c0e12;
+  --panel: #14171d;
+  --steel: #1d2129;
+  --muted: #9a978c;
+  --rule: #343946;
+}
+
+.t-launch .prose { max-width: 40rem; }
+
+.t-launch .banner {
+  display: block;
+  padding: 1.1rem 1.1rem 1rem;
+  border: 2px solid var(--rule);
+  border-top: 0;
+  background: var(--panel);
+  position: relative;
+}
+
+.t-launch .banner::before {
+  content: "";
+  display: block;
+  height: 12px;
+  margin: 0 -1.1rem 1rem;
+  background: repeating-linear-gradient(-45deg, var(--accent) 0 12px, #14130f 12px 24px);
+}
+
+.t-launch .banner__art { display: none; }
+
+.t-launch .article-title {
+  font-family: var(--mono);
+  font-size: clamp(1.3rem, 3.8vw, 2rem);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+}
+
+.t-launch .prose h2 {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.4rem;
+}
+
+.t-launch .prose h2::before { content: "▶ "; color: var(--alert); }
+.t-launch code { background: var(--steel); color: var(--accent); }
+.t-launch pre { background: #06070a; border-color: var(--rule); color: var(--ink); }
+.t-launch .prose a { color: var(--accent); }
+.t-launch .prose a:hover { background: var(--accent); color: #0c0e12; }
+.t-launch table th { background: var(--steel); color: var(--accent); }
+.t-launch table th, .t-launch table td { border-color: var(--rule); }
+.t-launch .dek { color: var(--muted); }
+.t-launch .onward__link { background: var(--panel); }
+
+/* The console ----------------------------------------------------------- */
+
+.console {
+  margin: 0 0 2rem;
+  border: 2px solid var(--rule);
+  background: var(--steel);
+  box-shadow: 0 0 0 6px #0c0e12, 0 0 0 8px var(--rule);
+}
+
+.console__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  background: repeating-linear-gradient(-45deg, var(--accent) 0 12px, #14130f 12px 24px);
+}
+
+.console__title {
+  padding: 0.25rem 0.6rem;
+  background: #0c0e12;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.console__lights { display: flex; gap: 0.4rem; }
+
+.console__lights i {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--alert);
+  box-shadow: 0 0 6px var(--alert), inset 0 0 2px #000;
+  animation: lamp 1.6s steps(1) infinite;
+}
+
+.console__lights i:nth-child(2) { animation-delay: 0.5s; }
+.console__lights i:nth-child(3) { animation-delay: 1s; }
+
+@keyframes lamp { 50% { opacity: 0.25; box-shadow: none; } }
+
+.console__sys {
+  padding: 0.45rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--rule);
+}
+
+.console__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.25rem 1rem 1.1rem;
+}
+
+.console__label {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+}
+
+.console__keys { display: flex; gap: 0.45rem; }
+
+.console input {
+  font-family: var(--mono);
+  color: var(--accent);
+  background: #06070a;
+  border: 2px solid var(--rule);
+  border-bottom: 4px solid #000;
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.05);
+  caret-color: var(--accent);
+}
+
+.console__keys input {
+  width: 100%;
+  min-width: 0;
+  padding: 0.7rem 0;
+  font-size: clamp(1.4rem, 4.5vw, 2rem);
+  text-align: center;
+}
+
+.console--one input {
+  font-size: clamp(1.6rem, 5vw, 2.2rem);
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  max-width: 100%;
+}
+
+.console input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+.console__status {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.console__lamp {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: #4a4f5c;
+  box-shadow: inset 0 0 3px #000;
+}
+
+/*
+  The lamps and status are driven entirely by :has() reading the form's own
+  validity. Paste into the six boxes and one becomes valid while five stay
+  :invalid, so the console never arms. The single field goes green.
+*/
+.console__state { display: none; color: var(--muted); }
+.console__state--wait { display: inline; }
+
+/* Any touched-and-invalid field: INCOMPLETE. (Untouched empties don't count
+   until a submit attempt marks them, so pasting into box one leaves the
+   console on Standby until you press Arm — and then it goes red.) */
+.console:has(input:user-invalid) .console__state--wait { display: none; }
+.console:has(input:user-invalid) .console__state--bad { display: inline; color: var(--alert); }
+.console:has(input:user-invalid) .console__lamp { background: var(--alert); box-shadow: 0 0 8px var(--alert); }
+
+/* Nothing invalid at all: ARMED. Must come last so it wins over the above. */
+.console:not(:has(input:invalid)) .console__state--wait { display: none; }
+.console:not(:has(input:invalid)) .console__state--bad { display: none; }
+.console:not(:has(input:invalid)) .console__state--ok { display: inline; color: var(--go); }
+.console:not(:has(input:invalid)) .console__lamp { background: var(--go); box-shadow: 0 0 10px var(--go); }
+
+.console__arm {
+  align-self: flex-start;
+  padding: 0.7rem 1.6rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  background: var(--alert);
+  border: 0;
+  border-bottom: 5px solid #8f0000;
+  cursor: pointer;
+}
+
+.console__arm:hover { filter: brightness(1.12); }
+.console__arm:active { transform: translateY(3px); border-bottom-width: 2px; }
+
+.console__foot {
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--ui);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+/* What breaks — a comparison grid that reads as a checklist. */
+.breaks { display: grid; gap: 0.65rem; margin: 1.5rem 0 1.75rem; }
+
+.break {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr 1fr;
+  grid-template-areas: "what six one" "fix fix fix";
+  gap: 0.4rem 0.9rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+}
+
+@media (max-width: 40rem) {
+  .break { grid-template-columns: 1fr 1fr; grid-template-areas: "what what" "six one" "fix fix"; }
+}
+
+.break__what { grid-area: what; font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
+.break__six { grid-area: six; font-family: var(--ui); font-size: 0.92rem; color: var(--ink); }
+.break__one { grid-area: one; font-family: var(--ui); font-size: 0.92rem; color: var(--ink); }
+.break__six::before { content: "Six boxes"; display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--alert); margin-bottom: 0.15rem; }
+.break__one::before { content: "One field"; display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--go); margin-bottom: 0.15rem; }
+.break__fix { grid-area: fix; font-family: var(--ui); font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
+
+.console__sr { font-family: var(--mono); font-size: 0.8rem !important; font-style: italic; }
+
+/* Card preview */
+.pv--launch { background: #0c0e12; }
+.pv--launch .pv__hazard { position: absolute; top: 0; left: 0; right: 0; height: 13%; background: repeating-linear-gradient(-45deg, #ffb300 0 8px, #14130f 8px 16px); }
+.pv--launch .pv__keys { position: absolute; top: 34%; left: 8%; right: 8%; display: flex; gap: 3%; }
+.pv--launch .pv__keys i { flex: 1; aspect-ratio: 3 / 4; background: #06070a; border: 2px solid #343946; border-bottom: 3px solid #000; }
+.pv--launch .pv__lamp { position: absolute; bottom: 12%; left: 8%; width: 9%; aspect-ratio: 1; border-radius: 50%; background: #ff2a2a; box-shadow: 0 0 6px #ff2a2a; }
+
+@media (prefers-reduced-motion: reduce) {
+  .console__lights i { animation: none; }
+}

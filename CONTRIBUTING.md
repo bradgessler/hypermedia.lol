@@ -36,7 +36,8 @@ front matter:
 | `spec` | A W3C document: numbered sections, status box, institutional blue | Arguing from the platform |
 | `terminal` | Amber phosphor on black, scanlines, blinking cursor | Deploys, tooling, the machine |
 | `zine` | Photocopied punk: halftone paper, headline knocked askew | Manifestos and rants |
-| `form` | Ruled grid paper, boxed sections, stamped labels | Inputs and forms |
+| `form` | Ruled grid paper, numbered fields | Inputs and forms |
+| `launch` | A nuclear launch console: hazard stripes, indicator lamps, a big red ARM button | Anything people over-engineer like it's a launch code |
 
 Treatments can change colour, chrome, headline handling, texture and
 decoration. They **cannot** change the prose face, prose size, or the measure —
