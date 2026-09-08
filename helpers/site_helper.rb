@@ -119,16 +119,10 @@ module SiteHelper
     articles[i + 1] if i
   end
 
-  # The site mark: a picket sign on a stick, poking up from the bottom-right of
-  # the viewport. Things that stick up out of the ground read as attached
-  # without needing to meet a visible line, which is why this works where a
-  # tag hung from the top edge did not.
-  def picket_sign
+  # The site mark: a small box floated at the top right of the viewport.
+  def site_mark
     raw <<~HTML
-      <a class="picket" href="/" aria-label="hypermedia.lol, back to the collection">
-        <span class="picket__sign">hypermedia.lol</span>
-        <span class="picket__stick" aria-hidden="true"></span>
-      </a>
+      <a class="mark" href="/" aria-label="hypermedia.lol, back to the collection">hypermedia.lol</a>
     HTML
   end
 
