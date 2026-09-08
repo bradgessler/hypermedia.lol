@@ -1,7 +1,31 @@
 # Submit an article
 
 Anyone can submit. Open a pull request that adds one file to `pages/articles/`.
-If it makes sense, it gets merged and it's live.
+
+## Read this before you spend an evening on it
+
+This site has a benevolent dictator, [Brad Gessler](https://bradgessler.com),
+and the benevolent part is intermittent. Here is the deal, stated plainly so
+nobody is surprised later:
+
+- **I might not read your PR.** I'll make a best effort. That is not a promise
+  of a review, a reply, or a timeline.
+- **I might not merge it.** Even if it's good. Even if it's better than what's
+  here. Fit, mood, and whether it makes me laugh all count, and none of them
+  are appealable.
+- **If I do merge it, it may come out completely different.** Most of this site
+  is generated with AI and then tuned by hand, and I tune hard. Your headline,
+  your structure, your jokes, your treatment, and your conclusion are all fair
+  game. What ships may keep your byline and not much else, or the other way
+  around.
+- **I'll change things after they're live** without asking. Articles here get
+  re-measured, re-cited, re-styled and re-titled when something better turns
+  up.
+
+If you need your writing to appear as you wrote it, publish it on your own
+site and send me the link. I'd genuinely like to read it. If you're fine with
+your idea going into the machine and coming out wearing a Windows 95 title bar,
+open the PR.
 
 ## The file
 

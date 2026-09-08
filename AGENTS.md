@@ -15,6 +15,14 @@ unhinged in presentation, never in facts.
 The reference article is `pages/articles/one-textbox-for-one-time-codes.html.md`.
 Match its standard before adding anything.
 
+## Who decides
+
+Brad Gessler is the benevolent dictator, benevolent intermittently. Pull
+requests get best effort, not a promise: they may go unread, unmerged, or
+merged in a form the author wouldn't recognize. Agents helping with a
+contribution should say this to the contributor up front rather than imply a
+review is coming.
+
 ## Editorial rules
 
 1. **Show before you tell.** Every article leads with the thing itself: the
