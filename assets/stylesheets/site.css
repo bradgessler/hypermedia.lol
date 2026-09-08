@@ -35,16 +35,7 @@
 
 body {
   margin: 0;
-  /*
-    viewport-fit=cover lets the ribbon bleed into the status bar area, which
-    means everything else has to inset itself out of the notch by hand —
-    max() keeps the normal padding when there is no inset to respect.
-  */
-  padding:
-    0
-    max(1.25rem, env(safe-area-inset-right))
-    calc(4rem + env(safe-area-inset-bottom))
-    max(1.25rem, env(safe-area-inset-left));
+  padding: 0 1.25rem 4rem;
   font-family: var(--ui);
   font-size: 1.05rem;
   line-height: 1.6;
@@ -54,51 +45,39 @@ body {
 }
 
 
-/* ----------------------------------------------------------- the ribbon */
+/* ------------------------------------------------------------- the mark */
 
 /*
-  The one fixed point on the site. Every page below can look like anything it
-  wants; this stays byte-for-byte identical so people always know where they
-  are and always have a way back to the collection.
-
-  Its colours are hard-coded on purpose. It must NOT inherit --accent: a
-  treatment is free to set that to near-black (the zine does), which would
-  render the ribbon's own text invisible. A constant that changes isn't one.
+  The one constant on the site: a pill that sticks to the top as you scroll.
+  It's in normal flow, so there's nothing to position around, no safe-area
+  arithmetic, no padding on main to clear it, and no filter repainting on
+  every scroll frame. position: sticky is the browser doing this job for us.
+  Colours are fixed on purpose — a constant that changes isn't one.
 */
 .mark {
-  position: fixed;
-  /*
-    Where "the top" is varies by browser: safe areas, collapsed toolbars,
-    in-app browsers that keep a strip of chrome. Rather than try to land on it
-    exactly, the ribbon starts 3rem above the viewport and pads by the same
-    amount. The overshoot is clipped, so it hangs from the edge wherever the
-    edge turns out to be.
-  */
-  top: -3rem;
-  left: max(clamp(0.75rem, 4vw, 2.5rem), env(safe-area-inset-left));
-  z-index: 100;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 10;
   display: block;
-  padding: calc(3.7rem + env(safe-area-inset-top, 0px)) 0.75rem 1.9rem;
+  width: max-content;
+  margin: 0.9rem 0 0;
+  padding: 0.45rem 0.9rem;
+  border: 2px solid #14130f;
+  border-radius: 999px;
   background: #d7f205;
   color: #14130f;
-  font-family: var(--display);
-  font-size: clamp(1rem, 2.8vw, 1.3rem);
-  line-height: 0.86;
-  text-transform: uppercase;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
   text-decoration: none;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 0.85rem), 0 100%);
-  filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.65));
-  transition: transform 140ms ease;
+  box-shadow: 3px 3px 0 #14130f;
 }
 
-.mark__line { display: block; }
-.mark__line--lol { color: #14130f; opacity: 0.5; }
+.mark:hover { background: #14130f; color: #d7f205; box-shadow: 3px 3px 0 #d7f205; }
+.mark:focus-visible { outline: 3px solid #14130f; outline-offset: 3px; }
 
-.mark:hover, .mark:focus-visible { transform: translateY(4px); }
-.mark:focus-visible { outline: 3px solid #14130f; outline-offset: 4px; }
-
-/* Nothing may sit under it. */
-main { padding-top: calc(7.5rem + env(safe-area-inset-top, 0px)); }
+main { padding-top: 2.5rem; }
 
 /* --------------------------------------------------------- the why pitch */
 
@@ -574,15 +553,15 @@ footer a:hover { color: var(--ink); }
 }
 
 /* The sting line on /why. */
-.sting {
+.prose p.sting {
   display: inline-block;
   margin: 2rem 0;
   padding: 0.6rem 0.8rem;
   background: var(--accent);
   color: #14130f;
-  font-family: var(--display) !important;
-  font-size: clamp(1.4rem, 5vw, 2.4rem) !important;
-  line-height: 1 !important;
+  font-family: var(--display);
+  font-size: clamp(1.4rem, 5vw, 2.4rem);
+  line-height: 1;
   text-transform: uppercase;
 }
 
@@ -1005,12 +984,12 @@ footer a:hover { color: var(--ink); }
    The line under a heading. Together with the headings it has to carry the
    whole argument for someone who never reads a paragraph. */
 
-.dek {
-  font-family: var(--ui) !important;
-  font-size: 0.95rem !important;
-  line-height: 1.45 !important;
+.prose p.dek {
+  font-family: var(--ui);
+  font-size: 0.95rem;
+  line-height: 1.45;
   color: var(--muted);
-  margin: -0.4rem 0 1.4rem !important;
+  margin: -0.4rem 0 1.4rem;
   max-width: 34rem;
 }
 
@@ -1156,7 +1135,7 @@ footer a:hover { color: var(--ink); }
 .t-launch .prose a:hover { background: var(--accent); color: #0c0e12; }
 .t-launch table th { background: var(--steel); color: var(--accent); }
 .t-launch table th, .t-launch table td { border-color: var(--rule); }
-.t-launch .dek { color: var(--muted); }
+.t-launch .prose p.dek { color: var(--muted); }
 .t-launch .onward__link { background: var(--panel); }
 
 /* The console ----------------------------------------------------------- */
@@ -1346,7 +1325,7 @@ footer a:hover { color: var(--ink); }
 .break__one::before { content: "One field"; display: block; font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--go); margin-bottom: 0.15rem; }
 .break__fix { grid-area: fix; font-family: var(--ui); font-size: 0.85rem; line-height: 1.45; color: var(--muted); }
 
-.console__sr { font-family: var(--mono); font-size: 0.8rem !important; font-style: italic; }
+.break .console__sr { font-family: var(--mono); font-size: 0.8rem; font-style: italic; }
 
 /* Card preview */
 .pv--launch { background: #0c0e12; }
@@ -1361,15 +1340,15 @@ footer a:hover { color: var(--ink); }
 
 
 /* Opening brief on the launch page. */
-.brief {
+.prose p.brief {
   margin: 0 0 1.25rem;
   padding: 0.9rem 1rem;
   border: 2px solid var(--rule);
   border-left: 8px solid var(--alert);
   background: var(--panel);
-  font-family: var(--mono) !important;
-  font-size: 0.85rem !important;
-  line-height: 1.55 !important;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  line-height: 1.55;
   letter-spacing: 0.02em;
   color: var(--ink);
 }

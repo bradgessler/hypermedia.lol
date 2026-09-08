@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset='utf-8'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title><%= page_title %></title>
     <meta name="description" content="<%= page_description %>">
@@ -25,9 +25,7 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
-    <a class="mark" href="/" aria-label="hypermedia.lol — home">
-      <span class="mark__line">hyper</span><span class="mark__line">media</span><span class="mark__line mark__line--lol">.lol</span>
-    </a>
+    <a class="mark" href="/">hypermedia.lol</a>
 
     <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
