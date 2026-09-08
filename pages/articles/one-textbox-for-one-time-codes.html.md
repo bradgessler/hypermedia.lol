@@ -33,7 +33,7 @@ I copy the code and go back to the tab, where I'm supposed to paste it into
 this. Somebody did a lot of work to an input field to get six little slots:
 
 <figure class="step">
-<div class="console console--six">
+<div class="console console--six" id="six">
   <div class="console__head">
     <span class="console__title">Authorization required</span>
     <span class="console__lights"><i></i><i></i><i></i></span>
@@ -236,7 +236,7 @@ So the strongest case for the boxes reduces to the look. You can keep the look.
 <p class="dek">One input. Every attribute is doing a job the script used to.</p>
 
 <figure class="step">
-<div class="console console--one">
+<div class="console console--one" id="one">
   <div class="console__head">
     <span class="console__title">Authorization required</span>
     <span class="console__lights"><i></i><i></i><i></i></span>
@@ -351,11 +351,11 @@ that. Nobody asked, either.
 | `maxlength="6"` | Stops at six. The job all that per-box focus juggling was doing. |
 | `autocomplete="one-time-code"` | The one everybody leaves off. It's the signal that makes SMS and email autofill work.[^apple] |
 | `inputmode="numeric"` | Number pad on mobile without lying about the type. Not `type="number"`: a code isn't a quantity, and you'd inherit spinners and `5e6`.[^webdev] |
-| `size="6"` | Width, in characters. Don't compute it. |
+| `size="6"` | Width, in characters. Enough on its own; the spaced-out look below is optional. |
 | `placeholder="______"` | Six underscores. Shows the shape. Only visible while empty, so it's a hint, not a progress bar. |
 
-## The width is one attribute. Don't compute it.
-<p class="dek">I tried the clever version first. It shipped three bugs.</p>
+## The spaced-out look, without the bugs
+<p class="dek">I tried the clever version first. It shipped three bugs. Two of them were one line.</p>
 
 ```css
 input {
@@ -366,29 +366,38 @@ input {
 }
 ```
 
-Caption: <b>Don't.</b> The clever version: four declarations, three bugs. It clips the last digit and puts the placeholder on a different origin than the value.
+Caption: <b>Don't.</b> Four declarations, three bugs. The last digit clips and the placeholder starts somewhere the digits don't.
 
-`box-sizing: border-box` means that `width` is the *border* box, so padding eats
-into it and the last digit clips. Centering text with a trailing letter-space
-puts the placeholder and the value on different origins. And `ch` stops
-predicting anything once you add spacing between characters.
+The arithmetic was never the problem. `box-sizing: border-box`, set globally on
+most sites, makes `width` include the padding and border, so the content gets
+squeezed and the last digit clips. Centering text that carries a trailing
+letter-space puts the placeholder and the value on different origins. The
+`text-indent` was a patch for the centering, which was itself a mistake.
 
-Four declarations, three bugs, to do a job one attribute already does:
+Fix the box model and the alignment and the same idea works:
 
 ```css
 input[name="code"] {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 1.9rem;
+  font-size: 2.4rem;
+  letter-spacing: 0.5em;
   text-align: left;
-  padding: 0.45rem 0.65rem;
+  box-sizing: content-box;
+  width: calc(6ch + 3em);
+  padding: 0.45rem 0.75rem;
 }
 ```
 
-Caption: <b>Do.</b> Monospace, left-aligned, padding. <code>size</code> handles the width.
+Caption: <b>Do.</b> Content-box, left-aligned, and a width that is just the arithmetic: six characters plus six half-em gaps.
 
-Monospace means `______` and `561579` are exactly the same width, with no
-arithmetic. Left-aligned means they start at the same point. `size` handles the
-rest.
+`content-box` makes `width` mean the content again. `6ch` is six characters in
+a monospace font, where `______` and `561579` are the same width by definition,
+and `3em` is the six gaps of `0.5em` that `letter-spacing` adds after each one.
+Left-aligned, the placeholder and the digits start at the same point. That's
+the whole trick, and it's four lines.
+
+If you don't want the spacing, delete the `letter-spacing` and `width` lines and
+let `size="6"` do it.
 
 ## It was never a launch code
 <p class="dek">Boxes are a paint job. Paint them on a control that works.</p>

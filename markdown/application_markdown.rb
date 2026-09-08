@@ -33,6 +33,14 @@ class ApplicationMarkdown < MarkdownRails::Renderer::Rails
     end
   end
 
+  # Every heading gets a stable id from its text and links to itself, so any
+  # section can be deep-linked and the heading is the handle you copy.
+  def header(text, level)
+    plain = text.gsub(/<[^>]+>/, "")
+    slug = plain.gsub(/&#?[a-z0-9]+;/i, "").downcase.gsub(/[^a-z0-9\s-]/, "").strip.gsub(/\s+/, "-")
+    %(<h#{level} id="#{slug}"><a class="anchor" href="##{slug}">#{text}</a></h#{level}>)
+  end
+
   def enable
     [:fenced_code_blocks, :tables, :no_intra_emphasis, :footnotes]
   end
