@@ -13,6 +13,9 @@ JavaScript, replace them with one HTML attribute, and know exactly what those
 lines were quietly breaking for everyone who wasn't you. It starts with
 coffee.</p>
 
+I go to buy green coffee from Sweet Maria's. They don't do passwords — they
+email me a magic code and I type it in. It arrives looking something like this:
+
 <figure class="step">
 <div class="message message--email" aria-label="Email from Sweet Maria's with your login code">
   <span class="message__from">From: Sweet Maria's <span class="message__time">just now</span></span>
@@ -21,8 +24,12 @@ coffee.</p>
   <span class="message__code"><code class="copyable">561579</code></span>
   <span class="message__hint">If you didn't request this, you can ignore this email.</span>
 </div>
-<figcaption><b>1.</b> You order coffee. Sweet Maria's emails you a code. Copy it — you'll need it in ten seconds.</figcaption>
+<figcaption><b>1.</b> The email. Dramatized — the real one has more logo. Copy the code; you need it next.</figcaption>
 </figure>
+
+I copy the code and go back to the tab, where I'm supposed to paste it into
+this. Somebody did a lot of strange things to an input field to get six little
+slots:
 
 <figure class="step">
 <div class="console console--six">
@@ -57,13 +64,16 @@ coffee.</p>
   </form>
   <div class="console__foot">Built the way these usually are: six boxes, auto-advance, a hidden field, and the JavaScript to hold it together. It's live so you can feel it.</div>
 </div>
-<figcaption><b>2.</b> The sign-in page. Paste the code. Then type two digits and press Backspace twice.</figcaption>
+<figcaption><b>2.</b> The sign-in screen. Paste the code and watch what happens. Then type two digits and press Backspace twice.</figcaption>
 </figure>
 
-One digit landed and five vanished. Backspace walked you back a box but left the
-digit behind. The lamp never went green. And on a phone, the keyboard never
-offered you the code — every box has <code>autocomplete="off"</code>, which is
+One digit landed and five vanished. Backspace walked me back a box and left the
+digit behind. The lamp never went green. And on my phone, the keyboard never
+offered me the code — every box has <code>autocomplete="off"</code>, which is
 how the popular libraries ship it.
+
+That's a six-digit code to buy coffee, and it fails a paste. So what did they
+build?
 
 <div class="verdict">
   <div class="verdict__col verdict__col--pro">
