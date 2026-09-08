@@ -1,6 +1,8 @@
 ---
 title: The motherfucking website canon
 date: September 8, 2026
+byline: Brad Gessler
+byline_url: https://bradgessler.com
 description: A reading list. Four profane single-page manifestos that have been making the case for plain HTML and a little CSS for over a decade.
 accent: sky
 sprite: brick

@@ -35,7 +35,7 @@
 
 body {
   margin: 0;
-  padding: 0 1.25rem 4rem;
+  padding: 0 0 4rem;
   font-family: var(--ui);
   font-size: 1.05rem;
   line-height: 1.6;
@@ -45,40 +45,37 @@ body {
 }
 
 
-/* ------------------------------------------------------------- the mark */
+/* ------------------------------------------------------------ the topbar */
 
 /*
-  The one constant on the site: a tab hanging off the top edge that sticks
-  as you scroll. It's in normal flow, so nothing is positioned around it and
-  there's no safe-area arithmetic; the browser does the sticking. Its top
-  offset is 0 both at rest and when stuck, so it never moves between page
-  loads or on scroll. Colours are fixed on purpose.
+  The one constant: a slim bar across the top of every page that sticks as
+  you scroll. Normal flow, position: sticky, nothing to fight. Its colours are
+  fixed on purpose so it reads the same over every treatment.
 */
-.mark {
+.topbar {
   position: sticky;
   top: 0;
   z-index: 10;
-  display: block;
-  width: max-content;
-  margin: 0;
-  padding: 0.5rem 0.9rem 0.55rem;
-  border: 2px solid #14130f;
-  border-top: 0;
-  border-radius: 0 0 8px 8px;
-  background: #d7f205;
-  color: #14130f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 2.5rem;
+  padding: 0 1.25rem;
+  background: #14130f;
+  color: #d7f205;
+  border-bottom: 2px solid #d7f205;
   font-family: var(--mono);
-  font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.03em;
-  text-decoration: none;
-  box-shadow: 3px 3px 0 #14130f;
+  font-size: 0.82rem;
 }
 
-.mark:hover { background: #14130f; color: #d7f205; box-shadow: 3px 3px 0 #d7f205; }
-.mark:focus-visible { outline: 3px solid #14130f; outline-offset: 3px; }
+.topbar a { color: inherit; text-decoration: none; }
+.topbar__home { font-weight: 700; letter-spacing: 0.03em; }
+.topbar__why { opacity: 0.8; }
+.topbar a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.topbar a:focus-visible { outline: 2px solid #d7f205; outline-offset: 3px; }
 
-main { padding-top: 2.5rem; }
+main { padding: 2.5rem 1.25rem 0; }
 
 /* --------------------------------------------------------- the why pitch */
 
@@ -536,7 +533,7 @@ footer {
   gap: 0.4rem 1.5rem;
   max-width: 76rem;
   margin: 5rem auto 0;
-  padding-top: 1.25rem;
+  padding: 1.25rem 1.25rem 0;
   border-top: 3px solid var(--rule);
   font-family: var(--mono);
   font-size: 0.75rem;
@@ -1763,3 +1760,18 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .prose .footnotes li { font-family: var(--ui); font-size: 0.9rem; line-height: 1.5; color: var(--muted); margin: 0.6rem 0; }
 .prose .footnotes li p { font-family: inherit; font-size: inherit; line-height: inherit; margin: 0; display: inline; }
 .footnotes .reversefootnote { text-decoration: none; margin-left: 0.3em; }
+
+
+/* ---------------------------------------------------------------- byline */
+.banner .byline, .prose p.byline {
+  margin: 0.5rem 0 0;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.byline a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.byline a:hover { background: var(--accent); color: #14130f; }
+.byline__sep { margin: 0 0.4rem; }
+.banner time { font-size: inherit; }

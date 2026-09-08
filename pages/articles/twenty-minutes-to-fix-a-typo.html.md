@@ -1,6 +1,8 @@
 ---
 title: Twenty minutes to fix a typo
 date: September 8, 2026
+byline: Brad Gessler
+byline_url: https://bradgessler.com
 description: In 2006 you opened the file over SFTP, fixed the character, hit save, and it was live. We traded that latency for safety — a good trade we then never revisited.
 accent: amber
 sprite: floppy

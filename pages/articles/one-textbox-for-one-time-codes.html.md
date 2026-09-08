@@ -1,6 +1,8 @@
 ---
 title: One textbox for one-time codes
 date: September 8, 2026
+byline: Brad Gessler
+byline_url: https://bradgessler.com
 description: Websites build a six-digit login code like it's a nuclear launch console. Here's what that breaks, live, and the one HTML input that replaces all of it.
 accent: hot
 sprite: key

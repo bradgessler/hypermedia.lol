@@ -25,7 +25,10 @@
     <%= stylesheet_link_tag "site" %>
   </head>
   <body<%= treatment == "plain" ? " style=\"--accent: #{accent}\"".html_safe : "" %> class="<%= home? ? "is-home" : "is-page" %> t-<%= treatment %>">
-    <a class="mark" href="/">hypermedia.lol</a>
+    <nav class="topbar" aria-label="Site">
+      <a class="topbar__home" href="/">hypermedia.lol</a>
+      <a class="topbar__why" href="/why/">Why this exists</a>
+    </nav>
 
     <main class="<%= home? ? "" : "prose" %>">
       <% unless home? %>
@@ -33,8 +36,21 @@
           <div class="banner__art"><%= sprite sprite_name, size: 84 %></div>
           <div class="banner__meta">
             <h1 class="article-title"><%= page_title %></h1>
-            <% if current_page.data["date"] %>
-              <time datetime="<%= Date.parse(current_page.data.fetch("date")).iso8601 %>"><%= date current_page.data.fetch("date") %></time>
+            <% if current_page.data["byline"] || current_page.data["date"] %>
+              <p class="byline">
+                <% if (name = current_page.data["byline"]) %>
+                  <%= current_page.data.fetch("byline_verb", "Prompted by") %>
+                  <% if (url = current_page.data["byline_url"]) %>
+                    <a href="<%= url %>" rel="author"><%= name %></a>
+                  <% else %>
+                    <%= name %>
+                  <% end %>
+                <% end %>
+                <% if current_page.data["date"] %>
+                  <% if current_page.data["byline"] %><span class="byline__sep">&middot;</span><% end %>
+                  <time datetime="<%= Date.parse(current_page.data.fetch("date")).iso8601 %>"><%= date current_page.data.fetch("date") %></time>
+                <% end %>
+              </p>
             <% end %>
           </div>
         </div>

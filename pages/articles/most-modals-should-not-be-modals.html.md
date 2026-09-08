@@ -1,6 +1,8 @@
 ---
 title: Most modals shouldn't be modals
 date: September 8, 2026
+byline: Brad Gessler
+byline_url: https://bradgessler.com
 description: The answer to a modal usually isn't a better modal. It's a page on the server — with a real URL, the actual data, and room for a challenge.
 accent: magenta
 sprite: dialog

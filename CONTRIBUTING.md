@@ -22,8 +22,13 @@ All of them need YAML front matter at the top:
 title: One textbox for one-time codes
 date: September 8, 2026
 description: One sentence. This is the search result and the social card copy.
+byline: Your Name
+byline_url: https://your.site
 ---
 ```
+
+The byline renders as "Prompted by Your Name". If you wrote every word yourself
+and want it to say so, add `byline_verb: By`.
 
 ### Pick a treatment
 
