@@ -9,20 +9,6 @@ module SiteHelper
   # mirroring the site's own paths. See https://opengraphplus.com.
   OG_IMAGE_HOST = "https://qwaj1e37.ogplus.net"
 
-  # Short tiles that fill the gaps in the wall. Each is a claim you should be
-  # able to check yourself in about thirty seconds.
-  APHORISMS = [
-    { text: "&lt;details&gt; is an accordion.", note: "You wrote 200 lines for this.", accent: "mint", sprite: "cursor" },
-    { text: "Your carousel is one scroll-snap away.", note: "overflow-x + scroll-snap-type", accent: "sky", sprite: "cursor" },
-    { text: ":has() shipped.", note: "Delete the class-toggling.", accent: "amber", sprite: "brick" },
-    { text: "The back button is a feature.", note: "You broke it.", accent: "hot", sprite: "cursor" },
-    { text: "Forms validate themselves.", note: "required, pattern, type", accent: "acid", sprite: "key" },
-    { text: "popover is an attribute.", note: "Not a dependency.", accent: "magenta", sprite: "dialog" },
-    { text: "A link is a &lt;a href&gt;.", note: "Not an onClick.", accent: "mint", sprite: "cursor" },
-    { text: "This page ships 0 bytes of JavaScript.", note: "So could yours.", accent: "sky", sprite: "floppy" },
-  ].freeze
-
-
   # Every accent is dark-text-safe against the ink, so a contributor picking a
   # colour can't accidentally ship something unreadable.
   ACCENTS = {
@@ -51,7 +37,7 @@ module SiteHelper
   TREATMENT_ACCENTS = {
     "spec"     => "#1a4ed8",
     "terminal" => "#ffb000",
-    "zine"     => "#111111",
+    "zine"     => "#d61f1f",
     "form"     => "#c0392b",
   }.freeze
 
@@ -68,30 +54,12 @@ module SiteHelper
     page.data.fetch("sprite", "brick")
   end
 
-  def aphorisms
-    APHORISMS
-  end
-
   def articles
     site
       .glob("articles/*.html.*")
       .select { |page| page.data["date"] }
       .sort_by { |page| Date.parse page.data.fetch("date") }
       .reverse
-  end
-
-  # Interleaves essays and one-liners so the wall reads as a mix rather than
-  # two stacked lists. Essays keep their order; aphorisms fill in around them.
-  def wall
-    essays = articles.map { |page| [:essay, page] }
-    lines = aphorisms.map { |line| [:aphorism, line] }
-    tiles = []
-    until essays.empty? && lines.empty?
-      tiles << essays.shift unless essays.empty?
-      tiles << lines.shift unless lines.empty?
-      tiles << lines.shift unless lines.empty?
-    end
-    tiles
   end
 
   def date(value)

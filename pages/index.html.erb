@@ -11,24 +11,15 @@ title: hypermedia.lol
 <h2 class="wall__lede">Short arguments for using what the browser already does.</h2>
 
 <div class="wall">
-  <% wall.each do |kind, item| %>
-    <% if kind == :essay %>
-      <a class="tile tile--essay" href="<%= item.request_path %>"
-         style="--accent: <%= tile_accent item %>">
-        <span class="tile__art"><%= sprite sprite_name(item), size: 44 %></span>
-        <span class="tile__kind">Essay</span>
-        <span class="tile__title"><%= item.data.fetch("title") %></span>
-        <span class="tile__desc"><%= item.data.fetch("description", nil) %></span>
-        <span class="tile__date"><%= date item.data.fetch("date") %></span>
-      </a>
-    <% else %>
-      <div class="tile tile--line"
-           style="--accent: <%= SiteHelper::ACCENTS.fetch(item.fetch(:accent)) %>">
-        <span class="tile__art"><%= sprite item.fetch(:sprite), size: 36 %></span>
-        <span class="tile__text"><%= raw item.fetch(:text) %></span>
-        <span class="tile__note"><%= item.fetch(:note) %></span>
-      </div>
-    <% end %>
+  <% articles.each do |article| %>
+    <a class="tile tile--essay" href="<%= article.request_path %>"
+       style="--accent: <%= tile_accent article %>">
+      <span class="tile__art"><%= sprite sprite_name(article), size: 44 %></span>
+      <span class="tile__kind"><%= treatment(article) %></span>
+      <span class="tile__title"><%= article.data.fetch("title") %></span>
+      <span class="tile__desc"><%= article.data.fetch("description", nil) %></span>
+      <span class="tile__date"><%= date article.data.fetch("date") %></span>
+    </a>
   <% end %>
 
   <a class="tile tile--cta" href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">
