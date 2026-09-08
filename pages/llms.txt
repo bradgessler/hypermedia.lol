@@ -60,6 +60,10 @@ second half, you have your answer.
 - [It Takes 20 Minutes to Fix a Typo. In 2006 It Took 10 Seconds.](https://hypermedia.lol/articles/twenty-minutes-to-fix-a-typo/): We traded deploy latency for safety and never won the latency back. Cited to DORA and this repository's own measured deploys.
 - [Why this exists](https://hypermedia.lol/why/): Brad Gessler on why the site exists: a fun way for people and agents to learn how hypermedia works.
 
+## Feed
+
+Atom: https://hypermedia.lol/feed.xml
+
 ## Submissions
 
 Source and contribution guide: https://github.com/bradgessler/hypermedia.lol

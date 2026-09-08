@@ -22,7 +22,11 @@
     <meta name="twitter:creator" content="@bradgessler">
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" type="application/atom+xml" href="/feed.xml" title="hypermedia.lol">
     <link rel="alternate" type="text/plain" href="/llms.txt" title="Rules for machines">
 
     <!-- Privacy-friendly analytics by Plausible. Disclosed in the footer. -->
@@ -91,8 +95,8 @@
         <dd>Pass it on. <a class="share" href="mailto:?subject=<%= ERB::Util.url_encode(page_title) %>&amp;body=<%= ERB::Util.url_encode(canonical_url) %>" data-title="<%= page_title %>" data-url="<%= canonical_url %>">Share this page.</a></dd>
         <dt>Contribute</dt>
         <dd><a href="https://github.com/bradgessler/hypermedia.lol/blob/main/CONTRIBUTING.md">Send a pull request.</a> One file, no JavaScript, merged at a dictator's whim.</dd>
-        <dt>Machines</dt>
-        <dd><a href="/llms.txt">llms.txt</a> has the rules. <a href="https://github.com/bradgessler/hypermedia.lol">Source</a> has everything.</dd>
+        <dt>Follow</dt>
+        <dd><a href="/feed.xml">RSS</a> for readers. <a href="/llms.txt">llms.txt</a> for agents. <a href="https://github.com/bradgessler/hypermedia.lol">Source</a> for everything.</dd>
       </dl>
       <p class="foot__meta">Scripts on this site: the six-box input we argue against, a Copy button, a Share button, Plausible analytics. Each annotated in the source.</p>
     </footer>

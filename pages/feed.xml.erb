@@ -1,0 +1,24 @@
+---
+layout: false
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><%= SiteHelper::SITE_NAME %></title>
+  <subtitle><%= SiteHelper::SITE_DESCRIPTION %></subtitle>
+  <link href="<%= SiteHelper::SITE_URL %>/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="<%= SiteHelper::SITE_URL %>/" rel="alternate" type="text/html"/>
+  <id><%= SiteHelper::SITE_URL %>/</id>
+  <updated><%= articles.map { |a| Date.parse(a.data.fetch("date")) }.max.to_time.utc.iso8601 %></updated>
+  <author><name>Brad Gessler</name><uri>https://bradgessler.com</uri></author>
+<% articles.each do |article| %>
+  <entry>
+    <title><%= article.data.fetch("title") %></title>
+    <link href="<%= canonical_url(article) %>" rel="alternate" type="text/html"/>
+    <id><%= canonical_url(article) %></id>
+    <published><%= Date.parse(article.data.fetch("date")).to_time.utc.iso8601 %></published>
+    <updated><%= Date.parse(article.data.fetch("date")).to_time.utc.iso8601 %></updated>
+    <summary><%= article.data.fetch("description", "") %></summary>
+    <% if (name = article.data["byline"]) %><author><name><%= name %></name><% if article.data["byline_url"] %><uri><%= article.data["byline_url"] %></uri><% end %></author><% end %>
+  </entry>
+<% end %>
+</feed>
