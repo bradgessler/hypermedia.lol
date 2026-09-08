@@ -1,7 +1,7 @@
 ---
 title: Most modals shouldn't be modals
 date: September 8, 2026
-description: modalzmodalzmodalz.com made the case years ago. Now the platform has popover and dialog, so the excuse for a div-and-JavaScript modal is gone.
+description: The answer to a modal usually isn't a better modal. It's a page on the server — with a real URL, the actual data, and room for a challenge.
 accent: magenta
 sprite: dialog
 treatment: spec
@@ -25,17 +25,89 @@ the rest of the page as inert so a screen reader doesn't wander into it. Almost
 nobody implements all seven. So you get a `<div>` with a dark background and an
 `overflow: hidden` on `<body>`, and a keyboard user gets a trap with no exit.
 
-## The part that's changed
+## The part almost everybody skips
 
-modalzmodalzmodalz has been up for years, and back then "just don't" was most of
-the available advice, because the alternative was writing all seven of those
-behaviors yourself.
+The usual next move is to reach for a better overlay. The platform grew good
+ones — I'll get to them — but they're the second answer, and leading with them
+skips the first.
 
-That's not true anymore. The platform grew the missing pieces, and they're
-declarative.
+Most of the time the thing you want is **a page on the server.**
 
-**If it doesn't need to block the page, use `popover`.** It's an attribute. That's
-the whole API:
+A confirmation is a resource. Give it a route, render it, post back to it:
+
+```
+GET  /websites/:id/delete_confirmation   → the page
+POST /websites/:id/delete_confirmation   → do it
+```
+
+That's the whole architecture. Nothing clever, and it buys you four things an
+overlay structurally cannot.
+
+**It knows what it's deleting.** A modal written in markup can say "Are you sure?"
+because that's all it knows at authoring time. A server-rendered page ran a query
+on the way in, so it can say exactly what goes:
+
+```html
+<p>The following will be deleted:</p>
+<ul>
+  <li>example.com website</li>
+  <li>412 pages</li>
+  <li>1,209 caches</li>
+</ul>
+```
+
+Those numbers are the difference between someone clicking through on reflex and
+someone actually stopping. You can't hardcode them.
+
+**It can ask for something.** The strongest confirmation isn't a button, it's a
+challenge — make them type the name of the thing:
+
+```html
+<label for="confirm">Type <strong>example.com</strong> to confirm</label>
+<input id="confirm" name="domain_confirmation" autocomplete="off" required>
+<button>Delete this website</button>
+```
+
+And then validate it *on the server*, where the real value lives. Get it wrong
+and the page re-renders with the error attached to the field. That's a form doing
+a form's job. No client state machine, no disabled-button logic, nothing to keep
+in sync.
+
+**It has a URL.** You can link to it, bookmark it, hit back, refresh it, screenshot
+it in a bug report. Someone can open it, go read something else, and come back. An
+overlay has none of that, because it isn't anywhere.
+
+**It's the whole screen.** Which sounds like the downside and is actually the
+point: a full-width page has no responsive problem to solve. No positioning
+against a viewport that keeps changing, no scroll locking, no what-happens-on-a-
+short-landscape-phone. It's a page. Pages already work at every size.
+
+## Where modals really fall apart
+
+Here's the failure nobody designs for: **your app ends up inside someone else's app.**
+
+Embedded in a webview. Rendered in an iframe on a partner's dashboard. Opened in
+an in-app browser from a chat client. It happens to almost every product
+eventually, and it's rarely your decision.
+
+Now your modal opens *inside* their modal. Two backdrops. Two focus traps
+fighting over the same tab order. Two escape-key handlers, one of which closes
+the wrong thing. Your overlay positioned against a viewport that is itself a box
+inside another box. There's no amount of care in your modal implementation that
+fixes this, because the problem isn't your modal — it's that modals don't
+compose.
+
+Pages compose. A full-page confirmation inside a webview is a full-page
+confirmation. It doesn't know or care that it's nested, because navigation is the
+one thing every container already knows how to do.
+
+## If it genuinely has to overlay
+
+Some things really are transient and local — shipping details next to a line
+item, a date picker, a menu. For those the platform now has good answers, and
+they're declarative.
+
+**`popover` is an attribute.** That's the whole API:
 
 ```html
 <button popovertarget="details">Shipping details</button>
@@ -45,12 +117,6 @@ the whole API:
   <button popovertarget="details" popovertargetaction="hide">Close</button>
 </div>
 ```
-
-No JavaScript. The browser promotes it to the top layer so it isn't trapped by a
-parent's `overflow` or `z-index`, closes it on <kbd>Esc</kbd>, closes it when you
-click outside ("light dismiss"), moves focus into it and back out again, and
-gives you `::backdrop` to style. Every behavior in that list is one somebody used
-to hand-write, badly.
 
 Here it is running. No script on this page:
 
@@ -62,35 +128,36 @@ Here it is running. No script on this page:
   </div>
 </div>
 
-Press <kbd>Esc</kbd>, or click anywhere outside it. Nobody wrote that.
+Press <kbd>Esc</kbd>, or click anywhere outside it. Nobody wrote that. The browser
+handles the top layer, light dismiss, focus, and `::backdrop`.
 
-**If it genuinely must block, use `<dialog>`.** A real modal — the kind where
-continuing without answering makes no sense — is `<dialog>`, which gets focus
-trapping and inerting of the background for free. It needs one line of script to
-open (`showModal()`), but it closes declaratively:
+**`<dialog>` for the rare one that must block.** It gets focus trapping and
+inerting free, needs one line to open, and closes declaratively — `method="dialog"`
+submits, closes, and hands you the button's value with no listeners:
 
 ```html
 <dialog id="confirm">
   <form method="dialog">
-    <p>Delete this order?</p>
+    <p>Discard this draft?</p>
     <button value="cancel">Cancel</button>
-    <button value="delete">Delete</button>
+    <button value="discard">Discard</button>
   </form>
 </dialog>
 ```
 
-`method="dialog"` is the nice bit — submitting the form closes the dialog and
-hands you the value of the button that did it, no event listeners involved.
+Use it for discarding a draft. Don't use it for deleting an account.
 
-## So the question got easier
+## So the question got simpler
 
-It used to be "is this worth the accessibility debt I'm about to take on?" Now
-it's just: does this need to block the page?
+It used to be "is this worth the accessibility debt?" Then it was "which overlay
+element?" It's actually neither:
 
-If no, it's a `popover` and you wrote zero JavaScript. If yes, it's a `<dialog>`
-and you wrote one line. And if the honest answer is "it doesn't need to be either
-of those, I just didn't know where to put it" — that's the junk drawer, and
-modalzmodalzmodalz already told you what to do about it.
+**Can this be a page?** It almost always can. If it's consequential, needs real
+data, wants a challenge, or might ever run inside someone else's app — it should
+be.
+
+Overlays are for things that are genuinely transient and genuinely local.
+Everything else is a route you didn't write.
 
 ## A confession
 
@@ -104,7 +171,8 @@ no URL, so you couldn't link to it or send it to anyone. The back button didn't
 close it. A crawler never saw it. I hadn't decided where it went, so I made it
 pop up — which is the junk drawer, precisely as described.
 
-It's a page now, at [/why](/why). That's what it always should have been.
+It's a page now, at [/why](/why). That's what it always should have been — which
+is the same conclusion as the rest of this article, arrived at the stupid way.
 
-The rule survives the embarrassment intact: a `popover` is a great answer for
-shipping details, and a bad answer for a document.
+A `popover` is a great answer for shipping details, and a bad answer for a
+document.
