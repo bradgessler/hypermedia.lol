@@ -108,6 +108,7 @@ In practice:
 - **Put a dek under each one.** `<p class="dek">One line.</p>` right after the heading, carrying the specific claim.
 - **Show before you tell.** A live demo of the broken thing next to the working thing beats three paragraphs describing the difference. You can build a startling number of these with no JavaScript.
 - **Label your code.** A reader should know what a block proves before they parse it.
+- **Cite, but don't clutter.** Inline links are fine when they're the natural next click. Anything else — a spec section, a line count, the source you're characterizing — is a footnote: `[^name]` in the text, `[^name]: …` at the end. Steelman the other side before you beat it; the best arguments state the strongest case against them first.
 
 ## What gets merged
 

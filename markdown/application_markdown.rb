@@ -34,6 +34,6 @@ class ApplicationMarkdown < MarkdownRails::Renderer::Rails
   end
 
   def enable
-    [:fenced_code_blocks, :tables, :no_intra_emphasis]
+    [:fenced_code_blocks, :tables, :no_intra_emphasis, :footnotes]
   end
 end

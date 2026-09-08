@@ -24,7 +24,7 @@ email me a magic code and I type it in. It arrives looking something like this:
   <span class="message__code"><code class="copyable">561579</code></span>
   <span class="message__hint">If you didn't request this, you can ignore this email.</span>
 </div>
-<figcaption><b>1.</b> The email. Dramatized — the real one has more logo. Copy the code; you need it next.</figcaption>
+<figcaption>The email. Dramatized — the real one has more logo. Copy the code; you need it next.</figcaption>
 </figure>
 
 I copy the code and go back to the tab, where I'm supposed to paste it into
@@ -64,7 +64,7 @@ slots:
   </form>
   <div class="console__foot">Built the way these usually are: six boxes, auto-advance, a hidden field, and the JavaScript to hold it together. It's live so you can feel it.</div>
 </div>
-<figcaption><b>2.</b> The sign-in screen. Paste the code and watch what happens. Then type two digits and press Backspace twice.</figcaption>
+<figcaption>The sign-in screen. Paste the code and watch what happens. Then type two digits and press Backspace twice.</figcaption>
 </figure>
 
 One digit landed and five vanished. Backspace walked me back a box and left the
@@ -164,8 +164,8 @@ handler, paste re-implemented in a `paste` handler — and every box rendered wi
 *deliberately disables* the one browser feature that makes a login code fast on
 a phone, because with six fields there was nothing else it could do.
 
-It's a competent implementation of a bad idea. 274 lines to reproduce one input,
-minus the attribute that mattered most.
+It's a competent implementation of a bad idea.[^rotp] 274 lines to reproduce one
+input, minus the attribute that mattered most.
 
 
 
@@ -191,6 +191,45 @@ Every line of it is repair work for one decision: hiding the input.
 
 You don't have to hide the input. Keep going.
 
+
+## The best case for the boxes
+<p class="dek">Steelman first. If one input is going to win, it should win against the strongest version of six.</p>
+
+**"The boxes tell you it's six digits."** They do, and that's a real
+advantage. A blank field is a question; six slots are an answer. But the shape
+is paint. `placeholder="______"` shows the length, `maxlength="6"` enforces it,
+and a label can say "6-digit code" in words. input-otp is the existence proof:
+one real input, six painted slots, and nobody can tell.[^iotp]
+
+**"Auto-advance is faster."** It *feels* faster. Count keystrokes. One field,
+six digits: six keystrokes, done. Six boxes, six digits: six keystrokes — and
+auto-advance exists so it isn't twelve. It's a fix for a cost the boxes
+introduced. The genuinely fast path is one tap, with the code offered from your
+messages, and that's the path the boxes close.[^webdev]
+
+**"Segmented inputs test better."** Some guides say so, for codes up to eight
+digits.[^ux] Read the same guide's checklist for doing it properly: distribute a
+paste across the boxes, walk Backspace backwards, put
+`autocomplete="one-time-code"` on the first box and split whatever lands there,
+wrap it all in `<fieldset>` and `<legend>`, label every box, announce errors with
+`aria-live`. Six requirements, each re-implementing something one input does by
+default. Do all six and you've rebuilt input-otp. Skip the first and you've
+failed WCAG.[^wcag]
+
+**"We handle autofill on the first box."** Some do. The browser drops all six
+digits into box one, `maxlength` truncates to a single digit, and a handler races
+to catch the value before that happens and spread it out. It's the shadow field
+again — intercepting the browser's behavior so you can redo it. It works until it
+doesn't, and when it doesn't, the person on the other end is trying to buy
+coffee.
+
+**"Accessibility can be handled."** It can, at the cost above. But the floor
+isn't a matter of opinion anymore. WCAG 2.2 treats an authentication step that
+makes you transcribe something as a cognitive function test, allowed only if
+paste works and password managers can fill the field.[^wcag] Six boxes that eat
+a paste fail Level AA. One input passes by doing nothing.
+
+So the strongest case for the boxes reduces to the look. You can keep the look.
 
 ## What should have been waiting for you
 <p class="dek">One input. Every attribute is doing a job the script used to.</p>
@@ -231,7 +270,7 @@ You don't have to hide the input. Keep going.
   </form>
   <div class="console__foot">Same console. Same drama. One <code>&lt;input&gt;</code>. No script.</div>
 </div>
-<figcaption><b>3.</b> What should have been waiting for you. Paste the same code.</figcaption>
+<figcaption>What should have been waiting for you. Paste the same code.</figcaption>
 </figure>
 
 All six digits land. Backspace deletes the last one. On a phone, the browser
@@ -309,8 +348,8 @@ that. Nobody asked, either.
 |---|---|
 | `pattern="[0-9]{6}"` + `required` | Validation. The browser refuses to submit and shows its own message. `title` is the text in that bubble. |
 | `maxlength="6"` | Stops at six. The job all that per-box focus juggling was doing. |
-| `autocomplete="one-time-code"` | The one everybody leaves off. It's the signal that makes SMS and email autofill work. |
-| `inputmode="numeric"` | Number pad on mobile without lying about the type. Not `type="number"` — a code isn't a quantity, and you'd inherit spinners and `5e6`. |
+| `autocomplete="one-time-code"` | The one everybody leaves off. It's the signal that makes SMS and email autofill work.[^apple] |
+| `inputmode="numeric"` | Number pad on mobile without lying about the type. Not `type="number"` — a code isn't a quantity, and you'd inherit spinners and `5e6`.[^webdev] |
 | `size="6"` | Width, in characters. Don't compute it. |
 | `placeholder="______"` | Six underscores. Shows the shape. Only visible while empty, so it's a hint, not a progress bar. |
 
@@ -360,6 +399,19 @@ keep paste, backspace, autofill, the password manager, and the screen reader.
 Sweet Maria's, if you ever read this: that's the whole fix. Delete a few hundred
 lines of JavaScript, ship one `<input>`, and I'll get back to buying coffee a
 little faster.
+
+
+[^wcag]: WCAG 2.2, Success Criterion 3.3.8 *Accessible Authentication (Minimum)*, Level AA. The [Understanding document](https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html) lists preventing copy and paste as a failure, and requires that browsers and third-party password managers be able to fill the field.
+
+[^webdev]: Google's own guidance, [SMS OTP form best practices](https://web.dev/articles/sms-otp-form): a single `<input>` with `type="text"`, `inputmode="numeric"`, `autocomplete="one-time-code"` and a `pattern`. It also warns off `type="number"`, whose spinner buttons can strip leading zeros from a code.
+
+[^apple]: Safari has offered the code from an incoming SMS to a field marked `autocomplete="one-time-code"` since Safari 12 on iOS, iPadOS and macOS. Chrome, Opera and Vivaldi on Android do it programmatically with the [WebOTP API](https://developer.chrome.com/docs/identity/web-apis/web-otp), which needs HTTPS, a script, and an SMS ending in `@yourdomain #code`. Both are built for one field.
+
+[^ux]: [Code Confirmation Pattern](https://uxpatterns.dev/patterns/forms/code-confirmation) at uxpatterns.dev argues for segmented inputs, then lists everything you must rebuild for them to work. The checklist is the argument against.
+
+[^rotp]: [react-otp-input, `src/index.tsx`](https://github.com/devfolioco/react-otp-input/blob/main/src/index.tsx): 274 lines, one input per digit, Backspace and paste re-implemented in handlers, `autoComplete: 'off'` on every box.
+
+[^iotp]: [input-otp, `packages/input-otp/src`](https://github.com/guilhermerodz/input-otp/tree/master/packages/input-otp/src): `input.tsx` is 598 lines; `use-pwm-badge.tsx` is 169 lines spent detecting 1Password, LastPass, Dashlane and Bitwarden by the DOM they inject, to make room for a badge on an invisible input.
 
 <script>
   // The JavaScript on this page, all of it, annotated.
