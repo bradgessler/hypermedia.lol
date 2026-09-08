@@ -54,12 +54,13 @@ second half, you have your answer.
 
 ## Articles
 
-- [One textbox for one-time codes](https://hypermedia.lol/articles/one-textbox-for-one-time-codes): Why six boxes for a six digit code breaks paste, autofill, backspace, and screen readers.
-- [Most modals shouldn't be modals](https://hypermedia.lol/articles/most-modals-should-not-be-modals): `popover` and `<dialog>` removed the excuse for hand-rolled modals.
-- [The motherfucking website canon](https://hypermedia.lol/articles/the-motherfucking-website-canon): The lineage of minimal-web manifestos, read as one argument.
-- [Twenty minutes to fix a typo](https://hypermedia.lol/articles/twenty-minutes-to-fix-a-typo): We traded deploy latency for safety and never won the latency back.
+- [Everybody Builds Six-Digit Code Inputs Wrong. Just Use a Text Field.](https://hypermedia.lol/articles/one-textbox-for-one-time-codes/): Six boxes break paste, backspace, autofill and screen readers; one input with autocomplete="one-time-code" does the job. Measured against react-otp-input and input-otp, cited to WCAG 2.2 and Google's guidance.
+- [Modals Are Broken by Design. The Spec Says So.](https://hypermedia.lol/articles/most-modals-should-not-be-modals/): A confirmation is a page with a URL, real data and a typed challenge. The HTML spec scopes modal blocking to one document, so a modal inside an embed protects nothing. Shown live with an iframe.
+- [Stop Bloating Motherfucking Websites](https://hypermedia.lol/articles/the-motherfucking-website-canon/): Lighthouse on the minimal-web manifestos, craigslist, Legible News and this site against the Web Almanac median. The original is 98% Google Analytics by weight.
+- [It Takes 20 Minutes to Fix a Typo. In 2006 It Took 10 Seconds.](https://hypermedia.lol/articles/twenty-minutes-to-fix-a-typo/): We traded deploy latency for safety and never won the latency back. Cited to DORA and this repository's own measured deploys.
+- [Why this exists](https://hypermedia.lol/why/): Brad Gessler on why the site exists: a fun way for people and agents to learn how hypermedia works.
 
 ## Submissions
 
 Source and contribution guide: https://github.com/bradgessler/hypermedia.lol
-One file in pages/articles/, markdown or HTML. The only rule is no JavaScript.
+One file in pages/articles/, markdown or HTML, no JavaScript for the site's own UI. Merged at the discretion of a sometimes-benevolent dictator; see CONTRIBUTING.md. The full editorial brief for agents is AGENTS.md in the repository.

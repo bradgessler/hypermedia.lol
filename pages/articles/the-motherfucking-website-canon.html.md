@@ -8,6 +8,7 @@ accent: sky
 sprite: brick
 treatment: default
 span: tall
+og_image: /images/og/the-motherfucking-website-canon.png
 ---
 
 <p class="lede">Four one-page websites with a swear word in the domain have been
@@ -177,7 +178,7 @@ without noticing.
 That's the whole editorial policy of this site, and those four pages got there
 first.
 
-[^method]: Lighthouse 12 via the CLI with mobile emulation and simulated throttling, which is the same configuration PageSpeed Insights reports. One run per site from a laptop in California on the day of writing. Treat single digits as noise and tens as signal. "Total weight" is Lighthouse's total byte weight; "JavaScript" is the transfer size of script requests; "largest paint" is Largest Contentful Paint.
+[^method]: Lighthouse 12 via the CLI with mobile emulation and simulated throttling, which is the same configuration PageSpeed Insights reports. One run per site from a laptop in California on the day of writing. Treat single digits as noise and tens as signal. This site was measured before it added a 6 KB privacy-friendly analytics script, disclosed in the footer; the 0 KB row is what it was, not what it is. "Total weight" is Lighthouse's total byte weight; "JavaScript" is the transfer size of script requests; "largest paint" is Largest Contentful Paint.
 
 [^almanac]: HTTP Archive, [Web Almanac 2024, Page Weight](https://almanac.httparchive.org/en/2024/page-weight). Median mobile page in October 2024: 2,311 KB over 66 requests, of which 558 KB is JavaScript. Mobile weight is up 357% over the decade.
 

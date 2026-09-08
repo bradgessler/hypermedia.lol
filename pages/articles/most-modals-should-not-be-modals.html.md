@@ -8,6 +8,7 @@ accent: magenta
 sprite: dialog
 treatment: modalz
 span: wide
+og_image: /images/og/most-modals-should-not-be-modals.png
 ---
 
 There's a website called [modalzmodalzmodalz.com](https://modalzmodalzmodalz.com/)

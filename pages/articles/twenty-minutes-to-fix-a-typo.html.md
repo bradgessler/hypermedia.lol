@@ -8,6 +8,7 @@ accent: amber
 sprite: floppy
 treatment: terminal
 span: wide
+og_image: /images/og/twenty-minutes-to-fix-a-typo.png
 ---
 
 Here's a workflow from 2006.
