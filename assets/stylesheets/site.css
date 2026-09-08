@@ -70,7 +70,7 @@ body {
 .mark:hover { background: var(--ink); color: var(--paper); box-shadow: 3px 3px 0 var(--paper); }
 .mark:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
-.topmark { display: flex; justify-content: flex-end; max-width: 76rem; margin: 0 auto; padding: 1rem 1.25rem 0; }
+.topmark { display: flex; justify-content: flex-start; max-width: 76rem; margin: 0 auto; padding: 1rem 1.25rem 0; }
 
 main { padding: 2rem 1.25rem 0; }
 
