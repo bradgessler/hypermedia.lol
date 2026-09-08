@@ -993,10 +993,23 @@ footer a:hover { color: var(--ink); }
   max-width: 34rem;
 }
 
+/*
+  One tap selects the whole code, so the next tap is Copy. That's as close as
+  the platform gets without a script — the Clipboard API is JavaScript-only,
+  and this site doesn't ship any. Safari needs the -webkit- prefix or the
+  tap-to-select does nothing at all.
+*/
 .copyable {
+  display: inline-block;
+  padding: 0.2em 0.55em;
   font-size: 1.05em;
+  -webkit-user-select: all;
   user-select: all;
+  cursor: copy;
+  border: 2px dashed currentColor;
 }
+
+.copyable::selection { background: #14130f; color: #d7f205; }
 
 /* ------------------------------------------------- side-by-side demonstration
    The broken pattern next to the working one, both live. Neither runs any
@@ -1353,7 +1366,7 @@ footer a:hover { color: var(--ink); }
   color: var(--ink);
 }
 
-.brief .copyable { font-size: 1.35em; color: var(--accent); padding: 0.1em 0.4em; }
+.brief .copyable { font-size: 1.35em; color: var(--accent); border-color: var(--accent); }
 
 /* Six puppets and a shadow field. */
 .shadow {

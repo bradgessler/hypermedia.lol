@@ -9,8 +9,10 @@ span: big
 ---
 
 <p class="brief">Your authorization code is <code class="copyable">561579</code>.
-Copy it now. You will need it to launch. Do not write it down. Do not share it
-with anyone. Especially not Sweet Maria's.</p>
+Tap it once to select it, then Copy. You will need it to launch. Do not write it
+down. Do not share it with anyone. Especially not Sweet Maria's.<br><br>
+<small>A one-tap copy button would be one line of JavaScript. This page has
+zero, so it's two taps. Worth it.</small></p>
 
 <div class="console console--six" data-mode="six">
   <div class="console__head">
