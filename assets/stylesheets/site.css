@@ -2150,7 +2150,8 @@ pre.highlight { background: var(--code-bg, #14130f); }
 
 .modal__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .modal__bar h2 { margin: 0; font-size: 1.05rem; line-height: 1.25; text-transform: none; letter-spacing: 0; border: 0; padding: 0; transform: none; }
-.modal__bar h2 .anchor { color: inherit; }
+/* Outranks the modal body's link colour: the title is the bar's colour. */
+.t-modalz .modal .modal__bar h2 > a.anchor, .t-modalz .modal .modal__bar h2 > a.anchor:hover { color: inherit; text-decoration: none; background: none; }
 .modal__controls { display: flex; gap: 0.35rem; flex: none; }
 .modal__controls i { display: block; width: 0.9rem; height: 0.9rem; }
 .modal__body { padding: 1.25rem 1.4rem 0.5rem; }
