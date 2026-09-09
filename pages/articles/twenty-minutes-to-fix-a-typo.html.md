@@ -13,8 +13,8 @@ og_image: /images/og/twenty-minutes-to-fix-a-typo.png
 
 Here's a workflow from 2006.
 
-You spot a typo on a page. You open Dreamweaver, which has had SFTP built in
-since MX 2004 and already holds the credentials for the server.[^dw] You double-click the file in the remote pane. You fix
+You spot a typo on a page. You open Dreamweaver, which has SFTP built in and
+already holds the credentials for the server.[^dw] You double-click the file in the remote pane. You fix
 the character. You hit <kbd>⌘S</kbd>. Dreamweaver uploads it. The next person who
 requests that page gets the corrected one.
 
@@ -125,7 +125,7 @@ every one of those seconds is buying the history and the revert button.
 Thirty seconds is survivable. Twenty minutes is a site nobody fixes typos on,
 and you can always tell which sites those are.
 
-[^dw]: Dreamweaver's release history: MX 2004 (2003) added SFTP, and Dreamweaver 8 (2005) added background file transfers. Adobe's own release notes for 8 are no longer online; [Wikipedia's release table](https://en.wikipedia.org/wiki/Adobe_Dreamweaver) carries the dates.
+[^dw]: Dreamweaver edits files locally and uploads them over FTP, SFTP or WebDAV, and did so throughout the 2000s. [Wikipedia, Adobe Dreamweaver](https://en.wikipedia.org/wiki/Adobe_Dreamweaver). Adobe's own release notes from that era are no longer online, so I'm not citing version numbers I can't show you.
 
 [^dora]: DORA, [State of DevOps Report 2024](https://dora.dev/research/2024/dora-report/). The four key metrics; elite performers deploy on demand with a lead time for changes under one day.
 
