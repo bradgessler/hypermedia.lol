@@ -147,7 +147,7 @@ None of that code exists in the fix.
 That sketch is the shape of the most-downloaded implementation on the
 internet.
 
-## The most popular library builds it exactly this way
+## The most popular library builds it this way
 <p class="dek">react-otp-input: one input per digit, 274 lines, and <code>autoComplete: 'off'</code> hardcoded on every box.</p>
 
 [react-otp-input](https://github.com/devfolioco/react-otp-input) is the
@@ -176,7 +176,7 @@ input, minus the attribute that mattered most.
 You've felt the bad version. Now the good one.
 [input-otp](https://github.com/guilhermerodz/input-otp) is the best OTP
 component in the React ecosystem, and it gets the big thing right: it renders
-exactly one real text input, makes it transparent, and draws the boxes on top.
+one real text input, makes it transparent, and draws the boxes on top.
 Its own README says six separate inputs lose "SMS autofill, screen reader
 support, partial paste, undo, and half the keyboard."
 
@@ -296,7 +296,7 @@ error you get is the browser's.
 
 Caption: <b>The fix.</b> The entire control. No script. Every attribute is doing a job the script used to.
 
-## What the six boxes actually break
+## What the six boxes break
 <p class="dek">Every item is a thing the browser already did, on the left, until it was replaced.</p>
 
 <div class="breaks">

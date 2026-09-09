@@ -36,8 +36,8 @@ argument in order.
 **[motherfuckingwebsite.com](https://motherfuckingwebsite.com/)** is the thesis.
 Use HTML. Your document is already fine.
 
-**[bettermotherfuckingwebsite.com](https://bettermotherfuckingwebsite.com/)** is
-the first rebuttal, and the most useful one. It concedes that the original is
+**bettermotherfuckingwebsite.com** was the first rebuttal, and the most useful
+one. It's offline as I write this, so no link. It concedes that the original is
 unpleasant to read, and fixes it with a handful of CSS declarations: line
 height, a measure you can track across, some margin, a grey that isn't `#000`.
 "No framework" and "no typography" are different claims, and only one of them
@@ -70,7 +70,6 @@ brochure.
 | thebestmotherfucking.website | **100** | 87 | 114 KB | 17 | 1 KB | 1.4 s |
 | legiblenews.com | **100** | 88 | 83 KB | 10 | 58 KB | 1.3 s |
 | sfbay.craigslist.org | 45 | 82 | 737 KB | 10 | 628 KB | 6.1 s |
-| bettermotherfuckingwebsite.com | [fails to load](#the-better-one-does-not-load) | | 1.9 KB over plain HTTP | | | |
 | *Median mobile page, Oct 2024* | | | *2,311 KB* | *66* | *558 KB* | |
 
 Caption: Lighthouse 12, mobile, simulated throttling, run from one laptop on the day of writing; scores move a few points between runs.[^method] The median row is the HTTP Archive's Web Almanac.[^almanac]
@@ -96,15 +95,6 @@ It also loses twelve accessibility points for one reason: `<html>` has no
 `lang` attribute. Which is the exact attribute the *perfect* motherfucking
 website added, four years later, with a paragraph explaining why. The canon
 corrected itself and the original never took the note.
-
-## The better one does not load
-<p class="dek">bettermotherfuckingwebsite.com times out over HTTPS. It's still there on plain HTTP, all 1.9 KB of it.</p>
-
-Chrome refuses it with an interstitial, curl times out, and Lighthouse can't
-score it. Over unencrypted HTTP it answers in 1,943 bytes. So the page that
-taught everyone `line-height: 1.4` is currently unreachable from a modern
-browser's address bar, which is its own lesson about what "just HTML" leaves
-out: someone still has to renew the certificate.
 
 ## craigslist is not fast any more
 <p class="dek">The site everyone cites as proof that plain HTML wins scores 45 on mobile and ships 628 KB of JavaScript.</p>
@@ -184,7 +174,7 @@ first.
 
 [^mfw]: The request log for motherfuckingwebsite.com: the document at 2.2 KB, `www.google-analytics.com/analytics.js` at 20.9 KB, and `www.googletagmanager.com/gtag/js` at 157.6 KB, plus two collection beacons and a favicon. The accessibility deduction is the `html-has-lang` audit.
 
-[^cl]: sfbay.craigslist.org, the page a person in the Bay Area actually lands on. The bare www.craigslist.org region chooser scores 65 with the same weight. Accessibility deductions are `html-has-lang` and `link-name`.
+[^cl]: sfbay.craigslist.org, the page a person in the Bay Area lands on. The bare www.craigslist.org region chooser scores 65 with the same weight. Accessibility deductions are `html-has-lang` and `link-name`.
 
 [^ln]: [legiblenews.com/speed](https://legiblenews.com/speed), which ranks 24 news sites by PageSpeed Insights score. Figures as published when I looked; they re-run over time.
 

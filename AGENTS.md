@@ -55,13 +55,16 @@ review is coming.
 6. **Measure, don't assert.** If the claim is "fast", run Lighthouse. If it's
    "767 lines", count them. If it's "our deploys take a minute", read the run
    log. Put the number and the method in a footnote.
-7. **Name companies as bug reports, not dunks.** "I like Sweet Maria's, their
+7. **Every cited URL must resolve.** Before publishing, request every link in
+   the article and fix or drop any that don't return 200. A dead citation is
+   worse than none. If a site in the story is offline, say so and unlink it.
+8. **Name companies as bug reports, not dunks.** "I like Sweet Maria's, their
    login just fails a paste." Never punch down. Libraries get the same
    treatment: "a competent implementation of a bad idea."
-8. **No em dashes.** Use a period, a colon, or a comma and rework the
+9. **No em dashes.** Use a period, a colon, or a comma and rework the
    sentence. No "isn't X, it's Y" setups, no "genuinely", "exactly", "quietly",
    no triplets for rhythm. If it reads as machine-written, cut it.
-9. **Headlines are shameless clickbait.** The title is the one line most
+10. **Headlines are shameless clickbait.** The title is the one line most
    people will ever see, and its job is to get the argument in front of them.
    "Everybody Builds Six-Digit Code Inputs Wrong. Just Use a Text Field."
    Make a claim, name the thing, promise the fix. Never accuse the reader:
@@ -69,12 +72,15 @@ review is coming.
    industry, the library, everybody. Readers will know if it applies to them,
    and the ones it applies to should laugh, not flinch. The article then has
    to earn the title.
-10. **Byline.** `byline:` and `byline_url:` in front matter render as
+11. **Byline.** `byline:` and `byline_url:` in front matter render as
    "Prompted by Name". `byline_verb: By` for hand-written work.
 
 ## The JavaScript rule
 
-No JavaScript for the site's own UI. Two exceptions, and they are the bar:
+No JavaScript for the site's own UI. The complete list of scripts on the site
+is: the six-box input the digits article argues against, a Copy button, a
+Share button, and Plausible analytics. Each is annotated where it lives and
+disclosed in the footer. Two kinds of exception exist, and they are the bar:
 
 1. Running the anti-pattern so the reader can feel it break, clearly labeled
    as the thing being argued against.
@@ -90,7 +96,14 @@ Both must be annotated in the source and mentioned on the page.
 
 - Front matter: `title`, `date`, `description` (the social card copy),
   `byline`, `byline_url`, `treatment`, `sprite`, `span` (`big`/`wide`/`tall`),
-  optional `og_image`.
+  and `og_image`. Every article ships its own card: screenshot the page top at
+  1200x630 with headless Chrome into `pages/images/og/<slug>.png`. Open Graph
+  Plus can't render nested paths, so don't rely on it for articles.
+- Site chrome is fixed: the name in a box at the top left of article pages
+  (in flow, never sticky or floating) and a masthead on the home page; a
+  footer on every page with the name, one line about the site, and three
+  rows: Share, Contribute, Follow (RSS at `/feed.xml`, `llms.txt`, source).
+  Don't add navigation beyond that.
 - `treatment:` picks a whole visual world: `plain`, `spec`, `terminal`, `zine`,
   `form`, `launch`, `default`, `modalz`. Treatments change chrome, colour,
   headings and texture. They may not change the prose face, prose size, or

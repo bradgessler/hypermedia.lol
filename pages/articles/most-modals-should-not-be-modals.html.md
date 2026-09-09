@@ -55,7 +55,7 @@ overlay structurally cannot.
 
 **It knows what it's deleting.** A modal written in markup can say "Are you sure?"
 because that's all it knows at authoring time. A server-rendered page ran a query
-on the way in, so it can say exactly what goes:
+on the way in, so it can say what goes:
 
 ```html
 <p>The following will be deleted:</p>
@@ -67,7 +67,7 @@ on the way in, so it can say exactly what goes:
 ```
 
 Those numbers are the difference between someone clicking through on reflex and
-someone actually stopping. You can't hardcode them.
+someone stopping. You can't hardcode them.
 
 **It can ask for something.** The strongest confirmation isn't a button, it's a
 challenge. Make them type the name of the thing. This is how GitHub deletes a
@@ -113,7 +113,7 @@ is a `pattern` on the input, which is enough to feel it:
 it in a bug report. Someone can open it, go read something else, and come back. An
 overlay has none of that, because it isn't anywhere.
 
-**It's the whole screen.** Which sounds like the downside and is actually the
+**It's the whole screen.** Which sounds like the downside and is the
 point: a full-width page has no responsive problem to solve. No positioning
 against a viewport that keeps changing, no scroll locking, no what-happens-on-a-
 short-landscape-phone. It's a page. Pages already work at every size.
@@ -155,7 +155,7 @@ one thing every container already knows how to do.
 ## Use <code>popover</code> for what's transient and local
 <p class="dek">Shipping details, a menu, a date picker. Not deleting an account.</p>
 
-Some things really are transient and local: shipping details next to a line
+Some things are transient and local: shipping details next to a line
 item, a date picker, a menu. For those the platform now has good answers, and
 they're declarative.
 
@@ -232,7 +232,7 @@ confirmation on the internet.[^github]
 
 **"`<dialog>` solved the accessibility problem."** Inside one document, it
 largely did, and that's why it's the right answer for a transient thing. The spec
-scopes its blocking to the document it lives in,[^spec] which is exactly the
+scopes its blocking to the document it lives in,[^spec] which is the
 guarantee that stops holding the moment your app is embedded. A page needs no
 such guarantee, because a page doesn't try to block anything.
 
@@ -240,13 +240,13 @@ such guarantee, because a page doesn't try to block anything.
 <p class="dek">It almost always can.</p>
 
 It used to be "is this worth the accessibility debt?" Then it was "which overlay
-element?" It's actually neither:
+element?" It's neither:
 
 **Can this be a page?** It almost always can. If it's consequential, needs real
 data, wants a challenge, or might ever run inside someone else's app, it should
 be.
 
-Overlays are for things that are genuinely transient and genuinely local.
+Overlays are for things that are transient and local.
 Everything else is a route you didn't write.
 
 ## I got this wrong on this very site

@@ -62,7 +62,7 @@ defensible, each one cost thirty seconds, and thirty seconds times forty
 decisions is a workday. Nobody chose twenty minutes. It accumulated, and then it
 became the water.
 
-And look at what's actually in those twenty minutes. Installing dependencies to
+And look at what's in those twenty minutes. Installing dependencies to
 render text that has none. Running an entire test suite against a one-character
 copy change. Rebuilding every page on the site because one of them moved. That's
 not safety, it's ceremony wearing safety's clothes. The pipeline can't tell the
@@ -125,7 +125,7 @@ every one of those seconds is buying the history and the revert button.
 Thirty seconds is survivable. Twenty minutes is a site nobody fixes typos on,
 and you can always tell which sites those are.
 
-[^dw]: Dreamweaver MX 2004 added SFTP; Dreamweaver 8, released in 2005, added background file transfers so you could keep working while it uploaded. Adobe's [Dreamweaver 8 release notes](https://www.adobe.com/support/documentation/en/dreamweaver/dw8/releasenotes.html).
+[^dw]: Dreamweaver's release history: MX 2004 (2003) added SFTP, and Dreamweaver 8 (2005) added background file transfers. Adobe's own release notes for 8 are no longer online; [Wikipedia's release table](https://en.wikipedia.org/wiki/Adobe_Dreamweaver) carries the dates.
 
 [^dora]: DORA, [State of DevOps Report 2024](https://dora.dev/research/2024/dora-report/). The four key metrics; elite performers deploy on demand with a lead time for changes under one day.
 
