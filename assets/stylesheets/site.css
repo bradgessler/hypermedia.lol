@@ -2281,3 +2281,9 @@ pre.highlight { background: var(--code-bg, #14130f); }
 /* On the dimmed desktop, the mark keeps a white card so it stays readable. */
 .t-modalz .mark { background: #fff; color: #111; border-color: #111; box-shadow: 3px 3px 0 #111; }
 .t-modalz .mark:hover { background: #111; color: #fff; box-shadow: 3px 3px 0 #fff; }
+
+
+/* Wide tables scroll inside their own box instead of widening the page. */
+.prose table { display: block; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.prose table th, .prose table td { white-space: nowrap; }
+.prose table th:first-child, .prose table td:first-child { white-space: normal; min-width: 11rem; }
