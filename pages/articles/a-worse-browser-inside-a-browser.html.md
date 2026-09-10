@@ -197,20 +197,29 @@ moment where the page exists but the orders don't. A small price.
 </figure>
 
 ## Blue square: Back, new tab, reload and share all stop working
-<p class="dek">Press Back and lose your place. Cmd-click an order and get a blank tab. Reload and start over. Paste the link to a colleague and they see something else.</p>
+<p class="dek">Press Back and lose your place. Cmd-click an order and nothing opens. Reload and start over. Paste the link to a colleague and they see something else.</p>
 
 Filtering works. Then someone filters to "unpaid", clicks an order, presses
 Back, and lands on the unfiltered list at the top of the page. Two bugs: the
 filter is gone and the scroll position is gone.
 
 Then the rest of the bugs arrive, and every one of them is a thing people do
-with URLs without thinking. Cmd-click an order to open it in a new tab: the
+with URLs without thinking. Cmd-click or middle-click an order to open it in a new tab: the
 order is a `<div>` with a click handler, not a link, so the browser gets nothing
 and the tab never opens. Reload the page: back to the unfiltered list, top of
 the page, spinner. Copy the address bar and paste it into chat: the colleague
 opens it and sees the default list, because the filter lived in the store, not
 the URL. Bookmark it: same. Every one of those worked on the HTML version for
 free, and none of them were in the ticket.
+
+They worked because a URL is a name for a thing, and the browser knows what to
+do with names. That's the oldest idea on the web, and it has a formal version:
+REST, the architecture the web was reverse-engineered into, starts with
+"identification of resources," which is a long way of saying every screen gets
+an address.[^rest] Cmd-click, reload, bookmark, share and Back are all the same
+operation, "go to this address," and they only work when the address is the
+truth. The moment the truth moves into a store, the address is a lie the
+browser hasn't been told about.
 
 The Browser used to handle all of this. It kept the old page in memory and put it back exactly as it was, because
 one in five navigations on a phone is a Back or a Forward and it was built for
@@ -309,7 +318,7 @@ None of this is a feature. Every line of it is a repair.
 ## Black diamond: The page starts showing things that aren't true
 <p class="dek">You marked it paid. It still says unpaid. Refresh and it's paid. Press Back and it's unpaid again. Support's first answer becomes "try refreshing."</p>
 
-Here's what it feels like from the chair. The list says three orders are
+Here's what it looks like from the other side of the screen. The list says three orders are
 unpaid. A colleague paid one ten minutes ago, and the list still says three,
 because nothing told it otherwise. You click Pay on another. It flips to paid
 instantly, which feels great, then a toast says "something went wrong" and it
@@ -644,26 +653,32 @@ quickly.
   <figcaption>Double black. Everything on the ball is a thing the browser underneath it already did. The Team is proud of the ball. It took two years.</figcaption>
 </figure>
 
-## The lodge: the best case for the app
-<p class="dek">Steelman first, by the fire. There are real ones.</p>
+## The lodge: the stories we tell ourselves by the fire
+<p class="dek">Every one of these has been said with a straight face. I've said most of them myself. Some are even true.</p>
 
 <div class="lodge" aria-hidden="true"></div>
 <p class="lodge__caption">The lodge. Warm, well-argued, and where every SPA decision gets made over a beer.</p>
 
 <p class="bubble"><q>Some things are applications.</q></p>
 
-Yes. A design tool, a spreadsheet, a map, a
-video editor. If the user is manipulating a document continuously and the
-server is a save button, the client should own that state, and a page-per-view
-would be absurd. This story is not about those. It's about a list of orders,
-which is most of the web, wearing the architecture of a spreadsheet.
+True, and the concession is real. A design tool, a spreadsheet, a map, a
+video editor: if the user is manipulating a document continuously and the
+server is a save button, the client should own that state, and a page per view
+would be absurd. Now count them. Most of what gets built is a list, a form and
+a detail page, with a login in front. Create, read, update, delete. That's the
+orders page. It got the spreadsheet's architecture because the spreadsheet's
+architecture is what the tutorial used.
 
 <p class="bubble"><q>We need the API for the mobile app anyway.</q></p>
 
-Fine. Have the API. Nothing
-about an API requires the browser to consume it through a store; the server can
-read the same code path and send HTML. The API and the split brain are separate
-decisions that got sold as one.
+Maybe. A generic JSON API is one way to build a mobile app, and it's not the
+only one. Hotwire Native wraps the same server-rendered pages in a native
+shell, with native navigation on top and the web doing the screens, so the
+mobile app and the website are one app with one set of bugs.[^native] And even
+where a JSON API is the right call for the phone, nothing about it requires
+the browser to consume it through a store. The server can call the same code
+path and send HTML. The API and the split brain are separate decisions that
+got sold as one.
 
 <p class="bubble"><q>Full page loads feel slow.</q></p>
 
@@ -718,23 +733,29 @@ isn't the requirement; it's the justification found afterwards.
 </div>
 <p class="crash__caption">The bottom of the hill. The snow is grey down here. The ball didn't survive the run, the junk is everywhere, and the yeti has been waiting since the green circle.</p>
 
+Two years in, here is what The Team maintains. A router that almost agrees
+with the address bar. A store that almost agrees with the database. A cache
+with its own opinion about what's fresh, a websocket that tells the store it's
+wrong, a reconciler to settle the argument, a retry queue for when the network
+settles it instead, a token refresher so the reconciler can keep talking, and
+a modal for when it can't. None of it was designed. Each piece was stitched on
+to stop the last one bleeding, and the seams show: three different spinners,
+two ways to be logged out, and a Back button that works on four screens out of
+seven. It isn't an application. It's a browser assembled from bug reports.
+
 Line the ball up against the thing it's sitting inside. A router: the address
 bar. Scroll save and restore: the browser's default. The store and its cache:
 HTTP caching, with validators the server already sends. Optimistic updates and
 rollback: a form post, which either works or shows you it didn't. Deep link
 handling: a URL. Focus management: a page load. The 404 screen: a 404.
 
-Every one of those was available in Act I, for free, tested against every
+Every one of those was there on the green circle, for free, tested against every
 site on the internet. The Team didn't reject them. The Team never saw them,
 because the first decision, "the server returns JSON," took the page away, and
 with it went everything the browser does to a page.
 
-The alternative isn't a rewrite. It's the page. Render the orders on the server.
-Make the filter a form. If the designer wants it to feel instant, add the one
-CSS rule for a cross-document transition and let the browser prefetch. If a
-region of the page needs to update in place, swap that region's HTML, not its
-JSON. That's what hypermedia is: the server sends the thing the browser already
-knows how to be.
+The alternative isn't a rewrite. It's the page, and the page is what spring
+is for.
 
 The Browser, who has had no lines in this play, was doing all of it the whole
 time.
@@ -745,14 +766,14 @@ time.
 <div class="thaw" aria-hidden="true"></div>
 <p class="thaw__caption">Spring at the base. The same hill, with the snow gone and the ground it was covering.</p>
 
-There's a way to get what The Team wanted in the green circle, the list that
-updates without a full reload, without the three runs that followed. It's not
-a framework that hides the browser. It's a small script that hands the browser
-more to do.
+There's more than one way to get what The Team wanted in the green circle,
+the list that updates without a full reload, without the three runs that
+followed. They differ in flavour and share one decision: **the server keeps
+sending HTML.** None of them is a framework that hides the browser. Each is a
+small script that hands the browser more to do.
 
 The two people are most likely to meet are [htmx](https://htmx.org/) and
-[Hotwire's Turbo](https://turbo.hotwired.dev/), and they share one decision:
-**the server keeps sending HTML.** htmx's own description is that it lets you
+[Hotwire's Turbo](https://turbo.hotwired.dev/). htmx's own description is that it lets you
 "access modern browser features directly from HTML." You put an attribute on an
 element, the element makes a request, the server answers with a fragment of
 HTML, and the fragment is swapped into the page. Links stay links. Forms stay
@@ -768,8 +789,15 @@ stands still.[^turbo]
 Neither one reinvents the browser. Neither has a store, because the page is the
 state. Neither has a router, because the URL is the router. Neither has a cache
 to reconcile, because the server rendered the truth and the browser cached it
-the way it caches everything. The filter The Team wanted in the green circle is
-a form and one attribute:
+the way it caches everything.
+
+This also has a name, and it's older than any of the libraries. The last of
+REST's four interface constraints is "hypermedia as the engine of application
+state": the server sends a page, and the page carries the links and forms that
+say what can happen next.[^rest] A JSON blob that says `"status": "unpaid"` and
+leaves the client to work out what a human can do about it isn't that, whatever
+its URLs look like. A page with a Pay button in it is. The filter The Team
+wanted in the green circle is a form and one attribute:
 
 ```html
 <form action="/orders" method="get" hx-boost="true" hx-target="#orders">
@@ -813,12 +841,30 @@ Caption: <b>The green circle, done in spring.</b> A form that works with no scri
   <figcaption>Spring. The state lives on the server, the browser does the navigating, caching, scrolling and focusing it was built for, and the app layer is one attribute and one script tag.</figcaption>
 </figure>
 
+<p class="cast__head">Other runs down the same hill</p>
+<ul class="tmap__key tmap__key--spring" aria-label="Other approaches">
+  <li><a href="https://unpoly.com/">Unpoly</a> · progressive enhancement for HTML</li>
+  <li><a href="https://hexdocs.pm/phoenix_live_view/welcome.html">Phoenix LiveView</a> · server-rendered HTML over a socket</li>
+  <li><a href="https://livewire.laravel.com/">Livewire</a> · the same idea, for Laravel</li>
+  <li><a href="https://data-star.dev/">Datastar</a> · signals and server-sent HTML</li>
+  <li><a href="https://stimulus.hotwired.dev/">Stimulus</a> · behaviour on the HTML you already have</li>
+  <li><a href="https://alpinejs.dev/">Alpine</a> · sprinkles in the markup, not a browser</li>
+</ul>
+
+Different trails, same base lodge. The page is the state, the URL is the
+router, the server is the only brain, and the script is small enough to read
+on a lift.
+
 That's the whole argument of this site in one hill. The browser is not a
 rendering target. It's a thirty-year-old application platform that already
 does navigation, history, caching, scroll, focus, forms and errors. Augment it a
 little and it does the rest. Rebuild it and you'll spend two years on a ball.
 
 [^htmx]: [htmx documentation](https://htmx.org/docs/). Attributes such as `hx-get`, `hx-post`, `hx-target` and `hx-swap` let any element make a request; the server responds with HTML, not JSON; `hx-boost` and `hx-push-url` keep links, forms and browser history working. It's a dependency-free script added with a single tag.
+
+[^rest]: Roy Fielding, [Architectural Styles and the Design of Network-based Software Architectures](https://ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm), chapter 5. REST's four interface constraints are identification of resources, manipulation of resources through representations, self-descriptive messages, and hypermedia as the engine of application state. The web's URLs, links and forms are that last one in practice.
+
+[^native]: [Hotwire Native](https://native.hotwired.dev/): "build your screens once, in HTML and CSS, and reuse them across every platform." It wraps a web view in native navigation for iOS and Android, with native screens where the web isn't enough.
 
 [^turbo]: [Turbo Handbook: Introduction](https://turbo.hotwired.dev/handbook/introduction). Turbo Drive intercepts links and form submissions and loads pages with fetch while maintaining browser history; Turbo Frames scope navigation to segments of a page; Turbo Streams deliver partial updates over WebSocket or SSE.
 

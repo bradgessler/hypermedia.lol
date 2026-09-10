@@ -3010,3 +3010,14 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .prose .crew li b { font-family: var(--ui); font-size: 1rem; }
 .prose .crew li span:last-child { font-size: 0.95rem; line-height: 1.45; }
 .prose .bubble::before { width: 3rem; height: 3rem; left: -3.6rem; bottom: -0.7rem; }
+
+/* Spring fingerpost: links on planks, lowercase, green wood */
+.prose .tmap__key--spring { margin: 1.2rem 0 2.2rem 0.6rem; }
+.prose .tmap__key--spring li { text-transform: none; letter-spacing: 0.02em; font-size: 0.8rem; background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 9px), linear-gradient(#2f6b3a, #1f4a28); border-color: #12301a; }
+.prose .tmap__key--spring::before { background: linear-gradient(90deg, #5a3416, #8a5a2b 55%, #5a3416); }
+.prose .tmap__key--spring::after { background: #6cc46f; box-shadow: 0 2px 0 #3f8f45; }
+.prose .tmap__key--spring a { color: #fff3d6; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.prose .tmap__key--spring a:hover, .prose .tmap__key--spring a:focus-visible { color: #ffe28a; }
+/* Bubble avatar sits on the bubble's baseline, tail points at its head */
+.prose .bubble::before { bottom: -0.15rem; }
+.prose .bubble::after { bottom: 0.9rem; }
