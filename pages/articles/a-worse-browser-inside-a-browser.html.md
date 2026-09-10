@@ -44,6 +44,8 @@ moment where the page exists but the orders don't. A small price.
     <div class="snow__hill"></div>
     <span class="snow__tree snow__tree--a"></span>
     <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__tree snow__tree--c"></span>
+    <span class="snow__tree snow__tree--d"></span>
     <span class="snow__skier"></span>
     <div class="snow__roll">
       <div class="snow__ball"></div>
@@ -91,6 +93,8 @@ None of this is a feature. Every line of it is a repair.
     <div class="snow__hill"></div>
     <span class="snow__tree snow__tree--a"></span>
     <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__tree snow__tree--c"></span>
+    <span class="snow__tree snow__tree--d"></span>
     <span class="snow__skier"></span>
     <div class="snow__roll">
       <div class="snow__ball"></div>
@@ -165,6 +169,8 @@ one. It has the page.
     <div class="snow__hill"></div>
     <span class="snow__tree snow__tree--a"></span>
     <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__tree snow__tree--c"></span>
+    <span class="snow__tree snow__tree--d"></span>
     <span class="snow__skier"></span>
     <div class="snow__roll">
       <div class="snow__ball"></div>
@@ -263,6 +269,8 @@ quickly.
     <div class="snow__hill"></div>
     <span class="snow__tree snow__tree--a"></span>
     <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__tree snow__tree--c"></span>
+    <span class="snow__tree snow__tree--d"></span>
     <span class="snow__skier"></span>
     <span class="snow__yeti"></span>
     <div class="snow__roll">

@@ -2375,34 +2375,84 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .t-slope .banner .byline { color: var(--muted); }
 .t-slope .byline a { color: var(--accent); }
 
-/* Trail markers on the act headings. */
+/* Section headers are trail signs: a board with the marker painted on it and
+   an arrow end, on a wooden post, planted in a mound of snow. */
 .t-slope .prose h2 {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
+  display: block;
+  margin: 6.5rem 0 5rem;
+  padding: 0;
+  border: 0;
   font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.5rem, 4.4vw, 2rem);
+  font-size: clamp(1.25rem, 3.6vw, 1.7rem);
+  line-height: 1.15;
   text-transform: none;
   letter-spacing: -0.01em;
-  border: 0;
-  padding: 0;
 }
 
+/* The board is the anchor, so the post and the mound can sit outside its clip. */
+.t-slope .prose h2 > a.anchor {
+  display: inline-block;
+  max-width: calc(100% - 1rem);
+  padding: 0.85rem 2.9rem 0.85rem 1.1rem;
+  color: #fff !important;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 9px),
+    linear-gradient(#6b3f1f, #4a2a12);
+  border: 3px solid #2b180a;
+  clip-path: polygon(0 0, calc(100% - 1.5rem) 0, 100% 50%, calc(100% - 1.5rem) 100%, 0 100%);
+  text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+  padding-left: 3.6rem;
+}
+.t-slope .prose h2 > a.anchor::after { content: none; }
+.t-slope .prose h2 > a.anchor::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-top: -0.9rem;
+  background: var(--marker) center / contain no-repeat;
+}
+.t-slope .prose h2 > a.anchor { position: relative; }
+
+/* The post. */
 .t-slope .prose h2::before {
   content: "";
-  flex: none;
-  width: 1.6rem;
-  height: 1.6rem;
-  background: var(--black);
+  position: absolute;
+  left: 2.2rem;
+  top: 100%;
+  width: 0.9rem;
+  height: 3.2rem;
+  background: linear-gradient(90deg, #5a3416, #7a4a22 45%, #4a2a12);
+  border: 2px solid #2b180a;
+  border-top: 0;
+  z-index: -1;
+}
+/* The mound. */
+.t-slope .prose h2::after {
+  content: "";
+  position: absolute;
+  left: 0.4rem;
+  top: calc(100% + 2.4rem);
+  width: 4.8rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, #fff, #e6edf5 70%, #cfd9e6);
+  box-shadow: 0 3px 0 rgba(16,24,32,0.15);
 }
 
-.t-slope .prose > h2:nth-of-type(1)::before { background: var(--green); border-radius: 50%; }
-.t-slope .prose > h2:nth-of-type(2)::before { background: var(--blue); }
-.t-slope .prose > h2:nth-of-type(3)::before { background: var(--black); transform: rotate(45deg) scale(0.8); }
-.t-slope .prose > h2:nth-of-type(4)::before { width: 3.4rem; background: linear-gradient(90deg, var(--black) 0 45%, transparent 45% 55%, var(--black) 55%); clip-path: polygon(22% 0, 45% 50%, 22% 100%, 0 50%, 22% 0, 77% 0, 100% 50%, 77% 100%, 55% 50%, 77% 0); }
-.t-slope .prose > h2:nth-of-type(5)::before { background: #8a5a2b; clip-path: polygon(50% 0, 100% 45%, 85% 45%, 85% 100%, 15% 100%, 15% 45%, 0 45%); }
-.t-slope .prose > h2:nth-of-type(6)::before { width: 2rem; height: 2rem; background: var(--yeti) center / contain no-repeat; }
+.t-slope .prose > h2:nth-of-type(1) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Ccircle%20cx=%228%22%20cy=%228%22%20r=%227%22%20fill=%22%232e9e4f%22%20stroke=%22%23fff%22%20stroke-width=%221.5%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(2) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Crect%20x=%221.5%22%20y=%221.5%22%20width=%2213%22%20height=%2213%22%20fill=%22%232266d1%22%20stroke=%22%23fff%22%20stroke-width=%221.5%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(3) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Cpolygon%20points=%228,1%2015,8%208,15%201,8%22%20fill=%22%23111%22%20stroke=%22%23fff%22%20stroke-width=%221.5%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(4) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2032%2016%22%3E%3Cpolygon%20points=%228,1%2015,8%208,15%201,8%22%20fill=%22%23111%22%20stroke=%22%23fff%22%20stroke-width=%221.5%22/%3E%3Cpolygon%20points=%2224,1%2031,8%2024,15%2017,8%22%20fill=%22%23111%22%20stroke=%22%23fff%22%20stroke-width=%221.5%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(4) > a.anchor::before { width: 3.4rem; }
+.t-slope .prose > h2:nth-of-type(4) > a.anchor { padding-left: 5.2rem; }
+.t-slope .prose > h2:nth-of-type(5) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Cpolygon%20points=%228,1%2015,7%2013,7%2013,15%203,15%203,7%201,7%22%20fill=%22%238a5a2b%22%20stroke=%22%23fff%22%20stroke-width=%221.2%22/%3E%3Crect%20x=%226.5%22%20y=%2210%22%20width=%223%22%20height=%225%22%20fill=%22%23fff%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(6) { --marker: var(--yeti); }
+.t-slope .prose > h2:nth-of-type(6) > a.anchor { background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 9px), linear-gradient(#5a1a1a, #3a0e0e); border-color: #220606; }
 
 .t-slope .prose p.dek { color: var(--muted); }
 .t-slope .prose p.lede { border-left-color: var(--accent); }
@@ -2446,17 +2496,50 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .snow__scene {
   position: relative;
   display: block;
-  height: calc(var(--orbit) * 2 + 16cqw);
+  height: calc(var(--orbit) * 2 + 20cqw);
   margin: 0 0 1rem;
   overflow: hidden;
-  background: #fbfcfe;
+  border: 3px solid var(--rule);
+  box-shadow: 6px 6px 0 var(--rule);
+  background:
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20400%20120%22%20preserveAspectRatio=%22none%22%3E%3Cpolygon%20points=%220,120%200,80%2045,40%2090,85%20130,30%20175,75%20215,45%20260,95%20305,25%20350,70%20400,50%20400,120%22%20fill=%22%23c9d6e6%22/%3E%3Cpolygon%20points=%220,120%200,95%2060,60%20110,100%20160,55%20210,90%20250,65%20300,105%20345,60%20400,85%20400,120%22%20fill=%22%23dfe7f1%22/%3E%3Cpolygon%20points=%22122,42%20130,30%20138,42%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%22297,37%20305,25%20313,37%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%2237,52%2045,40%2053,52%22%20fill=%22%23fff%22/%3E%3C/svg%3E") 0 8% / 100% 34% no-repeat,
+    linear-gradient(#bcd4f0 0, #e6eef8 30%, #fbfcfe 42%, #fbfcfe 100%);
 }
+/* The slope itself: drifts and a faint sparkle. */
 .snow__hill {
   position: absolute;
-  inset: 0;
-  background: #fbfcfe;
-  border: 2px solid var(--rule);
-  box-shadow: 4px 4px 0 var(--rule);
+  inset: 40% 0 0;
+  background:
+    radial-gradient(ellipse 60% 30% at 20% 30%, rgba(210,222,238,0.55), transparent 70%),
+    radial-gradient(ellipse 50% 28% at 75% 65%, rgba(210,222,238,0.55), transparent 70%),
+    radial-gradient(circle, rgba(255,255,255,0.9) 0.8px, transparent 1.2px) 0 0 / 14px 14px,
+    linear-gradient(#fbfcfe, #eef3f9);
+}
+/* Sun. */
+.snow__scene::before {
+  content: "";
+  position: absolute;
+  right: 10%;
+  top: 7%;
+  width: 7cqw;
+  height: 7cqw;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff6c8, #ffe28a 60%, rgba(255,226,138,0) 62%);
+  box-shadow: 0 0 6cqw rgba(255,226,138,0.7);
+}
+/* Speed trail behind the ball. */
+.snow__roll::before {
+  content: "";
+  position: absolute;
+  right: 60%;
+  top: 55%;
+  width: 70cqw;
+  height: 22%;
+  background: repeating-linear-gradient(90deg, rgba(120,140,165,0.28) 0 2.5cqw, transparent 2.5cqw 5cqw);
+  mask: linear-gradient(90deg, transparent, #000 85%);
+  -webkit-mask: linear-gradient(90deg, transparent, #000 85%);
+  animation: snow-trail 0.7s linear infinite;
+  transform: skewY(-6deg);
 }
 .snow__hill::before, .snow__hill::after, .snow__tree {
   content: "";
@@ -2465,10 +2548,12 @@ pre.highlight { background: var(--code-bg, #14130f); }
   height: 6.5cqw;
   background: var(--tree) center / contain no-repeat;
 }
-.snow__hill::before { left: 8%; top: 10%; }
-.snow__hill::after { right: 10%; bottom: 12%; }
-.snow__tree--a { left: 22%; bottom: 8%; }
-.snow__tree--b { right: 18%; top: 8%; width: 5cqw; height: 5cqw; }
+.snow__hill::before { left: 6%; top: 4%; width: 5cqw; height: 5cqw; opacity: 0.85; }
+.snow__hill::after { right: 8%; bottom: 10%; width: 8cqw; height: 8cqw; }
+.snow__tree--a { left: 20%; bottom: 6%; width: 8.5cqw; height: 8.5cqw; }
+.snow__tree--b { right: 22%; top: 42%; width: 4cqw; height: 4cqw; opacity: 0.8; }
+.snow__tree--c { left: 38%; top: 41%; width: 3.5cqw; height: 3.5cqw; opacity: 0.75; }
+.snow__tree--d { left: 4%; bottom: 30%; width: 6.5cqw; height: 6.5cqw; }
 .snow__skier {
   position: absolute;
   left: 12%;
@@ -2480,10 +2565,11 @@ pre.highlight { background: var(--code-bg, #14130f); }
 }
 .snow__yeti {
   position: absolute;
-  right: 6%;
-  bottom: 6%;
-  width: 9cqw;
-  height: 9cqw;
+  right: 5%;
+  bottom: 4%;
+  width: 15cqw;
+  height: 15cqw;
+  filter: drop-shadow(0 4px 0 rgba(16,24,32,0.2));
   background: var(--yeti) center / contain no-repeat;
   animation: snow-yeti 0.9s steps(2) infinite;
 }
@@ -2549,14 +2635,15 @@ pre.highlight { background: var(--code-bg, #14130f); }
 @keyframes snow-unspin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
 @keyframes snow-bounce { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.7rem; } }
 @keyframes snow-skier { 0%, 100% { translate: 0 0; } 50% { translate: 0.4rem -0.2rem; } }
-@keyframes snow-yeti { 0%, 100% { translate: 0 0; } 50% { translate: -0.5rem 0; } }
+@keyframes snow-yeti { 0%, 100% { translate: 0 0; } 50% { translate: -0.6rem -0.2rem; } }
+@keyframes snow-trail { to { background-position: -5cqw 0; } }
 
 .snow__junk { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 0 1rem; padding: 0; }
 .snow__junk li { font-family: var(--mono); font-size: 0.72rem; padding: 0.25rem 0.5rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
 @media (min-width: 48rem) { .snow__junk { display: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .t-slope::before, .snow__roll, .snow__ball, .snow__ring, .snow__ring li span, .snow__skier, .snow__yeti { animation: none; }
+  .t-slope::before, .snow__roll, .snow__roll::before, .snow__ball, .snow__ring, .snow__ring li span, .snow__skier, .snow__yeti { animation: none; }
 }
 
 /* The split-brain ledger. */
