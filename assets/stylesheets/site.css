@@ -2299,8 +2299,9 @@ pre.highlight { background: var(--code-bg, #14130f); }
   --accent: #1f5fd0;
   --ink: #101820;
   --paper: #e3ebf5;
+  --veil: rgba(227,235,245,0.55);
   --panel: #ffffff;
-  --muted: #56606b;
+  --muted: #444d56;
   --rule: #101820;
   --green: #2e9e4f;
   --blue: #2266d1;
@@ -2775,10 +2776,10 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .t-slope .prose figure.step:not(.snow, .ledger-board, .arch) > :is(table, .bars, figcaption),
 .t-slope .cast > :is(p, .crew),
 .t-slope .foot > :is(p, dl, .foot__meta), .t-slope .foot .mark--masthead {
-  background: var(--paper);
-  box-shadow: 0 0 0 0.6rem var(--paper);
+  background: var(--veil);
+  box-shadow: 0 0 0 0.6rem var(--veil);
 }
-.t-slope .prose > .lede { box-shadow: 0.6rem 0 0 var(--paper), 0 0 0 0.6rem var(--paper); }
+.t-slope .prose > .lede { box-shadow: 0.6rem 0 0 var(--veil), 0 0 0 0.6rem var(--veil); }
 
 
 /* The lodge: warm windows, smoke, skis by the door. Full bleed. */
@@ -2942,7 +2943,7 @@ pre.highlight { background: var(--code-bg, #14130f); }
 
 /* ---- Architecture, sketched on lodge napkins ---- */
 .arch { margin: 2.5rem 0 3rem; }
-.arch__head { margin: 0 0 0.6rem; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--paper); box-shadow: 0 0 0 0.6rem var(--paper); }
+.arch__head { margin: 0 0 0.6rem; font-family: var(--mono); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--veil); box-shadow: 0 0 0 0.6rem var(--veil); }
 .arch__board { display: grid; grid-template-columns: minmax(0, 1.6fr) auto minmax(0, 1fr); gap: 0.9rem; align-items: start;
   padding: 1rem; background: #fffdf5; border: 3px solid var(--ink); border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
   box-shadow: 4px 4px 0 var(--ink);
@@ -2974,7 +2975,7 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .arch__wire--ws .arch__line::before, .arch__wire--ws .arch__line::after { border-color: #b3111a; }
 .arch__req, .arch__res { position: relative; padding: 0 0.2rem; background: #fffdf5; }
 .arch__res { color: var(--muted); }
-.arch figcaption { margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--rule); background: var(--paper); box-shadow: 0 0 0 0.6rem var(--paper); }
+.arch figcaption { margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--rule); background: var(--veil); box-shadow: 0 0 0 0.6rem var(--veil); }
 .arch--4 .arch__board { background-color: #f6f2ea; }
 @media (max-width: 44rem) {
   .arch__board, .arch--3 .arch__board, .arch--4 .arch__board { grid-template-columns: 1fr; }
