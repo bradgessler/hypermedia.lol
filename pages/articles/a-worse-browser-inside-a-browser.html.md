@@ -196,13 +196,23 @@ moment where the page exists but the orders don't. A small price.
   <figcaption>The snowball, bottom of the green run. Four things the HTML version didn't need. Each one is tiny.</figcaption>
 </figure>
 
-## Blue square: The URL stops meaning anything
-<p class="dek">The back button breaks first. It always breaks first.</p>
+## Blue square: Back, new tab, reload and share all stop working
+<p class="dek">Press Back and lose your place. Cmd-click an order and get a blank tab. Reload and start over. Paste the link to a colleague and they see something else.</p>
 
 Filtering works. Then someone filters to "unpaid", clicks an order, presses
 Back, and lands on the unfiltered list at the top of the page. Two bugs: the
-filter is gone and the scroll position is gone. The Browser used to handle
-both. It kept the old page in memory and put it back exactly as it was, because
+filter is gone and the scroll position is gone.
+
+Then the rest of the bugs arrive, and every one of them is a thing people do
+with URLs without thinking. Cmd-click an order to open it in a new tab: the
+order is a `<div>` with a click handler, not a link, so the browser gets nothing
+and the tab never opens. Reload the page: back to the unfiltered list, top of
+the page, spinner. Copy the address bar and paste it into chat: the colleague
+opens it and sees the default list, because the filter lived in the store, not
+the URL. Bookmark it: same. Every one of those worked on the HTML version for
+free, and none of them were in the ticket.
+
+The Browser used to handle all of this. It kept the old page in memory and put it back exactly as it was, because
 one in five navigations on a phone is a Back or a Forward and it was built for
 that.[^bfcache] It restored scroll on its own, too; that's the default.[^scroll]
 But there's no navigation any more. There's one page and some state, and the
@@ -296,8 +306,18 @@ None of this is a feature. Every line of it is a repair.
   <figcaption>Bottom of the blue. The Team has reimplemented the address bar, the back button and scroll restoration. All three are worse than the originals, and the originals are still there, unused, one layer down.</figcaption>
 </figure>
 
-## Black diamond: Two copies of the truth
-<p class="dek">The server knows what's real. The client knows what it was told, once, a while ago.</p>
+## Black diamond: The page starts showing things that aren't true
+<p class="dek">You marked it paid. It still says unpaid. Refresh and it's paid. Press Back and it's unpaid again. Support's first answer becomes "try refreshing."</p>
+
+Here's what it feels like from the chair. The list says three orders are
+unpaid. A colleague paid one ten minutes ago, and the list still says three,
+because nothing told it otherwise. You click Pay on another. It flips to paid
+instantly, which feels great, then a toast says "something went wrong" and it
+flips back, or doesn't, depending on which bug is on duty. You fill in a note,
+hit save, and a modal says your session expired; the note is gone. You refresh,
+and now it says two unpaid, or one, or asks you to log in. Nothing on the screen
+can be trusted without a reload, and the reload is the thing the app was built
+to avoid.
 
 The list is now a store, and the store is a copy. That is the whole problem,
 and it's worth being exact about it: the moment a page keeps its own copy of
@@ -439,8 +459,16 @@ one. It has the page.
   <figcaption>Bottom of the black diamond. The Team is now maintaining an HTTP cache. It is not as good as the one in the browser, and it has to be, because the browser's can't see inside the store.</figcaption>
 </figure>
 
-## Double black diamond: The JSON is tiny. The bundle is not.
-<p class="dek">The number everyone quotes is the one that doesn't matter.</p>
+## Double black diamond: Everything gets slow, and stays slow
+<p class="dek">A blank page, then a skeleton, then a spinner, then the list. Every visit, every deploy, forever, because the JSON is tiny and the thing that draws it is not.</p>
+
+By now a visitor opening the orders page sees a white screen, then a grey
+skeleton in the shape of a list, then a spinner, then the list. On a laptop on
+office wifi that's a second or two and nobody files a bug. On a phone on a
+train it's ten seconds, or a skeleton that never fills in, or a page that
+finally loads and then reloads itself because a deploy went out while it was
+downloading. The page used to appear in one step. Now it has four, and the
+slow one comes first.
 
 Someone on The Team makes the argument that closes every one of these
 discussions: "The JSON is 2 KB. The HTML page was 20 KB. We're sending less."
