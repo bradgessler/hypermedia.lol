@@ -77,22 +77,22 @@ of the thing their code was running inside the whole time.</p>
 <use href="#trs" x="871" y="409" width="14" height="20"/>
 <use href="#tr" x="828" y="415" width="11" height="16"/>
 <use href="#trs" x="797" y="413" width="13" height="18"/>
-<path id="run-g" d="M450,72 C405,140 335,205 305,280 C280,340 240,385 205,418" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
-<path d="M450,72 C405,140 335,205 305,280 C280,340 240,385 205,418" fill="none" stroke="#2e9e4f" stroke-width="8" stroke-linecap="round"/>
-<path id="lbl-g" d="M205,418 C240,385 280,340 305,280 C335,205 405,140 450,72" fill="none" stroke="none"/><text class="tmap__run" dy="-11"><textPath href="#lbl-g" startOffset="22%">One JSON Endpoint</textPath></text>
-<g transform="translate(392,150)"><circle cx="0" cy="0" r="9" fill="#2e9e4f" stroke="#fff" stroke-width="2"/></g>
-<path id="run-b" d="M450,72 C445,150 425,225 405,300 C388,360 370,395 352,420" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
-<path d="M450,72 C445,150 425,225 405,300 C388,360 370,395 352,420" fill="none" stroke="#2266d1" stroke-width="8" stroke-linecap="round"/>
-<path id="lbl-b" d="M352,420 C370,395 388,360 405,300 C425,225 445,150 450,72" fill="none" stroke="none"/><text class="tmap__run" dy="-11"><textPath href="#lbl-b" startOffset="24%">Router Run</textPath></text>
-<g transform="translate(438,180)"><rect x="-8" y="-8" width="16" height="16" fill="#2266d1" stroke="#fff" stroke-width="2"/></g>
-<path id="run-k" d="M450,72 C470,150 520,205 540,280 C556,345 545,390 532,420" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
-<path d="M450,72 C470,150 520,205 540,280 C556,345 545,390 532,420" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+<path id="run-g" d="M450,72 C400,118 335,150 322,208 C310,268 252,292 242,342 C234,382 216,402 205,418" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
+<path d="M450,72 C400,118 335,150 322,208 C310,268 252,292 242,342 C234,382 216,402 205,418" fill="none" stroke="#2e9e4f" stroke-width="8" stroke-linecap="round"/>
+<path id="lbl-g" d="M205,418 C216,402 234,382 242,342 C252,292 310,268 322,208 C335,150 400,118 450,72" fill="none" stroke="none"/><text class="tmap__run" dy="-11"><textPath href="#lbl-g" startOffset="6%">One JSON Endpoint</textPath></text>
+<g transform="translate(351,156)"><circle cx="0" cy="0" r="9" fill="#2e9e4f" stroke="#fff" stroke-width="2"/></g>
+<path id="run-b" d="M450,72 C484,138 398,182 404,240 C410,300 356,332 370,372 C378,396 360,410 352,420" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
+<path d="M450,72 C484,138 398,182 404,240 C410,300 356,332 370,372 C378,396 360,410 352,420" fill="none" stroke="#2266d1" stroke-width="8" stroke-linecap="round"/>
+<path id="lbl-b" d="M352,420 C360,410 378,396 370,372 C356,332 410,300 404,240 C398,182 484,138 450,72" fill="none" stroke="none"/><text class="tmap__run" dy="-11"><textPath href="#lbl-b" startOffset="30%">Router Run</textPath></text>
+<g transform="translate(416,194)"><rect x="-8" y="-8" width="16" height="16" fill="#2266d1" stroke="#fff" stroke-width="2"/></g>
+<path id="run-k" d="M450,72 C500,128 478,190 528,240 C580,292 498,330 518,372 C530,396 526,410 532,420" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
+<path d="M450,72 C500,128 478,190 528,240 C580,292 498,330 518,372 C530,396 526,410 532,420" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
 <text class="tmap__run" dy="-11"><textPath href="#run-k" startOffset="34%">Split Brain</textPath></text>
-<g transform="translate(505,175)"><polygon points="0,-10 10,0 0,10 -10,0" fill="#111" stroke="#fff" stroke-width="2"/></g>
-<path id="run-kk" d="M450,72 C520,118 600,175 655,250 C700,312 730,372 762,422" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
-<path d="M450,72 C520,118 600,175 655,250 C700,312 730,372 762,422" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-dasharray="14 10"/>
+<g transform="translate(493,175)"><polygon points="0,-10 10,0 0,10 -10,0" fill="#111" stroke="#fff" stroke-width="2"/></g>
+<path id="run-kk" d="M450,72 C540,98 556,172 620,212 C692,256 658,312 718,352 C756,376 750,406 762,422" fill="none" stroke="#fff" stroke-width="15" stroke-linecap="round"/>
+<path d="M450,72 C540,98 556,172 620,212 C692,256 658,312 718,352 C756,376 750,406 762,422" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round" stroke-dasharray="14 10"/>
 <text class="tmap__run" dy="-11"><textPath href="#run-kk" startOffset="34%">Bundle Bowl</textPath></text>
-<g transform="translate(578,160)"><g><polygon points="-8,-9 1,0 -8,9 -17,0" fill="#111" stroke="#fff" stroke-width="2"/><polygon points="8,-9 17,0 8,9 -1,0" fill="#111" stroke="#fff" stroke-width="2"/></g></g>
+<g transform="translate(550,143)"><g><polygon points="-8,-9 1,0 -8,9 -17,0" fill="#111" stroke="#fff" stroke-width="2"/><polygon points="8,-9 17,0 8,9 -1,0" fill="#111" stroke="#fff" stroke-width="2"/></g></g>
 <line x1="150" y1="408" x2="444" y2="72" stroke="#5a3416" stroke-width="3"/>
 <rect x="201" y="348" width="4" height="26" fill="#5a3416"/><rect x="194" y="345" width="18" height="5" fill="#c0392b"/>
 <rect x="271" y="267" width="4" height="26" fill="#5a3416"/><rect x="264" y="264" width="18" height="5" fill="#c0392b"/>
@@ -114,19 +114,20 @@ of the thing their code was running inside the whole time.</p>
 <text class="tmap__lbl tmap__lbl--red" x="816" y="421" text-anchor="middle">TRAIL CLOSED · YETI</text>
 </svg>
   <ul class="tmap__key" aria-label="Key">
-    <li><span class="tmap__sym tmap__sym--g"></span> Green circle · One JSON Endpoint</li>
-    <li><span class="tmap__sym tmap__sym--b"></span> Blue square · Router Run</li>
-    <li><span class="tmap__sym tmap__sym--k"></span> Black diamond · Split Brain</li>
-    <li><span class="tmap__sym tmap__sym--k"></span><span class="tmap__sym tmap__sym--k"></span> Double black · Bundle Bowl</li>
-    <li><span class="tmap__sym tmap__sym--lift"></span> Chairlift · the browser, which does the climbing</li>
+    <li><span class="tmap__sym tmap__sym--g"></span>Green circle · One JSON Endpoint</li>
+    <li><span class="tmap__sym tmap__sym--b"></span>Blue square · Router Run</li>
+    <li><span class="tmap__sym tmap__sym--k"></span>Black diamond · Split Brain</li>
+    <li><span class="tmap__sym tmap__sym--k"></span><span class="tmap__sym tmap__sym--k"></span>Double black · Bundle Bowl</li>
+    <li><span class="tmap__sym tmap__sym--lift"></span>Chairlift · the browser, which does the climbing</li>
+    <li class="tmap__key--closed"><span class="tmap__sym tmap__sym--yeti"></span>Past the trees · Yeti · Closed</li>
   </ul>
   <p class="cast__head">Who's on the hill</p>
-  <dl>
-    <dt>The Team</dt><dd>Four developers and a designer. Sharp, busy, well-meaning.</dd>
-    <dt>The Browser</dt><dd>Thirty years old. Handles navigation, history, caching, scroll, focus, forms and errors. Never speaks. Nobody asks it anything.</dd>
-    <dt>The API</dt><dd>Speaks only JSON. Has no opinion about what a page is.</dd>
-    <dt>The Bundle</dt><dd>Small at first.</dd>
-  </dl>
+  <ul class="crew">
+    <li><span class="crew__icon crew__icon--team" aria-hidden="true"></span><b>The Team</b><span>Four developers and a designer. Sharp, busy, well-meaning.</span></li>
+    <li><span class="crew__icon crew__icon--browser" aria-hidden="true"><i></i><i></i><i></i></span><b>The Browser</b><span>Thirty years old. Handles navigation, history, caching, scroll, focus, forms and errors. Never speaks. Nobody asks it anything.</span></li>
+    <li><span class="crew__icon crew__icon--api" aria-hidden="true">{&nbsp;}</span><b>The API</b><span>Speaks only JSON. Has no opinion about what a page is.</span></li>
+    <li><span class="crew__icon crew__icon--bundle" aria-hidden="true"></span><b>The Bundle</b><span>Small at first.</span></li>
+  </ul>
 </div>
 
 ## Green circle: It starts with one JSON endpoint
@@ -140,6 +141,33 @@ server return JSON and render it on the client."
 It takes an afternoon. `fetch("/api/orders")`, parse, map to rows. The page
 feels snappy. There's a spinner now, because for the first time there's a
 moment where the page exists but the orders don't. A small price.
+
+<figure class="step arch arch--1 ">
+  <p class="arch__head">Green circle, as drawn on a napkin</p>
+  <div class="arch__board arch__board--idle">
+    <div class="arch__side arch__side--client">
+      <p class="arch__title">Browser tab</p>
+      <ul class="arch__nodes">
+        <li class="node node--app">orders.js <small>fetch · parse · draw</small></li>
+        <li class="node node--app node--new">spinner</li>
+        <li class="node node--app node--new">empty state</li>
+      </ul>
+      <p class="arch__label">Already in the browser. Unused.</p>
+      <ul class="arch__native" aria-label="Already in the browser"><li>history</li><li>HTTP cache</li><li>scroll</li><li>focus</li><li>forms</li><li>errors</li></ul>
+    </div>
+    <div class="arch__wires">
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /api/orders</span><span class="arch__res">JSON · 2 KB</span></div>
+    </div>
+    <div class="arch__side arch__side--server">
+      <p class="arch__title">Server</p>
+      <ul class="arch__nodes">
+        <li class="node node--srv">/api/orders</li>
+        <li class="node node--db">orders table</li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>Green circle. One script, one endpoint, two small extras. Six things the browser does for free are already idle, one layer down.</figcaption>
+</figure>
 
 <figure class="step snow snow--1" style="--n: 4">
   <div class="snow__scene" aria-hidden="true">
@@ -189,6 +217,41 @@ by hand. Focus has to be moved by hand, because a screen reader was told a page
 loaded and nothing happened.
 
 None of this is a feature. Every line of it is a repair.
+
+<figure class="step arch arch--2 ">
+  <p class="arch__head">Blue square, after the back button broke</p>
+  <div class="arch__board arch__board--idle">
+    <div class="arch__side arch__side--client">
+      <p class="arch__title">Browser tab</p>
+      <ul class="arch__nodes">
+        <li class="node node--app">orders.js</li>
+        <li class="node node--app">spinner</li>
+        <li class="node node--app">empty state</li>
+        <li class="node node--repair">router <small>replaces the address bar</small></li>
+        <li class="node node--app">store <small>filter, list</small></li>
+        <li class="node node--repair">query string sync</li>
+        <li class="node node--repair">scroll save/restore <small>sessionStorage</small></li>
+        <li class="node node--repair">deep link handler</li>
+        <li class="node node--repair">document.title setter</li>
+        <li class="node node--repair">focus manager</li>
+        <li class="node node--repair">404 screen</li>
+      </ul>
+      <p class="arch__label">Already in the browser. Unused.</p>
+      <ul class="arch__native" aria-label="Already in the browser"><li>history</li><li>HTTP cache</li><li>scroll</li><li>focus</li><li>forms</li><li>errors</li></ul>
+    </div>
+    <div class="arch__wires">
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /api/orders?status=unpaid</span><span class="arch__res">JSON · 2 KB</span></div>
+    </div>
+    <div class="arch__side arch__side--server">
+      <p class="arch__title">Server</p>
+      <ul class="arch__nodes">
+        <li class="node node--srv">/api/orders</li>
+        <li class="node node--db">orders table</li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>Blue square. Every red box is a repair of something in the grey row beneath it. The grey row still works. Nobody is calling it.</figcaption>
+</figure>
 
 <figure class="step snow snow--2" style="--n: 12">
   <div class="snow__scene" aria-hidden="true">
@@ -265,6 +328,53 @@ The Browser has done all of this since before anyone on The Team was hired. It
 asks the server "has this changed?" and gets back a `304 Not Modified` with no
 body when it hasn't.[^cond] It has no store to reconcile, because it doesn't keep
 one. It has the page.
+
+<figure class="step arch arch--3 ">
+  <p class="arch__head">Black diamond, with two brains</p>
+  <div class="arch__board arch__board--idle">
+    <div class="arch__side arch__side--client">
+      <p class="arch__title">Browser tab</p>
+      <ul class="arch__nodes">
+        <li class="node node--app">orders.js</li>
+        <li class="node node--app">spinner</li>
+        <li class="node node--app">empty state</li>
+        <li class="node node--repair">router</li>
+        <li class="node node--app node--hot">store <small>the second brain</small></li>
+        <li class="node node--repair">query string sync</li>
+        <li class="node node--repair">scroll save/restore</li>
+        <li class="node node--repair">deep link handler</li>
+        <li class="node node--repair">title setter</li>
+        <li class="node node--repair">focus manager</li>
+        <li class="node node--repair">404 screen</li>
+        <li class="node node--repair">cache + TTLs</li>
+        <li class="node node--repair">invalidation</li>
+        <li class="node node--repair">optimistic update</li>
+        <li class="node node--repair">rollback</li>
+        <li class="node node--repair">retry queue</li>
+        <li class="node node--repair">token refresh</li>
+        <li class="node node--app">websocket client</li>
+        <li class="node node--repair">reconciler</li>
+        <li class="node node--repair">“session expired” modal</li>
+      </ul>
+      <p class="arch__label">Already in the browser. Unused.</p>
+      <ul class="arch__native" aria-label="Already in the browser"><li>history</li><li>HTTP cache</li><li>scroll</li><li>focus</li><li>forms</li><li>errors</li></ul>
+    </div>
+    <div class="arch__wires">
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /api/orders · PATCH /api/orders/:id</span><span class="arch__res">JSON · 304 never happens</span></div>
+    <div class="arch__wire arch__wire--ws"><i class="arch__line"></i><span class="arch__req">subscribe</span><span class="arch__res">order.updated</span></div>
+    </div>
+    <div class="arch__side arch__side--server">
+      <p class="arch__title">Server</p>
+      <ul class="arch__nodes">
+        <li class="node node--srv">/api/orders</li>
+        <li class="node node--srv node--new">/api/refresh</li>
+        <li class="node node--srv node--new">websocket server</li>
+        <li class="node node--db node--hot">orders table <small>the first brain</small></li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>Black diamond. Two copies of the truth, a second wire to keep them talking, and a client-side HTTP cache that can't see the real one.</figcaption>
+</figure>
 
 <figure class="step snow snow--3" style="--n: 22">
   <div class="snow__scene" aria-hidden="true">
@@ -366,6 +476,64 @@ JSON, then draws. The Team measures this eventually and calls the result
 "perceived performance," which is the phrase for a spinner that appears
 quickly.
 
+<figure class="step arch arch--4 ">
+  <p class="arch__head">Double black diamond, with the bundle</p>
+  <div class="arch__board arch__board--idle">
+    <div class="arch__side arch__side--client">
+      <p class="arch__title">Browser tab</p>
+      <ul class="arch__nodes">
+        <li class="node node--bundle">vendor chunk <small>210 KB</small></li>
+        <li class="node node--bundle">app chunk <small>180 KB</small></li>
+        <li class="node node--bundle">route chunks <small>×9</small></li>
+        <li class="node node--bundle">hydration</li>
+        <li class="node node--app">loading skeleton</li>
+        <li class="node node--app">error boundary</li>
+        <li class="node node--repair">service worker</li>
+        <li class="node node--bundle">hash config</li>
+        <li class="node node--bundle">code splitting</li>
+        <li class="node node--app">orders.js</li>
+        <li class="node node--app">spinner</li>
+        <li class="node node--app">empty state</li>
+        <li class="node node--repair">router</li>
+        <li class="node node--app node--hot">store</li>
+        <li class="node node--repair">query string sync</li>
+        <li class="node node--repair">scroll save/restore</li>
+        <li class="node node--repair">deep link handler</li>
+        <li class="node node--repair">title setter</li>
+        <li class="node node--repair">focus manager</li>
+        <li class="node node--repair">404 screen</li>
+        <li class="node node--repair">cache + TTLs</li>
+        <li class="node node--repair">invalidation</li>
+        <li class="node node--repair">optimistic update</li>
+        <li class="node node--repair">rollback</li>
+        <li class="node node--repair">retry queue</li>
+        <li class="node node--repair">token refresh</li>
+        <li class="node node--app">websocket client</li>
+        <li class="node node--repair">reconciler</li>
+        <li class="node node--repair">“session expired” modal</li>
+      </ul>
+      <p class="arch__label">Already in the browser. Unused.</p>
+      <ul class="arch__native" aria-label="Already in the browser"><li>history</li><li>HTTP cache</li><li>scroll</li><li>focus</li><li>forms</li><li>errors</li></ul>
+    </div>
+    <div class="arch__wires">
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /static/app.3f9c1e.js</span><span class="arch__res">JavaScript · 558 KB, every deploy</span></div>
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /api/orders</span><span class="arch__res">JSON · 2 KB</span></div>
+    <div class="arch__wire arch__wire--ws"><i class="arch__line"></i><span class="arch__req">subscribe</span><span class="arch__res">order.updated</span></div>
+    </div>
+    <div class="arch__side arch__side--server">
+      <p class="arch__title">Server</p>
+      <ul class="arch__nodes">
+        <li class="node node--srv node--new">CDN</li>
+        <li class="node node--srv">/api/orders</li>
+        <li class="node node--srv">/api/refresh</li>
+        <li class="node node--srv">websocket server</li>
+        <li class="node node--db node--hot">orders table</li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>Double black. The 2 KB everyone quotes is the thin wire in the middle. The 558 KB is the browser The Team rebuilt, shipped to every visitor, every deploy.</figcaption>
+</figure>
+
 <figure class="step snow snow--4" style="--n: 31">
   <div class="snow__scene" aria-hidden="true">
     <div class="snow__hill"></div>
@@ -454,25 +622,33 @@ quickly.
 <div class="lodge" aria-hidden="true"></div>
 <p class="lodge__caption">The lodge. Warm, well-argued, and where every SPA decision gets made over a beer.</p>
 
-**"Some things are applications."** Yes. A design tool, a spreadsheet, a map, a
+<p class="bubble"><q>Some things are applications.</q></p>
+
+Yes. A design tool, a spreadsheet, a map, a
 video editor. If the user is manipulating a document continuously and the
 server is a save button, the client should own that state, and a page-per-view
 would be absurd. This story is not about those. It's about a list of orders,
 which is most of the web, wearing the architecture of a spreadsheet.
 
-**"We need the API for the mobile app anyway."** Fine. Have the API. Nothing
+<p class="bubble"><q>We need the API for the mobile app anyway.</q></p>
+
+Fine. Have the API. Nothing
 about an API requires the browser to consume it through a store; the server can
 read the same code path and send HTML. The API and the split brain are separate
 decisions that got sold as one.
 
-**"Full page loads feel slow."** They did, in 2012. Today the browser keeps the
+<p class="bubble"><q>Full page loads feel slow.</q></p>
+
+They did, in 2012. Today the browser keeps the
 previous page in memory and restores it instantly on Back.[^bfcache] It animates
 between two documents with one CSS rule and no JavaScript.[^vt] Chrome will
 prefetch or fully prerender the next page from a declarative rules block, though
 that one is still Chrome-only.[^specrules] The feel that justified the rewrite is
 now a property of documents.
 
-**"It works offline."** Some of it does, for the price of a service worker,
+<p class="bubble"><q>It works offline.</q></p>
+
+Some of it does, for the price of a service worker,
 which is on the ball. If offline is a real requirement it's worth it. It usually
 isn't the requirement; it's the justification found afterwards.
 
@@ -582,6 +758,32 @@ a form and one attribute:
 ```
 
 Caption: <b>The green circle, done in spring.</b> A form that works with no script at all, boosted so the response replaces one region instead of the page. Same server, same HTML, no second brain.
+
+<figure class="step arch arch--5 arch--spring">
+  <p class="arch__head">Spring, the same list</p>
+  <div class="arch__board arch__board--lit">
+    <div class="arch__side arch__side--client">
+      <p class="arch__title">Browser tab</p>
+      <ul class="arch__nodes">
+        <li class="node node--app">HTML page</li>
+        <li class="node node--spring">htmx <small>one script tag, 14 KB</small></li>
+      </ul>
+      <p class="arch__label">Already in the browser. Doing the work.</p>
+      <ul class="arch__native" aria-label="Already in the browser"><li>history</li><li>HTTP cache</li><li>scroll</li><li>focus</li><li>forms</li><li>errors</li></ul>
+    </div>
+    <div class="arch__wires">
+    <div class="arch__wire"><i class="arch__line"></i><span class="arch__req">GET /orders?status=unpaid</span><span class="arch__res">HTML fragment · 304 when unchanged</span></div>
+    </div>
+    <div class="arch__side arch__side--server">
+      <p class="arch__title">Server</p>
+      <ul class="arch__nodes">
+        <li class="node node--srv">/orders <small>renders the rows</small></li>
+        <li class="node node--db node--hot">orders table <small>the only brain</small></li>
+      </ul>
+    </div>
+  </div>
+  <figcaption>Spring. The state lives on the server, the browser does the navigating, caching, scrolling and focusing it was built for, and the app layer is one attribute and one script tag.</figcaption>
+</figure>
 
 That's the whole argument of this site in one hill. The browser is not a
 rendering target. It's a thirty-year-old application platform that already
