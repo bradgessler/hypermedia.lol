@@ -1,9 +1,10 @@
 ---
 title: Every Single-Page App Is a Worse Browser Running Inside a Browser
 date: September 9, 2026
+subtitle: Where good intentions snowball into a shitty browser inside a browser
 byline: Brad Gessler
 byline_url: https://bradgessler.com
-description: A team decides the server will speak JSON and the browser will do the rest. Four acts later they have rebuilt the back button, the cache, scroll restoration and the URL by hand, worse, and they can't see it. With a snowball.
+description: Good intentions snowball into a shitty browser inside a browser. A team decides the server will speak JSON and the client will do the rest, and four runs later they've rebuilt the back button, the cache, scroll restoration and the URL by hand, worse. With a yeti.
 accent: hot
 sprite: brick
 treatment: slope

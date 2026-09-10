@@ -2700,3 +2700,13 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .bars__bar--zero { background: transparent; border-left: 3px solid var(--muted); }
 .bars__bar b { position: absolute; left: calc(100% + 0.5rem); top: 50%; transform: translateY(-50%); font-family: var(--mono); font-size: 0.75rem; white-space: nowrap; color: var(--ink); }
 @media (max-width: 34rem) { .bars__row { grid-template-columns: 1fr; gap: 0.25rem; } }
+
+
+/* Subtitle under a title, when a page sets one. */
+.banner .subtitle { margin: 0.4rem 0 0.9rem; font-family: var(--prose); font-style: italic; font-size: 1.05rem; line-height: 1.4; color: var(--muted); }
+.t-slope .banner .subtitle { color: #ffe28a; font-family: var(--prose); font-style: italic; font-size: clamp(1rem, 2.6vw, 1.25rem); margin: 0 auto 1.2rem; max-width: 34rem; text-shadow: 0 1px 0 rgba(0,0,0,0.5); }
+
+/* The reading column is solid paper, so the snow falls around the words,
+   never under them. */
+.t-slope main.prose { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }
+.t-slope .foot { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }

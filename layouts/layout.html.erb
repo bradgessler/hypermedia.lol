@@ -47,6 +47,9 @@
           <div class="banner__art"><%= sprite sprite_name, size: 84 %></div>
           <div class="banner__meta">
             <h1 class="article-title"><%= page_title %></h1>
+            <% if (sub = current_page.data["subtitle"]) %>
+              <p class="subtitle"><%= sub %></p>
+            <% end %>
             <% if current_page.data["byline"] || current_page.data["date"] %>
               <p class="byline">
                 <% if (name = current_page.data["byline"]) %>
