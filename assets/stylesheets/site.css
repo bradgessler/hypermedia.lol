@@ -2502,7 +2502,7 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .t-slope pre { background: #101820; border-color: var(--rule); color: #f3f6fa; }
 .t-slope table th { background: #e3e9f2; color: var(--ink); }
 .t-slope table th, .t-slope table td { border-color: #b8c4cf; }
-.t-slope .step figcaption { color: var(--muted); }
+.t-slope .step:not(.snow) figcaption { color: var(--muted); }
 .t-slope .foot { color: var(--ink); }
 
 /* Card preview: a slope with trees and the ball. */
@@ -2518,12 +2518,26 @@ pre.highlight { background: var(--code-bg, #14130f); }
 /* ---------------------------------------------- SPA article: the props */
 
 .cast { margin: 0 0 4rem; padding: 1.25rem 1.4rem; border: 1px solid var(--rule); background: var(--panel); }
-.t-slope .cast { display: grid; grid-template-columns: minmax(12rem, 1fr) 1.15fr; grid-template-areas: 'map head' 'map list'; gap: 0 1.25rem; align-items: start; padding: 0; border: 3px solid var(--rule); box-shadow: 6px 6px 0 var(--rule); overflow: hidden; }
-.t-slope .cast::before { content: ''; grid-area: map; display: block; align-self: stretch; min-height: 15rem; background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 -150 320 390%22%3E%0A%3Crect y=%22-150%22 width=%22320%22 height=%22390%22 fill=%22%23eef3f9%22/%3E%3Ccircle cx=%22225%22 cy=%22-90%22 r=%2224%22 fill=%22%23ffe08a%22/%3E%0A%3Cpolygon points=%220,240 0,150 60,70 110,110 160,20 210,100 260,60 320,140 320,240%22 fill=%22%23dfe7f1%22/%3E%0A%3Cpolygon points=%22145,42 160,20 175,42%22 fill=%22%23fff%22/%3E%3Cpolygon points=%22248,74 260,60 272,74%22 fill=%22%23fff%22/%3E%3Cpolygon points=%2248,86 60,70 72,86%22 fill=%22%23fff%22/%3E%0A%3Cpolygon points=%220,240 0,200 320,170 320,240%22 fill=%22%23f7f9fc%22/%3E%0A%3Cpath d=%22M160 24 C 150 80, 120 120, 70 210%22 stroke=%22%232e9e4f%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 158 90, 140 140, 125 212%22 stroke=%22%232266d1%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 175 90, 200 130, 195 212%22 stroke=%22%23111%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 200 70, 250 130, 262 212%22 stroke=%22%23111%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-dasharray=%2210 6%22/%3E%0A%3Ccircle cx=%2270%22 cy=%22210%22 r=%227%22 fill=%22%232e9e4f%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Crect x=%22118%22 y=%22205%22 width=%2214%22 height=%2214%22 fill=%22%232266d1%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cpolygon points=%22195,203 204,212 195,221 186,212%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cpolygon points=%22254,203 262,211 254,219 246,211%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%3Cpolygon points=%22270,203 278,211 270,219 262,211%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cline x1=%2230%22 y1=%22230%22 x2=%22160%22 y2=%2228%22 stroke=%22%235a3416%22 stroke-width=%222%22/%3E%0A%3Cg fill=%22%235a3416%22%3E%3Crect x=%2260%22 y=%22180%22 width=%223%22 height=%2218%22/%3E%3Crect x=%22100%22 y=%22118%22 width=%223%22 height=%2218%22/%3E%3Crect x=%22132%22 y=%2270%22 width=%223%22 height=%2218%22/%3E%3C/g%3E%0A%3Cg fill=%22%23c0392b%22%3E%3Crect x=%2255%22 y=%22196%22 width=%2213%22 height=%227%22/%3E%3Crect x=%2295%22 y=%22134%22 width=%2213%22 height=%227%22/%3E%3Crect x=%22127%22 y=%2286%22 width=%2213%22 height=%227%22/%3E%3C/g%3E%0A%3Cg transform=%22translate%2814 0%29%22%3E%3Cpolygon points=%2218,232 40,206 62,232%22 fill=%22%238a5a2b%22/%3E%3Crect x=%2224%22 y=%22220%22 width=%2232%22 height=%2212%22 fill=%22%23a86b35%22/%3E%3Crect x=%2236%22 y=%22224%22 width=%228%22 height=%228%22 fill=%22%23ffd166%22/%3E%3Crect x=%2226%22 y=%22224%22 width=%226%22 height=%225%22 fill=%22%23ffd166%22/%3E%3Crect x=%2248%22 y=%22224%22 width=%226%22 height=%225%22 fill=%22%23ffd166%22/%3E%3C/g%3E%0A%3Cg fill=%22%232e7d32%22%3E%3Cpolygon points=%22290,232 298,214 306,232%22/%3E%3Cpolygon points=%22230,236 236,224 242,236%22/%3E%3Cpolygon points=%2212,196 18,182 24,196%22/%3E%3Cpolygon points=%22300,120 305,110 310,120%22/%3E%3C/g%3E%0A%3Cg%3E%3Crect x=%22286%22 y=%22180%22 width=%2218%22 height=%2214%22 rx=%224%22 fill=%22%23b8c4cf%22/%3E%3Crect x=%22290%22 y=%22184%22 width=%223%22 height=%223%22 fill=%22%23111%22/%3E%3Crect x=%22297%22 y=%22184%22 width=%223%22 height=%223%22 fill=%22%23111%22/%3E%3Crect x=%22292%22 y=%22190%22 width=%226%22 height=%222%22 fill=%22%23111%22/%3E%3C/g%3E%0A%3C/svg%3E") center bottom / cover no-repeat; border-right: 3px solid var(--rule); }
-.t-slope .cast__head { grid-area: head; padding: 1.1rem 1.25rem 0; margin: 0 0 0.5rem; }
-.t-slope .cast dl { grid-area: list; grid-template-columns: 1fr; gap: 0.15rem 0; padding: 0 1.25rem 1.1rem; }
-.t-slope .cast dd { margin-bottom: 0.6rem; }
-@media (max-width: 40rem) { .t-slope .cast { grid-template-columns: 1fr; grid-template-areas: 'map' 'head' 'list'; } .t-slope .cast::before { min-height: 0; aspect-ratio: 4 / 3; border-right: 0; border-bottom: 3px solid var(--rule); } }
+.t-slope .cast { display: block; padding: 0; border: 0; box-shadow: none; background: none; overflow: visible; }
+.t-slope .cast__head { margin: 0 0 0.6rem; }
+.t-slope .cast dl { grid-template-columns: 1fr 1fr; gap: 0.2rem 1.5rem; }
+.t-slope .cast dd { margin-bottom: 0.7rem; }
+@media (max-width: 34rem) { .t-slope .cast dl { grid-template-columns: 1fr; } }
+.tmap { display: block; width: min(56rem, 100vw - 2.5rem); height: auto; margin: 0.5rem 0 1rem 50%; translate: -50% 0; overflow: visible; }
+.tmap text { font-family: var(--ui); fill: var(--ink); paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.tmap .tmap__run { font-size: 17px; font-weight: 700; letter-spacing: 0.02em; }
+.tmap .tmap__lbl { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; }
+.tmap .tmap__lbl--red { fill: #b3111a; }
+@media (max-width: 44rem) { .tmap text { display: none; } }
+.tmap__key { display: flex; flex-wrap: wrap; gap: 0.35rem 1.4rem; margin: 0 0 1.8rem; padding: 0; list-style: none; font-family: var(--mono); font-size: 0.78rem; color: var(--ink); }
+.tmap__key li { display: flex; align-items: center; gap: 0.45rem; }
+.tmap__sym { display: inline-block; width: 0.75rem; height: 0.75rem; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--ink); }
+.tmap__sym--g { background: #2e9e4f; border-radius: 50%; }
+.tmap__sym--b { background: #2266d1; }
+.tmap__sym--k { background: #111; rotate: 45deg; width: 0.6rem; height: 0.6rem; }
+.tmap__sym--k + .tmap__sym--k { margin-left: -0.35rem; }
+.tmap__sym--lift { width: 1.2rem; height: 0; border: 0; box-shadow: none; border-top: 3px solid #5a3416; position: relative; }
+.tmap__sym--lift::after { content: ""; position: absolute; left: 0.35rem; top: 0; width: 0.45rem; height: 0.35rem; background: #c0392b; }
 .cast__head { margin: 0 0 0.75rem; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
 .cast dl { display: grid; grid-template-columns: 8rem 1fr; gap: 0.5rem 1rem; margin: 0; }
 .cast dt { font-family: var(--ui); font-weight: 700; color: var(--ink); }
@@ -2534,7 +2548,6 @@ pre.highlight { background: var(--code-bg, #14130f); }
    orbiting it. Grows act by act. Sized in container units so it scales down
    to a phone; the flat list stays under it there for reading. */
 .snow { display: block; container-type: inline-size; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
-.snow figcaption { max-width: 42rem; margin-left: auto; margin-right: auto; padding: 0 1.25rem; }
 .snow--1 { --size: clamp(4rem, 9cqw, 8rem);  --orbit: clamp(4.5rem, 10cqw, 9rem); }
 .snow--2 { --size: clamp(5rem, 12cqw, 11rem); --orbit: clamp(5.5rem, 13cqw, 12rem); }
 .snow--3 { --size: clamp(6rem, 15cqw, 14rem); --orbit: clamp(6.5rem, 16cqw, 15rem); }
@@ -2698,9 +2711,56 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .ledger { font-size: 0.92rem; }
 .prose table.ledger th, .prose table.ledger td { white-space: normal; min-width: 0; }
 .prose table.ledger th:first-child, .prose table.ledger td:first-child { min-width: 9rem; }
-/* Wide enough to wrap on desktop; on phones it scrolls in its box like any table. */
 @media (min-width: 48rem) { .prose table.ledger { display: table; width: 100%; } }
 .ledger__diff { color: var(--accent); font-weight: 700; }
+
+/* The split brain, chalked up on the conditions board outside the lodge. */
+.t-slope .ledger-board {
+  position: relative;
+  box-sizing: border-box;
+  width: min(58rem, 100vw - 2rem);
+  margin: 2.5rem 0 3rem 50%;
+  translate: -50% 0;
+  padding: 2.4rem 1.4rem 1.2rem;
+  border: 10px solid #7a4a22;
+  border-image: linear-gradient(#8d5a2e, #5a3416) 1;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.06), transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(255,255,255,0.05), transparent 50%),
+    #24352b;
+  box-shadow: 0 10px 0 #3a2110, 0 18px 30px rgba(16,24,32,0.3);
+  color: #f4f1e6;
+}
+.t-slope .ledger-board::before {
+  content: "Conditions report";
+  position: absolute;
+  top: 0.7rem;
+  left: 1.4rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #cfe3d3;
+}
+.t-slope .ledger-board table.ledger { font-size: 0.95rem; border: 0; background: none; color: inherit; }
+.t-slope .ledger-board table.ledger th, .t-slope .ledger-board table.ledger td { border: 0; border-bottom: 1px solid rgba(244,241,230,0.22); padding: 0.6rem 0.8rem; background: none; color: inherit; vertical-align: top; }
+.t-slope .ledger-board table.ledger th { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: #cfe3d3; border-bottom: 2px dashed rgba(244,241,230,0.55); }
+.t-slope .ledger-board table.ledger tr:last-child td { border-bottom: 0; }
+.t-slope .ledger-board .ledger__diff { color: #ffe28a; }
+.t-slope .ledger-board figcaption { margin-top: 1rem; padding-top: 0.8rem; border-top: 1px dashed rgba(244,241,230,0.45); color: #dfe9e0; }
+@media (max-width: 40rem) {
+  .t-slope .ledger-board { padding: 2.2rem 0.9rem 1rem; border-width: 7px; }
+  .t-slope .ledger-board table.ledger, .t-slope .ledger-board table.ledger tbody { display: block; width: 100%; overflow: visible; }
+  .t-slope .ledger-board table.ledger thead { display: none; }
+  .t-slope .ledger-board table.ledger tr { display: grid; grid-template-columns: 1fr 1fr; gap: 0 0.8rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(244,241,230,0.22); }
+  .t-slope .ledger-board table.ledger tr:last-child { border-bottom: 0; }
+  .t-slope .ledger-board table.ledger td { display: block; border: 0; padding: 0; min-width: 0; }
+  .t-slope .ledger-board table.ledger td:first-child { grid-column: 1 / -1; margin-bottom: 0.4rem; font-weight: 700; }
+  .t-slope .ledger-board table.ledger td:nth-child(2)::before, .t-slope .ledger-board table.ledger td:nth-child(3)::before { display: block; font-family: var(--mono); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #cfe3d3; margin-bottom: 0.15rem; }
+  .t-slope .ledger-board table.ledger td:nth-child(2)::before { content: "Client believes"; }
+  .t-slope .ledger-board table.ledger td:nth-child(3)::before { content: "Server knows"; }
+}
 
 /* What a typo costs, to scale. */
 .bars { display: grid; gap: 0.7rem; }
@@ -2717,10 +2777,17 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .banner .subtitle { margin: 0.4rem 0 0.9rem; font-family: var(--prose); font-style: italic; font-size: 1.05rem; line-height: 1.4; color: var(--muted); }
 .t-slope .banner .subtitle { color: #ffe28a; font-family: var(--prose); font-style: italic; font-size: clamp(1rem, 2.6vw, 1.25rem); margin: 0 auto 1.2rem; max-width: 34rem; text-shadow: 0 1px 0 rgba(0,0,0,0.5); }
 
-/* The reading column is solid paper, so the snow falls around the words,
-   never under them. */
-.t-slope main.prose { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }
-.t-slope .foot { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }
+/* Paper sits under each block of words, not under the whole column, so the
+   snow falls in every gap and margin and never crosses a line of text. */
+.t-slope .topmark { z-index: 2; }
+.t-slope .prose > :is(p:not(.lodge__caption, .crash__caption, .thaw__caption), ul, ol, dl, blockquote, .bars, .footnotes),
+.t-slope .prose figure.step:not(.snow, .ledger-board) > :is(table, .bars, figcaption),
+.t-slope .cast > :is(p, ul, dl),
+.t-slope .foot > :is(p, dl, .foot__meta), .t-slope .foot .mark--masthead {
+  background: var(--paper);
+  box-shadow: 0 0 0 0.6rem var(--paper);
+}
+.t-slope .prose > .lede { box-shadow: 0.6rem 0 0 var(--paper), 0 0 0 0.6rem var(--paper); }
 
 
 /* The lodge: warm windows, smoke, skis by the door. Full bleed. */
@@ -2746,7 +2813,40 @@ pre.highlight { background: var(--code-bg, #14130f); }
 }
 .lodge::after { animation-delay: 1.6s; width: 0.7rem; height: 0.7rem; }
 @keyframes smoke { 0% { translate: 0 0; opacity: 0.9; scale: 0.6; } 100% { translate: 1.2rem -4rem; opacity: 0; scale: 1.8; } }
-.lodge__caption, .crash__caption, .thaw__caption { max-width: 42rem; margin: 0.8rem auto 2.5rem; padding: 0 1.25rem; font-family: var(--ui); font-size: 0.88rem; color: var(--muted); }
+.t-slope .snow figcaption, .t-slope .lodge__caption, .t-slope .crash__caption, .t-slope .thaw__caption {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: min(36rem, 100% - 2.5rem);
+  margin: -1.15rem auto 3rem;
+  padding: 0.75rem 1.2rem 0.8rem;
+  border: 3px solid #2b180a;
+  border-top: 0;
+  border-radius: 0 0 6px 6px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 9px),
+    linear-gradient(#6b3f1f, #4a2a12);
+  box-shadow: 0 5px 0 #2b180a, 0 10px 18px rgba(16,24,32,0.25);
+  font-family: var(--ui);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #fff3d6;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+}
+.t-slope .snow figcaption::before, .t-slope .lodge__caption::before, .t-slope .crash__caption::before, .t-slope .thaw__caption::before,
+.t-slope .snow figcaption::after, .t-slope .lodge__caption::after, .t-slope .crash__caption::after, .t-slope .thaw__caption::after {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #d9d2c5;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.5);
+}
+.t-slope .snow figcaption::before, .t-slope .lodge__caption::before, .t-slope .crash__caption::before, .t-slope .thaw__caption::before { left: 0.5rem; }
+.t-slope .snow figcaption::after, .t-slope .lodge__caption::after, .t-slope .crash__caption::after, .t-slope .thaw__caption::after { right: 0.5rem; }
+.t-slope .snow figcaption b { color: #ffe28a; }
 
 /* The bottom of the hill: grey, gross, and occupied. Full bleed. */
 .crash {
