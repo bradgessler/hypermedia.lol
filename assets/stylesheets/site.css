@@ -2298,7 +2298,7 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .t-slope {
   --accent: #1f5fd0;
   --ink: #101820;
-  --paper: #f3f6fa;
+  --paper: #e3ebf5;
   --panel: #ffffff;
   --muted: #56606b;
   --rule: #101820;
@@ -2313,7 +2313,9 @@ pre.highlight { background: var(--code-bg, #14130f); }
   position: relative;
 }
 
-/* It snows on this page. Three layers, behind everything, never over text. */
+/* It snows on this page. Three layers of six-armed flakes at different sizes,
+   drifting down and sideways at different speeds, fixed behind everything so
+   they pass behind the words, never over them. */
 .t-slope::before {
   content: "";
   position: fixed;
@@ -2321,59 +2323,94 @@ pre.highlight { background: var(--code-bg, #14130f); }
   pointer-events: none;
   z-index: 0;
   background-image:
-    radial-gradient(circle, #b9c9de 1.2px, transparent 1.7px),
-    radial-gradient(circle, #a7bbd4 1.8px, transparent 2.4px),
-    radial-gradient(circle, rgba(146,168,196,0.75) 2.6px, transparent 3.2px);
-  background-size: 170px 170px, 270px 270px, 430px 430px;
-  background-position: 0 0, 70px 40px, 140px 110px;
-  animation: snowfall 28s linear infinite;
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20190%20190%22%20width=%22190%22%20height=%22190%22%3E%3Cg%20transform=%22translate%2820,30%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28110,80%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2860,150%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28160,120%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20310%20310%22%20width=%22310%22%20height=%22310%22%3E%3Cg%20transform=%22translate%2840,50%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28230,140%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28120,260%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20520%20520%22%20width=%22520%22%20height=%22520%22%3E%3Cg%20transform=%22translate%2890,90%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28380,300%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 190px 190px, 310px 310px, 520px 520px;
+  background-position: 0 0, 90px 60px, 160px 140px;
+  animation: snowfall 30s linear infinite;
 }
 
 .t-slope .topmark, .t-slope main, .t-slope .foot { position: relative; z-index: 1; }
 
 @keyframes snowfall {
-  to { background-position: 50px 170px, 30px 270px, -40px 430px; }
+  to { background-position: 70px 190px, 40px 310px, -60px 520px; }
 }
 
 .t-slope .prose { max-width: 42rem; }
 
+/* The banner is the resort's entrance sign: a big wood board with a mountain
+   crest, snow piled along its top edge, on two posts in the snow. */
 .t-slope .banner {
+  position: relative;
   display: block;
-  padding: 0;
-  border: 2px solid var(--rule);
-  background: var(--panel);
-  box-shadow: 4px 4px 0 var(--rule);
+  margin: 2.5rem 0 5.5rem;
+  padding: 2.4rem 1.6rem 1.6rem;
+  border: 4px solid #2b180a;
+  border-radius: 10px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 10px),
+    linear-gradient(#7a4a22, #4a2a12);
+  box-shadow: 0 8px 0 #2b180a, 0 14px 30px rgba(16,24,32,0.25);
+  text-align: center;
 }
-
-/* Windows 3.1 title bar. */
 .t-slope .banner::before {
-  content: "Ski - hypermedia.lol";
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.3rem 0.5rem;
-  background: #000080;
-  color: #fff;
-  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 0.85rem;
+  content: "";
+  position: absolute;
+  left: -0.5rem;
+  right: -0.5rem;
+  top: -0.7rem;
+  height: 1.6rem;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20200%2020%22%20preserveAspectRatio=%22none%22%3E%3Cpath%20d=%22M0%200h200v6c-8%200-10%209-18%209s-10-9-18-9-10%2011-18%2011-10-8-18-8-10%2010-18%2010-10-9-18-9-10%208-18%208-10-10-18-10-10%209-18%209-10-7-18-7-10%208-18%208V0z%22%20fill=%22%23fff%22/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 2px 0 rgba(16,24,32,0.15));
 }
-
-.t-slope .banner__art { display: none; }
-.t-slope .banner__meta { padding: 1.4rem 1.4rem 1.2rem; }
-
+/* Two posts and their mounds. */
+.t-slope .banner::after {
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 100%;
+  height: 3.6rem;
+  background:
+    linear-gradient(90deg, #5a3416, #7a4a22 45%, #4a2a12) 0 0 / 1.1rem 100% no-repeat,
+    linear-gradient(90deg, #5a3416, #7a4a22 45%, #4a2a12) 100% 0 / 1.1rem 100% no-repeat,
+    radial-gradient(ellipse at 50% 100%, #fff 0, #e6edf5 55%, transparent 56%) -1.6rem 100% / 4.5rem 1.8rem no-repeat,
+    radial-gradient(ellipse at 50% 100%, #fff 0, #e6edf5 55%, transparent 56%) calc(100% + 1.6rem) 100% / 4.5rem 1.8rem no-repeat;
+  z-index: -1;
+}
+.t-slope .banner__art {
+  display: block;
+  width: 5.5rem;
+  height: 3.4rem;
+  margin: 0 auto 0.8rem;
+  background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2040%22%3E%3Cpolygon%20points=%222,38%2018,10%2026,22%2034,6%2046,24%2052,16%2062,38%22%20fill=%22%23dfe7f1%22/%3E%3Cpolygon%20points=%2218,10%2022,16%2014,16%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%2234,6%2039,14%2029,14%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%2252,16%2055,21%2049,21%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%222,38%2062,38%2062,40%202,40%22%20fill=%22%232e7d32%22/%3E%3Cpolygon%20points=%228,38%2012,26%2016,38%22%20fill=%22%232e7d32%22/%3E%3Cpolygon%20points=%2254,38%2058,28%2062,38%22%20fill=%22%232e7d32%22/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.t-slope .banner__art svg { display: none; }
+.t-slope .banner__meta { padding: 0; }
 .t-slope .article-title {
-  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
-  font-weight: 700;
-  font-size: clamp(1.7rem, 5.2vw, 2.6rem);
-  line-height: 1.12;
-  text-transform: none;
-  letter-spacing: -0.01em;
-  color: var(--ink);
+  font-family: "Haettenschweiler", "Arial Narrow Bold", "Impact", "Franklin Gothic Bold", sans-serif;
+  font-weight: 400;
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #fff4dc;
+  text-shadow: 0 3px 0 #2b180a, 0 0 1px #2b180a;
+  margin: 0 0 0.9rem;
 }
-
-.t-slope .banner .byline { color: var(--muted); }
-.t-slope .byline a { color: var(--accent); }
+.t-slope .banner .byline {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border: 2px solid #fff4dc;
+  color: #fff4dc;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.t-slope .byline a { color: #ffe28a; }
+.t-slope .banner .byline time { color: #fff4dc; }
 
 /* Section headers are trail signs: a board with the marker painted on it and
    an arrow end, on a wooden post, planted in a mound of snow. */
