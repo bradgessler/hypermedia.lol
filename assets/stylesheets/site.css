@@ -2310,6 +2310,29 @@ pre.highlight { background: var(--code-bg, #14130f); }
   --yeti: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%225%22%20y=%220%22%20width=%226%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%221%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%225%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%226%22%20y=%222%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2210%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2211%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%223%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%226%22%20y=%224%22%20width=%224%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2210%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%225%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%222%22%20y=%226%22%20width=%2212%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%227%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%228%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%229%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2210%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2211%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3C/svg%3E");
   background-image: radial-gradient(circle, rgba(16,24,32,0.10) 0.8px, transparent 1px);
   background-size: 22px 22px;
+  position: relative;
+}
+
+/* It snows on this page. Three layers, behind everything, never over text. */
+.t-slope::before {
+  content: "";
+  position: fixed;
+  inset: -20% 0 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, #b9c9de 1.2px, transparent 1.7px),
+    radial-gradient(circle, #a7bbd4 1.8px, transparent 2.4px),
+    radial-gradient(circle, rgba(146,168,196,0.75) 2.6px, transparent 3.2px);
+  background-size: 170px 170px, 270px 270px, 430px 430px;
+  background-position: 0 0, 70px 40px, 140px 110px;
+  animation: snowfall 28s linear infinite;
+}
+
+.t-slope .topmark, .t-slope main, .t-slope .foot { position: relative; z-index: 1; }
+
+@keyframes snowfall {
+  to { background-position: 50px 170px, 30px 270px, -40px 430px; }
 }
 
 .t-slope .prose { max-width: 42rem; }
@@ -2411,121 +2434,116 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .cast dd { margin: 0; font-family: var(--prose); font-size: 1rem; line-height: 1.5; color: var(--muted); }
 @media (max-width: 34rem) { .cast dl { grid-template-columns: 1fr; gap: 0.15rem 0; } .cast dd { margin-bottom: 0.6rem; } }
 
-/* The snowball: rolls down the hill, spinning and bouncing, with the junk
-   orbiting it. Grows act by act. Phones get the static list instead of the
-   ring, and reduced-motion gets stillness. */
-.snow { display: block; }
-.snow--1 { --size: 5rem;  --orbit: 5.4rem; }
-.snow--2 { --size: 8rem;  --orbit: 7.6rem; }
-.snow--3 { --size: 10rem; --orbit: 9rem; }
-.snow--4 { --size: 12rem; --orbit: 10.2rem; }
+/* The snowball: stationary on the hill, spinning and bouncing, with the junk
+   orbiting it. Grows act by act. Sized in container units so it scales down
+   to a phone; the flat list stays under it there for reading. */
+.snow { display: block; container-type: inline-size; }
+.snow--1 { --size: 12cqw; --orbit: 13cqw; }
+.snow--2 { --size: 18cqw; --orbit: 18cqw; }
+.snow--3 { --size: 23cqw; --orbit: 22cqw; }
+.snow--4 { --size: 27cqw; --orbit: 26cqw; }
 
-.snow__scene { display: none; }
-
-@media (min-width: 48rem) {
-  .snow__scene {
-    position: relative;
-    display: block;
-    height: calc(var(--orbit) * 2 + 6rem);
-    margin: 0 0 1rem;
-    overflow: hidden;
-  }
-  .snow__hill {
-    position: absolute;
-    inset: 0;
-    background: #fbfcfe;
-    border: 2px solid var(--rule);
-    box-shadow: 4px 4px 0 var(--rule);
-  }
-  .snow__hill::before, .snow__hill::after, .snow__tree {
-    content: "";
-    position: absolute;
-    width: 2.6rem;
-    height: 2.6rem;
-    background: var(--tree) center / contain no-repeat;
-  }
-  .snow__hill::before { left: 8%; top: 10%; }
-  .snow__hill::after { right: 10%; bottom: 12%; }
-  .snow__tree--a { left: 22%; bottom: 8%; }
-  .snow__tree--b { right: 18%; top: 8%; width: 2rem; height: 2rem; }
-  .snow__skier {
-    position: absolute;
-    left: 12%;
-    bottom: 22%;
-    width: 2.4rem;
-    height: 2.4rem;
-    background: var(--skier) center / contain no-repeat;
-    animation: snow-skier 1.15s ease-in-out infinite;
-  }
-  .snow__yeti {
-    position: absolute;
-    right: 6%;
-    bottom: 6%;
-    width: 3.6rem;
-    height: 3.6rem;
-    background: var(--yeti) center / contain no-repeat;
-    animation: snow-yeti 0.9s steps(2) infinite;
-  }
-  .snow__scene { background: #fbfcfe; }
-  .snow__roll {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: var(--size);
-    height: var(--size);
-    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
-    animation: snow-bounce 1.15s ease-in-out infinite;
-  }
-  .snow__ball {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background:
-      radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0) 45%),
-      radial-gradient(circle at 62% 70%, rgba(0,0,0,0.10) 0 6%, transparent 7%),
-      radial-gradient(circle at 25% 65%, rgba(0,0,0,0.12) 0 4%, transparent 5%),
-      radial-gradient(circle at 70% 30%, rgba(0,0,0,0.09) 0 5%, transparent 6%),
-      radial-gradient(circle at 45% 45%, #f4f4f4, #cfcfcf 60%, #8e8e8e);
-    box-shadow: 0 12px 26px rgba(0,0,0,0.55), inset -10px -12px 22px rgba(0,0,0,0.18);
-    animation: snow-spin 5s linear infinite;
-  }
-  .snow__ring {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 0;
-    height: 0;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    animation: snow-spin 16s linear infinite;
-  }
-  .snow__ring li {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit)));
-  }
-  .snow__ring li:nth-child(even) { transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit) - 1.4rem)); }
-  .snow__ring li span {
-    display: block;
-    /* Undo the placement angle, then the ring's spin, so labels stay upright. */
-    rotate: calc(-1 * var(--i) / var(--n) * 360deg);
-    transform: translate(-50%, -50%);
-    padding: 0.22rem 0.5rem;
-    border: 1px solid var(--rule);
-    background: var(--panel);
-    color: var(--ink);
-    font-family: var(--mono);
-    font-size: 0.68rem;
-    white-space: nowrap;
-    box-shadow: 1px 2px 0 rgba(0,0,0,0.35);
-    animation: snow-unspin 16s linear infinite;
-  }
-  .snow__ring li:nth-child(5n) span { border-color: var(--accent); }
-  /* With the ring showing, the flat list is the caption's backup, kept small. */
-  .snow__junk { display: none; }
+.snow__scene {
+  position: relative;
+  display: block;
+  height: calc(var(--orbit) * 2 + 16cqw);
+  margin: 0 0 1rem;
+  overflow: hidden;
+  background: #fbfcfe;
 }
+.snow__hill {
+  position: absolute;
+  inset: 0;
+  background: #fbfcfe;
+  border: 2px solid var(--rule);
+  box-shadow: 4px 4px 0 var(--rule);
+}
+.snow__hill::before, .snow__hill::after, .snow__tree {
+  content: "";
+  position: absolute;
+  width: 6.5cqw;
+  height: 6.5cqw;
+  background: var(--tree) center / contain no-repeat;
+}
+.snow__hill::before { left: 8%; top: 10%; }
+.snow__hill::after { right: 10%; bottom: 12%; }
+.snow__tree--a { left: 22%; bottom: 8%; }
+.snow__tree--b { right: 18%; top: 8%; width: 5cqw; height: 5cqw; }
+.snow__skier {
+  position: absolute;
+  left: 12%;
+  bottom: 22%;
+  width: 6cqw;
+  height: 6cqw;
+  background: var(--skier) center / contain no-repeat;
+  animation: snow-skier 1.15s ease-in-out infinite;
+}
+.snow__yeti {
+  position: absolute;
+  right: 6%;
+  bottom: 6%;
+  width: 9cqw;
+  height: 9cqw;
+  background: var(--yeti) center / contain no-repeat;
+  animation: snow-yeti 0.9s steps(2) infinite;
+}
+.snow__roll {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  animation: snow-bounce 1.15s ease-in-out infinite;
+}
+.snow__ball {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0) 45%),
+    radial-gradient(circle at 62% 70%, rgba(0,0,0,0.14) 0 7%, transparent 8%),
+    radial-gradient(circle at 25% 65%, rgba(0,0,0,0.16) 0 5%, transparent 6%),
+    radial-gradient(circle at 70% 30%, rgba(0,0,0,0.12) 0 6%, transparent 7%),
+    radial-gradient(circle at 50% 18%, rgba(0,0,0,0.10) 0 4%, transparent 5%),
+    radial-gradient(circle at 45% 45%, #f4f4f4, #cfcfcf 60%, #8e8e8e);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.45), inset -10px -12px 22px rgba(0,0,0,0.18);
+  animation: snow-spin 2.6s linear infinite;
+}
+.snow__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  animation: snow-spin 9s linear infinite;
+}
+.snow__ring li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit)));
+}
+.snow__ring li:nth-child(even) { transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit) - 3.5cqw)); }
+.snow__ring li span {
+  display: block;
+  /* Undo the placement angle, then the ring's spin, so labels stay upright. */
+  rotate: calc(-1 * var(--i) / var(--n) * 360deg);
+  transform: translate(-50%, -50%);
+  padding: 0.5cqw 1.2cqw;
+  border: 1px solid var(--rule);
+  background: var(--panel);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: clamp(0.42rem, 1.65cqw, 0.72rem);
+  white-space: nowrap;
+  box-shadow: 1px 2px 0 rgba(0,0,0,0.35);
+  animation: snow-unspin 9s linear infinite;
+}
+.snow__ring li:nth-child(5n) span { border-color: var(--accent); }
 
 @keyframes snow-spin { to { transform: rotate(360deg); } }
 @keyframes snow-unspin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
@@ -2534,11 +2552,11 @@ pre.highlight { background: var(--code-bg, #14130f); }
 @keyframes snow-yeti { 0%, 100% { translate: 0 0; } 50% { translate: -0.5rem 0; } }
 
 .snow__junk { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 0 1rem; padding: 0; }
-@media (min-width: 48rem) { .snow__junk { display: none; } }
 .snow__junk li { font-family: var(--mono); font-size: 0.72rem; padding: 0.25rem 0.5rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
+@media (min-width: 48rem) { .snow__junk { display: none; } }
 
 @media (prefers-reduced-motion: reduce) {
-  .snow__roll, .snow__ball, .snow__ring, .snow__ring li span, .snow__skier, .snow__yeti { animation: none; }
+  .t-slope::before, .snow__roll, .snow__ball, .snow__ring, .snow__ring li span, .snow__skier, .snow__yeti { animation: none; }
 }
 
 /* The split-brain ledger. */
