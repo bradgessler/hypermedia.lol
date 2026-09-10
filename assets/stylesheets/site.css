@@ -2323,18 +2323,21 @@ pre.highlight { background: var(--code-bg, #14130f); }
   pointer-events: none;
   z-index: 0;
   background-image:
-    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20190%20190%22%20width=%22190%22%20height=%22190%22%3E%3Cg%20transform=%22translate%2820,30%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28110,80%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2860,150%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28160,120%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20310%20310%22%20width=%22310%22%20height=%22310%22%3E%3Cg%20transform=%22translate%2840,50%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28230,140%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28120,260%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20520%20520%22%20width=%22520%22%20height=%22520%22%3E%3Cg%20transform=%22translate%2890,90%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28380,300%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: 190px 190px, 310px 310px, 520px 520px;
-  background-position: 0 0, 90px 60px, 160px 140px;
-  animation: snowfall 30s linear infinite;
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20140%20140%22%20width=%22140%22%20height=%22140%22%3E%3Cg%20transform=%22translate%2810,20%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2870,50%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2840,100%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28110,90%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2890,130%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28125,15%29%20scale%280.3333333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20190%20190%22%20width=%22190%22%20height=%22190%22%3E%3Cg%20transform=%22translate%2820,30%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28110,80%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%2860,150%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28160,120%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28140,20%29%20scale%280.4583333333333333%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.8075%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.95%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20310%20310%22%20width=%22310%22%20height=%22310%22%3E%3Cg%20transform=%22translate%2840,50%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28230,140%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28120,260%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28270,40%29%20scale%280.75%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.765%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.9%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20520%20520%22%20width=%22520%22%20height=%22520%22%3E%3Cg%20transform=%22translate%2890,90%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28380,300%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%20transform=%22translate%28240,460%29%20scale%281.1666666666666667%29%22%3E%3Cg%20fill=%22none%22%20stroke-linecap=%22round%22%3E%3Cg%20stroke=%22rgba%28150,175,205,0.7224999999999999%29%22%20stroke-width=%223.4%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1%22/%3E%3C/g%3E%3Cg%20stroke=%22rgba%28255,255,255,0.85%29%22%20stroke-width=%221.7%22%3E%3Cpath%20d=%22M12%202v20M2%2012h20M4.9%204.9l14.2%2014.2M19.1%204.9L4.9%2019.1M12%205l-2%202M12%205l2%202M12%2019l-2-2M12%2019l2-2M5%2012l2-2M5%2012l2%202M19%2012l-2-2M19%2012l-2%202%22/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: 140px 140px, 190px 190px, 310px 310px, 520px 520px;
+  background-position: 20px 0, 0 0, 90px 60px, 160px 140px;
+  animation: snowfall 26s linear infinite;
 }
+
+.t-slope { overflow-x: clip; }
 
 .t-slope .topmark, .t-slope main, .t-slope .foot { position: relative; z-index: 1; }
 
 @keyframes snowfall {
-  to { background-position: 70px 190px, 40px 310px, -60px 520px; }
+  to { background-position: -30px 140px, 70px 190px, 40px 310px, -60px 520px; }
 }
 
 .t-slope .prose { max-width: 42rem; }
@@ -2515,6 +2518,12 @@ pre.highlight { background: var(--code-bg, #14130f); }
 /* ---------------------------------------------- SPA article: the props */
 
 .cast { margin: 0 0 4rem; padding: 1.25rem 1.4rem; border: 1px solid var(--rule); background: var(--panel); }
+.t-slope .cast { display: grid; grid-template-columns: minmax(12rem, 1fr) 1.15fr; grid-template-areas: 'map head' 'map list'; gap: 0 1.25rem; align-items: start; padding: 0; border: 3px solid var(--rule); box-shadow: 6px 6px 0 var(--rule); overflow: hidden; }
+.t-slope .cast::before { content: ''; grid-area: map; display: block; align-self: stretch; min-height: 15rem; background: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 -150 320 390%22%3E%0A%3Crect y=%22-150%22 width=%22320%22 height=%22390%22 fill=%22%23eef3f9%22/%3E%3Ccircle cx=%22225%22 cy=%22-90%22 r=%2224%22 fill=%22%23ffe08a%22/%3E%0A%3Cpolygon points=%220,240 0,150 60,70 110,110 160,20 210,100 260,60 320,140 320,240%22 fill=%22%23dfe7f1%22/%3E%0A%3Cpolygon points=%22145,42 160,20 175,42%22 fill=%22%23fff%22/%3E%3Cpolygon points=%22248,74 260,60 272,74%22 fill=%22%23fff%22/%3E%3Cpolygon points=%2248,86 60,70 72,86%22 fill=%22%23fff%22/%3E%0A%3Cpolygon points=%220,240 0,200 320,170 320,240%22 fill=%22%23f7f9fc%22/%3E%0A%3Cpath d=%22M160 24 C 150 80, 120 120, 70 210%22 stroke=%22%232e9e4f%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 158 90, 140 140, 125 212%22 stroke=%22%232266d1%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 175 90, 200 130, 195 212%22 stroke=%22%23111%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22/%3E%0A%3Cpath d=%22M160 24 C 200 70, 250 130, 262 212%22 stroke=%22%23111%22 stroke-width=%225%22 fill=%22none%22 stroke-linecap=%22round%22 stroke-dasharray=%2210 6%22/%3E%0A%3Ccircle cx=%2270%22 cy=%22210%22 r=%227%22 fill=%22%232e9e4f%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Crect x=%22118%22 y=%22205%22 width=%2214%22 height=%2214%22 fill=%22%232266d1%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cpolygon points=%22195,203 204,212 195,221 186,212%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cpolygon points=%22254,203 262,211 254,219 246,211%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%3Cpolygon points=%22270,203 278,211 270,219 262,211%22 fill=%22%23111%22 stroke=%22%23fff%22 stroke-width=%222%22/%3E%0A%3Cline x1=%2230%22 y1=%22230%22 x2=%22160%22 y2=%2228%22 stroke=%22%235a3416%22 stroke-width=%222%22/%3E%0A%3Cg fill=%22%235a3416%22%3E%3Crect x=%2260%22 y=%22180%22 width=%223%22 height=%2218%22/%3E%3Crect x=%22100%22 y=%22118%22 width=%223%22 height=%2218%22/%3E%3Crect x=%22132%22 y=%2270%22 width=%223%22 height=%2218%22/%3E%3C/g%3E%0A%3Cg fill=%22%23c0392b%22%3E%3Crect x=%2255%22 y=%22196%22 width=%2213%22 height=%227%22/%3E%3Crect x=%2295%22 y=%22134%22 width=%2213%22 height=%227%22/%3E%3Crect x=%22127%22 y=%2286%22 width=%2213%22 height=%227%22/%3E%3C/g%3E%0A%3Cg transform=%22translate%2814 0%29%22%3E%3Cpolygon points=%2218,232 40,206 62,232%22 fill=%22%238a5a2b%22/%3E%3Crect x=%2224%22 y=%22220%22 width=%2232%22 height=%2212%22 fill=%22%23a86b35%22/%3E%3Crect x=%2236%22 y=%22224%22 width=%228%22 height=%228%22 fill=%22%23ffd166%22/%3E%3Crect x=%2226%22 y=%22224%22 width=%226%22 height=%225%22 fill=%22%23ffd166%22/%3E%3Crect x=%2248%22 y=%22224%22 width=%226%22 height=%225%22 fill=%22%23ffd166%22/%3E%3C/g%3E%0A%3Cg fill=%22%232e7d32%22%3E%3Cpolygon points=%22290,232 298,214 306,232%22/%3E%3Cpolygon points=%22230,236 236,224 242,236%22/%3E%3Cpolygon points=%2212,196 18,182 24,196%22/%3E%3Cpolygon points=%22300,120 305,110 310,120%22/%3E%3C/g%3E%0A%3Cg%3E%3Crect x=%22286%22 y=%22180%22 width=%2218%22 height=%2214%22 rx=%224%22 fill=%22%23b8c4cf%22/%3E%3Crect x=%22290%22 y=%22184%22 width=%223%22 height=%223%22 fill=%22%23111%22/%3E%3Crect x=%22297%22 y=%22184%22 width=%223%22 height=%223%22 fill=%22%23111%22/%3E%3Crect x=%22292%22 y=%22190%22 width=%226%22 height=%222%22 fill=%22%23111%22/%3E%3C/g%3E%0A%3C/svg%3E") center bottom / cover no-repeat; border-right: 3px solid var(--rule); }
+.t-slope .cast__head { grid-area: head; padding: 1.1rem 1.25rem 0; margin: 0 0 0.5rem; }
+.t-slope .cast dl { grid-area: list; grid-template-columns: 1fr; gap: 0.15rem 0; padding: 0 1.25rem 1.1rem; }
+.t-slope .cast dd { margin-bottom: 0.6rem; }
+@media (max-width: 40rem) { .t-slope .cast { grid-template-columns: 1fr; grid-template-areas: 'map' 'head' 'list'; } .t-slope .cast::before { min-height: 0; aspect-ratio: 4 / 3; border-right: 0; border-bottom: 3px solid var(--rule); } }
 .cast__head { margin: 0 0 0.75rem; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
 .cast dl { display: grid; grid-template-columns: 8rem 1fr; gap: 0.5rem 1rem; margin: 0; }
 .cast dt { font-family: var(--ui); font-weight: 700; color: var(--ink); }
@@ -2524,20 +2533,22 @@ pre.highlight { background: var(--code-bg, #14130f); }
 /* The snowball: stationary on the hill, spinning and bouncing, with the junk
    orbiting it. Grows act by act. Sized in container units so it scales down
    to a phone; the flat list stays under it there for reading. */
-.snow { display: block; container-type: inline-size; }
-.snow--1 { --size: 12cqw; --orbit: 13cqw; }
-.snow--2 { --size: 18cqw; --orbit: 18cqw; }
-.snow--3 { --size: 23cqw; --orbit: 22cqw; }
-.snow--4 { --size: 27cqw; --orbit: 26cqw; }
+.snow { display: block; container-type: inline-size; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+.snow figcaption { max-width: 42rem; margin-left: auto; margin-right: auto; padding: 0 1.25rem; }
+.snow--1 { --size: clamp(4rem, 9cqw, 8rem);  --orbit: clamp(4.5rem, 10cqw, 9rem); }
+.snow--2 { --size: clamp(5rem, 12cqw, 11rem); --orbit: clamp(5.5rem, 13cqw, 12rem); }
+.snow--3 { --size: clamp(6rem, 15cqw, 14rem); --orbit: clamp(6.5rem, 16cqw, 15rem); }
+.snow--4 { --size: clamp(7rem, 18cqw, 17rem); --orbit: clamp(7.5rem, 19cqw, 18rem); }
 
 .snow__scene {
   position: relative;
   display: block;
-  height: calc(var(--orbit) * 2 + 20cqw);
+  height: calc(var(--orbit) * 2 + clamp(6rem, 12cqw, 10rem));
   margin: 0 0 1rem;
   overflow: hidden;
   border: 3px solid var(--rule);
-  box-shadow: 6px 6px 0 var(--rule);
+  border-left: 0;
+  border-right: 0;
   background:
     url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20400%20120%22%20preserveAspectRatio=%22none%22%3E%3Cpolygon%20points=%220,120%200,80%2045,40%2090,85%20130,30%20175,75%20215,45%20260,95%20305,25%20350,70%20400,50%20400,120%22%20fill=%22%23c9d6e6%22/%3E%3Cpolygon%20points=%220,120%200,95%2060,60%20110,100%20160,55%20210,90%20250,65%20300,105%20345,60%20400,85%20400,120%22%20fill=%22%23dfe7f1%22/%3E%3Cpolygon%20points=%22122,42%20130,30%20138,42%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%22297,37%20305,25%20313,37%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%2237,52%2045,40%2053,52%22%20fill=%22%23fff%22/%3E%3C/svg%3E") 0 8% / 100% 34% no-repeat,
     linear-gradient(#bcd4f0 0, #e6eef8 30%, #fbfcfe 42%, #fbfcfe 100%);
@@ -2558,11 +2569,11 @@ pre.highlight { background: var(--code-bg, #14130f); }
   position: absolute;
   right: 10%;
   top: 7%;
-  width: 7cqw;
-  height: 7cqw;
+  width: clamp(2.5rem, 5cqw, 5rem);
+  height: clamp(2.5rem, 5cqw, 5rem);
   border-radius: 50%;
   background: radial-gradient(circle, #fff6c8, #ffe28a 60%, rgba(255,226,138,0) 62%);
-  box-shadow: 0 0 6cqw rgba(255,226,138,0.7);
+  box-shadow: 0 0 4rem rgba(255,226,138,0.7);
 }
 /* Speed trail behind the ball. */
 .snow__roll::before {
@@ -2570,9 +2581,9 @@ pre.highlight { background: var(--code-bg, #14130f); }
   position: absolute;
   right: 60%;
   top: 55%;
-  width: 70cqw;
+  width: 60vw;
   height: 22%;
-  background: repeating-linear-gradient(90deg, rgba(120,140,165,0.28) 0 2.5cqw, transparent 2.5cqw 5cqw);
+  background: repeating-linear-gradient(90deg, rgba(120,140,165,0.28) 0 1.2rem, transparent 1.2rem 2.4rem);
   mask: linear-gradient(90deg, transparent, #000 85%);
   -webkit-mask: linear-gradient(90deg, transparent, #000 85%);
   animation: snow-trail 0.7s linear infinite;
@@ -2581,22 +2592,22 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .snow__hill::before, .snow__hill::after, .snow__tree {
   content: "";
   position: absolute;
-  width: 6.5cqw;
-  height: 6.5cqw;
+  width: clamp(2rem, 5cqw, 5rem);
+  height: clamp(2rem, 5cqw, 5rem);
   background: var(--tree) center / contain no-repeat;
 }
-.snow__hill::before { left: 6%; top: 4%; width: 5cqw; height: 5cqw; opacity: 0.85; }
-.snow__hill::after { right: 8%; bottom: 10%; width: 8cqw; height: 8cqw; }
-.snow__tree--a { left: 20%; bottom: 6%; width: 8.5cqw; height: 8.5cqw; }
-.snow__tree--b { right: 22%; top: 42%; width: 4cqw; height: 4cqw; opacity: 0.8; }
-.snow__tree--c { left: 38%; top: 41%; width: 3.5cqw; height: 3.5cqw; opacity: 0.75; }
-.snow__tree--d { left: 4%; bottom: 30%; width: 6.5cqw; height: 6.5cqw; }
+.snow__hill::before { left: 6%; top: 4%; opacity: 0.85; }
+.snow__hill::after { right: 8%; bottom: 10%; width: clamp(2.5rem, 7cqw, 7rem); height: clamp(2.5rem, 7cqw, 7rem); }
+.snow__tree--a { left: 18%; bottom: 6%; width: clamp(2.5rem, 7cqw, 7rem); height: clamp(2.5rem, 7cqw, 7rem); }
+.snow__tree--b { right: 24%; top: 42%; width: clamp(1.2rem, 3cqw, 3rem); height: clamp(1.2rem, 3cqw, 3rem); opacity: 0.8; }
+.snow__tree--c { left: 36%; top: 41%; width: clamp(1rem, 2.5cqw, 2.5rem); height: clamp(1rem, 2.5cqw, 2.5rem); opacity: 0.75; }
+.snow__tree--d { left: 4%; bottom: 30%; width: clamp(2rem, 5cqw, 5rem); height: clamp(2rem, 5cqw, 5rem); }
 .snow__skier {
   position: absolute;
   left: 12%;
   bottom: 22%;
-  width: 6cqw;
-  height: 6cqw;
+  width: clamp(2rem, 4.5cqw, 4.5rem);
+  height: clamp(2rem, 4.5cqw, 4.5rem);
   background: var(--skier) center / contain no-repeat;
   animation: snow-skier 1.15s ease-in-out infinite;
 }
@@ -2604,8 +2615,8 @@ pre.highlight { background: var(--code-bg, #14130f); }
   position: absolute;
   right: 5%;
   bottom: 4%;
-  width: 15cqw;
-  height: 15cqw;
+  width: clamp(4rem, 11cqw, 11rem);
+  height: clamp(4rem, 11cqw, 11rem);
   filter: drop-shadow(0 4px 0 rgba(16,24,32,0.2));
   background: var(--yeti) center / contain no-repeat;
   animation: snow-yeti 0.9s steps(2) infinite;
@@ -2650,18 +2661,18 @@ pre.highlight { background: var(--code-bg, #14130f); }
   top: 0;
   transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit)));
 }
-.snow__ring li:nth-child(even) { transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit) - 3.5cqw)); }
+.snow__ring li:nth-child(even) { transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit) - clamp(1rem, 2.5cqw, 2.4rem))); }
 .snow__ring li span {
   display: block;
   /* Undo the placement angle, then the ring's spin, so labels stay upright. */
   rotate: calc(-1 * var(--i) / var(--n) * 360deg);
   transform: translate(-50%, -50%);
-  padding: 0.5cqw 1.2cqw;
+  padding: 0.2rem 0.5rem;
   border: 1px solid var(--rule);
   background: var(--panel);
   color: var(--ink);
   font-family: var(--mono);
-  font-size: clamp(0.42rem, 1.65cqw, 0.72rem);
+  font-size: clamp(0.42rem, 1.1cqw, 0.74rem);
   white-space: nowrap;
   box-shadow: 1px 2px 0 rgba(0,0,0,0.35);
   animation: snow-unspin 9s linear infinite;
@@ -2673,9 +2684,9 @@ pre.highlight { background: var(--code-bg, #14130f); }
 @keyframes snow-bounce { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.7rem; } }
 @keyframes snow-skier { 0%, 100% { translate: 0 0; } 50% { translate: 0.4rem -0.2rem; } }
 @keyframes snow-yeti { 0%, 100% { translate: 0 0; } 50% { translate: -0.6rem -0.2rem; } }
-@keyframes snow-trail { to { background-position: -5cqw 0; } }
+@keyframes snow-trail { to { background-position: -2.4rem 0; } }
 
-.snow__junk { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 0 1rem; padding: 0; }
+.snow__junk { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 auto 1rem; padding: 0 1.25rem; max-width: 42rem; }
 .snow__junk li { font-family: var(--mono); font-size: 0.72rem; padding: 0.25rem 0.5rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
 @media (min-width: 48rem) { .snow__junk { display: none; } }
 
@@ -2710,3 +2721,95 @@ pre.highlight { background: var(--code-bg, #14130f); }
    never under them. */
 .t-slope main.prose { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }
 .t-slope .foot { background: var(--paper); box-shadow: 0 0 0 1.25rem var(--paper); }
+
+
+/* The lodge: warm windows, smoke, skis by the door. Full bleed. */
+.lodge {
+  margin: 2.5rem calc(50% - 50vw) 1rem;
+  height: clamp(12rem, 28vw, 22rem);
+  border-top: 3px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20400%20160%22%20preserveAspectRatio=%22xMidYMax%20meet%22%3E%0A%3Cpolygon%20points=%220,160%200,110%2060,60%20120,100%20180,40%20240,90%20300,55%20400,120%20400,160%22%20fill=%22%23dfe7f1%22/%3E%0A%3Crect%20x=%220%22%20y=%22118%22%20width=%22400%22%20height=%2242%22%20fill=%22%23f7f9fc%22/%3E%0A%3Cg%20fill=%22%232e7d32%22%3E%3Cpolygon%20points=%2240,130%2055,95%2070,130%22/%3E%3Cpolygon%20points=%22330,132%20348,88%20366,132%22/%3E%3Cpolygon%20points=%22352,132%20366,100%20380,132%22/%3E%3C/g%3E%0A%3Cg%20fill=%22%235d3a1a%22%3E%3Crect%20x=%2253%22%20y=%22130%22%20width=%224%22%20height=%228%22/%3E%3Crect%20x=%22346%22%20y=%22132%22%20width=%224%22%20height=%228%22/%3E%3Crect%20x=%22364%22%20y=%22132%22%20width=%224%22%20height=%228%22/%3E%3C/g%3E%0A%3Cpolygon%20points=%22140,132%20200,50%20260,132%22%20fill=%22%236b3f1f%22/%3E%3Cpolygon%20points=%22150,132%20200,64%20250,132%22%20fill=%22%238a5a2b%22/%3E%0A%3Cpolygon%20points=%22136,132%20200,44%20264,132%20264,126%20200,52%20136,126%22%20fill=%22%23fff%22/%3E%0A%3Crect%20x=%22188%22%20y=%22100%22%20width=%2224%22%20height=%2232%22%20fill=%22%233a2010%22/%3E%3Crect%20x=%22190%22%20y=%22102%22%20width=%2220%22%20height=%2228%22%20fill=%22%23ffd166%22/%3E%0A%3Crect%20x=%22160%22%20y=%22108%22%20width=%2216%22%20height=%2214%22%20fill=%22%23ffd166%22/%3E%3Crect%20x=%22224%22%20y=%22108%22%20width=%2216%22%20height=%2214%22%20fill=%22%23ffd166%22/%3E%0A%3Crect%20x=%22236%22%20y=%2270%22%20width=%2210%22%20height=%2226%22%20fill=%22%234a2a12%22/%3E%0A%3Crect%20x=%22118%22%20y=%22112%22%20width=%224%22%20height=%2222%22%20fill=%22%23c0392b%22%20transform=%22rotate%28-8%20120%20123%29%22/%3E%3Crect%20x=%22126%22%20y=%22112%22%20width=%224%22%20height=%2222%22%20fill=%22%232266d1%22%20transform=%22rotate%28-8%20128%20123%29%22/%3E%0A%3Ccircle%20cx=%22360%22%20cy=%2230%22%20r=%2214%22%20fill=%22%23ffe28a%22/%3E%0A%3C/svg%3E") center bottom / auto 100% no-repeat, linear-gradient(#bcd4f0, #e6eef8 55%, #f7f9fc 56%);
+  position: relative;
+  overflow: hidden;
+}
+.lodge::before, .lodge::after {
+  content: "";
+  position: absolute;
+  left: calc(50% + 4.6%);
+  bottom: 62%;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  animation: smoke 3.2s ease-out infinite;
+}
+.lodge::after { animation-delay: 1.6s; width: 0.7rem; height: 0.7rem; }
+@keyframes smoke { 0% { translate: 0 0; opacity: 0.9; scale: 0.6; } 100% { translate: 1.2rem -4rem; opacity: 0; scale: 1.8; } }
+.lodge__caption, .crash__caption, .thaw__caption { max-width: 42rem; margin: 0.8rem auto 2.5rem; padding: 0 1.25rem; font-family: var(--ui); font-size: 0.88rem; color: var(--muted); }
+
+/* The bottom of the hill: grey, gross, and occupied. Full bleed. */
+.crash {
+  position: relative;
+  margin: 2.5rem calc(50% - 50vw) 1rem;
+  height: clamp(14rem, 34vw, 26rem);
+  overflow: hidden;
+  border-top: 3px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
+  background:
+    radial-gradient(ellipse 40% 30% at 30% 80%, rgba(90,80,70,0.35), transparent 70%),
+    radial-gradient(ellipse 30% 25% at 70% 70%, rgba(70,60,50,0.3), transparent 70%),
+    linear-gradient(#8a93a0 0, #a8adb3 35%, #b7b3ac 60%, #9c9489 100%);
+}
+.crash__tree { position: absolute; width: clamp(2rem, 6vw, 5rem); aspect-ratio: 1; background: var(--tree) center / contain no-repeat; filter: grayscale(1) brightness(0.45); }
+.crash__tree--a { left: 6%; bottom: 12%; }
+.crash__tree--b { left: 20%; bottom: 40%; width: clamp(1.5rem, 4vw, 3.5rem); }
+.crash__tree--c { right: 30%; bottom: 20%; width: clamp(1.5rem, 4.5vw, 4rem); }
+.crash__yeti { position: absolute; right: 5%; bottom: 4%; width: clamp(6rem, 22vw, 18rem); aspect-ratio: 1; background: var(--yeti) center / contain no-repeat; filter: drop-shadow(0 6px 0 rgba(0,0,0,0.3)) brightness(0.9); animation: snow-yeti 0.9s steps(2) infinite; }
+.crash__ball { position: absolute; left: 34%; bottom: 10%; width: clamp(5rem, 16vw, 13rem); aspect-ratio: 1; border-radius: 50% 50% 45% 55% / 60% 60% 40% 40%; background: radial-gradient(circle at 40% 35%, #ddd, #a9a9a9 60%, #6e6e6e); box-shadow: inset -10px -12px 20px rgba(0,0,0,0.25); }
+.crash__ball::before { content: ""; position: absolute; left: 30%; top: 20%; width: 45%; height: 8%; background: #4a4a4a; transform: rotate(-28deg); box-shadow: 0.6rem 1.4rem 0 -0.1rem #4a4a4a, -0.4rem 2.6rem 0 -0.15rem #4a4a4a; }
+.crash__post { position: absolute; left: 12%; bottom: 6%; width: 0.7rem; height: clamp(4rem, 12vw, 9rem); background: linear-gradient(90deg, #5a3416, #7a4a22 45%, #4a2a12); border: 2px solid #2b180a; }
+.crash__post::before { content: "2,000 m"; position: absolute; left: -0.6rem; top: -1.9rem; padding: 0.3rem 0.6rem; background: #4a2a12; color: #fff4dc; border: 2px solid #2b180a; font-family: var(--mono); font-size: 0.72rem; white-space: nowrap; transform: rotate(-4deg); }
+.crash__junk { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
+.crash__junk li { position: absolute; left: var(--x); top: var(--y); transform: rotate(var(--r)); padding: 0.15rem 0.45rem; border: 1px solid #333; background: #d9d6d0; color: #222; font-family: var(--mono); font-size: clamp(0.4rem, 1.1vw, 0.68rem); white-space: nowrap; opacity: 0.9; }
+@media (prefers-reduced-motion: reduce) { .lodge::before, .lodge::after, .crash__yeti { animation: none; } }
+
+
+/* Spring: the thaw. Full bleed meadow with wildflowers that sway. */
+.thaw {
+  position: relative;
+  margin: 2.5rem calc(50% - 50vw) 1rem;
+  height: clamp(13rem, 30vw, 24rem);
+  overflow: hidden;
+  border-top: 3px solid var(--rule);
+  border-bottom: 3px solid var(--rule);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20400%20160%22%20preserveAspectRatio=%22xMidYMax%20slice%22%3E%0A%3Crect%20width=%22400%22%20height=%22160%22%20fill=%22%23cfe8ff%22/%3E%0A%3Ccircle%20cx=%22340%22%20cy=%2234%22%20r=%2216%22%20fill=%22%23ffe28a%22/%3E%0A%3Cpolygon%20points=%220,100%200,70%2050,40%20100,75%20150,45%20210,80%20260,50%20320,85%20400,60%20400,100%22%20fill=%22%23dfe7f1%22/%3E%0A%3Cpolygon%20points=%2244,47%2050,40%2056,47%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%22144,52%20150,45%20156,52%22%20fill=%22%23fff%22/%3E%3Cpolygon%20points=%22254,57%20260,50%20266,57%22%20fill=%22%23fff%22/%3E%0A%3Cpath%20d=%22M0%20160%20L0%20105%20C%2080%2085,%20160%20120,%20240%20100%20C%20300%2085,%20350%2095,%20400%2088%20L400%20160%20Z%22%20fill=%22%237cc46b%22/%3E%0A%3Cpath%20d=%22M0%20160%20L0%20125%20C%2090%20110,%20170%20140,%20260%20122%20C%20320%20110,%20360%20120,%20400%20112%20L400%20160%20Z%22%20fill=%22%235fae52%22/%3E%0A%3Cg%20fill=%22%232e7d32%22%3E%3Cpolygon%20points=%2220,112%2030,84%2040,112%22/%3E%3Cpolygon%20points=%22372,104%20380,80%20388,104%22/%3E%3C/g%3E%0A%3Cg%20fill=%22%235d3a1a%22%3E%3Crect%20x=%2228%22%20y=%22112%22%20width=%224%22%20height=%227%22/%3E%3Crect%20x=%22378%22%20y=%22104%22%20width=%224%22%20height=%227%22/%3E%3C/g%3E%0A%3Crect%20x=%22150%22%20y=%22122%22%20width=%228%22%20height=%2218%22%20fill=%22%23a86b35%22/%3E%3Cpolygon%20points=%22140,124%20154,108%20168,124%22%20fill=%22%23c0392b%22/%3E%0A%3C/svg%3E") center / cover no-repeat;
+}
+.thaw::before, .thaw::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: clamp(2.5rem, 7vw, 5rem);
+  background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20120%2040%22%20width=%22120%22%20height=%2240%22%3E%0A%3Cg%20stroke=%22%233d8b37%22%20stroke-width=%221.5%22%3E%3Cline%20x1=%2212%22%20y1=%2240%22%20x2=%2212%22%20y2=%2224%22/%3E%3Cline%20x1=%2240%22%20y1=%2240%22%20x2=%2240%22%20y2=%2220%22/%3E%3Cline%20x1=%2270%22%20y1=%2240%22%20x2=%2270%22%20y2=%2226%22/%3E%3Cline%20x1=%2298%22%20y1=%2240%22%20x2=%2298%22%20y2=%2222%22/%3E%3C/g%3E%0A%3Cg%3E%3Ccircle%20cx=%2212%22%20cy=%2222%22%20r=%224%22%20fill=%22%23ff6b8a%22/%3E%3Ccircle%20cx=%2212%22%20cy=%2222%22%20r=%221.5%22%20fill=%22%23ffe28a%22/%3E%3C/g%3E%0A%3Cg%3E%3Ccircle%20cx=%2240%22%20cy=%2218%22%20r=%224.5%22%20fill=%22%23ffe28a%22/%3E%3Ccircle%20cx=%2240%22%20cy=%2218%22%20r=%221.6%22%20fill=%22%238a5a2b%22/%3E%3C/g%3E%0A%3Cg%3E%3Ccircle%20cx=%2270%22%20cy=%2224%22%20r=%223.6%22%20fill=%22%238ab4f8%22/%3E%3Ccircle%20cx=%2270%22%20cy=%2224%22%20r=%221.3%22%20fill=%22%23fff%22/%3E%3C/g%3E%0A%3Cg%3E%3Ccircle%20cx=%2298%22%20cy=%2220%22%20r=%224.2%22%20fill=%22%23fff%22/%3E%3Ccircle%20cx=%2298%22%20cy=%2220%22%20r=%221.6%22%20fill=%22%23ffe28a%22/%3E%3C/g%3E%0A%3C/svg%3E") 0 100% / auto 100% repeat-x;
+  transform-origin: 50% 100%;
+  animation: sway 4s ease-in-out infinite;
+}
+.thaw::after { background-position: 60px 100%; height: clamp(1.8rem, 5vw, 3.6rem); animation-delay: -2s; opacity: 0.9; }
+@keyframes sway { 0%, 100% { transform: skewX(-3deg); } 50% { transform: skewX(3deg); } }
+.t-slope .prose > h2:nth-of-type(7) { --marker: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%3E%3Ccircle%20cx=%228%22%20cy=%224%22%20r=%223%22%20fill=%22%23ff6b8a%22/%3E%3Ccircle%20cx=%2212%22%20cy=%228%22%20r=%223%22%20fill=%22%23ff6b8a%22/%3E%3Ccircle%20cx=%228%22%20cy=%2212%22%20r=%223%22%20fill=%22%23ff6b8a%22/%3E%3Ccircle%20cx=%224%22%20cy=%228%22%20r=%223%22%20fill=%22%23ff6b8a%22/%3E%3Ccircle%20cx=%228%22%20cy=%228%22%20r=%222.4%22%20fill=%22%23ffe28a%22%20stroke=%22%23fff%22%20stroke-width=%221%22/%3E%3C/svg%3E"); }
+.t-slope .prose > h2:nth-of-type(7) > a.anchor { background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 3px, transparent 3px 9px), linear-gradient(#2e7d32, #1f5a24); border-color: #133a17; }
+
+/* The byline link on the resort sign must read against the wood. */
+.t-slope .banner .byline a, .t-slope .banner .byline a:visited { color: #ffe28a; text-decoration-color: #ffe28a; }
+.t-slope .banner .byline a:hover { background: #ffe28a; color: #2b180a; }
+@media (prefers-reduced-motion: reduce) { .thaw::before, .thaw::after { animation: none; } }
+
+
+/* Code comments on the slope's dark blocks: Monokai's grey is too dim there. */
+.t-slope pre.highlight .c, .t-slope pre.highlight .c1, .t-slope pre.highlight .cm, .t-slope pre.highlight .cp { color: #b3bcc8; }
+
+
+/* Onward tiles carry the neighbour's accent for their rule only. The text is
+   always ink, whatever the treatment's link colour or the neighbour's accent. */
+.prose nav.onward a.onward__link, .prose nav.onward a.onward__link .onward__title { color: var(--ink); }
+.prose nav.onward a.onward__link:hover { background: var(--panel); }

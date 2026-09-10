@@ -350,6 +350,9 @@ quickly.
 ## The lodge: the best case for the app
 <p class="dek">Steelman first, by the fire. There are real ones.</p>
 
+<div class="lodge" aria-hidden="true"></div>
+<p class="lodge__caption">The lodge. Warm, well-argued, and where every SPA decision gets made over a beer.</p>
+
 **"Some things are applications."** Yes. A design tool, a spreadsheet, a map, a
 video editor. If the user is manipulating a document continuously and the
 server is a save button, the client should own that state, and a page-per-view
@@ -375,6 +378,41 @@ isn't the requirement; it's the justification found afterwards.
 ## 2,000 metres: the yeti
 <p class="dek">In SkiFree, ski far enough and the abominable snowman comes for you. Here it's the bill for the browser The Team rebuilt.</p>
 
+<div class="crash" aria-hidden="true">
+  <span class="crash__tree crash__tree--a"></span>
+  <span class="crash__tree crash__tree--b"></span>
+  <span class="crash__tree crash__tree--c"></span>
+  <span class="crash__post"></span>
+  <span class="crash__ball"></span>
+  <ul class="crash__junk">
+    <li style="--x: 44%; --y: 64%; --r: 10deg">fetch()</li>
+    <li style="--x: 9%; --y: 59%; --r: 28deg">JSON.parse</li>
+    <li style="--x: 15%; --y: 78%; --r: 34deg">a spinner</li>
+    <li style="--x: 10%; --y: 87%; --r: -13deg">a router</li>
+    <li style="--x: 7%; --y: 60%; --r: 15deg">a store</li>
+    <li style="--x: 56%; --y: 59%; --r: -10deg">scroll save/restore</li>
+    <li style="--x: 14%; --y: 82%; --r: -33deg">deep link handling</li>
+    <li style="--x: 75%; --y: 62%; --r: -12deg">focus management</li>
+    <li style="--x: 77%; --y: 58%; --r: 33deg">a cache</li>
+    <li style="--x: 77%; --y: 80%; --r: -34deg">TTLs</li>
+    <li style="--x: 31%; --y: 57%; --r: 31deg">invalidation</li>
+    <li style="--x: 20%; --y: 73%; --r: 13deg">optimistic updates</li>
+    <li style="--x: 21%; --y: 62%; --r: 33deg">rollback</li>
+    <li style="--x: 42%; --y: 66%; --r: -27deg">a retry queue</li>
+    <li style="--x: 77%; --y: 67%; --r: 7deg">token refresh</li>
+    <li style="--x: 15%; --y: 59%; --r: 32deg">a websocket</li>
+    <li style="--x: 10%; --y: 68%; --r: 23deg">reconciliation</li>
+    <li style="--x: 71%; --y: 82%; --r: 0deg">a bundler</li>
+    <li style="--x: 62%; --y: 84%; --r: 6deg">code splitting</li>
+    <li style="--x: 41%; --y: 70%; --r: -17deg">vendor chunks</li>
+    <li style="--x: 34%; --y: 60%; --r: 33deg">hydration</li>
+    <li style="--x: 41%; --y: 88%; --r: 23deg">a service worker</li>
+    <li style="--x: 46%; --y: 83%; --r: -4deg">"perceived performance"</li>
+  </ul>
+  <span class="crash__yeti"></span>
+</div>
+<p class="crash__caption">The bottom of the hill. The snow is grey down here. The ball didn't survive the run, the junk is everywhere, and the yeti has been waiting since the green circle.</p>
+
 Line the ball up against the thing it's sitting inside. A router: the address
 bar. Scroll save and restore: the browser's default. The store and its cache:
 HTTP caching, with validators the server already sends. Optimistic updates and
@@ -395,6 +433,63 @@ knows how to be.
 
 The Browser, who has had no lines in this play, was doing all of it the whole
 time.
+
+## Spring: the thaw
+<p class="dek">The snow melts, the meadow comes back, and it turns out the browser was under there the whole time.</p>
+
+<div class="thaw" aria-hidden="true"></div>
+<p class="thaw__caption">Spring at the base. The same hill, with the snow gone and the ground it was covering.</p>
+
+There's a way to get what The Team wanted in the green circle, the list that
+updates without a full reload, without the three runs that followed. It's not
+a framework that hides the browser. It's a small script that hands the browser
+more to do.
+
+The two people are most likely to meet are [htmx](https://htmx.org/) and
+[Hotwire's Turbo](https://turbo.hotwired.dev/), and they share one decision:
+**the server keeps sending HTML.** htmx's own description is that it lets you
+"access modern browser features directly from HTML." You put an attribute on an
+element, the element makes a request, the server answers with a fragment of
+HTML, and the fragment is swapped into the page. Links stay links. Forms stay
+forms. The URL and the history keep working, because the library uses them
+rather than replacing them.[^htmx]
+
+Turbo's version of the same idea: "you let the server deliver HTML directly."
+Turbo Drive follows links and submits forms without a full reload while keeping
+the browser's history intact. Turbo Frames scope an update to one region of the
+page, so the orders list can refresh on its own while the rest of the document
+stands still.[^turbo]
+
+Neither one reinvents the browser. Neither has a store, because the page is the
+state. Neither has a router, because the URL is the router. Neither has a cache
+to reconcile, because the server rendered the truth and the browser cached it
+the way it caches everything. The filter The Team wanted in the green circle is
+a form and one attribute:
+
+```html
+<form action="/orders" method="get" hx-boost="true" hx-target="#orders">
+  <select name="status">
+    <option>all</option>
+    <option>unpaid</option>
+  </select>
+  <button>Filter</button>
+</form>
+
+<div id="orders">
+  <!-- server-rendered rows; swapped in place on submit -->
+</div>
+```
+
+Caption: <b>The green circle, done in spring.</b> A form that works with no script at all, boosted so the response replaces one region instead of the page. Same server, same HTML, no second brain.
+
+That's the whole argument of this site in one hill. The browser is not a
+rendering target. It's a thirty-year-old application platform that already
+does navigation, history, caching, scroll, focus, forms and errors. Augment it a
+little and it does the rest. Rebuild it and you'll spend two years on a ball.
+
+[^htmx]: [htmx documentation](https://htmx.org/docs/). Attributes such as `hx-get`, `hx-post`, `hx-target` and `hx-swap` let any element make a request; the server responds with HTML, not JSON; `hx-boost` and `hx-push-url` keep links, forms and browser history working. It's a dependency-free script added with a single tag.
+
+[^turbo]: [Turbo Handbook: Introduction](https://turbo.hotwired.dev/handbook/introduction). Turbo Drive intercepts links and form submissions and loads pages with fetch while maintaining browser history; Turbo Frames scope navigation to segments of a page; Turbo Streams deliver partial updates over WebSocket or SSE.
 
 [^bfcache]: web.dev, [Back/forward cache](https://web.dev/articles/bfcache). The browser keeps the whole page in memory and restores it instantly on back or forward, state and scroll included. Chrome's figure: one in ten navigations on desktop and one in five on mobile are a back or forward.
 

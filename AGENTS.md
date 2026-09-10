@@ -95,8 +95,8 @@ Both must be annotated in the source and mentioned on the page.
 ## How a page looks
 
 - Front matter: `title`, `date`, `description` (the social card copy),
-  `byline`, `byline_url`, `treatment`, `sprite`, `span` (`big`/`wide`/`tall`),
-  and `og_image`. Every article ships its own card: screenshot the page top at
+  `byline`, `byline_url`, `subtitle` (optional, sits under the title),
+  `treatment`, `sprite`, `span` (`big`/`wide`/`tall`), and `og_image`. Every article ships its own card: screenshot the page top at
   1200x630 with headless Chrome into `pages/images/og/<slug>.png`. Open Graph
   Plus can't render nested paths, so don't rely on it for articles.
 - Site chrome is fixed: the name in a box at the top left of article pages
@@ -105,12 +105,16 @@ Both must be annotated in the source and mentioned on the page.
   rows: Share, Contribute, Follow (RSS at `/feed.xml`, `llms.txt`, source).
   Don't add navigation beyond that.
 - `treatment:` picks a whole visual world: `plain`, `spec`, `terminal`, `zine`,
-  `form`, `launch`, `default`, `modalz`. Treatments change chrome, colour,
+  `form`, `launch`, `default`, `modalz`, `slope`. Treatments change chrome, colour,
   headings and texture. They may not change the prose face, prose size, or
   measure, with one exception: `default` is the browser's own stylesheet in
   Times New Roman, because for the canon the face is the argument. `modalz`
   wraps every section in a dialog of a different vintage; the article about
-  modals is modals all the way down. Body copy must
+  modals is modals all the way down. `slope` is a ski hill: headings are
+  trail signs, scenes are full-bleed CSS drawings sized in container units,
+  and the falling snow sits behind a solid paper column so it never crosses
+  text. All motion is CSS and switches off under `prefers-reduced-motion`.
+  Body copy must
   hold 7:1 contrast in both colour schemes. Scanlines and rotation go on
   chrome only, never on running text.
 - Figures get real air: the CSS handles it, don't fight it.

@@ -67,6 +67,7 @@ front matter:
 | `zine` | Photocopied punk: halftone paper, headline knocked askew | Manifestos and rants |
 | `form` | Ruled grid paper, numbered fields | Inputs and forms |
 | `launch` | A nuclear launch console: hazard stripes, indicator lamps, a big red ARM button | Anything people over-engineer like it's a launch code |
+| `slope` | A ski hill: trail-sign headings, falling snow, full-bleed scenes with a snowball, a lodge and a yeti | Stories that go downhill |
 
 Treatments can change colour, chrome, headline handling, texture and
 decoration. They **cannot** change the prose face, prose size, or the measure , 
