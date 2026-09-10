@@ -11,7 +11,7 @@ module PreviewHelper
     when "launch"   then launch_preview
     when "default"  then default_preview
     when "modalz"   then modalz_preview
-    when "stage"    then stage_preview
+    when "slope"    then slope_preview
     else plain_preview
     end
   end
@@ -99,14 +99,16 @@ module PreviewHelper
       HTML
     end
 
-    # A stage: curtains, a snowball, and a lot of junk stuck to it.
-    def stage_preview
+    # A ski hill: trees, the ball, and the thing waiting at the bottom.
+    def slope_preview
       <<~HTML
-        <span class="pv pv--stage" aria-hidden="true">
-          <span class="pv__curtain pv__curtain--l"></span>
-          <span class="pv__curtain pv__curtain--r"></span>
-          <span class="pv__ball"><i></i><i></i><i></i></span>
-          <span class="pv__act">ACT III</span>
+        <span class="pv pv--slope" aria-hidden="true">
+          <span class="pv__bar"></span>
+          <span class="pv__tree pv__tree--1"></span>
+          <span class="pv__tree pv__tree--2"></span>
+          <span class="pv__tree pv__tree--3"></span>
+          <span class="pv__ball"></span>
+          <span class="pv__yeti"></span>
         </span>
       HTML
     end

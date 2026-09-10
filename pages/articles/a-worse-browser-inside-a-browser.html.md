@@ -6,18 +6,19 @@ byline_url: https://bradgessler.com
 description: A team decides the server will speak JSON and the browser will do the rest. Four acts later they have rebuilt the back button, the cache, scroll restoration and the URL by hand, worse, and they can't see it. With a snowball.
 accent: hot
 sprite: brick
-treatment: stage
+treatment: slope
 span: big
 og_image: /images/og/a-worse-browser-inside-a-browser.png
 ---
 
 <p class="lede">This is the story of a team that builds a single-page app, told
-in four acts. Nobody in it is stupid. Every decision is reasonable on the day
-it's made. By the curtain they have written, by hand, a slower and buggier copy
+as a ski hill: four runs, green circle to double black diamond, and something
+waiting at the bottom. Nobody in it is stupid. Every decision is reasonable on the day
+it's made. By the bottom of the hill they have written, by hand, a slower and buggier copy
 of the thing their code was running inside the whole time.</p>
 
 <div class="cast" aria-label="Dramatis personae">
-  <p class="cast__head">Dramatis personae</p>
+  <p class="cast__head">Trail map</p>
   <dl>
     <dt>The Team</dt><dd>Four developers and a designer. Sharp, busy, well-meaning.</dd>
     <dt>The Browser</dt><dd>Thirty years old. Handles navigation, history, caching, scroll, focus, forms and errors. Never speaks. Nobody asks it anything.</dd>
@@ -26,7 +27,7 @@ of the thing their code was running inside the whole time.</p>
   </dl>
 </div>
 
-## Act I: It starts with one JSON endpoint
+## Green circle: It starts with one JSON endpoint
 <p class="dek">A list of things, fetched and drawn. Nothing could be more innocent.</p>
 
 The Team has a page that lists orders. It's server-rendered HTML and it's fine,
@@ -38,15 +39,32 @@ It takes an afternoon. `fetch("/api/orders")`, parse, map to rows. The page
 feels snappy. There's a spinner now, because for the first time there's a
 moment where the page exists but the orders don't. A small price.
 
-<figure class="step snow snow--1">
-  <span class="snow__ball" aria-hidden="true"></span>
+<figure class="step snow snow--1" style="--n: 4">
+  <div class="snow__scene" aria-hidden="true">
+    <div class="snow__hill"></div>
+    <span class="snow__tree snow__tree--a"></span>
+    <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__skier"></span>
+    <div class="snow__roll">
+      <div class="snow__ball"></div>
+      <ul class="snow__ring">
+      <li style="--i: 0"><span>fetch()</span></li>
+      <li style="--i: 1"><span>JSON.parse</span></li>
+      <li style="--i: 2"><span>a spinner</span></li>
+      <li style="--i: 3"><span>an empty state</span></li>
+      </ul>
+    </div>
+  </div>
   <ul class="snow__junk">
-    <li>fetch()</li><li>JSON.parse</li><li>a spinner</li><li>an empty state</li>
+    <li>fetch()</li>
+    <li>JSON.parse</li>
+    <li>a spinner</li>
+    <li>an empty state</li>
   </ul>
-  <figcaption>The snowball, end of Act I. Four things the HTML version didn't need. Each one is tiny.</figcaption>
+  <figcaption>The snowball, bottom of the green run. Four things the HTML version didn't need. Each one is tiny.</figcaption>
 </figure>
 
-## Act II: The URL stops meaning anything
+## Blue square: The URL stops meaning anything
 <p class="dek">The back button breaks first. It always breaks first.</p>
 
 Filtering works. Then someone filters to "unpaid", clicks an order, presses
@@ -68,16 +86,48 @@ loaded and nothing happened.
 
 None of this is a feature. Every line of it is a repair.
 
-<figure class="step snow snow--2">
-  <span class="snow__ball" aria-hidden="true"></span>
+<figure class="step snow snow--2" style="--n: 12">
+  <div class="snow__scene" aria-hidden="true">
+    <div class="snow__hill"></div>
+    <span class="snow__tree snow__tree--a"></span>
+    <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__skier"></span>
+    <div class="snow__roll">
+      <div class="snow__ball"></div>
+      <ul class="snow__ring">
+      <li style="--i: 0"><span>fetch()</span></li>
+      <li style="--i: 1"><span>JSON.parse</span></li>
+      <li style="--i: 2"><span>a spinner</span></li>
+      <li style="--i: 3"><span>an empty state</span></li>
+      <li style="--i: 4"><span>a router</span></li>
+      <li style="--i: 5"><span>query string sync</span></li>
+      <li style="--i: 6"><span>a store</span></li>
+      <li style="--i: 7"><span>scroll save/restore</span></li>
+      <li style="--i: 8"><span>deep link handling</span></li>
+      <li style="--i: 9"><span>document.title</span></li>
+      <li style="--i: 10"><span>focus management</span></li>
+      <li style="--i: 11"><span>a 404 screen</span></li>
+      </ul>
+    </div>
+  </div>
   <ul class="snow__junk">
-    <li>fetch()</li><li>JSON.parse</li><li>a spinner</li><li>an empty state</li>
-    <li>a router</li><li>query string sync</li><li>a store</li><li>scroll save/restore</li><li>deep link handling</li><li>document.title</li><li>focus management</li><li>a 404 screen</li>
+    <li>fetch()</li>
+    <li>JSON.parse</li>
+    <li>a spinner</li>
+    <li>an empty state</li>
+    <li>a router</li>
+    <li>query string sync</li>
+    <li>a store</li>
+    <li>scroll save/restore</li>
+    <li>deep link handling</li>
+    <li>document.title</li>
+    <li>focus management</li>
+    <li>a 404 screen</li>
   </ul>
-  <figcaption>End of Act II. The Team has reimplemented the address bar, the back button and scroll restoration. All three are worse than the originals, and the originals are still there, unused, one layer down.</figcaption>
+  <figcaption>Bottom of the blue. The Team has reimplemented the address bar, the back button and scroll restoration. All three are worse than the originals, and the originals are still there, unused, one layer down.</figcaption>
 </figure>
 
-## Act III: Two copies of the truth
+## Black diamond: Two copies of the truth
 <p class="dek">The server knows what's real. The client knows what it was told, once, a while ago.</p>
 
 The list is now a store, and the store is a copy. That is the whole problem,
@@ -110,17 +160,68 @@ asks the server "has this changed?" and gets back a `304 Not Modified` with no
 body when it hasn't.[^cond] It has no store to reconcile, because it doesn't keep
 one. It has the page.
 
-<figure class="step snow snow--3">
-  <span class="snow__ball" aria-hidden="true"></span>
+<figure class="step snow snow--3" style="--n: 22">
+  <div class="snow__scene" aria-hidden="true">
+    <div class="snow__hill"></div>
+    <span class="snow__tree snow__tree--a"></span>
+    <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__skier"></span>
+    <div class="snow__roll">
+      <div class="snow__ball"></div>
+      <ul class="snow__ring">
+      <li style="--i: 0"><span>fetch()</span></li>
+      <li style="--i: 1"><span>JSON.parse</span></li>
+      <li style="--i: 2"><span>a spinner</span></li>
+      <li style="--i: 3"><span>an empty state</span></li>
+      <li style="--i: 4"><span>a router</span></li>
+      <li style="--i: 5"><span>query string sync</span></li>
+      <li style="--i: 6"><span>a store</span></li>
+      <li style="--i: 7"><span>scroll save/restore</span></li>
+      <li style="--i: 8"><span>deep link handling</span></li>
+      <li style="--i: 9"><span>document.title</span></li>
+      <li style="--i: 10"><span>focus management</span></li>
+      <li style="--i: 11"><span>a 404 screen</span></li>
+      <li style="--i: 12"><span>a cache</span></li>
+      <li style="--i: 13"><span>TTLs</span></li>
+      <li style="--i: 14"><span>invalidation</span></li>
+      <li style="--i: 15"><span>optimistic updates</span></li>
+      <li style="--i: 16"><span>rollback</span></li>
+      <li style="--i: 17"><span>a retry queue</span></li>
+      <li style="--i: 18"><span>token refresh</span></li>
+      <li style="--i: 19"><span>a websocket</span></li>
+      <li style="--i: 20"><span>reconciliation</span></li>
+      <li style="--i: 21"><span>"session expired"</span></li>
+      </ul>
+    </div>
+  </div>
   <ul class="snow__junk">
-    <li>fetch()</li><li>JSON.parse</li><li>a spinner</li><li>an empty state</li>
-    <li>a router</li><li>query string sync</li><li>a store</li><li>scroll save/restore</li><li>deep link handling</li><li>document.title</li><li>focus management</li><li>a 404 screen</li>
-    <li>a cache</li><li>TTLs</li><li>invalidation</li><li>optimistic updates</li><li>rollback</li><li>a retry queue</li><li>token refresh</li><li>a websocket</li><li>reconciliation</li><li>"session expired"</li>
+    <li>fetch()</li>
+    <li>JSON.parse</li>
+    <li>a spinner</li>
+    <li>an empty state</li>
+    <li>a router</li>
+    <li>query string sync</li>
+    <li>a store</li>
+    <li>scroll save/restore</li>
+    <li>deep link handling</li>
+    <li>document.title</li>
+    <li>focus management</li>
+    <li>a 404 screen</li>
+    <li>a cache</li>
+    <li>TTLs</li>
+    <li>invalidation</li>
+    <li>optimistic updates</li>
+    <li>rollback</li>
+    <li>a retry queue</li>
+    <li>token refresh</li>
+    <li>a websocket</li>
+    <li>reconciliation</li>
+    <li>"session expired"</li>
   </ul>
-  <figcaption>End of Act III. The Team is now maintaining an HTTP cache. It is not as good as the one in the browser, and it has to be, because the browser's can't see inside the store.</figcaption>
+  <figcaption>Bottom of the black diamond. The Team is now maintaining an HTTP cache. It is not as good as the one in the browser, and it has to be, because the browser's can't see inside the store.</figcaption>
 </figure>
 
-## Act IV: The JSON is tiny. The bundle is not.
+## Double black diamond: The JSON is tiny. The bundle is not.
 <p class="dek">The number everyone quotes is the one that doesn't matter.</p>
 
 Someone on The Team makes the argument that closes every one of these
@@ -157,19 +258,88 @@ JSON, then draws. The Team measures this eventually and calls the result
 "perceived performance," which is the phrase for a spinner that appears
 quickly.
 
-<figure class="step snow snow--4">
-  <span class="snow__ball" aria-hidden="true"></span>
+<figure class="step snow snow--4" style="--n: 31">
+  <div class="snow__scene" aria-hidden="true">
+    <div class="snow__hill"></div>
+    <span class="snow__tree snow__tree--a"></span>
+    <span class="snow__tree snow__tree--b"></span>
+    <span class="snow__skier"></span>
+    <span class="snow__yeti"></span>
+    <div class="snow__roll">
+      <div class="snow__ball"></div>
+      <ul class="snow__ring">
+      <li style="--i: 0"><span>fetch()</span></li>
+      <li style="--i: 1"><span>JSON.parse</span></li>
+      <li style="--i: 2"><span>a spinner</span></li>
+      <li style="--i: 3"><span>an empty state</span></li>
+      <li style="--i: 4"><span>a router</span></li>
+      <li style="--i: 5"><span>query string sync</span></li>
+      <li style="--i: 6"><span>a store</span></li>
+      <li style="--i: 7"><span>scroll save/restore</span></li>
+      <li style="--i: 8"><span>deep link handling</span></li>
+      <li style="--i: 9"><span>document.title</span></li>
+      <li style="--i: 10"><span>focus management</span></li>
+      <li style="--i: 11"><span>a 404 screen</span></li>
+      <li style="--i: 12"><span>a cache</span></li>
+      <li style="--i: 13"><span>TTLs</span></li>
+      <li style="--i: 14"><span>invalidation</span></li>
+      <li style="--i: 15"><span>optimistic updates</span></li>
+      <li style="--i: 16"><span>rollback</span></li>
+      <li style="--i: 17"><span>a retry queue</span></li>
+      <li style="--i: 18"><span>token refresh</span></li>
+      <li style="--i: 19"><span>a websocket</span></li>
+      <li style="--i: 20"><span>reconciliation</span></li>
+      <li style="--i: 21"><span>"session expired"</span></li>
+      <li style="--i: 22"><span>a bundler</span></li>
+      <li style="--i: 23"><span>code splitting</span></li>
+      <li style="--i: 24"><span>hash config</span></li>
+      <li style="--i: 25"><span>vendor chunks</span></li>
+      <li style="--i: 26"><span>a loading skeleton</span></li>
+      <li style="--i: 27"><span>error boundaries</span></li>
+      <li style="--i: 28"><span>hydration</span></li>
+      <li style="--i: 29"><span>a service worker</span></li>
+      <li style="--i: 30"><span>"perceived performance"</span></li>
+      </ul>
+    </div>
+  </div>
   <ul class="snow__junk">
-    <li>fetch()</li><li>JSON.parse</li><li>a spinner</li><li>an empty state</li>
-    <li>a router</li><li>query string sync</li><li>a store</li><li>scroll save/restore</li><li>deep link handling</li><li>document.title</li><li>focus management</li><li>a 404 screen</li>
-    <li>a cache</li><li>TTLs</li><li>invalidation</li><li>optimistic updates</li><li>rollback</li><li>a retry queue</li><li>token refresh</li><li>a websocket</li><li>reconciliation</li><li>"session expired"</li>
-    <li>a bundler</li><li>code splitting</li><li>hash config</li><li>vendor chunks</li><li>a loading skeleton</li><li>error boundaries</li><li>hydration</li><li>a service worker</li><li>"perceived performance"</li>
+    <li>fetch()</li>
+    <li>JSON.parse</li>
+    <li>a spinner</li>
+    <li>an empty state</li>
+    <li>a router</li>
+    <li>query string sync</li>
+    <li>a store</li>
+    <li>scroll save/restore</li>
+    <li>deep link handling</li>
+    <li>document.title</li>
+    <li>focus management</li>
+    <li>a 404 screen</li>
+    <li>a cache</li>
+    <li>TTLs</li>
+    <li>invalidation</li>
+    <li>optimistic updates</li>
+    <li>rollback</li>
+    <li>a retry queue</li>
+    <li>token refresh</li>
+    <li>a websocket</li>
+    <li>reconciliation</li>
+    <li>"session expired"</li>
+    <li>a bundler</li>
+    <li>code splitting</li>
+    <li>hash config</li>
+    <li>vendor chunks</li>
+    <li>a loading skeleton</li>
+    <li>error boundaries</li>
+    <li>hydration</li>
+    <li>a service worker</li>
+    <li>"perceived performance"</li>
   </ul>
-  <figcaption>Curtain. Everything on the ball is a thing the browser underneath it already did. The Team is proud of the ball. It took two years.</figcaption>
+  <figcaption>Double black. Everything on the ball is a thing the browser underneath it already did. The Team is proud of the ball. It took two years.</figcaption>
 </figure>
 
-## The best case for the app
-<p class="dek">Steelman first. There are real ones.</p>
+## The lodge: the best case for the app
+<p class="dek">Steelman first, by the fire. There are real ones.</p>
 
 **"Some things are applications."** Yes. A design tool, a spreadsheet, a map, a
 video editor. If the user is manipulating a document continuously and the
@@ -193,8 +363,8 @@ now a property of documents.
 which is on the ball. If offline is a real requirement it's worth it. It usually
 isn't the requirement; it's the justification found afterwards.
 
-## What The Team built was a browser
-<p class="dek">A worse one, on top of the real one, with none of its thirty years.</p>
+## 2,000 metres: the yeti
+<p class="dek">In SkiFree, ski far enough and the abominable snowman comes for you. Here it's the bill for the browser The Team rebuilt.</p>
 
 Line the ball up against the thing it's sitting inside. A router: the address
 bar. Scroll save and restore: the browser's default. The store and its cache:

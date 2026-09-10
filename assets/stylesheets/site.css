@@ -2289,143 +2289,257 @@ pre.highlight { background: var(--code-bg, #14130f); }
 .prose table th:first-child, .prose table td:first-child { white-space: normal; min-width: 11rem; }
 
 
-/* --- STAGE ------------------------------------------------ a playbill
-   For the SPA article, told in acts. Curtain red, cream paper, a playbill
-   serif for the act headings, Roman numerals. Dark in both schemes. */
+/* --- SLOPE ---------------------------------------------- a ski hill
+   For the SPA article. A SkiFree-shaped world: white snow, pixel trees, a
+   Windows 3.1 title bar on the banner, and the four acts rated like trails,
+   green circle to double black diamond. A game screen, so it's light in both
+   colour schemes. */
 
-.t-stage {
-  --accent: #e0b04b;
-  --curtain: #8b1a1a;
-  --ink: #f3ead6;
-  --paper: #1a0d0d;
-  --panel: #2a1414;
-  --muted: #c4ad8c;
-  --rule: #5a2a2a;
-  --playbill: "Bodoni 72", "Didot", "Bodoni MT", "Playfair Display", Georgia, serif;
+.t-slope {
+  --accent: #1f5fd0;
+  --ink: #101820;
+  --paper: #f3f6fa;
+  --panel: #ffffff;
+  --muted: #56606b;
+  --rule: #101820;
+  --green: #2e9e4f;
+  --blue: #2266d1;
+  --black: #111111;
+  --tree: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%227%22%20y=%220%22%20width=%221%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%226%22%20y=%221%22%20width=%223%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%222%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%226%22%20y=%223%22%20width=%223%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%224%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%224%22%20y=%225%22%20width=%227%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%226%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%224%22%20y=%227%22%20width=%227%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%223%22%20y=%228%22%20width=%229%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%222%22%20y=%229%22%20width=%2211%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%227%22%20y=%2210%22%20width=%221%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3Crect%20x=%227%22%20y=%2211%22%20width=%221%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3Crect%20x=%226%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3C/svg%3E");
+  --skier: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%226%22%20y=%221%22%20width=%222%22%20height=%221%22%20fill=%22%23d33%22/%3E%3Crect%20x=%226%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23d33%22/%3E%3Crect%20x=%225%22%20y=%223%22%20width=%224%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%224%22%20y=%224%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%226%22%20y=%224%22%20width=%222%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%229%22%20y=%224%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%226%22%20y=%225%22%20width=%222%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%225%22%20y=%226%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%228%22%20y=%226%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%225%22%20y=%227%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%228%22%20y=%227%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%224%22%20y=%228%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%229%22%20y=%228%22%20width=%221%22%20height=%221%22%20fill=%22%231a237e%22/%3E%3Crect%20x=%223%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%229%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%222%22%20y=%2210%22%20width=%2211%22%20height=%221%22%20fill=%22%23111%22/%3E%3C/svg%3E");
+  --yeti: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%225%22%20y=%220%22%20width=%226%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%221%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%225%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%226%22%20y=%222%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2210%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2211%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%223%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%226%22%20y=%224%22%20width=%224%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2210%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%225%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%222%22%20y=%226%22%20width=%2212%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%227%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%228%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%229%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2210%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2211%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3C/svg%3E");
+  background-image: radial-gradient(circle, rgba(16,24,32,0.10) 0.8px, transparent 1px);
+  background-size: 22px 22px;
 }
 
-.t-stage .prose { max-width: 42rem; }
+.t-slope .prose { max-width: 42rem; }
 
-.t-stage .banner {
+.t-slope .banner {
   display: block;
-  position: relative;
-  padding: 2.5rem 1.5rem 1.5rem;
-  border: 0;
-  text-align: center;
-  background:
-    repeating-linear-gradient(90deg, #7a1515 0 1.2rem, #9c2020 1.2rem 2.4rem, #6e1212 2.4rem 3.2rem),
-    var(--curtain);
-  box-shadow: inset 0 -2rem 3rem rgba(0,0,0,0.45);
+  padding: 0;
+  border: 2px solid var(--rule);
+  background: var(--panel);
+  box-shadow: 4px 4px 0 var(--rule);
 }
 
-.t-stage .banner::before {
-  content: "A tragedy in four acts";
-  display: block;
-  margin-bottom: 0.9rem;
-  font-family: var(--playbill);
-  font-style: italic;
-  font-size: 1.05rem;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-}
-
-.t-stage .banner__art { display: none; }
-
-.t-stage .article-title {
-  font-family: var(--playbill);
+/* Windows 3.1 title bar. */
+.t-slope .banner::before {
+  content: "Ski - hypermedia.lol";
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0.5rem;
+  background: #000080;
+  color: #fff;
+  font-family: "MS Sans Serif", Tahoma, Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(2rem, 6.5vw, 3.4rem);
-  line-height: 1.05;
-  text-transform: none;
-  letter-spacing: 0.01em;
-  color: #fff6e3;
-  text-shadow: 0 2px 0 rgba(0,0,0,0.45);
+  font-size: 0.85rem;
 }
 
-.t-stage .banner .byline { justify-content: center; text-align: center; color: var(--muted); }
-.t-stage .byline a { color: var(--accent); }
+.t-slope .banner__art { display: none; }
+.t-slope .banner__meta { padding: 1.4rem 1.4rem 1.2rem; }
 
-.t-stage .prose h2 {
-  font-family: var(--playbill);
+.t-slope .article-title {
+  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
   font-weight: 700;
-  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  font-size: clamp(1.7rem, 5.2vw, 2.6rem);
+  line-height: 1.12;
   text-transform: none;
-  letter-spacing: 0.01em;
-  text-align: center;
-  border: 0;
-  padding-top: 1.5rem;
-  color: #fff6e3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
 }
 
-.t-stage .prose h2::before {
+.t-slope .banner .byline { color: var(--muted); }
+.t-slope .byline a { color: var(--accent); }
+
+/* Trail markers on the act headings. */
+.t-slope .prose h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: Tahoma, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4.4vw, 2rem);
+  text-transform: none;
+  letter-spacing: -0.01em;
+  border: 0;
+  padding: 0;
+}
+
+.t-slope .prose h2::before {
   content: "";
-  display: block;
-  width: 4rem;
-  height: 2px;
-  margin: 0 auto 1rem;
-  background: var(--accent);
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: var(--black);
 }
 
-.t-stage .prose p.dek { text-align: center; max-width: none; font-style: italic; font-family: var(--playbill); font-size: 1.1rem; color: var(--muted); }
-.t-stage .prose p.lede { border-left-color: var(--accent); }
-.t-stage .prose a { color: var(--accent); }
-.t-stage .prose a:hover { background: var(--accent); color: #1a0d0d; }
-.t-stage code { background: #3a1c1c; color: var(--accent); }
-.t-stage pre { background: #0f0707; border-color: var(--rule); color: var(--ink); }
-.t-stage table th { background: #3a1c1c; color: var(--accent); }
-.t-stage table th, .t-stage table td { border-color: var(--rule); }
-.t-stage .step figcaption { color: var(--muted); }
-.t-stage .onward__link, .t-stage .foot { color: var(--ink); }
+.t-slope .prose > h2:nth-of-type(1)::before { background: var(--green); border-radius: 50%; }
+.t-slope .prose > h2:nth-of-type(2)::before { background: var(--blue); }
+.t-slope .prose > h2:nth-of-type(3)::before { background: var(--black); transform: rotate(45deg) scale(0.8); }
+.t-slope .prose > h2:nth-of-type(4)::before { width: 3.4rem; background: linear-gradient(90deg, var(--black) 0 45%, transparent 45% 55%, var(--black) 55%); clip-path: polygon(22% 0, 45% 50%, 22% 100%, 0 50%, 22% 0, 77% 0, 100% 50%, 77% 100%, 55% 50%, 77% 0); }
+.t-slope .prose > h2:nth-of-type(5)::before { background: #8a5a2b; clip-path: polygon(50% 0, 100% 45%, 85% 45%, 85% 100%, 15% 100%, 15% 45%, 0 45%); }
+.t-slope .prose > h2:nth-of-type(6)::before { width: 2rem; height: 2rem; background: var(--yeti) center / contain no-repeat; }
 
-/* Card preview */
-.pv--stage { background: #1a0d0d; }
-.pv--stage .pv__curtain { position: absolute; top: 0; bottom: 0; width: 22%; background: repeating-linear-gradient(90deg, #7a1515 0 6px, #9c2020 6px 12px, #6e1212 12px 16px); }
-.pv--stage .pv__curtain--l { left: 0; }
-.pv--stage .pv__curtain--r { right: 0; }
-.pv--stage .pv__ball { position: absolute; left: 50%; top: 52%; width: 34%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #cfcfcf 60%, #9a9a9a); transform: translate(-50%, -50%); box-shadow: 0 6px 12px rgba(0,0,0,0.5); }
-.pv--stage .pv__ball i { position: absolute; width: 22%; height: 14%; background: #e0b04b; border: 1px solid #1a0d0d; }
-.pv--stage .pv__ball i:nth-child(1) { top: 18%; left: 10%; transform: rotate(-20deg); }
-.pv--stage .pv__ball i:nth-child(2) { top: 55%; left: 60%; transform: rotate(15deg); background: #8b1a1a; }
-.pv--stage .pv__ball i:nth-child(3) { top: 70%; left: 20%; transform: rotate(8deg); background: #0000ee; }
-.pv--stage .pv__act { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); font-family: "Bodoni 72", Didot, Georgia, serif; font-size: 0.8rem; letter-spacing: 0.2em; color: #e0b04b; }
+.t-slope .prose p.dek { color: var(--muted); }
+.t-slope .prose p.lede { border-left-color: var(--accent); }
+.t-slope .prose a { color: var(--accent); }
+.t-slope .prose a:hover { background: var(--accent); color: #fff; }
+.t-slope code { background: #e3e9f2; color: var(--ink); }
+.t-slope pre { background: #101820; border-color: var(--rule); color: #f3f6fa; }
+.t-slope table th { background: #e3e9f2; color: var(--ink); }
+.t-slope table th, .t-slope table td { border-color: #b8c4cf; }
+.t-slope .step figcaption { color: var(--muted); }
+.t-slope .foot { color: var(--ink); }
+
+/* Card preview: a slope with trees and the ball. */
+.pv--slope { background: #f3f6fa; background-image: radial-gradient(circle, rgba(16,24,32,0.12) 0.8px, transparent 1px); background-size: 10px 10px; }
+.pv--slope .pv__tree { position: absolute; width: 16%; aspect-ratio: 1; background: var(--tree, url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%227%22%20y=%220%22%20width=%221%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%226%22%20y=%221%22%20width=%223%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%222%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%226%22%20y=%223%22%20width=%223%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%224%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%224%22%20y=%225%22%20width=%227%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%225%22%20y=%226%22%20width=%225%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%224%22%20y=%227%22%20width=%227%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%223%22%20y=%228%22%20width=%229%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%222%22%20y=%229%22%20width=%2211%22%20height=%221%22%20fill=%22%232e7d32%22/%3E%3Crect%20x=%227%22%20y=%2210%22%20width=%221%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3Crect%20x=%227%22%20y=%2211%22%20width=%221%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3Crect%20x=%226%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%235d3a1a%22/%3E%3C/svg%3E")) center / contain no-repeat; }
+.pv--slope .pv__tree--1 { left: 8%; top: 12%; }
+.pv--slope .pv__tree--2 { left: 70%; top: 30%; }
+.pv--slope .pv__tree--3 { left: 22%; top: 60%; }
+.pv--slope .pv__ball { position: absolute; left: 48%; top: 40%; width: 26%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, #cfcfcf 60%, #8e8e8e); box-shadow: 0 5px 10px rgba(0,0,0,0.35); }
+.pv--slope .pv__yeti { position: absolute; right: 6%; bottom: 6%; width: 18%; aspect-ratio: 1; background: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2016%2016%22%20shape-rendering=%22crispEdges%22%3E%3Crect%20x=%225%22%20y=%220%22%20width=%226%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%221%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%225%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%226%22%20y=%222%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2210%22%20y=%222%22%20width=%221%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2211%22%20y=%222%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%223%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%226%22%20y=%224%22%20width=%224%22%20height=%221%22%20fill=%22%23111%22/%3E%3Crect%20x=%2210%22%20y=%224%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%225%22%20width=%2210%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%222%22%20y=%226%22%20width=%2212%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%227%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%228%22%20width=%2214%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%229%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%229%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%221%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2210%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%2213%22%20y=%2210%22%20width=%222%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2211%22%20width=%228%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2212%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%224%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2213%22%20width=%223%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%223%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3Crect%20x=%229%22%20y=%2214%22%20width=%224%22%20height=%221%22%20fill=%22%23b8c4cf%22/%3E%3C/svg%3E") center / contain no-repeat; }
+.pv--slope .pv__bar { position: absolute; top: 0; left: 0; right: 0; height: 14%; background: #000080; }
 
 /* ---------------------------------------------- SPA article: the props */
 
 .cast { margin: 0 0 4rem; padding: 1.25rem 1.4rem; border: 1px solid var(--rule); background: var(--panel); }
-.cast__head { margin: 0 0 0.75rem; font-family: var(--playbill, Georgia, serif); font-style: italic; letter-spacing: 0.1em; color: var(--accent); text-align: center; }
+.cast__head { margin: 0 0 0.75rem; font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--muted); }
 .cast dl { display: grid; grid-template-columns: 8rem 1fr; gap: 0.5rem 1rem; margin: 0; }
-.cast dt { font-family: var(--playbill, Georgia, serif); font-weight: 700; color: var(--ink); }
+.cast dt { font-family: var(--ui); font-weight: 700; color: var(--ink); }
 .cast dd { margin: 0; font-family: var(--prose); font-size: 1rem; line-height: 1.5; color: var(--muted); }
 @media (max-width: 34rem) { .cast dl { grid-template-columns: 1fr; gap: 0.15rem 0; } .cast dd { margin-bottom: 0.6rem; } }
 
-/* The snowball grows act by act, and the junk stuck to it accumulates. */
-.snow { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; }
-.snow__ball {
-  flex: none;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #ffffff, #d6d6d6 55%, #8d8d8d);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.5), inset -8px -10px 20px rgba(0,0,0,0.15);
-  width: var(--size);
-  height: var(--size);
+/* The snowball: rolls down the hill, spinning and bouncing, with the junk
+   orbiting it. Grows act by act. Phones get the static list instead of the
+   ring, and reduced-motion gets stillness. */
+.snow { display: block; }
+.snow--1 { --size: 5rem;  --orbit: 5.4rem; }
+.snow--2 { --size: 8rem;  --orbit: 7.6rem; }
+.snow--3 { --size: 10rem; --orbit: 9rem; }
+.snow--4 { --size: 12rem; --orbit: 10.2rem; }
+
+.snow__scene { display: none; }
+
+@media (min-width: 48rem) {
+  .snow__scene {
+    position: relative;
+    display: block;
+    height: calc(var(--orbit) * 2 + 6rem);
+    margin: 0 0 1rem;
+    overflow: hidden;
+  }
+  .snow__hill {
+    position: absolute;
+    inset: 0;
+    background: #fbfcfe;
+    border: 2px solid var(--rule);
+    box-shadow: 4px 4px 0 var(--rule);
+  }
+  .snow__hill::before, .snow__hill::after, .snow__tree {
+    content: "";
+    position: absolute;
+    width: 2.6rem;
+    height: 2.6rem;
+    background: var(--tree) center / contain no-repeat;
+  }
+  .snow__hill::before { left: 8%; top: 10%; }
+  .snow__hill::after { right: 10%; bottom: 12%; }
+  .snow__tree--a { left: 22%; bottom: 8%; }
+  .snow__tree--b { right: 18%; top: 8%; width: 2rem; height: 2rem; }
+  .snow__skier {
+    position: absolute;
+    left: 12%;
+    bottom: 22%;
+    width: 2.4rem;
+    height: 2.4rem;
+    background: var(--skier) center / contain no-repeat;
+    animation: snow-skier 1.15s ease-in-out infinite;
+  }
+  .snow__yeti {
+    position: absolute;
+    right: 6%;
+    bottom: 6%;
+    width: 3.6rem;
+    height: 3.6rem;
+    background: var(--yeti) center / contain no-repeat;
+    animation: snow-yeti 0.9s steps(2) infinite;
+  }
+  .snow__scene { background: #fbfcfe; }
+  .snow__roll {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--size);
+    height: var(--size);
+    margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+    animation: snow-bounce 1.15s ease-in-out infinite;
+  }
+  .snow__ball {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 28%, rgba(255,255,255,0.95), rgba(255,255,255,0) 45%),
+      radial-gradient(circle at 62% 70%, rgba(0,0,0,0.10) 0 6%, transparent 7%),
+      radial-gradient(circle at 25% 65%, rgba(0,0,0,0.12) 0 4%, transparent 5%),
+      radial-gradient(circle at 70% 30%, rgba(0,0,0,0.09) 0 5%, transparent 6%),
+      radial-gradient(circle at 45% 45%, #f4f4f4, #cfcfcf 60%, #8e8e8e);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.55), inset -10px -12px 22px rgba(0,0,0,0.18);
+    animation: snow-spin 5s linear infinite;
+  }
+  .snow__ring {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: snow-spin 16s linear infinite;
+  }
+  .snow__ring li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit)));
+  }
+  .snow__ring li:nth-child(even) { transform: rotate(calc(var(--i) / var(--n) * 360deg)) translateY(calc(-1 * var(--orbit) - 1.4rem)); }
+  .snow__ring li span {
+    display: block;
+    /* Undo the placement angle, then the ring's spin, so labels stay upright. */
+    rotate: calc(-1 * var(--i) / var(--n) * 360deg);
+    transform: translate(-50%, -50%);
+    padding: 0.22rem 0.5rem;
+    border: 1px solid var(--rule);
+    background: var(--panel);
+    color: var(--ink);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    white-space: nowrap;
+    box-shadow: 1px 2px 0 rgba(0,0,0,0.35);
+    animation: snow-unspin 16s linear infinite;
+  }
+  .snow__ring li:nth-child(5n) span { border-color: var(--accent); }
+  /* With the ring showing, the flat list is the caption's backup, kept small. */
+  .snow__junk { display: none; }
 }
-.snow--1 { --size: 4.5rem; }
-.snow--2 { --size: 7.5rem; }
-.snow--3 { --size: 11rem; }
-.snow--4 { --size: 15rem; }
-.snow__junk { flex: 1 1 14rem; display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0; padding: 0; }
-.snow__junk li {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  padding: 0.25rem 0.5rem;
-  border: 1px solid var(--rule);
-  background: var(--panel);
-  color: var(--ink);
-  transform: rotate(var(--tilt, -1deg));
+
+@keyframes snow-spin { to { transform: rotate(360deg); } }
+@keyframes snow-unspin { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes snow-bounce { 0%, 100% { translate: 0 0; } 50% { translate: 0 -0.7rem; } }
+@keyframes snow-skier { 0%, 100% { translate: 0 0; } 50% { translate: 0.4rem -0.2rem; } }
+@keyframes snow-yeti { 0%, 100% { translate: 0 0; } 50% { translate: -0.5rem 0; } }
+
+.snow__junk { display: flex; flex-wrap: wrap; gap: 0.35rem; list-style: none; margin: 0 0 1rem; padding: 0; }
+@media (min-width: 48rem) { .snow__junk { display: none; } }
+.snow__junk li { font-family: var(--mono); font-size: 0.72rem; padding: 0.25rem 0.5rem; border: 1px solid var(--rule); background: var(--panel); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .snow__roll, .snow__ball, .snow__ring, .snow__ring li span, .snow__skier, .snow__yeti { animation: none; }
 }
-.snow__junk li:nth-child(3n) { --tilt: 1.5deg; }
-.snow__junk li:nth-child(5n) { --tilt: -2deg; border-color: var(--accent); }
-.snow--3 .snow__junk li, .snow--4 .snow__junk li { font-size: 0.68rem; padding: 0.2rem 0.45rem; }
-.snow figcaption { flex-basis: 100%; }
 
 /* The split-brain ledger. */
 .ledger { font-size: 0.92rem; }
