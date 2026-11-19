@@ -1,0 +1,134 @@
+---
+title: The Clickable Card That Forgets the Keyboard
+date: November 19, 2026
+description: A fictional resource card passes a mouse click and fails Enter. Keep the destination as a link and the separate action as a native control.
+byline: Jake Tao
+byline_url: https://resources.packscena.com/
+treatment: plain
+sprite: cursor
+span: wide
+og_image: /images/og/clickable-card.png
+---
+
+<p class="lede">I put two resource cards beside each other. Both promise the same destination. One needs a small driving lesson before the keyboard can get there.</p>
+
+<p>The entries are invented for this AI-assisted local experiment. The test compares the two implementations shown here, with page JavaScript enabled and disabled. It makes no claim about a named framework or a production website.</p>
+
+<style>
+  .rp-card-pair { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:1.5rem; }
+  .rp-card-pair figure { margin:0; }
+  .rp-card { border:2px solid currentColor; border-radius:.4rem; padding:1rem; }
+  .rp-card h3 { margin-top:0; }
+  .rp-mouse-only { cursor:pointer; }
+  .rp-mark { display:block; margin-top:1rem; }
+  .rp-card :focus-visible, .rp-mouse-only:focus-visible { outline:3px solid currentColor; outline-offset:4px; }
+  .rp-results { width:100%; border-collapse:collapse; }
+  .rp-results th, .rp-results td { border:1px solid currentColor; padding:.45rem; text-align:left; vertical-align:top; }
+  .rp-code { overflow-x:auto; }
+  /* Keep every result column visible within the publisher's narrow mobile prose. */
+  .prose .rp-results { display:table; table-layout:fixed; overflow-x:visible; }
+  .prose .rp-results th, .prose .rp-results td { white-space:normal; overflow-wrap:anywhere; min-width:0; }
+  .prose .rp-results th:first-child, .prose .rp-results td:first-child { min-width:0; width:38%; }
+  .prose p.dek, .prose .step figcaption, .prose .step figcaption b { color:var(--ink); }
+</style>
+
+<div class="rp-card-pair">
+  <figure class="step">
+    <div class="rp-card rp-mouse-only" id="rp-mouse-card" role="link" tabindex="0">
+      <h3>Editing practice A</h3>
+      <p>A fictional resource with a mouse click handler and no keyboard handler.</p>
+    </div>
+    <figcaption><b>The implementation under test.</b> It is deliberately limited to the shown mouse handler. A complete scripted implementation could add the missing behavior.</figcaption>
+  </figure>
+  <figure class="step">
+    <article class="rp-card">
+      <h3><a id="rp-native-link" href="#rp-destination">Editing practice A</a></h3>
+      <p>The same fictional destination, expressed as a link.</p>
+      <label class="rp-mark"><input id="rp-example-mark" type="checkbox"> Mark this example</label>
+    </article>
+    <figcaption><b>The native version.</b> The title navigates. The checkbox changes its own form state. The mark is not a saved favorite.</figcaption>
+  </figure>
+</div>
+
+<script>
+  // Deliberate anti-pattern under test. The native card has no script handler.
+  document.getElementById('rp-mouse-card').addEventListener('click', () => {
+    location.hash = 'rp-destination';
+  });
+</script>
+
+<h2>The mouse handler teaches one gesture</h2>
+<p class="dek">Tab reaches the first card. Enter leaves the URL unchanged.</p>
+
+<p>The first card has <code>role="link"</code> and <code>tabindex="0"</code>. It can receive keyboard focus. Its script still listens only for a mouse click. In the local check, Enter does nothing; clicking changes the fragment when scripts are enabled. Disable page scripts, and the click stops navigating too.</p>
+
+<p>This is a small implementation with a specific omission. It does not establish that scripted navigation cannot work. It establishes what this handler actually implements.</p>
+
+<p>The WAI-ARIA link pattern makes the ownership of that extra work clear: a link role supplies semantics, while an author using it must provide the expected link behavior. The guide recommends an HTML anchor with an <code>href</code> when available.<sup><a href="#rp-ref-apg">1</a></sup></p>
+
+<h2>The destination can live in the markup</h2>
+<p class="dek">The second title has an address before a handler runs.</p>
+
+<p>In the same local check, Tab reaches the anchor and Enter navigates to its fragment. Middle-click opens that destination in another page. Those checks also pass with page scripts disabled. There is no navigation handler on this card.</p>
+
+<figure class="step">
+<pre class="rp-code"><code>&lt;article class="resource-card"&gt;
+  &lt;h3&gt;&lt;a href="#practice"&gt;Editing practice A&lt;/a&gt;&lt;/h3&gt;
+  &lt;p&gt;A fictional resource for the example.&lt;/p&gt;
+  &lt;label&gt;
+    &lt;input type="checkbox"&gt; Mark this example
+  &lt;/label&gt;
+&lt;/article&gt;</code></pre>
+<figcaption><b>The separation.</b> A destination and a local mark are different controls, with neither inside the other.</figcaption>
+</figure>
+
+<p>The HTML Standard defines an anchor with <code>href</code> as a hyperlink. Its content model also rules out interactive descendants, nested anchors, and descendants with a specified <code>tabindex</code>.<sup><a href="#rp-ref-html">2</a></sup> A checkbox or a second action therefore needs its own place beside the link.</p>
+
+<p>That separation helps the example say what it does. A title opens the resource. The adjacent checkbox marks this example in its current local form state. It does not claim to save a favorite across visits.</p>
+
+<h2>A bigger click target is a fair request</h2>
+<p class="dek">Keep the useful part of a clickable card without hiding its controls inside a link.</p>
+
+<p>A whole card is easier to hit with a pointer than a small title. That is a reasonable design goal. If the card has one destination and no other interactive content, an anchor can wrap suitable block content; the standard permits that shape.<sup><a href="#rp-ref-html">2</a></sup></p>
+
+<p>If the card also has a marking control or another destination, give those controls separate boundaries. Expanding the main link's padding or restructuring its non-interactive content may provide a larger target. Those variants are design options to test, rather than behaviors measured by this experiment.</p>
+
+<p>A router component that already renders a real anchor is also outside the first example's problem. Inspect the delivered element before prescribing a rewrite. JavaScript can enhance a link without removing its address.</p>
+
+<h2>The result belongs to this fixture</h2>
+<p class="dek">Seven checks in two script modes produced fourteen passing observations.</p>
+
+<figure class="step">
+<table class="rp-results">
+  <thead><tr><th scope="col">Local check</th><th scope="col">Scripts enabled</th><th scope="col">Scripts disabled</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Enter on the focused mouse-only card</th><td>No navigation</td><td>No navigation</td></tr>
+    <tr><th scope="row">Mouse click on that card</th><td>Fragment changes</td><td>No navigation</td></tr>
+    <tr><th scope="row">Tab reaches the native title</th><td>Yes</td><td>Yes</td></tr>
+    <tr><th scope="row">Enter on the native title</th><td>Fragment changes</td><td>Fragment changes</td></tr>
+    <tr><th scope="row">Check the separate mark</th><td>Checked; URL unchanged</td><td>Checked; URL unchanged</td></tr>
+    <tr><th scope="row">Middle-click the native title</th><td>Destination opens in a second page</td><td>Destination opens in a second page</td></tr>
+    <tr><th scope="row">390px viewport</th><td>No horizontal page overflow</td><td>No horizontal page overflow</td></tr>
+  </tbody>
+</table>
+<figcaption><b>Method and boundary.</b> An isolated headless session used the existing Chrome 157.0.8103.79 installation and a fictional localhost page on 19 November 2026. Page requests to external destinations were blocked; none occurred. These observations come from the separate fixture, not the publisher's production build.</figcaption>
+</figure>
+
+<p>This did not test other browsers, a screen reader, copying a link address, dark-mode contrast, or saved favorites. Passing the checks is not a WCAG conformance result. WCAG's keyboard criterion concerns operating functionality through a keyboard interface; it is a reason to examine the missing behavior, rather than a certificate issued by this small test.<sup><a href="#rp-ref-keyboard">3</a></sup></p>
+
+<section id="rp-destination" tabindex="-1">
+  <h2>The fictional destination is here</h2>
+  <p class="dek">Both cards point to this section. Only one needs a click handler to reach it.</p>
+  <p>The useful review question is visible in the markup: where does this control go, and which separate control changes state? A resource title can answer the first question with <code>href</code>. The small marking control can answer the second on its own.</p>
+</section>
+
+<h2>References and test scope</h2>
+<p class="dek">The specifications explain the semantics; the local observations cover the implementations shown.</p>
+
+<ol>
+  <li id="rp-ref-apg"><a href="https://www.w3.org/WAI/ARIA/apg/patterns/link/">W3C WAI-ARIA Authoring Practices: Link Pattern</a>. Current content read on 19 November 2026, including the note about role semantics, author-provided behaviors, and native anchors.</li>
+  <li id="rp-ref-html"><a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">WHATWG HTML Standard: the a element</a>. Current content read on 19 November 2026, including the hyperlink definition, content model, and example of a block-content link.</li>
+  <li id="rp-ref-keyboard"><a href="https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html">W3C Understanding SC 2.1.1: Keyboard</a>. Informative guidance read on 19 November 2026; no conformance claim is made for the fixture or article.</li>
+</ol>
+
+<p><small>Prepared with AI assistance for Jake Tao, operator of Resource Planet. The resource names and exercise data are fictional.</small></p>
